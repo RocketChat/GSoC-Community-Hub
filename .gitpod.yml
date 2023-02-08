@@ -1,0 +1,7 @@
+tasks:
+  - name: Start all services
+    init: pnpm install && turbo run build
+    command: pnpm run dev
+
+image:
+  file: .gitpod.Dockerfile
