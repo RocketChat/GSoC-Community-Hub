@@ -6,7 +6,7 @@ export const Timeline = () => {
       <li className="ui-mb-10 ui-ml-4">
         <div className="ui-absolute ui-w-3 ui-h-3 ui-bg-gray-200 ui-rounded-full ui-mt-1.5 ui--left-1.5 ui-border ui-border-white dark:ui-border-gray-900 dark:ui-bg-gray-700"></div>
         <time className="ui-mb-1 ui-text-sm ui-font-normal ui-leading-none ui-text-gray-400 dark:ui-text-gray-500">
-          February 2022
+          February 2024
         </time>
         <h3 className="ui-text-lg ui-font-semibold ui-text-gray-900 dark:ui-text-white">
           Application UI code in Tailwind CSS
