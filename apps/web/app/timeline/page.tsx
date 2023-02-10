@@ -1,7 +1,8 @@
 import { Timeline } from "ui";
-import fetchTimelineData from "./main";
+
+import d from "../../dist/timelineAPI.mjs";
 
 export default async function Home() {
-  const data = await fetchTimelineData({ num: 5 });
-  return <Timeline type="horizontal" data={data.products} num={data.length} />;
+  const data = await d({ num: 5 });
+  return <Timeline type="vertical" data={data.products} num={data.length} />;
 }
