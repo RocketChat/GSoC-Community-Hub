@@ -9,6 +9,9 @@
     ".": "./dist",
     "./styles.css": "./dist/index.css"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsup",
