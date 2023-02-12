@@ -1,1 +1,1 @@
-export { default as fetchTimelineData } from "./Timeline/timelineAPI";
+export * from "./Timeline/timelineAPI";

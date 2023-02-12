@@ -1,3 +1,5 @@
+import { TimelineObjectType } from 'core';
+
 declare const Button: () => JSX.Element;
 
 declare const Card: ({ title, cta, href, }: {
@@ -8,8 +10,8 @@ declare const Card: ({ title, cta, href, }: {
 
 declare const Timeline: ({ type, data, num, }: {
     type: "vertical" | "horizontal";
-    data: any;
+    data: TimelineObjectType[];
     num: number;
-}) => JSX.Element | undefined;
+}) => JSX.Element | null;
 
 export { Button, Card, Timeline };

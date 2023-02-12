@@ -1,5 +1,13 @@
-declare function fetchTimelineData({ num }: {
-    num: number;
-}): Promise<any>;
+declare function fetchTimelineData({ endpoint, transferType, }: {
+    endpoint: string;
+    transferType: (data: any) => TimelineObjectType[];
+}): Promise<TimelineObjectType[]>;
+type TimelineObjectType = {
+    id: any;
+    title: string;
+    meta: string;
+    subtitle: string;
+    description: string;
+};
 
-export { fetchTimelineData };
+export { TimelineObjectType, fetchTimelineData };

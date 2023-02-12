@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,8 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@palanikannan1437/rc4-core": "^1.0.1",
-    "@palanikannan1437/rc4-ui": "^0.0.1",
+    "@palanikannan1437/rc4-core": "^1.0.3",
+    "@palanikannan1437/rc4-ui": "^0.0.3",
     "core": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",

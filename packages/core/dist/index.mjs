@@ -1,3 +1,3 @@
-async function t({num:e}){return await(await fetch(`https://dummyjson.com/products?limit=${e}`)).json()}
+async function r({endpoint:t,transferType:e}){let i=await(await fetch(t)).json();return e(i)}
 
-export { t as fetchTimelineData };
+export { r as fetchTimelineData };
