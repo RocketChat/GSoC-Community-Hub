@@ -1,5 +1,13 @@
 # @palanikannan1437/rc4-ui
 
+## 0.0.7
+
+### Patch Changes
+
+- b8e27ac: removed num and built dist of ui
+- Updated dependencies [b8e27ac]
+  - @palanikannan1437/rc4-core@1.0.7
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # web
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [b8e27ac]
+  - @palanikannan1437/rc4-ui@0.0.7
+  - @palanikannan1437/rc4-core@1.0.7
+
 ## 1.0.5
 
 ### Patch Changes
