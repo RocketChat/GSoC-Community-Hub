@@ -1,5 +1,5 @@
 {
-  "name": "@palanikannan1437/rc4-core",
+  "name": "core",
   "version": "1.0.1",
   "description": "Core functional components for building your Next community",
   "types": "./dist/index.d.ts",

@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "private": "true",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,11 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@palanikannan1437/rc4-core": "^1.0.1",
+    "@palanikannan1437/rc4-ui": "^0.0.1",
+    "core": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*",
-    "core": "workspace:*"
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",

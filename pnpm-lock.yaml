@@ -39,6 +39,8 @@ importers:
 
   apps/web:
     specifiers:
+      '@palanikannan1437/rc4-core': ^1.0.1
+      '@palanikannan1437/rc4-ui': ^0.0.1
       '@types/node': ^18.11.17
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
@@ -56,6 +58,8 @@ importers:
       typescript: ^4.9.4
       ui: workspace:*
     dependencies:
+      '@palanikannan1437/rc4-core': 1.0.1
+      '@palanikannan1437/rc4-ui': 0.0.1_wxnjqhvau3kr4edcdlkxrbquiq
       core: link:../../packages/core
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -2464,6 +2468,21 @@ packages:
       mkdirp: 1.0.4
       rimraf: 3.0.2
     dev: true
+
+  /@palanikannan1437/rc4-core/1.0.1:
+    resolution: {integrity: sha512-cJHbWblUI1kV9zap2eOTFNas98Ffpqo8skNj3l9x8Ea7HlKsCcqVw2ZdIyxeXqbFr5ASrOggl4x4UbQBBzXHsA==}
+    dev: false
+
+  /@palanikannan1437/rc4-ui/0.0.1_wxnjqhvau3kr4edcdlkxrbquiq:
+    resolution: {integrity: sha512-rNdIwmIZq07iqj2R8Y7UTZcuhMf9d+OyaDvKs2DQA42yztMWenH5OGTijUKCiSf9jDhPOi0RSufYaTrG7smu2Q==}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      '@storybook/addon-postcss': 2.0.0_webpack@5.75.0
+      react: 18.2.0
+    transitivePeerDependencies:
+      - webpack
+    dev: false
 
   /@pkgr/utils/2.3.1:
     resolution: {integrity: sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==}

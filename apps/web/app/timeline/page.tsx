@@ -1,5 +1,5 @@
-import { fetchTimelineData } from "core";
-import { Timeline } from "ui";
+import { fetchTimelineData } from "@palanikannan1437/rc4-core";
+import { Timeline } from "@palanikannan1437/rc4-ui";
 
 export default async function Home() {
   const data = await fetchTimelineData({ num: 5 });

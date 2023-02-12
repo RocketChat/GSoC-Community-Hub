@@ -1,5 +1,5 @@
 {
-  "name": "@palanikannan1437/rc4-ui",
+  "name": "ui",
   "version": "0.0.1",
   "sideEffects": [
     "**/*.css"
