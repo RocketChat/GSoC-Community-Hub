@@ -4,11 +4,9 @@ import { TimelineObjectType } from "@palanikannan1437/rc4-core";
 export const Timeline = ({
   type,
   data,
-  num,
 }: {
   type: "vertical" | "horizontal";
   data: TimelineObjectType[];
-  num: number;
 }) => {
   if (type == "vertical" && data) {
     return (
