@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4-core
 
+## 1.0.5
+
+### Patch Changes
+
+- 77a1768: Core and UI deps
+
 ## 1.0.4
 
 ### Patch Changes

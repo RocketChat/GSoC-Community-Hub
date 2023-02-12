@@ -1,5 +1,13 @@
 # @palanikannan1437/rc4-ui
 
+## 0.0.5
+
+### Patch Changes
+
+- 77a1768: Core and UI deps
+- Updated dependencies [77a1768]
+  - @palanikannan1437/rc4-core@1.0.5
+
 ## 0.0.4
 
 ### Patch Changes
