@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4-core
 
+## 1.0.6
+
+### Patch Changes
+
+- 8c8b804: Cleaned up for prod
+
 ## 1.0.5
 
 ### Patch Changes

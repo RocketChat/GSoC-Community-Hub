@@ -1,5 +1,13 @@
 # @palanikannan1437/rc4-ui
 
+## 0.0.6
+
+### Patch Changes
+
+- 8c8b804: Cleaned up for prod
+- Updated dependencies [8c8b804]
+  - @palanikannan1437/rc4-core@1.0.6
+
 ## 0.0.5
 
 ### Patch Changes
