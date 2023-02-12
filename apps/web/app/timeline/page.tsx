@@ -20,5 +20,5 @@ export default async function Home() {
     transferType: transferType,
   });
 
-  return <Timeline type="horizontal" data={data} num={data.length} />;
+  return <Timeline type="horizontal" data={data} />;
 }

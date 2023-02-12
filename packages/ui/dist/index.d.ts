@@ -1,4 +1,4 @@
-import { TimelineObjectType } from 'core';
+import { TimelineObjectType } from '@palanikannan1437/rc4-core';
 
 declare const Button: () => JSX.Element;
 
@@ -8,10 +8,9 @@ declare const Card: ({ title, cta, href, }: {
     href: string;
 }) => JSX.Element;
 
-declare const Timeline: ({ type, data, num, }: {
+declare const Timeline: ({ type, data, }: {
     type: "vertical" | "horizontal";
     data: TimelineObjectType[];
-    num: number;
 }) => JSX.Element | null;
 
 export { Button, Card, Timeline };
