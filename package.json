@@ -11,9 +11,9 @@
     "@changesets/cli": "^2.26.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.11",
-    "turbo": "latest"
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "turbo": "^1.7.4"
   },
   "packageManager": "pnpm@7.15.0"
 }
