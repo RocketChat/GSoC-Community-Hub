@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TimelineObjectType } from "core";
+import { TimelineObjectType } from "@palanikannan1437/rc4-core";
 
 export const Timeline = ({
   type,

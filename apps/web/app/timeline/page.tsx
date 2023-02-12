@@ -1,5 +1,5 @@
-import { fetchTimelineData, TimelineObjectType } from "core";
-import { Timeline } from "ui";
+import { fetchTimelineData, TimelineObjectType } from "@palanikannan1437/rc4-core";
+import { Timeline } from "@palanikannan1437/rc4-ui";
 
 function transferType(data: any): TimelineObjectType[] {
   const timeline = data.products;
