@@ -39,8 +39,8 @@ importers:
 
   apps/web:
     specifiers:
-      '@palanikannan1437/rc4-core': latest
-      '@palanikannan1437/rc4-ui': latest
+      '@palanikannan1437/rc4-core': workspace:*
+      '@palanikannan1437/rc4-ui': workspace:*
       '@types/node': ^18.11.17
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
@@ -104,7 +104,7 @@ importers:
   packages/ui:
     specifiers:
       '@babel/core': ^7.20.12
-      '@palanikannan1437/rc4-core': latest
+      '@palanikannan1437/rc4-core': workspace:*
       '@storybook/addon-actions': ^6.5.16
       '@storybook/addon-essentials': ^6.5.16
       '@storybook/addon-interactions': ^6.5.16

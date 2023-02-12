@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4-core
 
+## 1.0.4
+
+### Patch Changes
+
+- 6d09e31: changes dependencies
+
 ## 1.0.3
 
 ### Patch Changes

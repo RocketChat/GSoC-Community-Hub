@@ -1,6 +1,6 @@
 {
   "name": "@palanikannan1437/rc4-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "sideEffects": [
     "**/*.css"
   ],
@@ -49,6 +49,6 @@
   },
   "dependencies": {
     "@storybook/addon-postcss": "^2.0.0",
-    "@palanikannan1437/rc4-core": "latest"
+    "@palanikannan1437/rc4-core": "workspace:*"
   }
 }
