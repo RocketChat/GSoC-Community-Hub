@@ -1,54 +1,45 @@
-# Turborepo Tailwind CSS starter
+<h1 align='center'>Rocket.Chat for Communities </h1>
 
-This is an official starter Turborepo.
+---
 
-## What's inside?
+<h2 align='center'>🚀 Features 🚀</h2>
+<ul>
+  <li>every part of the system scalable to handle from one to over a million online community members</li>
+  <li>engage your community at Rocket.Chat, Github, Discourse, Discord - wherever they may be</li>
+  <li>innovative reactJS components enhanced with fullstack behaviors</li>
+  <li>choice of Identity Management - popular SaaS (auth0, firebase) and open source (gluu, keycloak OpenID Connect)</li>
+  <li>full virtual conference handling</li>
+  <li>modern profile and superprofile factoring</li>
+  <li>supports flauna for scaled persistence</li>
+  <li>fine-grained full-stack optimization control - static, server side generation, per-request</li>
+  <li>designed for world-scale computing at the edge from day one</li>
+  <li>JAMStack and beyond, "no compromises" design</li>
+  <li>supports NextJS and Vercel pay-as-you-grow scaled deployments</li>
+  <li>easy assembly of reusable components for flexible adaptive systems</li>
+  <li>ultra-light-weight and re-imagined UX for next generation community builder / developer experience</li>
+</uL>
 
-This Turborepo includes the following packages/apps:
+---
 
-### Apps and Packages
+<h2 align='center'>🚀 Community Builder quick start 🚀</h2>
+<p align='center'> Customize - Deploy - Manage </p>
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## 💻 Develop your Community from any browser or Chromebook
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Start developing and make changes to your code via a single click **Anytime-Anywhere**!
 
-### Building packages/ui
+The application is written on nextjs and deployable on all nextjs compatible CDN + microservices and scaled deployment platforms.
 
-This example is setup to build `packages/ui` and output the transpiled source and compiled styles to `dist/`. This was chosen to make sharing one `tailwind.config.js` as easy as possible, and to ensure only the CSS that is used by the current application and its dependencies is generated.
+Using strapi directly - you can now have designers and devs modify the portal content directly and independently from the dev and devOps folks working on the app.  While developers can now enjoy the hot refresh and rapid iterations of the nextjs dev environment.
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update your `tailwind.config.js` to be aware of your package locations, so it can find all usages of the `tailwindcss` class names.
+<h3 align='center'>✨ About the repository ✨</h3>
 
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
+Since 2015, [Rocket.Chat](https://rocket.chat) has been used globally by groups and organizations to create and build online communities of all shapes and sizes. Today, with millions of end users and hundreds of thousands of deployed servers, Rocket.Chat has uniquely become a networked community of community builders - a community of communities.
 
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/**/*.{js,ts,jsx,tsx}",
-  ],
-```
+With its upcoming decentralized federation refactor, Rocket.Chat stands to become the next level Internet fabric that will loosely unite all on-line communities in a decentralized yet consistent manner.
 
-### Utilities
+This project is an extension to Rocket.Chat that aims to satisfy the immediate demands of today's community builders. Those who are intentionally building massive on-line communities (membership into the millions) centered around Rocket.Chat's core functionalities (sharing of information, collaboration, video and audio meet-ups, virtual conferences, and so on).
 
-This Turborepo has some additional tools already setup for you:
+Unlike the team chat heritage of Rocket.Chat, this area is a trending but nascent field where major innovations are yet to be imagined. Participants in both open source and closed source space are diligently working on scalability of their platforms and systems. Rocket.Chat for Communities uniquely features an already proven scalable collaboration engine right from day number one.
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx degit vercel/turbo/examples/with-tailwind with-tailwind
-cd with-tailwind
-pnpm install
-git init . && git add . && git commit -m "Init"
-```
+If you are involved in some ways in the creation, building, and growth of massive communities online - we invite you to participate in this project; help us steer its direction and ensure its long term success.
