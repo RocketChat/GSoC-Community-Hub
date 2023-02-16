@@ -1,5 +1,12 @@
 # web
 
+## 1.0.7
+
+### Patch Changes
+
+- Updated dependencies [031a5a4]
+  - @palanikannan1437/rc4community-timeline@0.0.2
+
 ## 1.0.6
 
 ### Patch Changes
