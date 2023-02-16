@@ -12,6 +12,7 @@
   "dependencies": {
     "@palanikannan1437/rc4-core": "workspace:*",
     "@palanikannan1437/rc4-ui": "workspace:*",
+    "@palanikannan1437/rc4community-timeline": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

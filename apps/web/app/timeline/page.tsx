@@ -1,5 +1,4 @@
-import { fetchTimelineData, TimelineObjectType } from "@palanikannan1437/rc4-core";
-import { Timeline } from "@palanikannan1437/rc4-ui";
+import { fetchTimelineData, Timeline, TimelineObjectType } from "@palanikannan1437/rc4community-timeline";
 
 function transferType(data: any): TimelineObjectType[] {
   const timeline = data.products;
@@ -20,5 +19,5 @@ export default async function Home() {
     transferType: transferType,
   });
 
-  return <Timeline type="horizontal" data={data} />;
+  return <Timeline type="vertical" data={data} />;
 }

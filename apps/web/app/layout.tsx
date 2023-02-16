@@ -1,6 +1,5 @@
 import "../src/styles/globals.css";
-// include styles from the ui package
-import "ui/styles.css";
+import "@palanikannan1437/rc4-ui/styles.css";
 
 export default function RootLayout({
   children,
