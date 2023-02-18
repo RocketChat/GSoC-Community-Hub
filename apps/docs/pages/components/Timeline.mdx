@@ -3,7 +3,7 @@
 ## 1. UI
 
 ```js filename="app/timeline/page.js" {4} copy
-import { Timeline } from "@palanikannan1437/rc4-ui";
+import { Timeline } from "@palanikannan1437/rc4community-timeline";
 
 export default async function TimelinePage() {
   return <Timeline type="horizontal" data={data} />;
@@ -46,12 +46,12 @@ Type of each Timeline object
 
 How to use the Timeline Component
 
-```js filename="app/timeline/page.js" {4,20} copy
+```js filename="app/timeline/page.js" {7,21} copy
 import {
   fetchTimelineData,
   TimelineObjectType,
-} from "@palanikannan1437/rc4-core";
-import { Timeline } from "@palanikannan1437/rc4-ui";
+  Timeline
+} from "@palanikannan1437/rc4community-timeline";
 
 function transferType(data: any): TimelineObjectType[] {
   const timeline = data.products;
