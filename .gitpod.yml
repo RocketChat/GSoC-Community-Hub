@@ -1,6 +1,8 @@
 tasks:
   - name: Start all services
-    init: pnpm install && turbo run build
+    init: |
+      git submodule update --recursive --remote && 
+      pnpm install && turbo run build
     command: pnpm run dev
 
 image:
