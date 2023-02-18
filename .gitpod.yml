@@ -1,9 +1,10 @@
 tasks:
   - name: Start all services
+    before: git submodule update --recursive --remote
     init: |
-      git submodule update --recursive --remote && 
       pnpm install && turbo run build
-    command: pnpm run dev
+    command: |
+      pnpm run dev
 
 image:
   file: .gitpod.Dockerfile
