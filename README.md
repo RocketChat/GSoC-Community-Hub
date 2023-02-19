@@ -5,18 +5,14 @@
 <h2 align='center'>🚀 Features 🚀</h2>
 <ul>
   <li>every part of the system scalable to handle from one to over a million online community members</li>
-  <li>engage your community at Rocket.Chat, Github, Discourse, Discord - wherever they may be</li>
-  <li>innovative reactJS components enhanced with fullstack behaviors</li>
-  <li>choice of Identity Management - popular SaaS (auth0, firebase) and open source (gluu, keycloak OpenID Connect)</li>
-  <li>full virtual conference handling</li>
-  <li>modern profile and superprofile factoring</li>
-  <li>supports flauna for scaled persistence</li>
+  <li>Innovative and simplified ReactJS components enhanced with fullstack behaviors you love!</li>
+  <li>Customizable UI with sane-defaults built on top of RadixUI and TailwindCSS</li>
   <li>fine-grained full-stack optimization control - static, server side generation, per-request</li>
-  <li>designed for world-scale computing at the edge from day one</li>
+  <li>Being designed for world-scale computing at the edge from day one</li>
   <li>JAMStack and beyond, "no compromises" design</li>
-  <li>supports NextJS and Vercel pay-as-you-grow scaled deployments</li>
-  <li>easy assembly of reusable components for flexible adaptive systems</li>
-  <li>ultra-light-weight and re-imagined UX for next generation community builder / developer experience</li>
+  <li>Supports single click NextJS and Vercel pay-as-you-grow scaled deployments</li>
+  <li>Easy assembly of reusable components for flexible adaptive systems</li>
+  <li>Re-imagined UX for next generation community builder / developer experience</li>
 </uL>
 
 ---
