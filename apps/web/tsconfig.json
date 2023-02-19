@@ -11,6 +11,8 @@
   ],
   "compilerOptions": {
     "incremental": true,
+    "noEmit": false,
+    "noEmitOnError": false,
     "plugins": [
       {
         "name": "next"

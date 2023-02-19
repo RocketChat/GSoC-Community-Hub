@@ -12,10 +12,18 @@
   "dependencies": {
     "@palanikannan1437/rc4-core": "workspace:*",
     "@palanikannan1437/rc4-ui": "workspace:*",
+    "@palanikannan1437/rc4community-navbar": "workspace:*",
     "@palanikannan1437/rc4community-timeline": "workspace:^0.0.2",
+    "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-navigation-menu": "^1.1.1",
+    "class-variance-authority": "^0.4.0",
+    "clsx": "^1.2.1",
+    "lucide-react": "^0.115.0",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.9.1",
+    "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
