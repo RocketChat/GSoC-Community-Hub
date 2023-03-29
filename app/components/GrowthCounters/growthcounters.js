@@ -1,4 +1,4 @@
-import styles from '../../styles/Growthcounters.module.css';
+import styles from './Growthcounters.module.css';
 import Countup from './countup';
 
 export default function Growthcounters({

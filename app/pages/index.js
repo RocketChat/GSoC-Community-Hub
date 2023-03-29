@@ -3,12 +3,12 @@ import styles from '../styles/Home.module.css';
 import Infotiles from '../components/utils/infotiles';
 import Newscarousel from '../components/utils/newscarousel';
 import Personacircle from '../components/utils/personalcircle';
-import Growthcounters from '../components/utils/growthcounters';
 import { Container, Col } from 'react-bootstrap';
 import { fetchAPI, rocketchatApi } from '../lib/api';
 import { INFOTILES_DATA } from '../lib/const/infotiles';
 import { DiscourseProvider, DiscourseTopicListTabs } from '../components/discourse/client';
 import { DiscourseClient } from '../components/discourse/lib';
+import { GrowthCounters } from '../components/GrowthCounters';
 
 export default function Home(props) {
   return (
@@ -37,7 +37,7 @@ export default function Home(props) {
           </p>
         </Col>
         <Col>
-          <Growthcounters items={props.counters}/>
+          <GrowthCounters items={props.counters}/>
         </Col>
         <Col className='my-5'>
           <div className={styles.infotiles}>
