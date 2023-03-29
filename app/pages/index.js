@@ -3,10 +3,9 @@ import styles from '../styles/Home.module.css';
 import Infotiles from '../components/utils/infotiles';
 import Newscarousel from '../components/utils/newscarousel';
 import Personacircle from '../components/utils/personalcircle';
-import Searchbox from '../components/utils/searchbox';
 import Growthcounters from '../components/utils/growthcounters';
 import { Container, Col } from 'react-bootstrap';
-import { fetchAPI } from '../lib/api';
+import { fetchAPI, rocketchatApi } from '../lib/api';
 import { INFOTILES_DATA } from '../lib/const/infotiles';
 import { DiscourseProvider, DiscourseTopicListTabs } from '../components/discourse/client';
 import { DiscourseClient } from '../components/discourse/lib';
@@ -38,7 +37,7 @@ export default function Home(props) {
           </p>
         </Col>
         <Col>
-          <Growthcounters></Growthcounters>
+          <Growthcounters items={props.counters}/>
         </Col>
         <Col className='my-5'>
           <div className={styles.infotiles}>
@@ -106,7 +105,28 @@ export async function getStaticProps({ params }) {
     }];
   }
 
+  let counters = [];
+
+  if(process.env.RC_HOST && process.env.RC_USER_ID && process.env.RC_PERSONAL_ACCESS_TOKEN) {
+    try {
+      const stats = (await rocketchatApi.get('api/v1/statistics')).data;
+      counters.push({
+        label: "Users",
+        value: stats.totalUsers || 0
+      }, {
+        label: "Messages",
+        value: stats.totalMessages || 0
+      }, {
+        label: "Online",
+        value: stats.onlineUsers || 0
+      })
+    } catch (e) {
+      console.error("Could not load statistics from rocketchat server")
+      console.error(e);
+    }
+  }
+
   return {
-    props: { carousels, personas, guides, releaseNotes, topNavItems, discourseTabsData },
+    props: { carousels, personas, guides, releaseNotes, topNavItems, discourseTabsData, counters },
   };
 }

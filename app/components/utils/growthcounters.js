@@ -1,37 +1,25 @@
 import styles from '../../styles/Growthcounters.module.css';
 import Countup from './countup';
 
-export default function Growthcounters() {
+export default function Growthcounters({
+  items = []
+}) {
+  if (items.length === 0) {
+    return null;
+  }
   return (
     <>
-      <div className=' d-flex flex-row align-items-center justify-content-center '>
-        <div className='d-flex flex-column  pe-4 px-md-5 mx-md-3'>
-          <span suppressHydrationWarning={true}>
-            {typeof window && (
-              <Countup end={343433} className={` ${styles.countup}`} />
-            )}
-          </span>
-
-          <span className={` ${styles.text}`}>Users</span>
-        </div>
-
-        <div className='d-flex flex-column  px-4 px-md-5 mx-md-3 border-start border-gray'>
-          <span suppressHydrationWarning={true}>
-            {typeof window && (
-              <Countup end={1294056} className={` ${styles.countup}`} />
-            )}
-          </span>
-          <span className={` ${styles.text}`}>Messages</span>
-        </div>
-
-        <div className='d-flex flex-column  ps-4 px-md-5 mx-md-3 border-start border-gray'>
-          <span suppressHydrationWarning={true}>
-            {typeof window && (
-              <Countup end={507} className={` ${styles.countup}`} />
-            )}
-          </span>
-          <span className={` ${styles.text}`}>Online</span>
-        </div>
+      <div className={`d-flex flex-row align-items-center justify-content-center`}>
+      {items.map((item, idx) => (
+          <div key={item.label} className={`d-flex flex-column align-items-center pe-4 px-md-5 mx-md-3 ${idx > 0 ? 'border-start' : ''}`}>
+            <span suppressHydrationWarning={true}>
+              {typeof window && (
+                <Countup end={item.value} className={` ${styles.countup}`} />
+              )}
+            </span>
+            <span className={` ${styles.text}`}>{item.label}</span>
+          </div>
+      ))}
       </div>
     </>
   );
