@@ -1,5 +1,12 @@
 # web
 
+## 1.0.10
+
+### Patch Changes
+
+- Updated dependencies
+  - @palanikannan1437/rc4community-navbar@2.1.1
+
 ## 1.0.9
 
 ### Patch Changes
