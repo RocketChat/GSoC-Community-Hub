@@ -53,7 +53,7 @@ export async function fetchNavData(
 
   if (!response.ok) {
     console.error(response);
-    throw new Error(`An error occured please try again`);
+    return []
   }
 
   const data = await response.json();
