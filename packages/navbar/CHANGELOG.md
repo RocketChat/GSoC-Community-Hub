@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4community-navbar
 
+## 2.1.2
+
+### Patch Changes
+
+- Handled errors
+
 ## 2.1.1
 
 ### Patch Changes
