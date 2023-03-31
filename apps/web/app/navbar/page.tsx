@@ -2,10 +2,8 @@
 
 import NavigationMenuDemo from "./nav";
 
-export function NavDemoPage() {
+export default function NavDemoPage() {
   return (
     <NavigationMenuDemo />
   )
 }
-
-export default NavDemoPage;

@@ -34,3 +34,4 @@ yarn-error.log*
 
 storybook-static
 packages/timeline
+apps/web/.env

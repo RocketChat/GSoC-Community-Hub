@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "include": [".", "src/core/.ts"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "lib": ["DOM"],
+    "paths": {
+      "@core/*": ["./src/core/*"],
+    }
+  }
+}

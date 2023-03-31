@@ -48,7 +48,6 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@storybook/addon-postcss": "^2.0.0",
-    "@palanikannan1437/rc4-core": "workspace:*"
+    "@storybook/addon-postcss": "^2.0.0"
   }
 }

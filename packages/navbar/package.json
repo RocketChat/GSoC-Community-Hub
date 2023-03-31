@@ -5,9 +5,16 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "types": "./dist/index.d.ts",
+  "types": "dist/*.d.ts",
   "exports": {
-    ".": "./dist",
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./core": {
+      "require": "./dist/server.js",
+      "import": "./dist/server.mjs"
+    },
     "./styles.css": "./dist/index.css"
   },
   "publishConfig": {
@@ -15,14 +22,15 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
   "devDependencies": {
     "@types/react": "^18.0.26",
     "autoprefixer": "^10.4.13",
@@ -36,11 +44,17 @@
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "13.2.4"
+  },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.1.1",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.115.0",
+    "qs": "^6.11.0",
     "tailwind-merge": "^1.9.1",
     "tailwindcss-animate": "^1.0.5"
   }

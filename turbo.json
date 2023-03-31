@@ -1,4 +1,5 @@
 {
+  "globalEnv": ["NEXT_PUBLIC_STRAPI_API_URL","FAUNADB_SECRET","GOOGLE_CLIENT_ID","GOOGLE_CLIENT_SECRET"],
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
