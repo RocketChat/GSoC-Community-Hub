@@ -18,7 +18,7 @@ export function getStrapiURL(path: string = ""): string {
 export async function fetchNavData(
   options: object = {},
   urlParamsObject: object = {}
-): Promise<NavItems[]> {
+): Promise<NavItems[] | null> {
   const mergedOptions = {
     headers: {
       "Content-Type": "application/json",
@@ -53,12 +53,13 @@ export async function fetchNavData(
 
   if (!response.ok) {
     console.error(response);
-    return []
+    return null
   }
 
+  
   const data = await response.json();
 
-  return data.length > 0 ? data.data[0].attributes : [];
+  return data.data.length > 0 ? data.data[0].attributes : null;
 }
 
 export type NavBarData = {

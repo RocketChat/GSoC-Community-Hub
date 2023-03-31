@@ -10,7 +10,7 @@ declare function getStrapiURL(path?: string): string;
  * @param {Object} options Options passed to fetch
  * @returns Parsed API call response
  */
-declare function fetchNavData(options?: object, urlParamsObject?: object): Promise<NavItems[]>;
+declare function fetchNavData(options?: object, urlParamsObject?: object): Promise<NavItems[] | null>;
 type NavBarData = {
     brandLogo: BrandLogo;
     variant1: Variant1[];
