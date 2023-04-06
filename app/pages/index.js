@@ -9,6 +9,7 @@ import { INFOTILES_DATA } from '../lib/const/infotiles';
 import { DiscourseProvider, DiscourseTopicListTabs } from '../components/discourse/client';
 import { DiscourseClient } from '../components/discourse/lib';
 import { GrowthCounters } from '../components/GrowthCounters';
+import axios from 'axios';
 
 export default function Home(props) {
   return (
@@ -107,9 +108,9 @@ export async function getStaticProps({ params }) {
 
   let counters = [];
 
-  if(process.env.RC_HOST && process.env.RC_USER_ID && process.env.RC_PERSONAL_ACCESS_TOKEN) {
+  if(process.env.STATS_URL) {
     try {
-      const stats = (await rocketchatApi.get('api/v1/statistics')).data;
+      const stats = (await axios.get(process.env.STATS_URL)).data;
       counters.push({
         label: "Users",
         value: stats.totalUsers || 0
