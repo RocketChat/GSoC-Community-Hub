@@ -17,3 +17,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@keyframes changeColor {
+  0% {
+    background-color: rgb(0, 0, 0);
+  }
+  50% {
+    background-color: rgb(70, 70, 70);
+  }
+  100% {
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+.announcement_strip {
+  animation-name: changeColor;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  /* background-color: #ff0000; */
+  text-align: center;
+  padding: 1px 0;
+}
+
+.announcement_strip:hover {
+  animation-play-state: paused;
+}
