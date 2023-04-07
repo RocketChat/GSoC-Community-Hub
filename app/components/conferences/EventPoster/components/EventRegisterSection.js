@@ -88,14 +88,6 @@ export const EventTicket = ({ tktDetail, event, error, customLink }) => {
           customLink={customLink}
         />
       )}
-      <JoinModal
-        open={open}
-        handleClose={handleJoin}
-        event={event}
-        alertOp={alertOp}
-        setAlertOp={setAlertOp}
-        err={err}
-      />
     </>
   );
 };
@@ -174,84 +166,5 @@ const TopNav = ({
         )}{' '}
       </Container>
     </Navbar>
-  );
-};
-
-const JoinModal = ({ open, handleClose, event, alertOp, setAlertOp, err }) => {
-  const eventName = event?.data?.attributes.name;
-  const eventId = event?.data?.id;
-  const router = useRouter();
-
-  const [isSignedIn, setIsSignedIn] = useState(false);
-
-  useEffect(() => {
-    const checkSignedIn = async () => {
-      try {
-        const isSignedIn = await isSignedIn();
-
-        if (isSignedIn) {
-          setIsSignedIn(true);
-        }
-      } catch (e) {
-        console.error('An error while verifying admin access', e);
-      }
-    };
-    try {
-      if (event.data.attributes.privacy === 'private') {
-        checkSignedIn();
-      } else {
-        setIsSignedIn(true);
-      }
-    } catch (e) {
-      console.error(
-        'An error occurred while whitelisting the event as public',
-        e
-      );
-    }
-  });
-
-  const handleRedirect = (location) => {
-    if (typeof window != 'undefined') {
-      window.open(location, '_blank');
-    }
-  };
-
-  return (
-    <Modal show={open} onHide={handleClose} backdrop="static">
-      <Modal.Header>
-        <Modal.Title>Join, {eventName ? eventName : 'Event'}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <div className={styles.join_modal_button}>
-          <Button
-            name={'greenroom'}
-            onClick={() => handleRedirect(`/conferences/greenroom/${eventId}`)}
-            disabled={!isSignedIn}
-          >
-            Join as a Speaker
-          </Button>
-          <br />
-          <Button
-            disabled={!isSignedIn}
-            onClick={() => handleRedirect(`/conferences/mainstage/${eventId}`)}
-            name={'mainstage'}
-          >
-            Join as a Attendee
-          </Button>
-        </div>
-        <Alert
-          className="mt-3"
-          variant={'danger'}
-          show={!isSignedIn || alertOp}
-        >
-          {<BiError />} {err}
-        </Alert>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-      </Modal.Footer>
-    </Modal>
   );
 };
