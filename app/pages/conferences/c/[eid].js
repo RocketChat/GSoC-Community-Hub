@@ -82,7 +82,7 @@ export async function getStaticProps(context) {
   const sessionRes = await fetchAPI(
     `/event-sessions?populate=session_items&filters[event_id][$eq]=${event?.data?.id}`
   );
-  let prsession = sessionRes.data[0];
+  let prsession = sessionRes?.data?.[0];
 
   if (!prsession) prsession = null;
 
