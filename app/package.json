@@ -8,8 +8,7 @@
     "preexport": "npm run build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "lint": "next lint"
   },
   "dependencies": {
     "@rocket.chat/icons": "^0.31.22",
