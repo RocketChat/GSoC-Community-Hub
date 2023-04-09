@@ -1,4 +1,4 @@
-import BrandLogo from "./brandlogo";
+import BrandLogo from './brandlogo';
 
 function Footer() {
   return (
@@ -8,12 +8,10 @@ function Footer() {
           <span className="d-flex">Powered by </span>
           <span className="d-flex ps-2">
             <BrandLogo
-              brandLink={"/"}
-              brandLogoSrc={
-                "https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
-              }
-              imageTitle={"Rocket.Chat"}
-              brandName={"Rocket.Chat Community"}
+              brandLink="/"
+              brandLogoSrc="https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
+              imageTitle="Rocket.Chat"
+              brandName="Rocket.Chat Community"
               height={32}
               width={98}
             />

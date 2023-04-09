@@ -1,30 +1,36 @@
 import Head from 'next/head';
+import { Container, Col } from 'react-bootstrap';
+import axios from 'axios';
 import styles from '../styles/Home.module.css';
 import Infotiles from '../components/utils/infotiles';
 import Newscarousel from '../components/utils/newscarousel';
 import Personacircle from '../components/utils/personalcircle';
-import { Container, Col } from 'react-bootstrap';
-import { fetchAPI, rocketchatApi } from '../lib/api';
+import { fetchAPI } from '../lib/api';
 import { INFOTILES_DATA } from '../lib/const/infotiles';
-import { DiscourseProvider, DiscourseTopicListTabs } from '../components/discourse/client';
+import {
+  DiscourseProvider,
+  DiscourseTopicListTabs,
+} from '../components/discourse/client';
 import { DiscourseClient } from '../components/discourse/lib';
 import { GrowthCounters } from '../components/GrowthCounters';
-import axios from 'axios';
 
 export default function Home(props) {
   return (
     <DiscourseProvider host={process.env.NEXT_PUBLIC_DISCOURSE_HOST}>
       <Head>
         <title>Rocket.Chat: Communications Platform You Can Fully Trust</title>
-        <meta name='description' content='Rocket.Chat is a Communications Platform You Can Fully Trust' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name="description"
+          content="Rocket.Chat is a Communications Platform You Can Fully Trust"
+        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container
         fluid
-        className='d-flex flex-column align-items-center gap-3 gap-md-5'
+        className="d-flex flex-column align-items-center gap-3 gap-md-5"
       >
-        <Col className='d-flex flex-column align-items-center gap-2 py-5 mt-2'>
+        <Col className="d-flex flex-column align-items-center gap-2 py-5 mt-2">
           <h1
             className={`display-4 fw-bold text-center ${styles.hero_heading}`}
           >
@@ -33,38 +39,40 @@ export default function Home(props) {
           <p
             className={`fw-regular col-10 col-md-8 text-center ${styles.hero_subheading}`}
           >
-            Let&apos;s dream, share, and collaborate in shaping the future of the
-            Rocket.Chat ecosystem together
+            Let&apos;s dream, share, and collaborate in shaping the future of
+            the Rocket.Chat ecosystem together
           </p>
         </Col>
         <Col>
-          <GrowthCounters items={props.counters}/>
+          <GrowthCounters items={props.counters} />
         </Col>
-        <Col className='my-5'>
+        <Col className="my-5">
           <div className={styles.infotiles}>
             <Infotiles data={INFOTILES_DATA} />
           </div>
         </Col>
 
-        <div
-          className={`d-flex flex-column py-5 ${styles.community_news}  `}
-        >
+        <div className={`d-flex flex-column py-5 ${styles.community_news}  `}>
           <h2 className={`mx-auto  w-auto pb-5 ${styles.title}`}>
             Latest Community News
           </h2>
-          <Newscarousel carousels={props.carousels.data}></Newscarousel>
+          <Newscarousel carousels={props.carousels.data} />
         </div>
 
         <h2 className={`mx-auto w-auto m-5 ${styles.title}`}>
           Get What You Need...
         </h2>
-        <Personacircle personas={props.personas.data}></Personacircle>
+        <Personacircle personas={props.personas.data} />
 
-        <div className={` d-flex w-100 flex-column py-5 align-items-center`}>
+        <div className=" d-flex w-100 flex-column py-5 align-items-center">
           <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
             Community Activity
           </h2>
-          <DiscourseTopicListTabs max={10} maxWidth={'900px'} tabs={props.discourseTabsData}/>
+          <DiscourseTopicListTabs
+            max={10}
+            maxWidth="900px"
+            tabs={props.discourseTabsData}
+          />
         </div>
       </Container>
     </DiscourseProvider>
@@ -80,54 +88,74 @@ export async function getStaticProps({ params }) {
 
   let discourseTabsData = [];
   if (process.env.NEXT_PUBLIC_DISCOURSE_HOST) {
-    const discourseClient = new DiscourseClient(process.env.NEXT_PUBLIC_DISCOURSE_HOST, {
-      /**
-       * Switch to false if using apiKey and apiUserName.
-       * Currently using only unauthenticated apis. So apiKey and apiUserName is not required
-       * */
-      isClient: true,
-    });
-    const topTopics = await discourseClient.getTopTopics()
-    const latestTopics = await discourseClient.getLatestTopics()
-    const solvedTopics = await discourseClient.getSolvedTopics()
-    const unsolvedTopics = await discourseClient.getUnsolvedTopics()
-    discourseTabsData = [{
-      variant: 'top',
-      data: topTopics,
-    }, {
-      variant: 'latest',
-      data: latestTopics,
-    }, {
-      variant: 'solved',
-      data: solvedTopics
-    }, {
-      variant: 'unsolved',
-      data: unsolvedTopics,
-    }];
+    const discourseClient = new DiscourseClient(
+      process.env.NEXT_PUBLIC_DISCOURSE_HOST,
+      {
+        /**
+         * Switch to false if using apiKey and apiUserName.
+         * Currently using only unauthenticated apis. So apiKey and apiUserName is not required
+         * */
+        isClient: true,
+      }
+    );
+    const topTopics = await discourseClient.getTopTopics();
+    const latestTopics = await discourseClient.getLatestTopics();
+    const solvedTopics = await discourseClient.getSolvedTopics();
+    const unsolvedTopics = await discourseClient.getUnsolvedTopics();
+    discourseTabsData = [
+      {
+        variant: 'top',
+        data: topTopics,
+      },
+      {
+        variant: 'latest',
+        data: latestTopics,
+      },
+      {
+        variant: 'solved',
+        data: solvedTopics,
+      },
+      {
+        variant: 'unsolved',
+        data: unsolvedTopics,
+      },
+    ];
   }
 
-  let counters = [];
+  const counters = [];
 
-  if(process.env.STATS_URL) {
+  if (process.env.STATS_URL) {
     try {
       const stats = (await axios.get(process.env.STATS_URL)).data;
-      counters.push({
-        label: "Users",
-        value: stats.totalUsers || 0
-      }, {
-        label: "Messages",
-        value: stats.totalMessages || 0
-      }, {
-        label: "Online",
-        value: stats.onlineUsers || 0
-      })
+      counters.push(
+        {
+          label: 'Users',
+          value: stats.totalUsers || 0,
+        },
+        {
+          label: 'Messages',
+          value: stats.totalMessages || 0,
+        },
+        {
+          label: 'Online',
+          value: stats.onlineUsers || 0,
+        }
+      );
     } catch (e) {
-      console.error("Could not load statistics from rocketchat server")
+      console.error('Could not load statistics from rocketchat server');
       console.error(e);
     }
   }
 
   return {
-    props: { carousels, personas, guides, releaseNotes, topNavItems, discourseTabsData, counters },
+    props: {
+      carousels,
+      personas,
+      guides,
+      releaseNotes,
+      topNavItems,
+      discourseTabsData,
+      counters,
+    },
   };
 }

@@ -1,71 +1,67 @@
-import { useEffect, useRef, useState, forwardRef, useLayoutEffect, Fragment } from 'react';
-import { Navbar, Nav, Container, Col, Row, Offcanvas, Dropdown } from 'react-bootstrap';
+import {
+  useEffect,
+  useRef,
+  useState,
+  forwardRef,
+  useLayoutEffect,
+  Fragment,
+} from 'react';
+import {
+  Navbar,
+  Nav,
+  Container,
+  Col,
+  Row,
+  Offcanvas,
+  Dropdown,
+} from 'react-bootstrap';
+import Link from 'next/link';
 import styles from '../../styles/Menubar.module.css';
-import BrandLogo from "../brandlogo";
-import Link from "next/link";
+import BrandLogo from '../brandlogo';
 
-const CustomToggle = forwardRef(({ children, onClick }, ref) => (
-  <a
-    className={styles.elipses}
-    href=""
-    ref={ref}
-    onClick={(e) => {
-      e.preventDefault();
-      onClick(e);
-    }}
+const ArrowIcon = () => (
+  <svg
+    width="14"
+    height="15"
+    viewBox="0 0 32 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    {children}
-    <span className={styles.threedots} />
-  </a>
-));
-
-const ArrowIcon = () => {
-  return (
-    <svg
-      width='14'
-      height='15'
-      viewBox='0 0 32 17'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <path d='M1.5 1.5L15.5 15.5L31 1.5' stroke='black' strokeWidth='2' />
-    </svg>
-  );
-};
+    <path d="M1.5 1.5L15.5 15.5L31 1.5" stroke="black" strokeWidth="2" />
+  </svg>
+);
 
 const MobileNav = ({ nav_Items }) => {
   const [dropDown, setDropDown] = useState({ show: false, _id: 0 });
   return (
-    <Navbar className='d-lg-none' expand={false}>
+    <Navbar className="d-lg-none" expand={false}>
       <Container fluid>
         <Navbar.Toggle
-          aria-controls='offcanvasNavbar'
+          aria-controls="offcanvasNavbar"
           className={styles.default_toggler}
         >
           <div
             className={`${styles.navbar_toggler} navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around bg-white`}
-            type='button'
+            type="button"
           >
-            <span className={`${styles.toggler_icon} mb-2`}></span>
-            <span className={`${styles.toggler_icon} mt-2`}></span>
+            <span className={`${styles.toggler_icon} mb-2`} />
+            <span className={`${styles.toggler_icon} mt-2`} />
           </div>
         </Navbar.Toggle>
         <Navbar.Offcanvas
-          id='offcanvasNavbar'
-          aria-labelledby='offcanvasNavbarLabel'
-          placement='start'
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="start"
         >
           <Offcanvas.Header closeButton>
             <Navbar.Brand
-              href='/'
-              className='d-flex justify-content-center align-items-center '
+              href="/"
+              className="d-flex justify-content-center align-items-center "
             >
               <BrandLogo
-                brandLogoSrc={
-                  "https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
-                }
-                imageTitle={"Rocket.Chat"}
-                brandName={"Rocket.Chat Community"}
+                brandLogoSrc="https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
+                imageTitle="Rocket.Chat"
+                brandName="Rocket.Chat Community"
                 height={30}
                 width={132}
               />
@@ -82,10 +78,10 @@ const MobileNav = ({ nav_Items }) => {
                     }}
                   >
                     <Col>
-                    <Link 
+                      <Link
                         key={nav_Item.id}
                         href={nav_Item.url}
-                        className='text-decoration-none fs-4 fw-light text-dark' 
+                        className="text-decoration-none fs-4 fw-light text-dark"
                       >
                         {nav_Item.label}
                       </Link>
@@ -129,34 +125,50 @@ const MobileNav = ({ nav_Items }) => {
                   </Row>
                   {dropDown._id === nav_Item.id && dropDown.show ? (
                     <div>
-                      {nav_Item.sub_menus.data.map(
-                        (item, key) =>
-                        (
-                          <Fragment key={key}>
-                            <div key={key} className={'p-2 fw-medium' + ` ${item.attributes.style === 'disable' ? styles.link_heading_mobile : 'fw-light link-primary'}`}>
-                              <Link
-                                className={styles.subItemLinks}
-                                href={item.attributes.url ? item.attributes.url : '#'}
-                              >
-                                {item.attributes.label}
-                              </Link>
-                            </div>
-                            {nav_Item.attributes?.parent_id && nav_Item.sub_menus.data.map(
+                      {nav_Item.sub_menus.data.map((item, key) => (
+                        <Fragment key={key}>
+                          <div
+                            key={key}
+                            className={
+                              'p-2 fw-medium' +
+                              ` ${
+                                item.attributes.style === 'disable'
+                                  ? styles.link_heading_mobile
+                                  : 'fw-light link-primary'
+                              }`
+                            }
+                          >
+                            <Link
+                              className={styles.subItemLinks}
+                              href={
+                                item.attributes.url ? item.attributes.url : '#'
+                              }
+                            >
+                              {item.attributes.label}
+                            </Link>
+                          </div>
+                          {nav_Item.attributes?.parent_id &&
+                            nav_Item.sub_menus.data.map(
                               (subItem, key) =>
-                                subItem.attributes.parent_id === item.attributes.id && (
-                                  <div className='px-4 py-1 fw-light'>
-                                    <Link 
+                                subItem.attributes.parent_id ===
+                                  item.attributes.id && (
+                                  <div className="px-4 py-1 fw-light">
+                                    <Link
                                       key={key}
                                       className={styles.subItemLinks}
-                                      href={subItem.attributes.url ? subItem.attributes.url : '#' }>
-                                        {subItem.attributes.label}
+                                      href={
+                                        subItem.attributes.url
+                                          ? subItem.attributes.url
+                                          : '#'
+                                      }
+                                    >
+                                      {subItem.attributes.label}
                                     </Link>
                                   </div>
                                 )
                             )}
-                          </Fragment>
-                        )
-                      )}
+                        </Fragment>
+                      ))}
                     </div>
                   ) : (
                     ''
@@ -172,7 +184,6 @@ const MobileNav = ({ nav_Items }) => {
 };
 
 const DesktopNav = ({ nav_Items }) => {
-
   const [isShown, setIsShown] = useState(0);
   const clickRef = useRef(null);
 
@@ -190,15 +201,12 @@ const DesktopNav = ({ nav_Items }) => {
   }, []);
 
   return (
-    <Navbar className='d-none d-lg-flex justify-content-between px-4 py-3'>
-
-      <Nav className='w-full d-flex align-items-center' ref={clickRef}>
+    <Navbar className="d-none d-lg-flex justify-content-between px-4 py-3">
+      <Nav className="w-full d-flex align-items-center" ref={clickRef}>
         <BrandLogo
-          brandLogoSrc={
-            "https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
-          }
-          imageTitle={"Rocket.Chat"}
-          brandName={"Rocket.Chat Community"}
+          brandLogoSrc="https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
+          imageTitle="Rocket.Chat"
+          brandName="Rocket.Chat Community"
           height={21}
           width={124}
         />
@@ -206,7 +214,7 @@ const DesktopNav = ({ nav_Items }) => {
           nav_item.sub_menus?.data?.length > 1 ? (
             <span
               key={key}
-              className='p-2 d-flex flex-column mx-3 '
+              className="p-2 d-flex flex-column mx-3 "
               onMouseEnter={() => {
                 setIsShown(nav_item.id);
               }}
@@ -217,14 +225,17 @@ const DesktopNav = ({ nav_Items }) => {
             >
               <span className={`${styles.navbar_item_hover} text-muted`}>
                 {nav_item.url ? (
-                  <Link href={ nav_item ? this.nav-item.url : '#' } className='text-decoration-none'>
+                  <Link
+                    href={nav_item ? nav_item.url : '#'}
+                    className="text-decoration-none"
+                  >
                     {nav_item.label}
                   </Link>
                 ) : (
                   nav_item.label
                 )}
               </span>
-              {/*submenu container | this will be shown for those whose id is in isShown */}
+              {/* submenu container | this will be shown for those whose id is in isShown */}
               <div className={`${styles.navbar_subitems} shadow-lg`}>
                 {isShown === nav_item.id && (
                   <div
@@ -235,35 +246,48 @@ const DesktopNav = ({ nav_Items }) => {
                     }
                   >
                     {/* iterate over sub menus like omnichannels, devops, GSoC, GSoD */}
-                    {nav_item.sub_menus.data.map(
-                      (item, key) =>
-                      (
-                        <div className={`${styles.navbar_subitems_items} `} key={key}>
-                          <div className={item.attributes.style === 'disable' ? styles.link_heading : ''}>
-                            <Link
-                              href={item.attributes.url ? item.attributes.url : '#' }
-                              className={styles.subItemLinks}
-                            >
-                              {item.attributes.label}
-                            </Link>
-                          </div>
-                          {/*if submenus contain more sub menus */}
-                          {item.sub_menus?.data.map(
-                            (subItem) =>
-                              subItem.attributes.parent_id === item.attributes.id && (
-                                <div className='px-4 pt-3 fw-light'>
-                                  <Link
-                                    href={subItem.attributes.url ? subItem.attributes.url : '#'}
-                                    className={styles.subItemLinks}
-                                  >
-                                    {subItem.attributes.label}
-                                  </Link>
-                                </div>
-                              )
-                          )}
+                    {nav_item.sub_menus.data.map((item, key) => (
+                      <div
+                        className={`${styles.navbar_subitems_items} `}
+                        key={key}
+                      >
+                        <div
+                          className={
+                            item.attributes.style === 'disable'
+                              ? styles.link_heading
+                              : ''
+                          }
+                        >
+                          <Link
+                            href={
+                              item.attributes.url ? item.attributes.url : '#'
+                            }
+                            className={styles.subItemLinks}
+                          >
+                            {item.attributes.label}
+                          </Link>
                         </div>
-                      )
-                    )}
+                        {/* if submenus contain more sub menus */}
+                        {item.sub_menus?.data.map(
+                          (subItem) =>
+                            subItem.attributes.parent_id ===
+                              item.attributes.id && (
+                              <div className="px-4 pt-3 fw-light">
+                                <Link
+                                  href={
+                                    subItem.attributes.url
+                                      ? subItem.attributes.url
+                                      : '#'
+                                  }
+                                  className={styles.subItemLinks}
+                                >
+                                  {subItem.attributes.label}
+                                </Link>
+                              </div>
+                            )
+                        )}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
@@ -278,7 +302,7 @@ const DesktopNav = ({ nav_Items }) => {
           )
         )}
       </Nav>
-    </Navbar >
+    </Navbar>
   );
 };
 

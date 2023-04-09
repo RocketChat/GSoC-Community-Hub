@@ -5,15 +5,13 @@ import { MenuBar } from './menubar';
 function Layout(props) {
   return (
     <>
-    <div
-        className="announcement_strip"
-      >
+      <div className="announcement_strip">
         <a
-          href={'/conferences/c/GSoC-Alumni-Summit-2023'}
+          href="/conferences/c/GSoC-Alumni-Summit-2023"
           style={{ textDecoration: 'none', color: 'white' }}
         >
           <h6>
-            📢 Join our GSoC'23 Alumni Summit at{' '}
+            📢 Join our GSoC&apos;23 Alumni Summit at{' '}
             {new Date('2023-03-30T06:00:00-04:00').toLocaleString('en-GB', {
               day: '2-digit',
               month: '2-digit',
