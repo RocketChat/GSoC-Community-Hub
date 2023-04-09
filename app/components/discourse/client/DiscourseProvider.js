@@ -1,20 +1,24 @@
 'use client';
 
-import { useMemo } from "react";
-import { DiscourseClient } from "../lib";
-import DiscourseContext from "./DiscourseContext";
+import { useMemo } from 'react';
+import { DiscourseClient } from '../lib';
+import DiscourseContext from './DiscourseContext';
 
-function DiscourseProvider({host, discourseClient, children}){
+function DiscourseProvider({ host, discourseClient, children }) {
+  const _discourseClient = useMemo(
+    () => discourseClient || new DiscourseClient(host, { isClient: true }),
+    [host, discourseClient]
+  );
 
-  const _discourseClient = useMemo(() => {
-    return (discourseClient || new DiscourseClient(host, { isClient: true }));
-  }, [host, discourseClient]);
-
-	return (
-		<DiscourseContext.Provider value={{discourseClient: _discourseClient}}>
-			{children}
-		</DiscourseContext.Provider>
-	)
+  const contextValue = useMemo(
+    () => ({ discourseClient: _discourseClient }),
+    [_discourseClient]
+  );
+  return (
+    <DiscourseContext.Provider value={contextValue}>
+      {children}
+    </DiscourseContext.Provider>
+  );
 }
 
 export default DiscourseProvider;

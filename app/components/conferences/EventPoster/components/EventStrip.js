@@ -18,7 +18,7 @@ function EventStrip({
 
   useEffect(() => {
     // Fetch the timezone from the user's browser
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
     setTimezone(timeZone);
     const start = new Date(event.attributes['starts-at']);
     const end = new Date(event.attributes['ends-at']);
@@ -30,7 +30,7 @@ function EventStrip({
       hour: '2-digit',
       minute: '2-digit',
       hour12: true,
-      timeZone: timeZone, // specify the timezone here
+      timeZone, // specify the timezone here
     };
 
     setStartDate(`${new Date(start).toLocaleTimeString('en-US', options)}`);
@@ -84,7 +84,7 @@ function EventStrip({
             <Col>Location</Col>
           </Row>
           <Row>
-            <Col xs={1} md={1} xl={1} sm={1} xxl={1}></Col>
+            <Col xs={1} md={1} xl={1} sm={1} xxl={1} />
             <Col>{event.attributes['location-name'] || 'Online'}</Col>
           </Row>
         </Col>
@@ -92,12 +92,12 @@ function EventStrip({
           <Row>
             <Col>
               {ticket ? ticket.attributes.name : 'Community'}{' '}
-              <Badge as={'span'} pill bg="light" text="secondary">
+              <Badge as="span" pill bg="light" text="secondary">
                 {ticket?.attributes?.price ?? 'Free'}
               </Badge>
             </Col>
           </Row>
-          <div className="ticket-name"></div>
+          <div className="ticket-name" />
           <div className="ticket-price">
             {ticket ? ticket.attributes.price : 'Free'}
           </div>

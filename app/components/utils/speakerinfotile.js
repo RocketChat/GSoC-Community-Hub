@@ -1,6 +1,6 @@
-import Image from "next/legacy/image";
-import Styles from "../../styles/SpeakerInfotiles.module.css";
-import { parseDate, parseTime } from "../lib/dateTime";
+import Image from 'next/legacy/image';
+import Styles from '../../styles/SpeakerInfotiles.module.css';
+import { parseDate, parseTime } from '../../lib/dateTime';
 
 export default function SpeakerInfotiles({ data }) {
   return (
@@ -8,7 +8,9 @@ export default function SpeakerInfotiles({ data }) {
       {data?.map((obj) => (
         <div
           key={obj.id}
-          className={obj.attributes.imageUrl ? Styles.cardWithImage : Styles.card}
+          className={
+            obj.attributes.imageUrl ? Styles.cardWithImage : Styles.card
+          }
         >
           {obj.attributes.imageUrl && (
             <Image
@@ -27,7 +29,9 @@ export default function SpeakerInfotiles({ data }) {
               )} ${parseTime(obj.attributes.date_time)}`}</p>
             )}
             <h6
-              className={obj.attributes.live ? Styles.talk_topic_live : Styles.talk_topic}
+              className={
+                obj.attributes.live ? Styles.talk_topic_live : Styles.talk_topic
+              }
             >
               {obj.attributes.talk_topic}
             </h6>

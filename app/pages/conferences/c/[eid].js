@@ -16,33 +16,27 @@ function EventDisplayPage({ event, spkdata, prsession }) {
   return (
     <div>
       <Head>
-        <title>{eventname ? eventname : 'Event Poster'}</title>
+        <title>{eventname || 'Event Poster'}</title>
         <meta
-          name='description'
-          content='Rocket.Chat GSoC 2023 Alumni Summit, March 30th'
+          name="description"
+          content="Rocket.Chat GSoC 2023 Alumni Summit, March 30th"
         />
-        <link
-          rel='icon'
-          href='/favicon.ico'
-        />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0'
-        />
-        <meta
-          property='og:image'
-          content='https://github.com/RocketChat/RC4Conferences/blob/main/app/assets/gsoc_alumni_2023.png?raw=true'
+          property="og:image"
+          content="https://github.com/RocketChat/RC4Conferences/blob/main/app/assets/gsoc_alumni_2023.png?raw=true"
         />
       </Head>
-      <div className='mx-auto'>
-        <Stack direction='vertical'>
+      <div className="mx-auto">
+        <Stack direction="vertical">
           {event && (
             <EventPoster
               event={event}
               error={error}
               speaker={spkdata}
               prsession={prsession}
-              customLink={'https://bbb.rocket.chat/b/sin-ur2-c72-cbv'}
+              customLink="https://bbb.rocket.chat/b/sin-ur2-c72-cbv"
             />
           )}
         </Stack>
@@ -59,7 +53,7 @@ export async function getStaticPaths() {
       params: { eid: event.attributes.identifier },
     }));
     return {
-      paths: paths,
+      paths,
       fallback: true,
     };
   } catch (e) {
@@ -72,7 +66,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const eventIdentifier = context.params.eid;
-  //temp 9ddffcbb
+  // temp 9ddffcbb
   const event = await getEventDeatils(eventIdentifier);
 
   const spkdata = await getEventSpeakers(eventIdentifier);

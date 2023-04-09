@@ -1,15 +1,15 @@
 'use client';
-import { useContext } from "react";
-import DiscourseClient from "../lib/DiscourseClient";
-import DiscourseContext from "./DiscourseContext";
+
+import { useContext } from 'react';
+import DiscourseContext from './DiscourseContext';
 
 /**
- * @returns {DiscourseClient}
+ * @returns {import('../lib').DiscourseClient}
  */
-function useDiscourseClient(){
-	const { discourseClient } = useContext(DiscourseContext);
+function useDiscourseClient() {
+  const { discourseClient } = useContext(DiscourseContext);
 
-	return discourseClient;
+  return discourseClient;
 }
 
 export default useDiscourseClient;

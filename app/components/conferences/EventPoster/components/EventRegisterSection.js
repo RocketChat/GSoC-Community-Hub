@@ -1,16 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  Alert,
-  Badge,
-  Button,
-  Container,
-  Modal,
-  Nav,
-  Navbar,
-} from 'react-bootstrap';
+import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap';
 import styles from '../styles/index.module.css';
-import { BiError } from 'react-icons/bi';
-import { useRouter } from 'next/router';
 import EventStrip from './EventStrip';
 
 const detectElement = (options) => {
@@ -23,7 +13,7 @@ const detectElement = (options) => {
   };
 
   useEffect(() => {
-    let observer = new IntersectionObserver(callbackFn, options);
+    const observer = new IntersectionObserver(callbackFn, options);
     if (containerRef.current) observer.observe(containerRef.current);
 
     return () => {
@@ -100,35 +90,33 @@ const InNav = ({
   showMainstage,
   eid,
   customLink,
-}) => {
-  return (
-    <Navbar
-      ref={containerRef}
-      className={styles.event_ticket_innav}
-      variant="dark"
-    >
-      <Container>
-        <Navbar.Brand>
-          {brand}{' '}
-          <Badge as={'span'} pill bg="light" text="secondary">
-            {price ? price : 'Free'}
-          </Badge>
-        </Navbar.Brand>
-        <Nav className="me-auto"></Nav>
-        {showMainstage ? (
-          <Button onClick={handleJoin}>Join</Button>
-        ) : (
-          <Button
-            href={customLink || `/conferences/greenroom/${eid}`}
-            target="_blank"
-          >
-            Join
-          </Button>
-        )}
-      </Container>
-    </Navbar>
-  );
-};
+}) => (
+  <Navbar
+    ref={containerRef}
+    className={styles.event_ticket_innav}
+    variant="dark"
+  >
+    <Container>
+      <Navbar.Brand>
+        {brand}{' '}
+        <Badge as="span" pill bg="light" text="secondary">
+          {price || 'Free'}
+        </Badge>
+      </Navbar.Brand>
+      <Nav className="me-auto" />
+      {showMainstage ? (
+        <Button onClick={handleJoin}>Join</Button>
+      ) : (
+        <Button
+          href={customLink || `/conferences/greenroom/${eid}`}
+          target="_blank"
+        >
+          Join
+        </Button>
+      )}
+    </Container>
+  </Navbar>
+);
 
 const TopNav = ({
   brand,
@@ -137,34 +125,32 @@ const TopNav = ({
   showMainstage,
   eid,
   customLink,
-}) => {
-  return (
-    <Navbar fixed={'bottom'} className={styles.event_ticket_nav} variant="dark">
-      <Container>
-        <Navbar.Brand style={{ fontSize: 'inherit', fontFamily: 'monospace' }}>
-          {brand}{' '}
-          <Badge as={'span'} pill bg="light" text="secondary">
-            {price ? price : 'Free'}
-          </Badge>
-        </Navbar.Brand>
-        <Nav className="me-auto"></Nav>
-        {/* <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
+}) => (
+  <Navbar fixed="bottom" className={styles.event_ticket_nav} variant="dark">
+    <Container>
+      <Navbar.Brand style={{ fontSize: 'inherit', fontFamily: 'monospace' }}>
+        {brand}{' '}
+        <Badge as="span" pill bg="light" text="secondary">
+          {price || 'Free'}
+        </Badge>
+      </Navbar.Brand>
+      <Nav className="me-auto" />
+      {/* <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
         <Button>Join</Button>
         </Link> */}
-        {showMainstage ? (
-          <Button size="sm" onClick={handleJoin}>
-            Join
-          </Button>
-        ) : (
-          <Button
-            size="sm"
-            href={customLink || `/conferences/greenroom/${eid}`}
-            target="_blank"
-          >
-            Join (BBB)
-          </Button>
-        )}{' '}
-      </Container>
-    </Navbar>
-  );
-};
+      {showMainstage ? (
+        <Button size="sm" onClick={handleJoin}>
+          Join
+        </Button>
+      ) : (
+        <Button
+          size="sm"
+          href={customLink || `/conferences/greenroom/${eid}`}
+          target="_blank"
+        >
+          Join (BBB)
+        </Button>
+      )}{' '}
+    </Container>
+  </Navbar>
+);

@@ -7,6 +7,6 @@ export default function MDPreview(props) {
       dangerouslySetInnerHTML={{
         __html: DOMPurify.sanitize(marked.parse(props.body)),
       }}
-    ></div>
+    />
   );
 }
