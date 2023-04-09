@@ -18,7 +18,7 @@ env:
 jobs:
   bat:
     runs-on: ubuntu-latest
-
+    environment: production
     steps:
       - name: Clone repo
         uses: actions/checkout@v2
@@ -140,12 +140,11 @@ jobs:
           pkill -9 -F /tmp/app.pid
           cd app; npm run build
         env:
-          {
-            NEXT_PUBLIC_STRAPI_API_URL: 'http://localhost:1337',
-            NEXT_PUBLIC_EVENT_BACKEND_URL: 'http://conf.rceng.shop:8090',
-            NEXT_PUBLIC_DISCOURSE_HOST: 'https://forums.rocket.chat',
-            DISCOURSE_HOST: 'https://forums.rocket.chat',
-          }
+          NEXT_PUBLIC_STRAPI_API_URL: 'http://localhost:1337'
+          NEXT_PUBLIC_EVENT_BACKEND_URL: ${{ secrets.EVENT_BACKEND_URL }}
+          NEXT_PUBLIC_DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
+          DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
+          STATS_URL: ${{ secrets.STATS_URL }}
 
       - name: Generate archive
         if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
