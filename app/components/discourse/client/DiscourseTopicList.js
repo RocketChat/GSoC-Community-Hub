@@ -110,6 +110,7 @@ function DiscourseTopicList({
               </div>
               <div className={`${styles.user_avatars}`}>
                 {getAvatarUrlsForTopic(item, 32).map((avatarItem) => (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     className={styles.user_avatar}
                     key={avatarItem.username}

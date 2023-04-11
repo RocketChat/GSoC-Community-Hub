@@ -1,11 +1,10 @@
-import { Button, ButtonGroup, Col } from 'react-bootstrap';
 import styles from '../../styles/Personacircle.module.css';
 
-export default function Personacircle(props) {
+export default function Personacircle() {
   return (
     <>
-      <Col
-        className={`${styles.personas} d-flex flex-wrap justify-content-center`}
+      <div
+        className={`${styles.personas} col d-flex flex-wrap justify-content-center`}
       >
         <span className={`${styles.persona}`}>
           <div className={styles.svg}>
@@ -139,7 +138,7 @@ export default function Personacircle(props) {
           </div>
           <div className={styles.title}>GSoC</div>
         </span>
-      </Col>
+      </div>
     </>
   );
 }

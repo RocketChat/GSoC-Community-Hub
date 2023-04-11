@@ -1,20 +1,7 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  forwardRef,
-  useLayoutEffect,
-  Fragment,
-} from 'react';
-import {
-  Navbar,
-  Nav,
-  Container,
-  Col,
-  Row,
-  Offcanvas,
-  Dropdown,
-} from 'react-bootstrap';
+'use client';
+
+import { useEffect, useRef, useState, Fragment } from 'react';
+import { Navbar, Nav, Container, Col, Row, Offcanvas } from 'react-bootstrap';
 import Link from 'next/link';
 import styles from '../../styles/Menubar.module.css';
 import BrandLogo from '../brandlogo';
