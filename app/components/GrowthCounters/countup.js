@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 // client-side only compoent -  dynamic Javascript count-up of numbers

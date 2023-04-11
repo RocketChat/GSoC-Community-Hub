@@ -1,10 +1,12 @@
+'use client';
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import styles from '../../styles/Newscarousel.module.css';
 
-const PrevArrow = ({ currentSlide, slideCount, onClick, ...props }) => (
+const PrevArrow = ({ onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="80"
@@ -21,7 +23,7 @@ const PrevArrow = ({ currentSlide, slideCount, onClick, ...props }) => (
   </svg>
 );
 
-const NextArrow = ({ currentSlide, slideCount, onClick, ...props }) => (
+const NextArrow = ({ onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="80"
