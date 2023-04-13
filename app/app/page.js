@@ -29,7 +29,8 @@ export default async function Page() {
           <p
             className={`fw-regular col-10 col-md-8 text-center ${styles.hero_subheading}`}
           >
-            Let&apos;s dream, share, and collaborate in shaping the future of the Rocket.Chat ecosystem together!
+            Let&apos;s dream, share, and collaborate in shaping the future of
+            the Rocket.Chat ecosystem together!
           </p>
         </div>
         <div className="col">
