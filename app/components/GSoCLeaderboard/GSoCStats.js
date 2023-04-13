@@ -13,6 +13,9 @@ function GSoCStatItem({ label, value, backgroundColor, textColor }) {
   );
 }
 async function GSoCStats({ gsocLeaderboardBaseUrl }) {
+  if (!gsocLeaderboardBaseUrl) {
+    return null;
+  }
   const api = axios.create({
     baseURL: gsocLeaderboardBaseUrl,
   });

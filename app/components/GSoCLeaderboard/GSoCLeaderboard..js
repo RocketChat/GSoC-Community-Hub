@@ -6,6 +6,9 @@ async function GSoCLeaderboard({
   max = 10,
   showViewAll = true,
 }) {
+  if (!gsocLeaderboardBaseUrl) {
+    return null;
+  }
   const api = axios.create({
     baseURL: gsocLeaderboardBaseUrl,
   });
