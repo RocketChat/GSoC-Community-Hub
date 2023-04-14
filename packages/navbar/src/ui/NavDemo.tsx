@@ -25,15 +25,15 @@ type Props = {
 export const NavDemo = ({ navData, navItems, logo, logoSec }: Props) => {
   return (
     navItems.length > 0 &&
-    (<header className="body-font text-gray-600">
-      <div className="container mx-auto flex flex-col flex-wrap items-center p-5 md:flex-row">
-        <a className="title-font mb-4 flex items-center font-medium text-gray-900 md:mb-0">
+    (<header className="header__nav">
+      <div className="header__container">
+        <a className="logo__link">
           {logo}
           <span className="ml-3 text-xl">
             {navData.brandLogo.data.attributes.logoText}
           </span>
         </a>
-        <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
+        <nav className="nav__items">
           <NavigationMenu>
             <NavigationMenuList>
               {navItems.map((navItem) => {
