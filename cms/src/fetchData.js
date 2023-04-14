@@ -213,7 +213,7 @@ module.exports = async () => {
 
     if (topNavItemCount) {
       await strapi.service("api::top-nav-item.top-nav-item").createOrUpdate({
-        
+
         where: { id: 1 },
         data: {
           body: topNavItem.body.map((topNavItem, index) => {
@@ -265,11 +265,11 @@ module.exports = async () => {
               };
             }
           }),
-          publishedAt: new Date() 
+          publishedAt: new Date()
         },
       });
     }
   } catch (error) {
-    console.log("Error:= ", error);
+    f("Error:= ", error);
   }
 };
