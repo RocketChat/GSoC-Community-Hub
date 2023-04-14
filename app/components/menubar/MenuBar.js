@@ -198,7 +198,7 @@ const DesktopNav = ({ nav_Items }) => {
           width={124}
         />
         {nav_Items?.map((nav_item, key) =>
-          nav_item.sub_menus?.data?.length > 1 ? (
+          nav_item.sub_menus?.data?.length > 0 ? (
             <span
               key={key}
               className="p-2 d-flex flex-column mx-3 "

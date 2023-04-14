@@ -8,6 +8,8 @@ const {
   topNavItem,
   speakers,
   forms,
+  sessions,
+  eventSessions,
 } = require("../config/initialData");
 
 module.exports = async () => {
@@ -27,6 +29,10 @@ module.exports = async () => {
     var guidesCount = await strapi.db.query("api::guide.guide").count();
     var formCount = await strapi.db.query("api::form.form").count();
     var speakersCount = await strapi.db.query("api::speaker.speaker").count({});
+    var sessionCount = await strapi.db.query("api::session.session").count({});
+    var eventSessionsCount = await strapi.db
+      .query("api::event-session.event-session")
+      .count({});
 
     // initial fetch
     speakers.map(async (speaker, index) => {
@@ -63,6 +69,66 @@ module.exports = async () => {
         });
       }
     });
+
+    try {
+      sessions.map(async (session, index) => {
+        if (index <= sessionCount - 1) {
+          await strapi.db.query("api::session.session").update({
+            where: { id: session.id },
+            data: {
+              Start: session.Start,
+              End: session.End,
+              Speaker: session.Speaker,
+              Title: session.Title,
+              Duration: session.Duration,
+              Mentor: session.Mentor,
+              Description: session.Description,
+              Youtube: session.Youtube,
+            },
+          });
+        } else {
+          await strapi.db.query("api::session.session").create({
+            data: {
+              Start: session.Start,
+              End: session.End,
+              Speaker: session.Speaker,
+              Title: session.Title,
+              Duration: session.Duration,
+              Mentor: session.Mentor,
+              Description: session.Description,
+              Youtube: session.Youtube,
+            },
+          });
+        }
+      });
+    } catch (e) {
+      console.error("Oops! something went wrong while poulating session data, error:", e);
+    }
+
+    try {
+      eventSessions.map(async (sessionit, index) => {
+        if (index <= eventSessionsCount - 1) {
+          await strapi.db.query("api::event-session.event-session").update({
+            where: { id: sessionit.id },
+            data: {
+              event_name: sessionit.event_name,
+              event_id: sessionit.event_id,
+              session_items: sessionit.session_items,
+            },
+          });
+        } else {
+          await strapi.db.query("api::event-session.event-session").create({
+            data: {
+              event_name: sessionit.event_name,
+              event_id: sessionit.event_id,
+              session_items: sessionit.session_items,
+            },
+          });
+        }
+      });
+    } catch (e) {
+      console.error("ops! something went wrong while poulating eventsession data, error:", e);
+    }
 
     forms.map(async (form, index) => {
       if (index <= formCount - 1) {
