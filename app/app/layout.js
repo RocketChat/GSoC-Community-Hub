@@ -1,20 +1,24 @@
+/* eslint-disable import/no-unresolved */
 import '../styles/vars.css';
 import '../styles/globals.css';
 import '../styles/Layout.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '../components/footer';
-import { MenuBar } from '../components/menubar';
-import { fetchAPI } from '../lib/api';
 
-async function Layout(props) {
-  const topNavItems = await fetchAPI('/top-nav-item');
-  const brandInfo = {
-    brandLogoSrc:
-      'https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg',
-    brandLink: '/',
-    imageTitle: 'Rocket.Chat',
-    brandName: 'Rocket.Chat Community',
-  };
+import '@palanikannan1437/rc4community-navbar/styles.css';
+import { fetchNavData } from '@palanikannan1437/rc4community-navbar/core';
+import Navbar from './nav';
+
+import Footer from '../components/footer';
+
+export default async function Layout(props) {
+  const navData = await fetchNavData();
+  const navItems = navData
+    ? [
+        { show: true, item: navData.variant1.data[0] },
+        { show: true, item: navData.variant2.data[0] },
+      ]
+    : [];
+
   return (
     <html lang="en">
       <head>
@@ -39,12 +43,10 @@ async function Layout(props) {
             </h6>
           </a>
         </div>
-        <MenuBar menu={topNavItems} brandInfo={brandInfo} />
+        <Navbar navData={navData} navItems={navItems} />
         {props.children}
         <Footer />
       </body>
     </html>
   );
 }
-
-export default Layout;
