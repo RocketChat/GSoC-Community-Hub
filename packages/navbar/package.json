@@ -1,6 +1,6 @@
 {
   "name": "@palanikannan1437/rc4community-navbar",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "",
   "sideEffects": [
     "**/*.css"
