@@ -33,7 +33,7 @@
   }
 }
 
-.nav__items {
+.nav__items--center {
   display: flex;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -44,5 +44,23 @@
   @media (min-width: 768px) {
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+.nav__items--left {
+  display: flex;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: 1rem;
+    border-left-width: 1px;
   }
 }

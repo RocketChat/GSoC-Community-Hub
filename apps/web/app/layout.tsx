@@ -18,6 +18,7 @@ export default async function RootLayout({
   const navItems = navData
     ? [
         { show: true, item: navData.variant1.data[0] },
+        { show: true, item: navData.variant2.data[0] },
       ]
     : [];
 

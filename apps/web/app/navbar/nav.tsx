@@ -9,6 +9,7 @@ import { Session } from "next-auth";
 export function CustomNavBar({ navData, navItems }: { session: Session | null, navData: any, navItems: object[] }) {
   return (
     <NavDemo
+      layoutVariant={"right"}
       logo={
         <svg
           xmlns="http://www.w3.org/2000/svg"
