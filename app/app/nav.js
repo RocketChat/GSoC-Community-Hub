@@ -1,12 +1,16 @@
+/* eslint-disable import/no-unresolved */
+
 'use client';
 
 import * as React from 'react';
 import { NavDemo } from '@palanikannan1437/rc4community-navbar';
+import { Button } from 'react-bootstrap';
 import BrandLogo from '../components/brandlogo';
 
 export function CustomNavBar({ navData, navItems }) {
   return (
     <NavDemo
+      layoutVariant="center"
       logo={
         <BrandLogo
           brandLink="/"
@@ -19,11 +23,7 @@ export function CustomNavBar({ navData, navItems }) {
       }
       navData={navData}
       navItems={navItems}
-      logoSec={
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Sign In
-        </button>
-      }
+      logoSec={<Button variant="outline-danger">Join</Button>}
     />
   );
 }
