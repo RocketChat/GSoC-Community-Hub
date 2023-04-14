@@ -1,0 +1,124 @@
+.GSoCLeaderboard {
+  display: flex;
+  flex-direction: column;
+  .ViewAll {
+    padding: 0 0.5rem;
+  }
+  .TableWrapper {
+    overflow: auto;
+    max-width: 100%;
+
+    .Table {
+      border-collapse: separate;
+      border-spacing: 0 5px;
+      font-size: 14px;
+      padding: 0 0.5rem;
+
+      .Head,
+      .Body {
+        .Cell {
+          padding: 0.25rem 0.125rem;
+        }
+
+        .Cell:first-child {
+          padding: 0.25rem 0.75rem;
+        }
+      }
+
+      .Head {
+        color: var(--theme-primary);
+
+        .Cell {
+          font-weight: 600;
+          vertical-align: bottom;
+          text-align: center;
+        }
+      }
+
+      .Body {
+        .Row {
+          box-shadow: rgba(0, 0, 0, 0.1) 2px 4px 6px -1px,
+            rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          border-radius: 5px;
+
+          .Cell:first-child {
+            font-weight: 600;
+          }
+
+          .Cell:not(.User) {
+            text-align: center;
+          }
+
+          .Cell.User {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+
+            .Avatar {
+              img {
+                height: 2.5rem;
+                width: 2.5rem;
+                border-radius: 50%;
+              }
+            }
+
+            .Name {
+              max-width: 20rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .Row:hover {
+          background-color: var(--theme-primary);
+          color: var(--theme-on-primary);
+
+          a {
+            color: var(--theme-on-primary);
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      .TableWrapper {
+        .Table {
+          border-spacing: 0 1em;
+          font-size: 1rem;
+
+          .Head,
+          .Body {
+            .Cell {
+              padding: 0.5rem;
+            }
+          }
+
+          .Body {
+            .Row {
+              border-radius: 5px;
+
+              .Cell {
+                padding: 1rem;
+              }
+
+              .Cell.User {
+                gap: 1rem;
+
+                .Avatar {
+                  img {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    border-radius: 50%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
