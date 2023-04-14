@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logos",
+  "info": {
+    "singularName": "logo",
+    "pluralName": "logos",
+    "displayName": "logo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logoText": {
+      "type": "string"
+    }
+  }
+}

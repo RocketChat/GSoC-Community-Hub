@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variant1s",
+  "info": {
+    "singularName": "variant1",
+    "pluralName": "variant1s",
+    "displayName": "variant1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "variant1"
+    },
+    "title": {
+      "type": "string"
+    },
+    "tile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nav.nav"
+    },
+    "subTiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nav.nav"
+    }
+  }
+}
