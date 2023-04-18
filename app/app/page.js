@@ -24,7 +24,7 @@ export default async function Page() {
           <h1
             className={`display-4 fw-bold text-center ${styles.hero_heading}`}
           >
-            Welcome to our <span className={styles.redText}>community</span>
+            Welcome to our rockonpi <span className={styles.redText}>community</span>
           </h1>
           <p
             className={`fw-regular col-10 col-md-8 text-center ${styles.hero_subheading}`}
