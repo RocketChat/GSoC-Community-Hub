@@ -33,6 +33,9 @@
     "url-join": "^5.0.0"
   },
   "devDependencies": {
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "prettier": "^2.8.4"
   },
   "volta": {
     "node": "16.13.0"
