@@ -210,7 +210,7 @@ jobs:
       #       pm2 reload ecosystem.config.js
 
       - name: Push archive and start service
-        uses: debdutdeb/rc4community.deploy.action@main
+        uses: sing-li/rc4community.deploy.action@main
         with:
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
