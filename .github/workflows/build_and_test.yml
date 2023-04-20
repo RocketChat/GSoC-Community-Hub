@@ -3,6 +3,8 @@ name: 'Build, Test, Deploy'
 on:
   pull_request: #{ types: [ready_for_review] }
   push: { branches: [main] }
+  schedule:
+    - cron: "36 */5 * * *"
   #release: { types: [published] }
 
 concurrency:
@@ -145,6 +147,7 @@ jobs:
           NEXT_PUBLIC_DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
           DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
           STATS_URL: ${{ secrets.STATS_URL }}
+          GSOC_LEADERBOARD_BASE_URL: ${{ secrets.GSOC_LEADERBOARD_BASE_URL }}
 
       - name: Generate archive
         if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}

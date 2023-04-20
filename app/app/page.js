@@ -6,6 +6,7 @@ import { fetchAPI } from '../lib/api';
 import { INFOTILES_DATA } from '../lib/const/infotiles';
 import { DiscourseTopicListTabs } from '../components/discourse/server';
 import { GrowthCounters } from '../components/GrowthCounters';
+import { GSoCLeaderboard, GSoCStats } from '../components/GSoCLeaderboard';
 
 export const metadata = {
   title: 'Rocket.Chat: Communications Platform You Can Fully Trust',
@@ -52,6 +53,21 @@ export default async function Page() {
           Get What You Need...
         </h2>
         <Personacircle personas={personas.data} />
+
+        <div className=" d-flex w-100 flex-column py-5 align-items-center justify-content-center">
+          <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
+            GSoC Leaderboard
+          </h2>
+          <div className="d-flex flex-row align-items-start justify-content-center flex-wrap gap-3">
+            <GSoCStats
+              gsocLeaderboardBaseUrl={process.env.GSOC_LEADERBOARD_BASE_URL}
+            />
+            <GSoCLeaderboard
+              gsocLeaderboardBaseUrl={process.env.GSOC_LEADERBOARD_BASE_URL}
+              max={10}
+            />
+          </div>
+        </div>
 
         <div className=" d-flex w-100 flex-column py-5 align-items-center">
           <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
