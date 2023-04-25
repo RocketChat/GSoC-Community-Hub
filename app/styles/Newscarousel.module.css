@@ -37,17 +37,17 @@
   font-size: 22.5px;
 }
 
-.imgItm{
+.imgItm {
   width: 100%;
   height: 100%;
 }
 
-.content{
+.content {
   height: 120px !important;
 }
 
 @media only screen and (max-width: 300px) {
-  .content{
+  .content {
     height: 80px !important;
   }
 }

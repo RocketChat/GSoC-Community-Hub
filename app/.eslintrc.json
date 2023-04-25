@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier", "plugin:@next/next/recommended"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,7 +18,7 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-unused-vars": "warn",
     "no-console": "off",
     "no-underscore-dangle": "off",
