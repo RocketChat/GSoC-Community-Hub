@@ -161,6 +161,7 @@ jobs:
             next.config.js \
             package-lock.json \
             package.json \
+            husky.js \
             /tmp/.github_sha \
             /tmp/.github_ref
 
