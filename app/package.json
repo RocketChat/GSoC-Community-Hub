@@ -9,7 +9,8 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "cd .. && npx husky install",
+    "prepare": "node husky.js",
+    "husky:init": "cd .. && npx husky install",
     "format": "prettier --write . --loglevel=silent"
   },
   "dependencies": {
