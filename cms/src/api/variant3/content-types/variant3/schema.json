@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variant3s",
+  "info": {
+    "singularName": "variant3",
+    "pluralName": "variant3s",
+    "displayName": "variant3"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "variant3"
+    },
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variant2s",
+  "info": {
+    "singularName": "variant2",
+    "pluralName": "variant2s",
+    "displayName": "variant2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "variant2"
+    },
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nav.nav"
+    }
+  }
+}
