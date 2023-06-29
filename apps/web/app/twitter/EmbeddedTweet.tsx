@@ -1,19 +1,22 @@
+"use client"
 import Image from 'next/image';
 import { format } from 'date-fns';
 
 export default function Tweet({
-  text,
-  id,
-  author,
-  media,
-  created_at,
-  public_metrics,
-  referenced_tweets,
+  tweet
 }) {
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const { text,
+    id,
+    author,
+    media,
+    created_at,
+    public_metrics,
+    referenced_tweets } = tweet
+  console.log("asdasfadsfsadfs", author)
   const authorUrl = `https://twitter.com/${author.username}`;
   const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
   const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`;
