@@ -14,6 +14,7 @@
     "@palanikannan1437/rc4-ui": "workspace:*",
     "@palanikannan1437/rc4community-auth": "workspace:*",
     "@palanikannan1437/rc4community-navbar": "workspace:*",
+    "@palanikannan1437/rc4community-navbar-demo": "workspace:*",
     "@palanikannan1437/rc4community-timeline": "workspace:*",
     "@radix-ui/react-icons": "^1.2.0",
     "@radix-ui/react-navigation-menu": "^1.1.1",

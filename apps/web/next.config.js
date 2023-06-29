@@ -3,9 +3,5 @@ module.exports = {
   experimental: {
     appDir: true,
   },
-  typescript: {
-    options: {
-      ignoreBuildErrors: true,
-    },
-  }
+  transpilePackages: ['@palanikannan1437/rc4community-navbar-demo']
 }

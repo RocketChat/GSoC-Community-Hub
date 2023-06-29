@@ -3,13 +3,13 @@
 import * as React from "react";
 import {
   NavDemo,
-} from "@palanikannan1437/rc4community-navbar";
+} from "@palanikannan1437/rc4community-navbar-demo";
 import { Session } from "next-auth";
 
 export function CustomNavBar({ navData, navItems }: { session: Session | null, navData: any, navItems: object[] }) {
   return (
     <NavDemo
-      layoutVariant={"right"}
+      layoutVariant={"center"}
       logo={
         <svg
           xmlns="http://www.w3.org/2000/svg"

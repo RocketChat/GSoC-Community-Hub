@@ -18,6 +18,11 @@
         "name": "next"
       }
     ],
+    "paths": {
+      "@core/*": ["./src/core/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@lib/*": ["./lib/*"],
+    },
     "strictNullChecks": true
   }
 }
