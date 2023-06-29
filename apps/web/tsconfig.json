@@ -19,9 +19,18 @@
       }
     ],
     "paths": {
-      "@core/*": ["./src/core/*"],
-      "@ui/*": ["./src/ui/*"],
-      "@lib/*": ["./lib/*"],
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
     "strictNullChecks": true
   }
