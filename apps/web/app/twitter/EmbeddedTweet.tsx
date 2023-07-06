@@ -16,7 +16,7 @@ export default function Tweet({
     created_at,
     public_metrics,
     referenced_tweets } = tweet
-  console.log("asdasfadsfsadfs", author)
+
   const authorUrl = `https://twitter.com/${author.username}`;
   const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
   const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`;

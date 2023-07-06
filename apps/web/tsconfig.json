@@ -30,6 +30,12 @@
       ],
       "@/*": [
         "./*"
+      ],
+      "@rc4-reddit/*": [
+        "./app/reddit/*"
+      ],
+      "@rc4-stackoverflow/*": [
+        "./app/stackoverflow/*"
       ]
     },
     "strictNullChecks": true
