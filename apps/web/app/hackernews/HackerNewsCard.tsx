@@ -1,39 +1,34 @@
 "use client"
-import { MessageCircle, Star, CheckCircle, Clock } from "lucide-react"
-import stackOverflowIcon from "./stack-overflow.png"
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { useState } from "react";
-import Image from "next/image"
+import React, { useState } from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import { Eye } from "lucide-react"
+import Image from 'next/image'
+import hackerNewsIcon from "./hacker-news.png"
+import { Button } from '@/components/ui/button'
+import { MessageCircle, ThumbsUp, User } from 'lucide-react'
+import { Clock } from 'lucide-react'
 
-export function StackOverflowCard({ question }) {
+export function HackerNewsCard({ post }) {
     const [copied, setCopied] = useState(false)
     return (
-        <Card onClick={() => openInNewTab(question.link)} className="bg-white border border-gray-200 shadow-sm relative max-h-32 max-w-sm p-2">
+        <Card className="bg-white border border-gray-200 shadow-sm relative max-h-32 max-w-sm p-2">
             <CardHeader className="flex flex-row justify-between p-1 h-10">
-                <div className="max-w-[250px] whitespace-wrap">
-                    <Link href={question.link} rel="noopener noreferrer" target="_blank">
-                        <CardTitle className="hover:underline text-gray-800 text-sm">{question?.title}</CardTitle>
+                <div className="max-w-[200px] whitespace-wrap">
+                    <Link href={post?.url ? post.url : 'https://news.ycombinator.com/'} rel="noopener noreferrer" target="_blank">
+                        <CardTitle className="hover:underline text-gray-800 text-sm">{post.title}</CardTitle>
                     </Link>
                 </div>
                 <div>
                     <Button variant="secondary" size="sm"
                         onClick={(e) => {
                             e.stopPropagation();
-                            navigator.clipboard.writeText(question.link)
+                            navigator.clipboard.writeText(post.url)
                             setCopied(true)
                             setTimeout(() => setCopied(false), 1000)
                         }}>
                         <span className="text-sm">{!copied ? "Share" : "Copied"}</span>
                         <Image
-                            src={stackOverflowIcon}
+                            src={hackerNewsIcon}
                             className="ml-2"
                             height={16}
                             alt="Stack Overflow Icon"
@@ -42,35 +37,24 @@ export function StackOverflowCard({ question }) {
                 </div>
             </CardHeader>
             <CardContent className="p-1 h-20 flex flex-col justify-end">
-                <div className="flex flex-wrap">
-                    {question.tags.map((tag, index) => (
-                        <span key={index} className="bg-gray-200 text-gray-800 px-1 py-0.5 mr-1 mb-1 rounded text-xs">
-                            {tag}
-                        </span>
-                    ))}
-                </div>
                 <div className="flex space-x-2 text-xs text-gray-600 flex-wrap">
                     <div className="flex items-center">
                         <MessageCircle className="mr-1 h-3 w-3 fill-orange-600 text-orange-600" />
-                        {question.answer_count} answers
+                        {post.num_comments} comments
                     </div>
                     <div className="flex items-center">
-                        <Star className="mr-1 h-3 w-3 text-orange-600" />
-                        {question.score} votes
+                        <ThumbsUp className="mr-1 h-3 w-3 fill-orange-600 text-orange-600" />
+                        {post.points} points
                     </div>
-                    <div className="flex items-center">
-                        <Eye className="mr-1 h-3 w-3 text-gray-600" />
-                        {question.view_count} views
-                    </div>
-                    {question.is_answered && (
+                    <Link href={`https://news.ycombinator.com/user?id=${post.author}`} rel="noopener noreferrer" target="_blank">
                         <div className="flex items-center">
-                            <CheckCircle className="mr-1 h-3 w-3 text-green-600" />
-                            Answer accepted
+                            <User className="mr-1 h-3 w-3 text-orange-600" />
+                            by {post.author}
                         </div>
-                    )}
+                    </Link>
                     <div className="flex items-center">
                         <Clock className="mr-1 h-3 w-3 text-green-600" />
-                        Posted {timeAgo(question.creation_date)}
+                        Posted {timeAgo(post.created_at_i)}
                     </div>
                 </div>
             </CardContent>
@@ -84,8 +68,8 @@ function openInNewTab(url: string) {
 
 function timeAgo(utcTime: number): string {
     const now = new Date();
-    const diff = now.getTime() - utcTime * 1000; // convert to milliseconds
-    const seconds = Math.floor(diff / 1000);
+    const diff = now.getTime() / 1000 - utcTime; // convert to seconds
+    const seconds = Math.floor(diff);
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);

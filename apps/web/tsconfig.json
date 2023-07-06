@@ -36,6 +36,9 @@
       ],
       "@rc4-stackoverflow/*": [
         "./app/stackoverflow/*"
+      ],
+      "@rc4-hackernews/*": [
+        "./app/hackernews/*"
       ]
     },
     "strictNullChecks": true

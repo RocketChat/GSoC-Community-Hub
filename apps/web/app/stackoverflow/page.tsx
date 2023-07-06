@@ -2,7 +2,6 @@ import StackOverflowComponent, { getStackOverflowQuestions } from "@rc4-stackove
 
 export default async function Home() {
     const questions = await getStackOverflowQuestions("blender");
- 
     const questions1 = await getStackOverflowQuestions("react");
     return (
         <>
