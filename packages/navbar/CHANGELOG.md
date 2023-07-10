@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4community-navbar
 
+## 2.1.4
+
+### Patch Changes
+
+- 3136590: Added variants and custom css support
+
 ## 2.1.3
 
 ### Patch Changes

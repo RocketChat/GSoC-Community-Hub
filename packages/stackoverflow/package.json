@@ -1,6 +1,6 @@
 {
   "name": "@palanikannan1437/rc4community-stackoverflow",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "scripts": {

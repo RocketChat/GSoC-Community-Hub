@@ -1,5 +1,14 @@
 # web
 
+## 1.0.13
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies [3136590]
+  - @palanikannan1437/rc4community-stackoverflow@2.0.0
+  - @palanikannan1437/rc4community-navbar@2.1.4
+
 ## 1.0.12
 
 ### Patch Changes
