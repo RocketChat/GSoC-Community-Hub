@@ -1,5 +1,12 @@
 # web
 
+## 1.0.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @palanikannan1437/rc4community-stackoverflow@2.0.1
+
 ## 1.0.13
 
 ### Patch Changes
