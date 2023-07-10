@@ -30,9 +30,9 @@ export default async function RootLayout({
           navData={navData}
           navItems={navItems}
         /> */}
-        <div className="flex min-h-screen items-center justify-center py-2">
+        {/* <div className="flex min-h-screen items-center justify-center py-2"> */}
             {children}
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );

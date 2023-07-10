@@ -11,7 +11,7 @@ import { LineChart } from "lucide-react";
 import { BadgeIcon  } from "@radix-ui/react-icons";
 
 function StackOverflowComponent({ questions }) {
-    const { newPosts, hotPosts, topPosts, unsansweredPosts } = questions
+    const { newPosts, hotPosts, topPosts, unansweredPosts } = questions
 
     return (
         <main className="w-auto">
@@ -44,7 +44,7 @@ function StackOverflowComponent({ questions }) {
                     </TabsContent>
                     <TabsContent value="unanswered">
                         <div className="grid grid-cols-2 gap-6">
-                            {unsansweredPosts.map((question) => (
+                            {unansweredPosts.map((question) => (
                                 <StackOverflowCard key={question.question_id} question={question} />
                             ))}
                         </div>
@@ -73,9 +73,9 @@ export const getStackOverflowQuestions = async (tag: string) => {
     const topPosts = await fetchStackOverflowQuestions("votes", tag);
     const newPosts = await fetchStackOverflowQuestions("creation", tag);
     const hotPosts = await fetchStackOverflowQuestions("activity", tag);
-    const unsansweredPosts = await fetchStackOverflowQuestions("creation", tag, true);
+    const unansweredPosts = await fetchStackOverflowQuestions("creation", tag, true);
 
-    return { topPosts, newPosts, hotPosts, unsansweredPosts }
+    return { topPosts, newPosts, hotPosts, unansweredPosts }
 }
 
 const fetchStackOverflowQuestions = async (type: "activity" | "creation" | "votes", tag: string, unanswered?: true) => {

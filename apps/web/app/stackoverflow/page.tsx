@@ -1,12 +1,5 @@
-import StackOverflowComponent, { getStackOverflowQuestions } from "@rc4-stackoverflow/StackOverflowComponent";
+import DemoStackOverFlowComponent from "@palanikannan1437/rc4community-stackoverflow/DemoComponent";
 
 export default async function Home() {
-    const questions = await getStackOverflowQuestions("blender");
-    const questions1 = await getStackOverflowQuestions("react");
-    return (
-        <>
-            <StackOverflowComponent questions={questions} />
-            <StackOverflowComponent questions={questions1} />
-        </>
-    );
+    return (<DemoStackOverFlowComponent />);
 }
