@@ -1,5 +1,11 @@
 # @palanikannan1437/rc4community-stackoverflow
 
+## 0.0.2
+
+### Patch Changes
+
+- Added importable css support
+
 ## 0.0.1
 
 ### Patch Changes
