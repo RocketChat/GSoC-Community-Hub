@@ -17,8 +17,15 @@ type postType = {
     created_at_i: number;
 };
 
-declare function HackerNewsComponent({ posts }: {
+declare function HackerNewsComponent({ posts, styleOverrides }: {
     posts: postsType;
+    styleOverrides?: {
+        main?: string;
+        container?: string;
+        tabs?: string;
+        tabsList?: string;
+        tabsContent?: string;
+    };
 }): react_jsx_runtime.JSX.Element;
 
 export { HackerNewsComponent as default };
