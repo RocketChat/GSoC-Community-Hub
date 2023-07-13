@@ -1,4 +1,5 @@
-import HackerNewsComponent, { getHackerNewsPosts } from "@rc4-hackernews/HackerNewsComponent";
+import HackerNewsComponent from "@palanikannan1437/rc4community-hackernews/HackerNewsComponent";
+import {getHackerNewsPosts} from "@palanikannan1437/rc4community-hackernews/functions";
 
 export default async function Home() {
     const posts = await getHackerNewsPosts("blender");

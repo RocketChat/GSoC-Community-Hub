@@ -16,7 +16,7 @@ function StackOverflowComponent({ questions }: { questions: questionsType }) {
     const { newPosts, hotPosts, topPosts, unansweredPosts } = questions
 
     return (
-        <div className="flex min-h-screen items-center justify-center py-2">
+        <div className="flex min-h-screen items-center py-2">
             <main className="w-auto">
                 <div className="container p-8 max-w-[200px]">
                     <Tabs defaultValue="top" className="w-full">

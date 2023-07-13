@@ -3,12 +3,11 @@ import { defineConfig } from "tsup";
 import type { Options } from "tsup";
 
 const client = [
-  "./src/StackOverflowComponent.tsx",
+  "./src/HackerNewsComponent.tsx",
 ];
 
 const server = [
-  "./src/functions.tsx",
-  "./src/DemoComponent.tsx"
+  "./src/functions.tsx"
 ];
 
 export default defineConfig((opts) => {
