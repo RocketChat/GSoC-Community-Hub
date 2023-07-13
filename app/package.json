@@ -14,6 +14,7 @@
     "format": "prettier --write . --loglevel=silent"
   },
   "dependencies": {
+    "@palanikannan1437/rc4community-hackernews": "^0.0.3",
     "@rocket.chat/icons": "^0.31.22",
     "axios": "^1.3.5",
     "bootstrap": "^5.1.3",
