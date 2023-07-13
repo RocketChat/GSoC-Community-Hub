@@ -1,5 +1,12 @@
 # web
 
+## 1.0.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @palanikannan1437/rc4community-hackernews@0.0.2
+
 ## 1.0.15
 
 ### Patch Changes
