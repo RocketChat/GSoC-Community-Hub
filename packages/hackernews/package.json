@@ -1,6 +1,6 @@
 {
   "name": "@palanikannan1437/rc4community-hackernews",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "publishConfig": {
