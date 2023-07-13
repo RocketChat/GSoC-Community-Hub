@@ -12,7 +12,7 @@ const server = [
 
 export default defineConfig((opts) => {
   const common = {
-    clean: false,
+    clean: true,
     dts: true,
     format: ["esm"],
     minify: true,
@@ -36,6 +36,7 @@ export default defineConfig((opts) => {
         ) as PackageJson;
         pkgJson.exports = {
           "./package.json": "./package.json",
+          "./styles.css": "./dist/index.css",
           ".": {
             import: "./dist/index.mjs",
             types: "./dist/index.d.mts",
