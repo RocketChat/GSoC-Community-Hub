@@ -7,7 +7,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
     var _styleOverrides, _styleOverrides1, _styleOverrides2, _styleOverrides3;
     const { topStories, newStories, bestStories, askHN, showHN } = posts;
     const defaultStyles = {
-        container: "p-8 max-w-[800px]",
+        container: "p-8 max-w-[800px] min-h-[800px]",
         tabs: "w-full",
         tabsList: "grid grid-cols-5 mb-5",
         tabsContent: "grid grid-cols-2 gap-6"
@@ -28,7 +28,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
                 /*#__PURE__*/ _jsxs(TabsList, {
                     className: styles.tabsList,
                     children: [
-                        /*#__PURE__*/ _jsxs(TabsTrigger, {
+                        topStories.length > 0 && /*#__PURE__*/ _jsxs(TabsTrigger, {
                             value: "top",
                             children: [
                                 /*#__PURE__*/ _jsx(Star, {
@@ -37,7 +37,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
                                 "Top"
                             ]
                         }),
-                        /*#__PURE__*/ _jsxs(TabsTrigger, {
+                        newStories.length > 0 && /*#__PURE__*/ _jsxs(TabsTrigger, {
                             value: "new",
                             children: [
                                 /*#__PURE__*/ _jsx(Clock, {
@@ -46,7 +46,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
                                 "New"
                             ]
                         }),
-                        /*#__PURE__*/ _jsxs(TabsTrigger, {
+                        bestStories.length > 0 && /*#__PURE__*/ _jsxs(TabsTrigger, {
                             value: "best",
                             children: [
                                 /*#__PURE__*/ _jsx(Flame, {
@@ -55,7 +55,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
                                 "Best"
                             ]
                         }),
-                        /*#__PURE__*/ _jsxs(TabsTrigger, {
+                        askHN.length > 0 && /*#__PURE__*/ _jsxs(TabsTrigger, {
                             value: "ask",
                             children: [
                                 /*#__PURE__*/ _jsx(HelpCircle, {
@@ -64,7 +64,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }) {
                                 "Ask"
                             ]
                         }),
-                        /*#__PURE__*/ _jsxs(TabsTrigger, {
+                        showHN.length > 0 && /*#__PURE__*/ _jsxs(TabsTrigger, {
                             value: "show",
                             children: [
                                 /*#__PURE__*/ _jsx(Flame, {

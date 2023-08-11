@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 export default async function Home() {
     return (
         <>
-            <Hacker id="blender" styleOverrides={{
+            <Hacker id="rocketchat" styleOverrides={{
                 main: styles["my-class"],
                 tabsList: 'text-red-500',
             }} />

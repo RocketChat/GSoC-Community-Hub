@@ -8,7 +8,7 @@ export default function HackerNewsComponent({ posts, styleOverrides }: { posts: 
     const { topStories, newStories, bestStories, askHN, showHN } = posts
 
     const defaultStyles = {
-        container: "p-8 max-w-[800px]",
+        container: "p-8 max-w-[800px] min-h-[800px]",
         tabs: "w-full",
         tabsList: "grid grid-cols-5 mb-5",
         tabsContent: "grid grid-cols-2 gap-6"
@@ -26,26 +26,26 @@ export default function HackerNewsComponent({ posts, styleOverrides }: { posts: 
         <div className={styles.container}>
             <Tabs defaultValue="top" className={styles.tabs}>
                 <TabsList className={styles.tabsList}>
-                    <TabsTrigger value="top">
+                    {topStories.length > 0 && <TabsTrigger value="top">
                         <Star className="mr-2" />
                         Top
-                    </TabsTrigger>
-                    <TabsTrigger value="new">
+                    </TabsTrigger>}
+                    {newStories.length > 0 && <TabsTrigger value="new">
                         <Clock className="mr-2" />
                         New
-                    </TabsTrigger>
-                    <TabsTrigger value="best">
+                    </TabsTrigger>}
+                    {bestStories.length > 0 &&<TabsTrigger value="best">
                         <Flame className="mr-2" />
                         Best
-                    </TabsTrigger>
-                    <TabsTrigger value="ask">
+                    </TabsTrigger>}
+                    {askHN.length > 0 &&<TabsTrigger value="ask">
                         <HelpCircle className="mr-2" />
                         Ask
-                    </TabsTrigger>
-                    <TabsTrigger value="show">
+                    </TabsTrigger>}
+                    {showHN.length > 0 &&<TabsTrigger value="show">
                         <Flame className="mr-2" />
                         Show
-                    </TabsTrigger>
+                    </TabsTrigger>}
                 </TabsList>
                 <TabsContent value="top">
                     <div className="grid grid-cols-2 gap-6">
