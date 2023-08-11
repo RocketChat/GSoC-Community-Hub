@@ -1,5 +1,12 @@
 # web
 
+## 1.0.19
+
+### Patch Changes
+
+- Updated dependencies [dbc2d7a]
+  - @palanikannan1437/rc4-hackernews@0.0.4
+
 ## 1.0.18
 
 ### Patch Changes
