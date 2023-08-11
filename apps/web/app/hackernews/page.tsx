@@ -1,5 +1,5 @@
-import { Hacker } from "@palanikannan/react-hackernews";
-import "@palanikannan/react-hackernews/styles.css"
+import { Hacker } from "@palanikannan1437/rc4-hackernews";
+import "@palanikannan1437/rc4-hackernews/styles.css"
 
 import styles from './styles.module.css'
 export default async function Home() {

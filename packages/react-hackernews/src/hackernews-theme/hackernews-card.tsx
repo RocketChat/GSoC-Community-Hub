@@ -1,8 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Link from "next/link"
-import hackerNewsIcon from "./hacker-news.png"
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Clock,MessageCircle, ThumbsUp, User } from 'lucide-react'
 import { postType, timeAgo } from '../api/index.js'
 import { Button, Card, CardContent, CardHeader, CardTitle } from './components.js'
@@ -26,12 +25,13 @@ export function HackerNewsCard({ post }: { post: postType }) {
                             setTimeout(() => setCopied(false), 1000)
                         }}>
                         <span className="text-sm">{!copied ? "Share" : "Copied"}</span>
-                        <Image
-                            src={hackerNewsIcon}
+                        {/* <Image
+                            src={"https://cdn2.iconfinder.com/data/icons/social-flat-buttons-3/512/hacker_news-1024.png"}
                             className="ml-2"
                             height={16}
+                            width={16}
                             alt="Hackernews Icon"
-                        />
+                        /> */}
                     </Button>
                 </div>
             </CardHeader>

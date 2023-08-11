@@ -2,8 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useState } from 'react';
 import Link from "next/link";
-import hackerNewsIcon from "./hacker-news.png";
-import Image from 'next/image';
+// import Image from 'next/image'
 import { Clock, MessageCircle, ThumbsUp, User } from 'lucide-react';
 import { timeAgo } from '../api/index.js';
 import { Button, Card, CardContent, CardHeader, CardTitle } from './components.js';
@@ -29,7 +28,7 @@ export function HackerNewsCard({ post }) {
                         })
                     }),
                     /*#__PURE__*/ _jsx("div", {
-                        children: /*#__PURE__*/ _jsxs(Button, {
+                        children: /*#__PURE__*/ _jsx(Button, {
                             variant: "secondary",
                             size: "sm",
                             onClick: (e)=>{
@@ -38,18 +37,10 @@ export function HackerNewsCard({ post }) {
                                 setCopied(true);
                                 setTimeout(()=>setCopied(false), 1000);
                             },
-                            children: [
-                                /*#__PURE__*/ _jsx("span", {
-                                    className: "text-sm",
-                                    children: !copied ? "Share" : "Copied"
-                                }),
-                                /*#__PURE__*/ _jsx(Image, {
-                                    src: hackerNewsIcon,
-                                    className: "ml-2",
-                                    height: 16,
-                                    alt: "Hackernews Icon"
-                                })
-                            ]
+                            children: /*#__PURE__*/ _jsx("span", {
+                                className: "text-sm",
+                                children: !copied ? "Share" : "Copied"
+                            })
                         })
                     })
                 ]
