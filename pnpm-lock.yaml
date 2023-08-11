@@ -52,8 +52,8 @@ importers:
   apps/web:
     specifiers:
       '@next-auth/fauna-adapter': ^1.0.4
-      '@palanikannan/react-hackernews': workspace:^0.0.1
       '@palanikannan/react-tweet': workspace:*
+      '@palanikannan1437/rc4-hackernews': workspace:*
       '@palanikannan1437/rc4-ui': workspace:*
       '@palanikannan1437/rc4community-auth': workspace:*
       '@palanikannan1437/rc4community-hackernews': workspace:*
@@ -94,8 +94,8 @@ importers:
       typescript: 5.1.6
     dependencies:
       '@next-auth/fauna-adapter': 1.0.4_kcyv3akvippdb4p2y6m37lqdaq
-      '@palanikannan/react-hackernews': link:../../packages/react-hackernews
       '@palanikannan/react-tweet': link:../../packages/react-tweet
+      '@palanikannan1437/rc4-hackernews': link:../../packages/react-hackernews
       '@palanikannan1437/rc4-ui': link:../../packages/ui
       '@palanikannan1437/rc4community-auth': link:../../packages/auth
       '@palanikannan1437/rc4community-hackernews': link:../../packages/hackernews
