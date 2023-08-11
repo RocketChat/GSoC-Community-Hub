@@ -1,5 +1,11 @@
 # react-tweet
 
+## 0.0.5
+
+### Patch Changes
+
+- 783ebfe: css fix
+
 ## 0.0.4
 
 ### Patch Changes
