@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import { Hacker } from '@palanikannan1437/rc4-hackernews';
 import styles from '../styles/Home.module.css';
 import Infotiles from '../components/utils/infotiles';
 import Newscarousel from '../components/utils/newscarousel';
@@ -67,6 +69,19 @@ export default async function Page() {
               max={10}
             />
           </div>
+        </div>
+
+        <div className=" d-flex w-100 flex-column py-5 align-items-center">
+          <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
+            Community at HackerNews
+          </h2>
+          <Hacker
+            id="rocketchat"
+            styleOverrides={{
+              container: styles.container_hackernews,
+              tabsList: styles.tabList_hackernews,
+            }}
+          />
         </div>
 
         <div className=" d-flex w-100 flex-column py-5 align-items-center">
