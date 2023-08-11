@@ -47,6 +47,9 @@
       ],
       "HackerNewsComponent": [
         "dist/HackerNewsComponent.d.mts"
+      ],
+      "Hacker": [
+        "dist/Hacker.d.mts"
       ]
     }
   },
@@ -60,6 +63,10 @@
     "./HackerNewsComponent": {
       "import": "./dist/HackerNewsComponent.mjs",
       "types": "./dist/HackerNewsComponent.d.mts"
+    },
+    "./Hacker": {
+      "import": "./dist/Hacker.mjs",
+      "types": "./dist/Hacker.d.mts"
     },
     "./functions": {
       "import": "./dist/functions.mjs",

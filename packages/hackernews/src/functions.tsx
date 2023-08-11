@@ -30,7 +30,7 @@ const fetchHackerNewsPosts = async (query: string, sort: string, storyType?: str
     let res;
     const tags = storyType ? `story,${storyType}` : 'story';
     const response = await fetch(`https://hn.algolia.com/api/v1/${sort === "created_at" ? "search_by_date" : "search"}?query=${query}&tags=${tags}&page=1&hitsPerPage=8`)
-    const results: { hits: postsType[] } = await response.json()
+    const results: { hits: postType[] } = await response.json()
     return results.hits;
 }
 

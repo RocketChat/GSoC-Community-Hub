@@ -10,7 +10,7 @@ import {
 } from "@/src/components/ui/tabs"
 import { postsType } from '@/src/functions';
 
-export default function HackerNewsComponent({ posts, styleOverrides }: { posts: postsType, styleOverrides?: { main?: string, container?: string, tabs?: string, tabsList?: string, tabsContent?: string } }) {
+export default function HackerNewsComponent({ posts, styleOverrides }: { posts: postsType, styleOverrides?: { main?: string, container?: string, tabs?: string, tabsList?: string, tabsContent?: string }  }) {
 
     const { topStories, newStories, bestStories, askHN, showHN } = posts
 

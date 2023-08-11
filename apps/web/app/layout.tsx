@@ -1,7 +1,7 @@
 import "./globals.css";
-import "@palanikannan1437/rc4-ui/styles.css";
-import "@palanikannan1437/rc4community-timeline/styles.css";
-import "@palanikannan1437/rc4community-navbar/styles.css";
+// import "@palanikannan1437/rc4-ui/styles.css";
+// import "@palanikannan1437/rc4community-timeline/styles.css";
+// import "@palanikannan1437/rc4community-navbar/styles.css";
 import NavigationMenuDemo from "./navbar/nav";
 // import { getSession } from "../lib/session";
 

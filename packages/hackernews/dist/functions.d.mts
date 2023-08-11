@@ -15,11 +15,11 @@ type postType = {
     created_at_i: number;
 };
 declare const getHackerNewsPosts: (tag: string) => Promise<{
-    topStories: postsType[];
-    newStories: postsType[];
-    bestStories: postsType[];
-    askHN: postsType[];
-    showHN: postsType[];
+    topStories: postType[];
+    newStories: postType[];
+    bestStories: postType[];
+    askHN: postType[];
+    showHN: postType[];
 }>;
 declare function openInNewTab(url: string): void;
 declare function timeAgo(utcTime: number): string;

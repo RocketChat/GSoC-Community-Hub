@@ -4,6 +4,7 @@ import type { Options } from "tsup";
 
 const client = [
   "./src/HackerNewsComponent.tsx",
+  "./src/Hacker.tsx"
 ];
 
 const server = [
@@ -15,7 +16,7 @@ export default defineConfig((opts) => {
     clean: true,
     dts: true,
     format: ["esm"],
-    minify: true,
+    minify: false,
     outDir: "dist",
     external: ["react", "react-dom", "next", "react/jsx-runtime"],
   } satisfies Options;

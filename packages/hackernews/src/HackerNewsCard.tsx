@@ -1,8 +1,7 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card"
 import Link from "next/link"
-import Image from 'next/image'
 // import hackerNewsIcon from "./hacker-news.png"
 import { Button } from '@/src/components/ui/button'
 import { MessageCircle, ThumbsUp, User } from 'lucide-react'
@@ -10,7 +9,7 @@ import { Clock } from 'lucide-react'
 import { postType, timeAgo } from '@/src/functions'
 
 export function HackerNewsCard({ post }: { post: postType }) {
-    const [copied, setCopied] = useState(false)
+    // const [copied, setCopied] = useState(false)
     return (
         <Card className="bg-white border border-gray-200 shadow-sm relative max-h-32 max-w-sm p-2">
             <CardHeader className="flex flex-row justify-between p-1 h-10">
@@ -24,10 +23,10 @@ export function HackerNewsCard({ post }: { post: postType }) {
                         onClick={(e) => {
                             e.stopPropagation();
                             navigator.clipboard.writeText(post.url)
-                            setCopied(true)
-                            setTimeout(() => setCopied(false), 1000)
+                            // setCopied(true)
+                            // setTimeout(() => setCopied(false), 1000)
                         }}>
-                        <span className="text-sm">{!copied ? "Share" : "Copied"}</span>
+                        {/* <span className="text-sm">{!copied ? "Share" : "Copied"}</span> */}
                         {/* <Image
                             src={hackerNewsIcon}
                             className="ml-2"
