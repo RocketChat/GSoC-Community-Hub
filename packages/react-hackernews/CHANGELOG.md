@@ -1,5 +1,11 @@
 # react-tweet
 
+## 0.0.2
+
+### Patch Changes
+
+- 82d7109: Initialized full stack component with styling customization
+
 ## 3.0.3
 
 ### Patch Changes
