@@ -296,6 +296,8 @@ importers:
 
   packages/react-hackernews:
     specifiers:
+      '@radix-ui/react-slot': ^1.0.2
+      '@radix-ui/react-tabs': ^1.0.4
       '@swc/cli': ^0.1.62
       '@swc/core': ^1.3.66
       '@swc/helpers': ^0.5.1
@@ -303,28 +305,36 @@ importers:
       '@types/react': ^18.2.13
       autoprefixer: ^10.4.14
       chokidar: ^3.5.3
+      class-variance-authority: ^0.4.0
+      clsx: ^1.2.1
       date-fns: ^2.30.0
       eslint: ^8.43.0
       eslint-config-next: ^13.4.7
       lucide-react: ^0.263.1
       postcss: ^8.4.27
       postcss-cli: ^10.1.0
-      react: '>= 18.0.0'
-      react-dom: '>= 18.0.0'
+      react: ^18.2.0
+      react-dom: ^18.2.0
       swr: ^2.2.0
       tailwind-config: workspace:*
       tailwind-merge: 1.14.0
       tailwindcss: ^3.3.3
+      tailwindcss-animate: ^1.0.5
       tsconfig: workspace:*
       typescript: ^5.1.3
     dependencies:
+      '@radix-ui/react-slot': 1.0.2_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-tabs': 1.0.4_3op2lnyzlva6z5yh6fcmfv7uy4
       '@swc/helpers': 0.5.1
+      class-variance-authority: 0.4.0_typescript@5.1.6
+      clsx: 1.2.1
       date-fns: 2.30.0
       lucide-react: 0.263.1_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       swr: 2.2.0_react@18.2.0
       tailwind-merge: 1.14.0
+      tailwindcss-animate: 1.0.6_tailwindcss@3.3.3
     devDependencies:
       '@swc/cli': 0.1.62_7icjz3ddi4zvuujd4bpqe25uha
       '@swc/core': 1.3.75_@swc+helpers@0.5.1
@@ -4411,6 +4421,34 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /@radix-ui/react-roving-focus/1.0.4_3op2lnyzlva6z5yh6fcmfv7uy4:
+    resolution: {integrity: sha512-2mUg5Mgcu001VkGy+FfzZyzbmuUWzgWkj3rvv4yu+mLw03+mTzbxZHvfcGyFp2b8EkQeMkpRQ5FiA2Vr2O6TeQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.10
+      '@radix-ui/primitive': 1.0.1
+      '@radix-ui/react-collection': 1.0.3_3op2lnyzlva6z5yh6fcmfv7uy4
+      '@radix-ui/react-compose-refs': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-context': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-direction': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-id': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-primitive': 1.0.3_3op2lnyzlva6z5yh6fcmfv7uy4
+      '@radix-ui/react-use-callback-ref': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-use-controllable-state': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@types/react': 18.2.19
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@radix-ui/react-roving-focus/1.0.4_ml6diaeoljuxdq7psn5bilsrme:
     resolution: {integrity: sha512-2mUg5Mgcu001VkGy+FfzZyzbmuUWzgWkj3rvv4yu+mLw03+mTzbxZHvfcGyFp2b8EkQeMkpRQ5FiA2Vr2O6TeQ==}
     peerDependencies:
@@ -4474,6 +4512,33 @@ packages:
       '@radix-ui/react-compose-refs': 1.0.1_6kgymidexis2l23kiss4by6rqm
       '@types/react': 18.2.19
       react: 18.2.0
+    dev: false
+
+  /@radix-ui/react-tabs/1.0.4_3op2lnyzlva6z5yh6fcmfv7uy4:
+    resolution: {integrity: sha512-egZfYY/+wRNCflXNHx+dePvnz9FbmssDTJBtgRfDY7e8SE5oIo3Py2eCB1ckAbh1Q7cQ/6yJZThJ++sgbxibog==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.10
+      '@radix-ui/primitive': 1.0.1
+      '@radix-ui/react-context': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-direction': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-id': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@radix-ui/react-presence': 1.0.1_3op2lnyzlva6z5yh6fcmfv7uy4
+      '@radix-ui/react-primitive': 1.0.3_3op2lnyzlva6z5yh6fcmfv7uy4
+      '@radix-ui/react-roving-focus': 1.0.4_3op2lnyzlva6z5yh6fcmfv7uy4
+      '@radix-ui/react-use-controllable-state': 1.0.1_6kgymidexis2l23kiss4by6rqm
+      '@types/react': 18.2.19
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@radix-ui/react-tabs/1.0.4_ml6diaeoljuxdq7psn5bilsrme:
