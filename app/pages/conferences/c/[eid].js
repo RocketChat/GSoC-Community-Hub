@@ -36,7 +36,7 @@ function EventDisplayPage({ event, spkdata, prsession }) {
               error={error}
               speaker={spkdata}
               prsession={prsession}
-              customLink="https://bbb.rocket.chat/b/sin-ur2-c72-cbv"
+              customLink="https://meet.google.com/bhc-bthy-dcd"
             />
           )}
         </Stack>

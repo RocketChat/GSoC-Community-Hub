@@ -143,7 +143,7 @@ jobs:
           cd app; npm run build
         env:
           NEXT_PUBLIC_STRAPI_API_URL: 'http://localhost:1337'
-          NEXT_PUBLIC_EVENT_BACKEND_URL: ${{ secrets.EVENT_BACKEND_URL }}
+          NEXT_PUBLIC_EVENT_BACKEND_URL: ${{ 'https://8080-rocketchat-rc4conferenc-nia7labaxiw.ws-us104.gitpod.io' }}
           NEXT_PUBLIC_DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
           DISCOURSE_HOST: ${{ secrets.DISCOURSE_HOST }}
           STATS_URL: ${{ secrets.STATS_URL }}

@@ -148,7 +148,7 @@ const TopNav = ({
           href={customLink || `/conferences/greenroom/${eid}`}
           target="_blank"
         >
-          Join (BBB)
+          Join
         </Button>
       )}{' '}
     </Container>
