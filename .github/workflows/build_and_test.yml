@@ -2,7 +2,7 @@ name: 'Build, Test, Deploy'
 
 on:
   pull_request: #{ types: [ready_for_review] }
-  push: { branches: [main] }
+  push: { branches: [23gsoc/demoday] }
   schedule:
     - cron: "36 */5 * * *"
   #release: { types: [published] }
