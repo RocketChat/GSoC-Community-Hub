@@ -174,7 +174,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }} || ${{ github.event_name == 'pull_request' && github.event.pull_request.number == 29 }} # don't wanna run on prs
+    if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }} # don't wanna run on prs
     needs: [bat]
 
     steps:
