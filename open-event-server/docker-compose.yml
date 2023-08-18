@@ -26,6 +26,8 @@ services:
     image: postgis/postgis:12-3.0-alpine
     container_name: opev-postgres
     restart: unless-stopped
+    ports:
+      - 5432:5432
     volumes:
       - pg:/var/lib/postgresql/data
       - ./seed:/var/log/seed
