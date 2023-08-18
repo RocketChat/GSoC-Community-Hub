@@ -4,8 +4,8 @@ x-environment-vars: &environment-vars
   POSTGRES_HOST: postgres
   DATABASE_URL: postgresql://open_event_user:opev_pass@postgres:5432/open_event
   REDIS_URL: redis://redis:6379/0
-  ADMIN_EMAIL: "@{ADMIN_EMAIL}"
-  ADMIN_PASSWORD: "@{ADMIN_PASSWORD}"
+  ADMIN_EMAIL: '@{ADMIN_EMAIL}'
+  ADMIN_PASSWORD: '@{ADMIN_PASSWORD}'
 
 x-defaults: &defaults
   image: eventyay/open-event-server:master
@@ -22,11 +22,12 @@ x-defaults: &defaults
     - ./generated:/data/app/generated # Workaround for #6155
 
 services:
-
   postgres:
     image: postgis/postgis:12-3.0-alpine
     container_name: opev-postgres
     restart: unless-stopped
+    ports:
+      - opev-postgres:5432
     volumes:
       - pg:/var/lib/postgresql/data
       - ./seed:/var/log/seed
@@ -50,9 +51,8 @@ services:
     ports:
       - 8080:8080
 
-
 volumes:
-    pg:
-      external: true
-    rd:
-      external: true
+  pg:
+    external: true
+  rd:
+    external: true
