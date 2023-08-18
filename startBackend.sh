@@ -20,6 +20,7 @@ if [ -z $OES_CONTAINER_ID ]; then
     exit 1
 else
     cd open-event-server
+    docker ps
     docker exec -i opev-postgres /bin/sh /var/log/seed/seed.sh
     cd ..
     if [ ! -e $INIT_DB ];then
