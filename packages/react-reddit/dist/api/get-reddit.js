@@ -16,7 +16,7 @@ const getRedditPost = async (type, subreddit)=>{
             title: post.data.title,
             url: post.data.url,
             comments: post.data.num_comments,
-            upvotes: post.data.upvotes,
+            upvotes: post.data.ups,
             time_ago: post.data.created_utc
         }));
     return fetchedPosts;
