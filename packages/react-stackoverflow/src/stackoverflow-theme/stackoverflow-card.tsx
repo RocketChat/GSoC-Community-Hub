@@ -1,20 +1,14 @@
 "use client"
+import * as React from "react"
 import { MessageCircle, Star, CheckCircle, Clock } from "lucide-react"
-import stackOverflowIcon from "./stack-overflow.png"
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { useState } from "react";
-import Image from "next/image"
+import { openInNewTab, questionType, timeAgo } from '../api/index.js'
+import { Button, Card, CardContent, CardHeader, CardTitle } from './components.js'
+
 import Link from "next/link"
 import { Eye } from "lucide-react"
 
-export function StackOverflowCard({ question }) {
-    const [copied, setCopied] = useState(false)
+export function StackOverflowCard({ question }: { question: questionType }) {
+    const [copied, setCopied] = React.useState<boolean>(false)
     return (
         <Card onClick={() => openInNewTab(question.link)} className="bg-white border border-gray-200 shadow-sm relative max-h-32 max-w-sm p-2">
             <CardHeader className="flex flex-row justify-between p-1 h-10">
@@ -32,12 +26,12 @@ export function StackOverflowCard({ question }) {
                             setTimeout(() => setCopied(false), 1000)
                         }}>
                         <span className="text-sm">{!copied ? "Share" : "Copied"}</span>
-                        <Image
+                        {/* <Image
                             src={stackOverflowIcon}
                             className="ml-2"
                             height={16}
                             alt="Stack Overflow Icon"
-                        />
+                        /> */}
                     </Button>
                 </div>
             </CardHeader>
@@ -76,23 +70,4 @@ export function StackOverflowCard({ question }) {
             </CardContent>
         </Card>
     )
-}
-
-function timeAgo(utcTime: number): string {
-    const now = new Date();
-    const diff = now.getTime() - utcTime * 1000; // convert to milliseconds
-    const seconds = Math.floor(diff / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-
-    if (days > 0) {
-        return `${days}d ago`;
-    } else if (hours > 0) {
-        return `${hours}h ago`;
-    } else if (minutes > 0) {
-        return `${minutes}m ago`;
-    } else {
-        return `${seconds}s ago`;
-    }
 }

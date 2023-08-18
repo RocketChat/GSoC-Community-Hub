@@ -22,7 +22,6 @@ export default function HackerNewsComponent({ posts, styleOverrides }: { posts: 
     };
 
     return (
-
         <div className={styles.container}>
             <Tabs defaultValue="top" className={styles.tabs}>
                 <TabsList className={styles.tabsList}>

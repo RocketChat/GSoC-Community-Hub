@@ -69,27 +69,6 @@ function StackOverflowComponent({ questions }) {
     )
 }
 
-export const getStackOverflowQuestions = async (tag: string) => {
-    const topPosts = await fetchStackOverflowQuestions("votes", tag);
-    const newPosts = await fetchStackOverflowQuestions("creation", tag);
-    const hotPosts = await fetchStackOverflowQuestions("activity", tag);
-    const unansweredPosts = await fetchStackOverflowQuestions("creation", tag, true);
 
-    return { topPosts, newPosts, hotPosts, unansweredPosts }
-}
-
-const fetchStackOverflowQuestions = async (type: "activity" | "creation" | "votes", tag: string, unanswered?: true) => {
-    let res;
-    const apiKey = "g3mAQmsDYenxbigx)cDf6g((";
-    await fetch(`https://api.stackexchange.com/2.3/questions?order=desc&sort=${type}&tagged=${tag}&site=stackoverflow&key=${apiKey}&pagesize=8&unsanswered=${unanswered}`)
-        .then((response) => response.json())
-        .then((data) => {
-            res = data.items;
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    return res;
-}
 
 export default StackOverflowComponent
