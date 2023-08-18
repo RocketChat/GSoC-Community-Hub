@@ -6,7 +6,7 @@ if [ ! -e $INIT_FLAG ];then
     echo "--Cleaning Up the database--"
     
     ls var/log/seed
-    psql -h localhost -U open_event_user open_event -f var/log/seed/seed.sql
+    psql -h postgres -U open_event_user open_event -f var/log/seed/seed.sql
     echo "--Creating SQL files--"
     psql -U open_event_user open_event -f var/log/seed/tmp/seed_event.sql
     psql -h opev-postgres -U open_event_user open_event -f var/log/seed/tmp/seed_speaker.sql
