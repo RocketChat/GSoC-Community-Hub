@@ -46,10 +46,8 @@ jobs:
             await new Promise(zzz => setTimeout(zzz, 60 * 1000));
             http
               .request(`http://localhost:${process.env.PORT}`, { method: 'GET' }, r => {
-                print(`open event server returned status code: ${r}`)
                 if (r.statusCode === 200)
                   {
-                    print('open event server successfully started')
                     core.info('open event server successfully started')
                     return
                   }
