@@ -23,12 +23,12 @@ async function Layout(props) {
       <body>
         <div className="announcement_strip">
           <a
-            href="/conferences/c/GSoC-Alumni-Summit-2023"
+            href="/conferences/c/GSoC-23-Demo-Day"
             style={{ textDecoration: 'none', color: 'white' }}
           >
             <h6>
-              📢 Join our GSoC&apos;23 Alumni Summit at{' '}
-              {new Date('2023-03-30T06:00:00-04:00').toLocaleString('en-GB', {
+              📢 Join our GSoC&apos;23 Demo Day at{' '}
+              {new Date('2023-08-24T11:00:00.000Z').toLocaleString('en-GB', {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric',
