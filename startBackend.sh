@@ -21,6 +21,7 @@ if [ -z $OES_CONTAINER_ID ]; then
 else
     cd open-event-server
     docker ps
+    sleep 30
     docker exec -i opev-postgres /bin/sh /var/log/seed/seed.sh
     docker-compose logs postgres
 
