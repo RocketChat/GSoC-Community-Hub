@@ -11,7 +11,7 @@ function RedditComponent({ posts }) {
         className: "container mx-auto p-8",
         children: /*#__PURE__*/ _jsxs(Tabs, {
             defaultValue: "top",
-            className: "w-[800px]",
+            className: "w-[700px]",
             children: [
                 /*#__PURE__*/ _jsxs(TabsList, {
                     className: "grid w-full grid-cols-3 mb-5",

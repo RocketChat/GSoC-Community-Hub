@@ -9,7 +9,7 @@ import { RedditPosts } from '../api';
 function RedditComponent({ posts }: { posts: RedditPosts }) {
     const { newPosts, hotPosts, topPosts } = posts
     return (<div className="container mx-auto p-8">
-        <Tabs defaultValue="top" className="w-[800px]">
+        <Tabs defaultValue="top" className="w-[700px]">
             <TabsList className="grid w-full grid-cols-3 mb-5">
                 <TabsTrigger value="top">
                     <LineChart className="mr-2" />
