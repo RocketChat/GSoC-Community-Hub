@@ -22,6 +22,8 @@ else
     cd open-event-server
     docker ps
     docker exec -i opev-postgres /bin/sh /var/log/seed/seed.sh
+    docker-compose logs postgres
+
     cd ..
     if [ ! -e $INIT_DB ];then
         echo "\033[31m***Open-event-server DB was not seeded with demo event, please check pg logs***\e[0m"
