@@ -8,7 +8,7 @@ if [ ! -e $INIT_FLAG ];then
     ls var
     ls var/log
     ls var/log/seed
-    psql -h host.docker.internal -U open_event_user open_event -f var/log/seed/seed.sql
+    psql -h opev-postgres -U open_event_user open_event -f var/log/seed/seed.sql
     echo "--Creating SQL files--"
     psql -h host.docker.internal -U open_event_user open_event -f var/log/seed/tmp/seed_event.sql
     psql -U open_event_user open_event -f var/log/seed/tmp/seed_speaker.sql
