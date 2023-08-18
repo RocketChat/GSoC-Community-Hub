@@ -1,16 +1,12 @@
 import React from 'react'
 import { Flame } from "lucide-react";
-import { RedditCard } from "./RedditCard";
-import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components';
 import { LineChart } from "lucide-react";
 import { BadgeIcon } from "@radix-ui/react-icons";
+import { RedditCard } from './reddit-card';
+import { RedditPosts } from '../api';
 
-function RedditComponent({ posts }) {
+function RedditComponent({ posts }: { posts: RedditPosts }) {
     const { newPosts, hotPosts, topPosts } = posts
     return (<div className="container mx-auto p-8">
         <Tabs defaultValue="top" className="w-[800px]">

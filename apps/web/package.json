@@ -13,6 +13,7 @@
     "@next-auth/fauna-adapter": "^1.0.4",
     "@palanikannan1437/rc4-hackernews": "workspace:*",
     "@palanikannan1437/rc4-stackoverflow": "workspace:*",
+    "@palanikannan1437/rc4-reddit": "workspace:*",
     "@palanikannan/react-tweet": "workspace:*",
     "@palanikannan1437/rc4-ui": "workspace:*",
     "@palanikannan1437/rc4community-auth": "workspace:*",

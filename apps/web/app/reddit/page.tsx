@@ -1,11 +1,13 @@
-import RedditComponent, { getRedditPosts } from "@rc4-reddit/RedditComponent";
+// import RedditComponent, { getRedditPosts } from "@rc4-reddit/RedditComponent";
+
+import { Reddit } from "@palanikannan1437/rc4-reddit";
 
 export default async function Home() {
-    const posts = await getRedditPosts("blender");
+    // const posts = await getRedditPosts("blender");
  
     return (
         <>
-            <RedditComponent posts={posts} />
+            <Reddit id="blender"  />
         </>
     );
 }
