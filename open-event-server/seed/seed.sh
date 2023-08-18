@@ -4,6 +4,10 @@ if [ ! -e $INIT_FLAG ];then
     sh var/log/seed/sqlc.sh | exit 1
     
     echo "--Cleaning Up the database--"
+    ls
+    ls var
+    ls var/log
+    ls var/log/seed
     psql -h localhost -U open_event_user open_event -f var/log/seed/seed.sql
     echo "--Creating SQL files--"
     psql -h localhost -U open_event_user open_event -f var/log/seed/tmp/seed_event.sql
