@@ -1,5 +1,5 @@
 import { questionType } from "./types";
-export declare const getStackOverflowQuestions: (tag: string) => Promise<{
+export declare const getStackOverflowQuestions: (tag: string, apiKey: string) => Promise<{
     topPosts: questionType[];
     newPosts: questionType[];
     hotPosts: questionType[];

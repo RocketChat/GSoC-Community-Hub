@@ -9,7 +9,7 @@ import "@palanikannan1437/rc4-stackoverflow/styles.css"
 export default async function Home() {
     return (
         <>
-            <StackOverflow id="blender" />
+            <StackOverflow id="blender" apiKey="g3mAQmsDYenxbigx)cDf6g(("/>
         </>
     );
 }

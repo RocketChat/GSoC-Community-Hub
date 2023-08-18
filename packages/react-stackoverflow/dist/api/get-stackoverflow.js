@@ -1,8 +1,8 @@
-export const getStackOverflowQuestions = async (tag)=>{
-    const topPosts = await fetchStackOverflowQuestions("votes", tag);
-    const newPosts = await fetchStackOverflowQuestions("creation", tag);
-    const hotPosts = await fetchStackOverflowQuestions("activity", tag);
-    const unansweredPosts = await fetchStackOverflowQuestions("creation", tag, true);
+export const getStackOverflowQuestions = async (tag, apiKey)=>{
+    const topPosts = await fetchStackOverflowQuestions("votes", tag, apiKey);
+    const newPosts = await fetchStackOverflowQuestions("creation", tag, apiKey);
+    const hotPosts = await fetchStackOverflowQuestions("activity", tag, apiKey);
+    const unansweredPosts = await fetchStackOverflowQuestions("creation", tag, apiKey, true);
     return {
         topPosts,
         newPosts,
@@ -10,8 +10,7 @@ export const getStackOverflowQuestions = async (tag)=>{
         unansweredPosts
     };
 };
-const fetchStackOverflowQuestions = async (type, tag, unanswered)=>{
-    const apiKey = "g3mAQmsDYenxbigx)cDf6g((";
+const fetchStackOverflowQuestions = async (type, tag, apiKey, unanswered)=>{
     const response = await fetch(`https://api.stackexchange.com/2.3/questions?order=desc&sort=${type}&tagged=${tag}&site=stackoverflow&key=${apiKey}&pagesize=8&unsanswered=${unanswered}`);
     const results = await response.json();
     return results.items;
