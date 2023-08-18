@@ -7,17 +7,9 @@ echo "--Starting the Open Event server--"
 cd open-event-server
 sh startOes.sh $1 $2
 
-if [ "$2" = 'production' ]; then
-    echo "--Please use the Fauna SaaS for production deployments--"
-else
-    echo "--Starting Superprofile Backend--"
-    cd ../superprofile
-    sh initFaunaOnce.sh $1 $2
-fi
 cd ..
 
 OES_CONTAINER_ID=$( docker ps -q -f name=opev-web )
-FAUNA_CONTAINER_ID=$( docker ps -q -f name=faunadb )
 
 if [ -s $ERR_FILE ];then
     echo "\033[31m***Some error occurred while starting the Open Event Server please check open-event-server/$ERR_FILE , resolve them, and then re-run the init command***\e[0m"
@@ -36,9 +28,4 @@ else
     else
         echo "--Successfully seeded the database with demo data--"
     fi
-fi
-if [ -z $FAUNA_CONTAINER_ID ] && [ "$2" != 'production' ]; then
-    echo $FAUNA_CONTAINER_ID
-    echo "\033[31m***FaunaDB container was unable to install and start, please rerun the script***\e[0m"
-    exit 1
 fi
