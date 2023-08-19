@@ -12,7 +12,7 @@
         "Title": "Welcome to Rocket.Chat GSOC Demo Day 2023!",
         "Mentor": "",
         "Description": "Let's welcome all participants, contributors and Mentor!",
-        "Speaker": "Gabriel Engel & Rodrigo Nascimento",
+        "Speaker": "Gabriel Engel & Rodrigo Nascimento & Sing Li",
         "Duration": 20,
         "Youtube": null
       },
@@ -139,6 +139,30 @@
       {
         "id": 12,
         "Event": "GSoC Demo Day",
+        "Start": "2023-08-24T14:20:00.000Z",
+        "End": "2023-08-24T14:40:00.000Z",
+        "Speaker": "Henit Chobisa",
+        "Title": "Next Generation Desktop Apps on Tauri",
+        "Mentor": "Jean Brito, David Alen",
+        "Description": "Join us for a session showcasing the remarkable strides made in building a dedicated desktop application for Rocket.Chat through the innovative Tauri framework. Our GSoC contributor will present their accomplishments, spotlighting the application's UI/UX enhancements, seamless Tauri integration, and solutions to technical challenges. Be part of this insightful discussion on the project's architecture, future prospects, and community engagement.",
+        "Duration": 20,
+        "Youtube": null
+      },
+      {
+        "id": 13,
+        "Event": "GSoC Demo Day",
+        "Start": "2023-08-24T14:20:00.000Z",
+        "End": "2023-08-24T14:40:00.000Z",
+        "Speaker": "Abhinav Kumar",
+        "Title": "Embedded Chat 2023",
+        "Mentor": "Sidharth Mohanty",
+        "Description": "Join us for an exciting session, and dive into the evolution of Rocket.Chat's Embedded Chat component in this session. ",
+        "Duration": 20,
+        "Youtube": null
+      },
+      {
+        "id": 14,
+        "Event": "GSoC Demo Day",
         "Start": "2023-08-24T14:40:00.000Z",
         "End": "2023-08-24T14:45:00.000Z",
         "Speaker": "Rocketeers",
@@ -156,7 +180,7 @@
     "event_id": 3,
     "session_items": [
       {
-        "id": 13,
+        "id": 15,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T06:00:00-04:00",
         "End": "2023-03-30T06:20:00-04:00",
@@ -167,7 +191,7 @@
         "Youtube": null
       },
       {
-        "id": 14,
+        "id": 16,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T06:20:00-04:00",
         "End": "2023-03-30T06:40:00-04:00",
@@ -178,7 +202,7 @@
         "Youtube": null
       },
       {
-        "id": 15,
+        "id": 17,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T06:40:00-04:00",
         "End": "2023-03-30T07:00:00-04:00",
@@ -189,7 +213,7 @@
         "Youtube": null
       },
       {
-        "id": 16,
+        "id": 18,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T07:00:00-04:00",
         "End": "2023-03-30T07:20:00-04:00",
@@ -200,7 +224,7 @@
         "Youtube": null
       },
       {
-        "id": 17,
+        "id": 19,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T07:20:00-04:00",
         "End": "2023-03-30T07:50:00-04:00",
@@ -211,7 +235,7 @@
         "Youtube": null
       },
       {
-        "id": 18,
+        "id": 20,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T07:50:00-04:00",
         "End": "2023-03-30T08:10:00-04:00",
@@ -222,7 +246,7 @@
         "Youtube": null
       },
       {
-        "id": 19,
+        "id": 21,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T08:10:00-04:00",
         "End": "2023-03-30T08:30:00-04:00",
@@ -233,7 +257,7 @@
         "Youtube": null
       },
       {
-        "id": 20,
+        "id": 22,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T08:30:00-04:00",
         "End": "2023-03-30T08:50:00-04:00",
@@ -244,7 +268,7 @@
         "Youtube": null
       },
       {
-        "id": 21,
+        "id": 23,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T08:50:00-04:00",
         "End": "2023-03-30T09:10:00-04:00",
@@ -255,7 +279,7 @@
         "Youtube": null
       },
       {
-        "id": 22,
+        "id": 24,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T09:10:00-04:00",
         "End": "2023-03-30T09:20:00-04:00",
@@ -266,7 +290,7 @@
         "Youtube": null
       },
       {
-        "id": 23,
+        "id": 25,
         "Event": "GSoC Alumni Summit 2023",
         "Start": "2023-03-30T09:20:00-04:00",
         "End": "2023-03-30T09:30:00-04:00",

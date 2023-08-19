@@ -37,6 +37,7 @@ function EventDisplayPage({ event, spkdata, prsession }) {
               speaker={spkdata}
               prsession={prsession}
               customLink="https://meet.google.com/bhc-bthy-dcd"
+              suppressHydrationWarning
             />
           )}
         </Stack>
