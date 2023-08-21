@@ -1,7 +1,45 @@
 import { useState, useEffect } from 'react';
-import { Badge, Button, Col, Container, Row } from 'react-bootstrap';
+import {
+  Badge,
+  Button,
+  ButtonGroup,
+  Col,
+  Container,
+  Row,
+} from 'react-bootstrap';
 import { GoLocation } from 'react-icons/go';
+import { atcb_action } from 'add-to-calendar-button';
+import { FaCalendarPlus } from 'react-icons/fa';
 import styles from '../styles/index.module.css';
+
+const configCreate = (startDate, startTime, endTime, name, description) => {
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  };
+
+  const fmtStartDate = new Date(startDate).toLocaleDateString('en-CA');
+  const fmtStartTime = new Date(startTime).toLocaleTimeString('en-US', options);
+  const fmtEndTime = new Date(endTime).toLocaleTimeString('en-US', options);
+
+  return {
+    name,
+    description,
+    startDate: fmtStartDate,
+    startTime: fmtStartTime,
+    endTime: fmtEndTime,
+    options: [
+      'Apple',
+      'Google',
+      'iCal',
+      'Microsoft365',
+      'MicrosoftTeams',
+      'Outlook.com',
+      'Yahoo',
+    ],
+  };
+};
 
 function EventStrip({
   event,
@@ -47,24 +85,60 @@ function EventStrip({
         <Col style={{ overflow: 'auto' }}>{event.attributes.name}</Col>
         <Col
           xs={2}
-          md={1}
-          xl={1}
-          sm={1.5}
-          xxl={1}
+          md={1.2}
+          xl={1.2}
+          sm={2}
+          xxl={1.2}
           className="event-join-button"
         >
           {showMainstage ? (
-            <Button size="sm" onClick={handleJoin}>
-              Join
-            </Button>
+            <ButtonGroup size="sm">
+              <Button size="sm" onClick={handleJoin}>
+                Join
+              </Button>
+              <Button
+                variant="success"
+                onClick={() =>
+                  atcb_action(
+                    configCreate(
+                      event.attributes['starts-at'],
+                      event.attributes['starts-at'],
+                      event.attributes['ends-at'],
+                      event.attributes.name,
+                      event.attributes.description
+                    )
+                  )
+                }
+              >
+                <FaCalendarPlus />
+              </Button>
+            </ButtonGroup>
           ) : (
-            <Button
-              size="sm"
-              href={customLink || `/conferences/greenroom/${eid}`}
-              target="_blank"
-            >
-              Join
-            </Button>
+            <ButtonGroup size="sm">
+              <Button
+                size="sm"
+                href={customLink || `/conferences/greenroom/${eid}`}
+                target="_blank"
+              >
+                Join
+              </Button>
+              <Button
+                variant="success"
+                onClick={() =>
+                  atcb_action(
+                    configCreate(
+                      event.attributes['starts-at'],
+                      event.attributes['starts-at'],
+                      event.attributes['ends-at'],
+                      event.attributes.name,
+                      event.attributes.description
+                    )
+                  )
+                }
+              >
+                <FaCalendarPlus color="white" />
+              </Button>
+            </ButtonGroup>
           )}
         </Col>
       </Row>
