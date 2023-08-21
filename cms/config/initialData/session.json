@@ -135,7 +135,19 @@
     "id": 12,
     "Event": "GSoC Demo Day",
     "Start": "2023-08-24T14:40:00.000Z",
-    "End": "2023-08-24T15:00:00.000Z",
+    "End": "2023-08-24T14:45:00.000Z",
+    "Speaker": "Vipin Chaudhary",
+    "Title": "Google Summer of Code Community Hub",
+    "Mentor": "M. Palanikannan",
+    "Description": "Join us for an exciting session, presenting the Full-stack components, which can be leveraged to build a scalable, flexible GSoC Community Hub",
+    "Duration": 5,
+    "Youtube": null
+  },
+  {
+    "id": 13,
+    "Event": "GSoC Demo Day",
+    "Start": "2023-08-24T14:45:00.000Z",
+    "End": "2023-08-24T15:05:00.000Z",
     "Speaker": "Henit Chobisa",
     "Title": "Next Generation Desktop Apps on Tauri",
     "Mentor": "Jean Brito, David Alen",
@@ -144,10 +156,10 @@
     "Youtube": null
   },
   {
-    "id": 13,
+    "id": 14,
     "Event": "GSoC Demo Day",
-    "Start": "2023-08-24T15:20:00.000Z",
-    "End": "2023-08-24T15:40:00.000Z",
+    "Start": "2023-08-24T15:05:00.000Z",
+    "End": "2023-08-24T15:25:00.000Z",
     "Speaker": "Abhinav Kumar",
     "Title": "Embedded Chat 2023",
     "Mentor": "Sidharth Mohanty",
@@ -156,11 +168,11 @@
     "Youtube": null
   },
   {
-    "id": 14,
+    "id": 15,
     "Event": "GSoC Demo Day",
-    "Start": "2023-08-24T15:40:00.000Z",
-    "End": "2023-08-24T15:45:00.000Z",
-    "Speaker": "Rocketeers ",
+    "Start": "2023-08-24T15:25:00.000Z",
+    "End": "2023-08-24T15:30:00.000Z",
+    "Speaker": "Gabriel Engel & Rodrigo Nascimento & Sing Li",
     "Title": "Closing Notes",
     "Mentor": "",
     "Description": "",
@@ -168,7 +180,7 @@
     "Youtube": null
   },
   {
-    "id": 15,
+    "id": 25,
     "Event": "GSoC Alumni Summit 2023",
     "Start": "2023-03-30T06:00:00-04:00",
     "End": "2023-03-30T06:20:00-04:00",
