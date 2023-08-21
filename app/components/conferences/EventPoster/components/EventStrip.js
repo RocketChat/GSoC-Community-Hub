@@ -29,6 +29,7 @@ const configCreate = (startDate, startTime, endTime, name, description) => {
     startDate: fmtStartDate,
     startTime: fmtStartTime,
     endTime: fmtEndTime,
+    location: 'https://meet.google.com/bhc-bthy-dcd',
     options: [
       'Apple',
       'Google',
