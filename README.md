@@ -1,5 +1,5 @@
 # GSoC-Community-Hub
-Ready-to-run hub to engage and extend your Google Summer of Code Community
+Ready-to-run hub to engage and extend your Google Summer of Code Community.
 
 # Fast dev environment setup
 ```sh
