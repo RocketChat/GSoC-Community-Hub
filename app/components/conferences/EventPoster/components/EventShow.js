@@ -117,13 +117,16 @@ const EventSession = ({ session, toOpen, setToOpen }) => {
     duration_minutes: 'Duration Minutes',
   };
 
-  const excludedFields = [
-    'createdAt',
-    'updatedAt',
-    'Description',
-    'Event',
-    'Mentor',
-  ];
+  const excludedFields = ['createdAt', 'updatedAt', 'Description', 'Event'];
+
+  const sessionItems = session.attributes.session_items.data; // Assuming sessionItems is array
+
+  // Using the some function to check if Mentor exists in any item
+  const includeMentor = sessionItems.some((item) => item.attributes?.Mentor);
+
+  if (!includeMentor) {
+    excludedFields.push('Mentor');
+  }
 
   let headerItems = [];
 
@@ -180,7 +183,10 @@ const EventSession = ({ session, toOpen, setToOpen }) => {
                 <td>{retHours(sess.attributes.End)}</td>
                 <td>{sess.attributes.Speaker}</td>
                 <td>{sess.attributes.Title}</td>
+
                 <td>{sess.attributes.Duration}</td>
+                {includeMentor && <td>{sess.attributes?.Mentor}</td>}
+
                 <td>
                   <Button
                     variant="link"
