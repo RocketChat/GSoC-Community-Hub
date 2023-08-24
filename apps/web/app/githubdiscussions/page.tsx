@@ -2,13 +2,14 @@ import GithubDiscussionsComponent, { fetchGithubDiscussionCategories, getGithubD
 
 
 export default async function Home() {
-  const discussions = await getGithubDiscussions("RocketChat", "fuselage");
-  const discussions1 = await getGithubDiscussions("postmanlabs", "postman-flows");
+  // const discussions = await getGithubDiscussions("RocketChat", "fuselage");
+  // const discussions1 = await getGithubDiscussions("postmanlabs", "postman-flows");
 
   return (
     <>
-      <GithubDiscussionsComponent discussions={discussions} />
-      <GithubDiscussionsComponent discussions={discussions1} />
+      <div>hi</div>
+      {/* <GithubDiscussionsComponent discussions={discussions} /> */}
+      {/* <GithubDiscussionsComponent discussions={discussions1} /> */}
     </>
   );
 }
