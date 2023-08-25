@@ -9,7 +9,7 @@
     "Description": "Let's welcome all participants, contributors and Mentor!",
     "Speaker": "Gabriel Engel & Rodrigo Nascimento & Sing Li",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/zxj3cYgAol0?si=NO33TbI01hJ2q5qD"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "Description": "Join us for an exciting session where we will showcase the new botpress connector app for Rocket.Chat, an open-source chat platform that lets you create your own chatbots and integrations.",
     "Speaker": "Shubham Bhardwaj",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/K6hGdhJ6Kt0?si=tG69hiE4zNVgNRAU"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "Mentor": "Shiqi Mei, Douglas Gubert",
     "Description": "Do you want to enhance your team collaboration with whiteboards and visual drawing? If so, you will love our new Rocket.Chat App that integrates Markboard, an open-source whiteboard created by a Rocket.Chat GSoC alumni. Markboard is built on the same technology stack as Rocket.Chat, and it allows you to create and share concepts, diagrams, sketches, and more with your team members. In this session, you will learn how to install and use the app, how it extends Rocket.Chat’s team collaboration features, and what challenges and outcomes the project faced. You will also see some live demos of the app in action and interact with our project team. Don’t miss this opportunity to discover how Markboard can transform your team collaboration with Rocket.Chat!",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/Z1mx4Of5UjE?si=usJVSNy4rUTjIrNT"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "Mentor": "Douglas Fabris, Guilherme Gazzo",
     "Description": "Are you interested in creating new UI elements for Rocket.Chat, the open-source chat platform? If so, you will enjoy our session on Rocket.Chat UiKit, the protocol/tool that allows Rocket.Chat apps to add new web and mobile elements to the current UI. Rocket.Chat UiKit is a powerful and flexible way to customize and extend your chat experience with Rocket.Chat. In this session, you will learn how to use the UiKit Playground, a tool that lets you visualize and test the main functionalities of the UiKit. You will also learn how to add other features that improve and encourage the development of apps, such as templates, workflows simulation, connecting to a workspace, and sending/sharing the prototypes through Rocket.Chat. You will also see some live demos of the UiKit in action and interact with our project team. Don’t miss this opportunity to discover how Rocket.Chat UiKit can help you create amazing UI elements for your chat apps!",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/pNdVJXnEnqI?si=lFNFf5z9uHOozVpF"
   },
   {
     "id": 5,
@@ -69,7 +69,7 @@
     "Mentor": "Samad Yar Khan, Bárbara Zanella",
     "Description": "In this presentation, you'll gain insights into the development of a unique integration that allows for seamless interaction between Rocket.Chat and Notion. Imagine the power of creating pages and receiving notifications, all without stepping out of Rocket.Chat's ecosystem.",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/G1fZBqy5jp8?si=rd7K3HsV0AR9XUaE"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "Mentor": "Kevin Aleman, Sing Li",
     "Description": "This project Project uses VS code's Code tour extension which helps us to create step by step tours Let's say if developer wants to know how a message is sent, they may install the extension and start the tour and the tour would traverse through multiple files and folders and guide users how things are happening.",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/TNp8ICkmmdQ?si=qkryXbOl3jgdsjaJ"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "Mentor": "Mustafa Hasan Khan, Rafael Tapia",
     "Description": "Unleash your creativity as we explore the synergy between Rocket.Chat and Miro, opening doors to efficient idea sharing and visual collaboration. Don't miss out on this opportunity to witness firsthand how the Miro App transforms the way you work together. Join us and embark on a journey to boost productivity and engagement in your collaborative projects.",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/sQva1MUz8Wk?si=seM4k5ghlMMldvS2"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "Mentor": "Murtaza Patrawala, Renato Becker, Kevin Aleman",
     "Description": "Join us for a quick session unveiling the triumph against spam messages. Witness how RocketChat's live chat widget now stands fortified with CAPTCHA, ensuring human interactions and elevating user experience. Say goodbye to spam and hello to secure and seamless conversations. Be there to witness the evolution!",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/1qJ45mlq3ZM?si=DhN0ycoa_9udflsI"
   },
   {
     "id": 10,
@@ -129,7 +129,7 @@
     "Mentor": "Dhruv Jain, Devanshu, Hugo Costa",
     "Description": "Join us for an exciting session, presenting the Full-stack components, which can be leveraged to build a scalable, flexible GSoC Community Hub",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/GTiSG0wUa3E?si=DUM1NwCj7aZUq9HZ"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "Mentor": "M. Palanikannan",
     "Description": "Join us for an exciting session, presenting the Full-stack components, which can be leveraged to build a scalable, flexible GSoC Community Hub",
     "Duration": 5,
-    "Youtube": null
+    "Youtube": "https://youtu.be/GTiSG0wUa3E?si=DUM1NwCj7aZUq9HZ"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "Mentor": "Jean Brito, David Alen",
     "Description": "Join us for a session showcasing the remarkable strides made in building a dedicated desktop application for Rocket.Chat through the innovative Tauri framework. Our GSoC contributor will present their accomplishments, spotlighting the application's UI/UX enhancements, seamless Tauri integration, and solutions to technical challenges. Be part of this insightful discussion on the project's architecture, future prospects, and community engagement.",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/ZXy7zwdcl_s?si=AwzfLFXKxMGf4Vua"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "Mentor": "Sidharth Mohanty",
     "Description": "Join us for an exciting session, and dive into the evolution of Rocket.Chat's Embedded Chat component in this session. ",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/Y5bbkxRyu4o?si=_j8yoU84LjQrRVg5"
   },
   {
     "id": 15,
@@ -188,7 +188,7 @@
     "Description": "Let's welcome all participants, contributors and Mentor!",
     "Speaker": "Gabriel Engel & Sing Li & Rodrigo Nascimento",
     "Duration": 20,
-    "Youtube": null
+    "Youtube": "https://youtu.be/QiyjV49VuqQ?si=TPFbzZyUCeB33XeO"
   },
   {
     "id": 16,
