@@ -7,6 +7,7 @@ import { INFOTILES_DATA } from '../lib/const/infotiles';
 import { DiscourseTopicListTabs } from '../components/discourse/server';
 import { GrowthCounters } from '../components/GrowthCounters';
 import { GSoCLeaderboard, GSoCStats } from '../components/GSoCLeaderboard';
+import { StackOverflow } from "@palanikannan1437/rc4-stackoverflow";
 
 export const metadata = {
   title: 'Rocket.Chat: Communications Platform You Can Fully Trust',
@@ -68,6 +69,13 @@ export default async function Page() {
             />
           </div>
         </div>
+
+        <div className=" d-flex w-100 flex-column py-5 align-items-center">
+           <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
+             Community Questions at Stackoverflow
+           </h2>
+           <StackOverflow id="rocketchat" apiKey={process.env.StackOverflow_API_Key}/>
+         </div>
 
         <div className=" d-flex w-100 flex-column py-5 align-items-center">
           <h2 className={`mx-auto w-auto m-2 ${styles.title}`}>
