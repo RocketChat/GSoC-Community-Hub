@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nav_datas",
+  "info": {
+    "singularName": "nav-data",
+    "pluralName": "nav-datas",
+    "displayName": "navData",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brandLogo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logo.logo"
+    },
+    "variant1": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::variant1.variant1"
+    },
+    "variant2": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::variant2.variant2"
+    },
+    "variant3": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::variant3.variant3"
+    }
+  }
+}
