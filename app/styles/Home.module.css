@@ -32,3 +32,11 @@
 .form {
   width: 90%;
 }
+
+.container_hackernews {
+  max-width: 800px !important;
+}
+
+.tabList_hackernews {
+  margin-bottom: 1rem !important;
+}
