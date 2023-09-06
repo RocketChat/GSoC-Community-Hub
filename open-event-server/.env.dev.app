@@ -1,0 +1,3 @@
+
+EVENT_USER_PASSPHRASE="yourSecretGoesHere"
+NEXT_PUBLIC_EVENT_ADMIN_MAIL="acat0@rocket.chat"
