@@ -22,9 +22,8 @@ export default async function Page() {
       <div className="container container-fluid d-flex flex-column align-items-center gap-3 gap-md-5">
         <div className="col d-flex flex-column align-items-center gap-2 py-5 mt-2">
           <h1
-            className={`display-4 fw-bold text-center ${styles.hero_heading}`}
-          >
-            Welcome to our <span className={styles.redText}>community</span>
+            className={`display-4 fw-bold text-center ${styles.hero_heading}`}>
+              INFOTILES_DATA:<i>Google Summer of Code <span className={styles.redText}>Community Hub</span></i>
           </h1>
           <p
             className={`fw-regular col-10 col-md-8 text-center ${styles.hero_subheading}`}
