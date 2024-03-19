@@ -1,3 +1,4 @@
+import Navbar from "@repo/npm-payload";
 import path from "path";
 // import { postgresAdapter } from '@payloadcms/db-postgres'
 import {
@@ -30,7 +31,7 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  collections: [
+  collections: [Navbar,
     {
       slug: "pages",
       admin: {
@@ -43,7 +44,7 @@ export default buildConfig({
         },
         {
           name: "content",
-          type: "richText",
+          type: "text",
         },
       ],
     },
