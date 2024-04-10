@@ -1,10 +1,15 @@
-import Example from '@/components/Example'
 import Link from 'next/link'
 import React from 'react'
+import Navbar from '@repo/npm-payload';
 
 const Page = () => {
   return (
     <article className={['container'].filter(Boolean).join(' ')}>
+       {/* <Navbar data={"xyz"} 
+       
+       db_url={"xyz"}
+       user={"zzz"}
+       /> */}
       <h1>
         Payload 3.0 <span className="rainbow">ALPHA</span>!
       </h1>
