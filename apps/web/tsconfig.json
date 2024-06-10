@@ -4,7 +4,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
   "exclude": [
     "node_modules"
@@ -43,6 +43,9 @@
       "@rc4-githubdiscussions/*": [
         "./app/githubdiscussions/*"
       ],
+      "@payload-config": [
+        "./payload.config.ts"
+      ]
     },
     "strictNullChecks": true
   }

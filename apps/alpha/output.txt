@@ -1,3 +1,0 @@
-file name- app/(payload)/layout.tsx 
-line no.- 16
-content- app/(payload)/layout.tsx:16:    <Navbar data={testdata}/>

@@ -15,5 +15,5 @@
     "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "^1.7.4"
   },
-  "packageManager": "pnpm@7.22.0"
+  "packageManager": "pnpm@8.9.0"
 }
