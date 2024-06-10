@@ -1,0 +1,203 @@
+.navbarItem {
+  transition: all 0.5s;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.clickToChat_button {
+  position: absolute;
+  right: 100px;
+}
+
+.navbarItem::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #ff5050;
+  color: transparent;
+  width: 0%;
+  content: '.';
+  height: 2px;
+}
+
+.navbarItem:hover:after {
+  width: 100%;
+}
+
+.brand {
+  margin-right: 0px;
+}
+.my-dropdown-toggle:after {
+  display: none;
+}
+
+.chat {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* reseting the default styles */
+.default_toggler,
+.default_toggler:hover,
+.default_toggler:active,
+.default_toggler:focus {
+  outline: 0px solid white;
+  border-inline: 0px solid white;
+  border: 0px solid white;
+  border-color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 0;
+}
+
+.btn-close:focus {
+  box-shadow: 0 0 0 0rem rgba(255, 255, 255, 0);
+  border: 0px solid white;
+  outline: 0px solid white;
+}
+
+.navbar_toggler {
+  width: 33px;
+  height: 20px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  border: 0px;
+}
+
+.navbar-light .navbar_toggler {
+  border: 0px;
+}
+
+.toggler_icon {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: rgb(62, 62, 62);
+  border-radius: 1px;
+}
+
+.toggler_icon::before,
+.toggler_icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background-color: rgb(107, 107, 107);
+  transition: top 0.25s;
+}
+
+.toggler_icon::after {
+  top: 3px;
+}
+
+.toggler_icon::before {
+  top: 13px;
+}
+
+/* when navigation is clicked */
+.toggler_bar {
+  margin-top: 0px;
+  background-color: transparent;
+}
+
+/* state when the navbar is collapsed or collapsed==true */
+.toggler_bar_collapsed {
+  margin-top: -10px;
+}
+
+.toggler_bar::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.rotate {
+  transform: rotate(-180deg);
+  transition: all 0.1s;
+}
+.navbar_subitems {
+  position: absolute;
+  transform: translate(-5rem, 30px);
+  background-color: white;
+  padding: 0rem;
+  max-width: 36rem;
+  z-index: 10;
+}
+
+.navbar_subitems_items {
+  padding: 1rem 1rem 1rem 2rem;
+  width: 18rem;
+}
+
+.subItemLinks {
+  cursor: pointer;
+
+  text-decoration: none;
+  color: black;
+}
+
+.color {
+  color: red;
+}
+
+.arrow {
+  margin-left: 80%;
+}
+
+.arrowRotate {
+  margin-left: 80%;
+  transform: rotate(180deg);
+}
+.navbar_item_hover:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.toggler_bar::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.threedots:after {
+  content: '\2807';
+  font-size: 30px;
+  height: 100%;
+  padding-left: 7px;
+}
+
+.elipses:hover,
+.elipses {
+  color: #87898d;
+  text-decoration-line: none !important;
+}
+
+.dropdown_menu {
+  display: flex;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.dropdown_menu_item:hover,
+.dropdown_menu_item {
+  color: black;
+  text-decoration: none;
+}
+
+.nft_pfp {
+  width: 50px;
+  overflow: hidden;
+}
