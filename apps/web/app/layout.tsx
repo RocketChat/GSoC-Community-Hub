@@ -1,11 +1,11 @@
-import "../src/styles/globals.css";
-import "@palanikannan1437/rc4-ui/styles.css";
-import "@palanikannan1437/rc4community-timeline/styles.css";
-import "@palanikannan1437/rc4community-navbar/styles.css";
-import NavigationMenuDemo from "./navbar/nav";
-import { getSession } from "../lib/session";
+import "./globals.css";
+// import "@palanikannan1437/rc4-ui/styles.css";
+// import "@palanikannan1437/rc4community-timeline/styles.css";
+// import "@palanikannan1437/rc4community-navbar/styles.css";
+// import NavigationMenuDemo from "./navbar/nav";
+// import { getSession } from "../lib/session";
 
-import { fetchNavData } from "@palanikannan1437/rc4community-navbar-demo/core";
+// import { fetchNavData } from "@palanikannan1437/rc4community-navbar-demo/core";
 
 export default async function RootLayout({
   children,
@@ -30,11 +30,9 @@ export default async function RootLayout({
           navData={navData}
           navItems={navItems}
         /> */}
-        <div className="flex min-h-screen flex-col items-center justify-center py-2">
-          <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
+        {/* <div className="flex min-h-screen items-center justify-center py-2"> */}
             {children}
-          </main>
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );

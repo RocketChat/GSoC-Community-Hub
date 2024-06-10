@@ -4,7 +4,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
   "exclude": [
     "node_modules"
@@ -19,9 +19,33 @@
       }
     ],
     "paths": {
-      "@core/*": ["./src/core/*"],
-      "@ui/*": ["./src/ui/*"],
-      "@lib/*": ["./lib/*"],
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@/*": [
+        "./*"
+      ],
+      "@rc4-reddit/*": [
+        "./app/reddit/*"
+      ],
+      "@rc4-stackoverflow/*": [
+        "./app/stackoverflow/*"
+      ],
+      "@rc4-hackernews/*": [
+        "./app/hackernews/*"
+      ],
+      "@rc4-githubdiscussions/*": [
+        "./app/githubdiscussions/*"
+      ],
+      "@payload-config": [
+        "./payload.config.ts"
+      ]
     },
     "strictNullChecks": true
   }

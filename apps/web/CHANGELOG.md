@@ -1,5 +1,63 @@
 # web
 
+## 1.0.20
+
+### Patch Changes
+
+- Updated dependencies [783ebfe]
+  - @palanikannan1437/rc4-hackernews@0.0.5
+
+## 1.0.19
+
+### Patch Changes
+
+- Updated dependencies [dbc2d7a]
+  - @palanikannan1437/rc4-hackernews@0.0.4
+
+## 1.0.18
+
+### Patch Changes
+
+- Updated dependencies [f95a41a]
+  - @palanikannan1437/rc4-hackernews@0.0.3
+
+## 1.0.17
+
+### Patch Changes
+
+- Updated dependencies [e0951bd]
+  - @palanikannan1437/rc4community-hackernews@0.0.3
+
+## 1.0.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @palanikannan1437/rc4community-hackernews@0.0.2
+
+## 1.0.15
+
+### Patch Changes
+
+- Updated dependencies [09855a5]
+  - @palanikannan1437/rc4community-hackernews@0.0.1
+
+## 1.0.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @palanikannan1437/rc4community-stackoverflow@2.0.1
+
+## 1.0.13
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies [3136590]
+  - @palanikannan1437/rc4community-stackoverflow@2.0.0
+  - @palanikannan1437/rc4community-navbar@2.1.4
+
 ## 1.0.12
 
 ### Patch Changes
