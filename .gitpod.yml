@@ -8,22 +8,14 @@ tasks:
     command: |
       pnpm i
       pnpm run dev
-  - name: Start Strapi
-    before: |
-      cd apps/cms
-    init: |
-      pnpm i
-      pnpm run build
-    command: |
-      pnpm run develop
-  - name: Nav Package
-    before: |
-      cd packages/navbar
-    init: |
-      pnpm i 
-      pnpm run build
-    command: |
-      pnpm run dev
+  # - name: Nav Package
+  #   before: |
+  #     cd packages/navbar
+  #   init: |
+  #     pnpm i 
+  #     pnpm run build
+  #   command: |
+  #     pnpm run dev
 image:
   file: .gitpod.Dockerfile
 
