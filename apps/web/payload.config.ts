@@ -1,4 +1,3 @@
-import Navbar from "@repo/npm-payload";
 import path from 'path'
 // import { postgresAdapter } from '@payloadcms/db-postgres'
 // import { en } from 'payload/i18n/en'
@@ -15,7 +14,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  collections: [Navbar,
+  collections: [
     {
       slug: 'users',
       auth: true,
