@@ -7,6 +7,10 @@
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+   "workspaces": [
+        "apps/*",
+        "packages/*"
+  ],
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "eslint": "^7.32.0",
@@ -14,6 +18,5 @@
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "^1.7.4"
-  },
-  "packageManager": "pnpm@8.9.0"
+  }
 }
