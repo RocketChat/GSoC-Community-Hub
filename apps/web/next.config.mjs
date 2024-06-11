@@ -1,5 +1,17 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import { fileURLToPath } from 'url';
+import path from 'path';
+import dotenv from 'dotenv';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const ENV_FILES = ['.env', '.env.local', `.env.${process.env.NODE_ENV || 'development'}`];
+
+ENV_FILES.forEach((file) => {
+  dotenv.config({
+    path: path.join(__dirname, `../../${file}`),
+  });
+});
 
 const nextConfig = {
   reactStrictMode: true,
