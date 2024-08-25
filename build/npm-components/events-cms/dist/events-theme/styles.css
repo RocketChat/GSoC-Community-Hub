@@ -1,0 +1,43 @@
+.session-title {
+    font-weight: 600;
+  }
+  
+  .session-info {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .time-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #6B7280;
+  }
+  
+  .text-gray {
+    color: #6B7280;
+  }
+  
+  .youtube-info {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .youtube-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #DC2626;
+  }
+  
+  .youtube-link {
+    color: #2563EB;
+  }

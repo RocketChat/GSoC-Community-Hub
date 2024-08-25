@@ -1,0 +1,91 @@
+{
+  "name": "build",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv next dev",
+    "devturbo": "cross-env NODE_OPTIONS=--no-deprecation next dev --turbo",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "next build",
+    "compile": "tsc compiler/scripts/main.ts && node compiler/scripts/main.js",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "generate:types": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types"
+  },
+  "dependencies": {
+    "@lexical/headless": "0.16.0",
+    "@lexical/link": "0.16.0",
+    "@lexical/list": "0.16.0",
+    "@lexical/mark": "0.16.0",
+    "@lexical/markdown": "0.16.0",
+    "@lexical/react": "0.16.0",
+    "@lexical/rich-text": "0.16.0",
+    "@lexical/selection": "0.16.0",
+    "@lexical/utils": "0.16.0",
+    "@next-auth/fauna-adapter": "^1.0.4",
+    "@payloadcms/db-mongodb": "3.0.0-beta.80",
+    "@payloadcms/db-postgres": "3.0.0-beta.80",
+    "@payloadcms/next": "3.0.0-beta.80",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.80",
+    "@payloadcms/richtext-slate": "3.0.0-beta.80",
+    "@payloadcms/ui": "3.0.0-beta.80",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
+    "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-navigation-menu": "^1.1.1",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@widgetbot/react-embed": "^1.7.0",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
+    "class-variance-authority": "^0.4.0",
+    "clsx": "^1.2.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "encoding": "^0.1.13",
+    "esm": "^3.2.25",
+    "faunadb": "^4.8.0",
+    "graphql": "^16.8.2",
+    "lexical": "0.16.0",
+    "lucide-react": "^0.115.0",
+    "masonic": "^3.7.0",
+    "navbar-cms": "^1.0.3",
+    "next": "15.0.0-canary.104",
+    "next-auth": "^4.24.7",
+    "next-themes": "^0.2.1",
+    "payload": "3.0.0-beta.80",
+    "qs": "^6.11.0",
+    "react": "19.0.0-rc-06d0b89e-20240801",
+    "react-dom": "19.0.0-rc-06d0b89e-20240801",
+    "react-responsive-masonry": "^2.1.7",
+    "react-tweet": "^3.1.1",
+    "sharp": "0.32.6",
+    "tailwind-merge": "^1.9.1",
+    "tailwindcss-animate": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "npm:types-react@19.0.0-rc.0",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
+    "ts-morph": "^22.0.0",
+    "ts-node": "8.6.2",
+    "tsup": "^6.5.0",
+    "typescript": "^5.4.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.0",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
+    }
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.0",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  }
+}

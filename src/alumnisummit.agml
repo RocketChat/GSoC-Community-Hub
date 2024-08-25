@@ -1,0 +1,13 @@
+i navbar-cms
+i events-cms
+
+use NavigationMenuDemo from navbar-cms
+use Events from events-cms;
+
+get navItems
+get session
+
+<main>
+<NavigationMenuDemo data={navItems} />
+<Events data={session}/>
+</main>

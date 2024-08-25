@@ -1,0 +1,13 @@
+i navbar-cms
+i gsoc-projects
+
+use NavigationMenuDemo from navbar-cms
+use GsocProjects from gsoc-projects;
+
+get navItems
+get projects
+
+<main>
+<NavigationMenuDemo data={navItems} />
+<GsocProjects data={projects} user={user}/>
+</main>   

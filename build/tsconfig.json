@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.js" // Exclude JavaScript files
+  ],
+  "compilerOptions": {
+    "baseUrl": "../",
+    "outDir": "./dist", // Specify output directory
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false, // Set to false if not needed
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "node16",
+    "moduleResolution": "node16",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+    "strictNullChecks": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "name": "next"
+    }
+  ],
+  "paths": {
+    "@core/*": [
+      "./src/core/*"
+    ],
+    "@ui/*": [
+      "./src/ui/*"
+    ],
+    "@lib/*": [
+      "./lib/*"
+    ],
+    "@/*": [
+      "./*"
+    ],
+    "@payload-config": [
+      "./payload.config.ts"
+    ],
+    "@/src/*": ["../src/*"]
+  }
+}

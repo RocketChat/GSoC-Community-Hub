@@ -1,0 +1,55 @@
+const projects = [{
+    title: "💡Extended LLM Prompt Editor/Explorer",
+    projectDescription: "A prompt editor is the quintessential development tool for any AI/ML prompt engineer. With ever-increasing number of Rocket.Chat users experimenting and developing with open source LLMs, it is important to have a great prompt editor at their disposal. This project includes the creation of a fully featured prompt editor as a Rocket.Chat app. This editor should enable free conversation, by any designated/configured Rocket.Chat user, to chat with any open source LLMs (Mistral, Llama 2, Phi, and so on), and the ability to save (and manage - delete etc) all conversation history. It should also enable a Rocket.Chat users to  the prompt(s) to external applications. Initial implementation should be for the RC Web App (and Electron).",
+    githubLink:"project1",
+    channelLink:"project1",    
+    contributor: "project1",
+    skills:"Rocket.Chat Apps development. LLM prompt editor dev experience",
+    mentor:"Shubham Bhardwaj, Gabriel Engel", 
+    year:"2024"
+  },
+  {
+    title: "💡Graphical Guided RC Code Tours",
+    projectDescription: "Most Rocket.Chat developers uses VSCode when studying our massive production code base, and when writing new code. VSCode is the best environment for conducting interactive tutorial and code walkthroughs. The CodeTour extension available in VSCode can be used to create such walkthrough and tutorials. This project involves the development of a set of guided tutorials using CodeTour that will help new developers to understand how to perform multiple actions. In 2024, we want to extend these tours to include graphical diagrams and flow charts.",
+    githubLink:"project2",
+    channelLink:"project2",    
+    contributor: "project2",
+    skills:"NodeJS, MongoDB",
+    mentor:"Aditya Singh, Kevin Aleman", 
+    year: "2024"
+  },
+  {
+    title: "💡Whiteboard Integration",
+    projectDescription: "White boards and visual drawing/concepts sharing has become a stable of team collaboration. Rocket.Chat currently does not offer any whiteboarding feature. Markboard is an open source incumbent whiteboard created upon the same technology stack as Rocket.Chat and built by a team led by a Rocket.Chat GSoC alumni. This project will create a Rocket.Chat App that integrates Markboard into Rocket.Chat and extends its team collaboration features through Rocket.Chat.",
+    githubLink:"project1",
+    channelLink:"project1",    
+    contributor: "project1",
+    skills:"Advanced Typescript. MeteorJS. Rocket.Chat Apps development",
+    mentor:"Shiqi Mei, Douglas Gubert", 
+    year:"2023"
+  },
+  {
+    title: "💡Guided RC Code Walkthrough and Tutorial",
+    projectDescription: `Most Rocket.Chat developers use VSCode when studying our massive production code base, and when writing new code. 
+  VSCode is the best environment for conducting interactive tutorials and code walkthroughs. The CodeTour extension available in VSCode can be used to create such walkthroughs and tutorials. 
+  This project involves the development of a set of guided tutorials using CodeTour that will help new developers to understand how to perform multiple actions. 
+  Paths to be documented will go from these areas:
+  - How a message is sent
+  - How to create an endpoint
+  - How to add a new service
+  - How to create a DB model
+  - How to use DB models
+  - How services interact between them
+  - How to build a lib
+  - How to navigate monorepo (where is everything, how's imported, etc)
+  We welcome any additional ideas you may have.`,
+    githubLink:"project2",
+    channelLink:"project2",    
+    contributor: "project2",
+    skills:"NodeJS, MongoDB",
+    mentor:"Kevin Aleman", 
+    year: "2023"
+  },
+]
+
+export default projects;

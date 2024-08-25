@@ -1,0 +1,95 @@
+{
+  "name": "navbar-cms",
+  "version": "1.0.2",
+  "repository": "",
+  "author": "",
+  "scripts": {
+    "build": "pnpm build:postcss && pnpm build:swc && pnpm types",
+    "build:swc": "swc src -d dist --copy-files",
+    "build:types": "tsc -d --declarationDir dist --declarationMap --emitDeclarationOnly",
+    "build:postcss": "postcss src/index.css -o src/styles.css --minify",
+    "dev": "pnpm build:swc -w && pnpm dev:postcss",
+    "dev:postcss": "postcss src/index.css -o src/styles.css --watch",
+    "types": "tsc --emitDeclarationOnly",
+    "lint": "TIMING=1 eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
+    "clean": "rm -rf dist && rm -rf .turbo"
+  },
+  "exports": {
+    ".": {
+      "react-server": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist/**/*.{js,d.ts,css}"
+  ],
+  "typesVersions": {
+    "*": {
+      "index": [
+        "src/index"
+      ],
+      "api": [
+        "src/api/index"
+      ],
+      "*": []
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "typesVersions": {
+      "*": {
+        "index": [
+          "dist/index.d.ts"
+        ],
+        "api": [
+          "dist/api/index.d.ts"
+        ],
+        "*": []
+      }
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.9.1",
+    "tailwindcss": "^3.2.4",
+    "tailwindcss-animate": "^1.0.5"
+  },
+  "dependencies": {
+    "@lexical/headless": "0.16.0",
+    "@lexical/link": "0.16.0",
+    "bootstrap":"5.3.3",
+    "react-bootstrap": "^2.10.2",
+    "@swc/helpers": "^0.5.1",
+    "class-variance-authority": "^0.4.0",
+    "clsx": "^1.2.1",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.30.0",
+    "flowbite-react": "^0.10.0",
+    "graphql": "^16.8.1",
+    "lexical": "0.16.0",
+    "lucide-react": "^0.263.1",
+    "react-vertical-timeline-component": "^3.6.0",
+    "rsuite": "^5.64.1",
+    "swr": "^2.2.0",
+    "qs": "^6.11.0",
+    "tailwindcss-animate": "^1.0.5"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.66",
+    "@types/node": "20.3.1",
+    "autoprefixer": "^10.4.14",
+    "chokidar": "^3.5.3",
+    "eslint": "^8.43.0",
+    "eslint-config-next": "^13.4.7",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "@types/react": "18.2.25",
+    "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.3.3",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.1.3"
+  }
+}
