@@ -9,7 +9,7 @@ export const navItems  = [
       "dropdown": [
         {
           "type": "link",
-          "link": "/demo-day",
+          "link": "/demoDay",
           "label": "GSoC Demo Day"
         },
         {
