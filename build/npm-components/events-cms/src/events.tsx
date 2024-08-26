@@ -27,25 +27,28 @@ interface EventsProps {
   user: User[];
 }
 
-const EventsContent = async ({ cms, data, user }: EventsProps) => {
+const EventsContent = async ({ cms, data, user, speakers }: EventsProps) => {
   console.log(user);
   let events = data;
   if (cms) {
     const paginatedEvents = await getEvents()
     events = paginatedEvents.docs
   }
-//   console.log(events);
+  console.log("-----------",events);
 
   return <EventsComponent  overview={"overviewData"}
-  speakers={"speakersData"}
-  sessions={events}/>;
+  speakers={speakers}
+  sessions={events}
+  />;
+  // return;
 };
 
-export const Events = ({ cms, data, user }: EventsProps) => (
+export const Events = ({ cms, data, user,speakers }: EventsProps) => (
   <Suspense>
     {/* @ts-ignore: Async components are valid in the app directory */}
     <EventsContent
       cms={cms}
+      speakers={speakers}
       data={data}
       user={user}
     />
