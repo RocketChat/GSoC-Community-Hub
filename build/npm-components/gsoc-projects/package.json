@@ -1,6 +1,6 @@
 {
   "name": "gsoc-projects",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "",
   "author": "",
   "scripts": {
@@ -108,9 +108,7 @@
     "eslint-config-next": "^13.4.7",
     "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",
-    "tailwind-config": "workspace:*",
     "tailwindcss": "^3.3.3",
-    "tsconfig": "workspace:*",
     "typescript": "^5.1.3"
   }
 }

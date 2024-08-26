@@ -514,7 +514,7 @@ function SocialIcon2({ iconType, link, ...props }) {
     };
     if (iconType !== 'passbook' && !link) return null;
     return /*#__PURE__*/ _jsx("a", {
-        href: link,
+        href: link || "",
         target: "_blank",
         rel: "noopener noreferrer",
         children: /*#__PURE__*/ _jsx("svg", {

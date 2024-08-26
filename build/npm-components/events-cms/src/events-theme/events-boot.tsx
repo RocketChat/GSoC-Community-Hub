@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import React, { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import { Col, Container, Image, Row, Stack } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
@@ -40,6 +40,9 @@ interface Speaker {
   short_biography: string;
   long_biography: string;
   position: string;
+  linkedin?: string;
+  twitter?: string;
+  github?: string;
 }
 
 interface EventsComponentProps {
@@ -262,12 +265,12 @@ function ClockIcon(props: IconProps) {
 }
 
 
-interface SocialIconProps extends React.SVGProps<SVGSVGElement> {
+interface SocialIconProps2 extends React.SVGProps<SVGSVGElement> {
   iconType: 'linkedin' | 'twitter' | 'github' | 'facebook' | 'email' | 'passbook';
   link?: string | null;
 }
 
-function SocialIcon2({ iconType, link, ...props }: SocialIconProps) {
+function SocialIcon2({ iconType, link, ...props }: SocialIconProps2) {
   const socialIcons = {
     linkedin: (
       <>
@@ -316,7 +319,7 @@ function SocialIcon2({ iconType, link, ...props }: SocialIconProps) {
   if (iconType !== 'passbook' && !link) return null;
 
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <a href={link || ""} target="_blank" rel="noopener noreferrer">
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"

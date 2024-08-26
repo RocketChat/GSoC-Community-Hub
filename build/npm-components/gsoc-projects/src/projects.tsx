@@ -14,8 +14,8 @@ interface Project {
   year: string;
 }
 
-const GsocProjectsContent = async ({ data, user } : { data: Project[], user: any }) => {
-  console.log(user);
+const GsocProjectsContent = async ({ data } : { data: Project[] }) => {
+  // console.log(user);
   let events = data;
  // add check to get the data from the cms and verify if its same, if not then update it
  
@@ -28,12 +28,11 @@ const GsocProjectsContent = async ({ data, user } : { data: Project[], user: any
   return <ProjectsComponent data={data}/>;
 };
 
-export const GsocProjects = ({ data, user } : { data: Project[], user: any }) => (
+export const GsocProjects = ({ data } : { data: Project[]}) => (
   <Suspense>
     {/* @ts-ignore: Async components are valid in the app directory */}
     <GsocProjectsContent
       data={data}
-      user={user}
     />
   </Suspense>
 );

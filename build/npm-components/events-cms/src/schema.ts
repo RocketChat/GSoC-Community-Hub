@@ -1,6 +1,6 @@
-import { CollectionConfig } from 'payload/types';
+import type { GlobalConfig } from 'payload'
 
-export const EventsSchema : CollectionConfig = ({
+export const EventsSchema: GlobalConfig  = ({
         slug: 'events',
         fields:[
           {

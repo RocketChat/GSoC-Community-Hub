@@ -1,15 +1,18 @@
-import { getPayloadHMR } from '@payloadcms/next/utilities';
-import configPromise from '@payload-config';
+// import { getPayloadHMR } from '@payloadcms/next/utilities';
+// import configPromise from '@payload-config';
 
 export const getEvents = async () => {
-    const payload = await getPayloadHMR({ config: configPromise });
+    // const payload = await getPayloadHMR({ config: configPromise });
 
-    const data = await payload.find({
-      collection: 'events',
-    });
+    // const data = await payload.find({
+    //   collection: 'events',
+    // });
 
-    return data;
+    // return data;
+    return;
 };
+
+
 
 // check to not populate duplicate data
 // export function timeAgo(utcTime: number): string {

@@ -1,0 +1,15 @@
+i navbar-cms
+i events-cms
+
+use NavigationMenuDemo from navbar-cms
+use Events from events-cms;
+
+get navItems
+get speakers
+get events
+
+<main>
+<NavigationMenuDemo data={navItems} />
+<Events data={events} speakers={speakers} />
+
+</main>
