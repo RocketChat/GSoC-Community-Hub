@@ -20,6 +20,16 @@ const ProjectsComponent = ({ data })=>{
         children: [
             /*#__PURE__*/ _jsx("div", {
                 style: {
+                    marginTop: "2rem",
+                    marginBottom: "1rem",
+                    font: "2rem",
+                    fontWeight: '600',
+                    margin: 'auto'
+                },
+                children: "GSoC Project Ideas"
+            }),
+            /*#__PURE__*/ _jsx("div", {
+                style: {
                     display: 'flex',
                     justifyContent: 'center',
                     marginBottom: '2rem'

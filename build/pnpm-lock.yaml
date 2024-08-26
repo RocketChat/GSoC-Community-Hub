@@ -105,8 +105,8 @@ dependencies:
     specifier: ^16.8.2
     version: 16.8.2
   gsoc-projects:
-    specifier: ^0.0.2
-    version: 0.0.2(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18)
+    specifier: ^0.0.4
+    version: 0.0.4(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18)
   lexical:
     specifier: 0.16.0
     version: 0.16.0
@@ -6913,8 +6913,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
-  /gsoc-projects@0.0.2(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18):
-    resolution: {integrity: sha512-z5suSJE1In/uaL0FJ2tfXMz+ViXJm4k/1ezNlim0TBh+CiGbfuAK9s5LvBtJADWw+//FI2h4O24VXY+wLgbuIQ==}
+  /gsoc-projects@0.0.4(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18):
+    resolution: {integrity: sha512-5sMl2+Ng2GsNOackDDuCCu209NL8AKnGs6eiILQokwSnanxkWHM/QlFlj9p+ZONhmRtB6dq6q9ASM4RfQiPDzg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
