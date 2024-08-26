@@ -6,7 +6,6 @@ function isJsxOpeningLike(node: ts.Node): node is ts.JsxOpeningElement {
 
 export function findFirstJsxOpeningLikeElementWithName(node: ts.SourceFile, tagNames: string[]): ts.JsxOpeningElement[] {
     const elements: ts.JsxOpeningElement[] = [];
-    console.log("@@@@@@@@",tagNames)
     function find(node: ts.Node | undefined): void {
         if (!node) {
             return;

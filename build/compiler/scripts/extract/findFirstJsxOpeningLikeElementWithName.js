@@ -7,7 +7,6 @@ function isJsxOpeningLike(node) {
 }
 function findFirstJsxOpeningLikeElementWithName(node, tagNames) {
     var elements = [];
-    console.log("@@@@@@@@", tagNames);
     function find(node) {
         if (!node) {
             return;
