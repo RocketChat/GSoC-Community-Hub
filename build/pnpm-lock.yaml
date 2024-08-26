@@ -95,6 +95,9 @@ dependencies:
   esm:
     specifier: ^3.2.25
     version: 3.2.25
+  events-cms:
+    specifier: ^0.0.5
+    version: 0.0.5(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18)
   faunadb:
     specifier: ^4.8.0
     version: 4.8.0(encoding@0.1.13)
@@ -6421,6 +6424,90 @@ packages:
   /event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
+    dev: false
+
+  /events-cms@0.0.5(@aws-sdk/client-sso-oidc@3.635.0)(@faceless-ui/scroll-info@2.0.0-beta.0)(@swc/core@1.7.14)(@swc/types@0.1.12)(encoding@0.1.13)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwind-merge@1.9.1)(tailwindcss-animate@1.0.5)(tailwindcss@3.2.4)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)(typescript@5.4.5)(yjs@13.6.18):
+    resolution: {integrity: sha512-lYRTTUOhYk7ZoouXZVL8iZcgxS+rFMbNnNJ5IPTJQk2SQKBwO45rFjeoEh5FePgtT6LUqJ9Rk788j+NXat9/LA==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      tailwind-merge: ^1.9.1
+      tailwindcss: ^3.2.4
+      tailwindcss-animate: ^1.0.5
+    dependencies:
+      '@lexical/headless': 0.16.0
+      '@lexical/link': 0.16.0
+      '@lexical/list': 0.16.0
+      '@lexical/mark': 0.16.0
+      '@lexical/markdown': 0.16.0
+      '@lexical/react': 0.16.0(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(yjs@13.6.18)
+      '@lexical/rich-text': 0.16.0
+      '@lexical/selection': 0.16.0
+      '@lexical/utils': 0.16.0
+      '@payloadcms/db-mongodb': 3.0.0-beta.55(@aws-sdk/client-sso-oidc@3.635.0)(payload@3.0.0-beta.55)
+      '@payloadcms/db-postgres': 3.0.0-beta.55(encoding@0.1.13)(payload@3.0.0-beta.55)(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)
+      '@payloadcms/next': 3.0.0-beta.55(graphql@16.8.2)(monaco-editor@0.50.0)(next@15.0.0-canary.104)(payload@3.0.0-beta.55)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.4.5)
+      '@payloadcms/richtext-lexical': 3.0.0-beta.55(@faceless-ui/scroll-info@2.0.0-beta.0)(@lexical/headless@0.16.0)(@lexical/link@0.16.0)(@lexical/list@0.16.0)(@lexical/mark@0.16.0)(@lexical/markdown@0.16.0)(@lexical/react@0.16.0)(@lexical/rich-text@0.16.0)(@lexical/selection@0.16.0)(@lexical/utils@0.16.0)(@payloadcms/next@3.0.0-beta.55)(@payloadcms/ui@3.0.0-beta.55)(lexical@0.16.0)(payload@3.0.0-beta.55)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)
+      '@payloadcms/richtext-slate': 3.0.0-beta.55(@payloadcms/ui@3.0.0-beta.55)(payload@3.0.0-beta.55)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)
+      '@payloadcms/ui': 3.0.0-beta.55(monaco-editor@0.50.0)(next@15.0.0-canary.104)(payload@3.0.0-beta.55)(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)
+      '@radix-ui/react-slot': 1.1.0(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)
+      '@radix-ui/react-tabs': 1.0.4(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(types-react-dom@19.0.0-rc.0)(types-react@19.0.0-rc.0)
+      '@swc/helpers': 0.5.12
+      class-variance-authority: 0.4.0(typescript@5.4.5)
+      clsx: 1.2.1
+      cross-env: 7.0.3
+      date-fns: 2.30.0
+      flowbite-react: 0.10.1(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(tailwindcss@3.2.4)
+      graphql: 16.8.2
+      lexical: 0.16.0
+      lucide-react: 0.263.1(react@19.0.0-rc-06d0b89e-20240801)
+      payload: 3.0.0-beta.55(@swc/core@1.7.14)(@swc/types@0.1.12)(graphql@16.8.2)(typescript@5.4.5)
+      react: 19.0.0-rc-06d0b89e-20240801
+      react-bootstrap: 2.10.4(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)
+      react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
+      react-vertical-timeline-component: 3.6.0(react@19.0.0-rc-06d0b89e-20240801)
+      rsuite: 5.69.0(react-dom@19.0.0-rc-06d0b89e-20240801)(react@19.0.0-rc-06d0b89e-20240801)
+      swr: 2.2.5(react@19.0.0-rc-06d0b89e-20240801)
+      tailwind-merge: 1.9.1
+      tailwindcss: 3.2.4(postcss@8.4.20)(ts-node@8.6.2)
+      tailwindcss-animate: 1.0.5(tailwindcss@3.2.4)
+    transitivePeerDependencies:
+      - '@aws-sdk/client-rds-data'
+      - '@aws-sdk/client-sso-oidc'
+      - '@cloudflare/workers-types'
+      - '@faceless-ui/modal'
+      - '@faceless-ui/scroll-info'
+      - '@neondatabase/serverless'
+      - '@opentelemetry/api'
+      - '@payloadcms/translations'
+      - '@planetscale/database'
+      - '@swc/core'
+      - '@swc/types'
+      - '@types/better-sqlite3'
+      - '@types/pg'
+      - '@types/react'
+      - '@types/react-dom'
+      - '@types/sql.js'
+      - '@vercel/postgres'
+      - aws-crt
+      - better-sqlite3
+      - bufferutil
+      - bun-types
+      - encoding
+      - expo-sqlite
+      - knex
+      - kysely
+      - monaco-editor
+      - mysql2
+      - next
+      - pg-native
+      - postgres
+      - sql.js
+      - sqlite3
+      - supports-color
+      - typescript
+      - utf-8-validate
+      - yjs
     dev: false
 
   /events@3.3.0:
