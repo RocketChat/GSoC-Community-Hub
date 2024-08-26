@@ -5,7 +5,8 @@ use NavigationMenuDemo from navbar-cms
 use Events from events-cms;
 
 get navItems
-get session
+get speakers
+get events
 
 <main>
 <NavigationMenuDemo data={navItems} />
