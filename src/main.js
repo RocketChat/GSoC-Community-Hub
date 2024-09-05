@@ -52,5 +52,10 @@ export const navItems  = [
       "link": "/projects",
       "label": "projects"
     },
+    {
+      "type":"link",
+      "link":"/register",
+      "label":"Register"
+    }
   ];
   
