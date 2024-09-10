@@ -14,6 +14,7 @@ ENV_FILES.forEach((file) => {
 });
 
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   // output: 'export',
   typescript: {

@@ -38,6 +38,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@widgetbot/react-embed": "^1.7.0",
     "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
+    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
@@ -45,6 +46,8 @@
     "encoding": "^0.1.13",
     "esm": "^3.2.25",
     "events-cms": "^0.0.10",
+    "express": "^4.19.2",
+    "fauna": "^2.2.0",
     "faunadb": "^4.8.0",
     "graphql": "^16.8.2",
     "gsoc-projects": "^0.0.4",
@@ -58,6 +61,7 @@
     "payload": "3.0.0-beta.80",
     "qs": "^6.11.0",
     "react": "19.0.0-rc-06d0b89e-20240801",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "19.0.0-rc-06d0b89e-20240801",
     "react-responsive-masonry": "^2.1.7",
     "react-tweet": "^3.1.1",
@@ -89,5 +93,6 @@
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
-  }
+  },
+  "packageManager": "pnpm@9.5.0+sha1.8c155dc114e1689d18937974f6571e0ceee66f1d"
 }
