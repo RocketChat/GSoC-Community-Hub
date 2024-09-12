@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationMenuDemo } from 'navbar-cms';
-import { navItems } from 'src/main';
+import { navItems } from 'src/test';
 
 const Card = ({ children, className }) => (
   <div className={`bg-white shadow-md rounded-lg overflow-hidden ${className}`}>

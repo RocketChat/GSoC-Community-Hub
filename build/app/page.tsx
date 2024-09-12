@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { NavigationMenuDemo } from 'navbar-cms';
-import { navItems } from 'src/main';
+import { navItems } from 'src/test';
 import { getCookie } from 'cookies-next';
 
 export default function Main() {

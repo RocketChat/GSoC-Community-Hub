@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationMenuDemo } from 'navbar-cms'
-import { Events } from '../../npm-components/events-cms/dist'
-import { navItems } from 'src/main';
+import { Events } from 'events-cms'
+import { navItems } from 'src/demoDay';
 import { speakers } from 'src/demoDay';
 import { events } from 'src/demoDay';
 

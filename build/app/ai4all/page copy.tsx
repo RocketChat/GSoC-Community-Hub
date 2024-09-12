@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationMenuDemo } from 'navbar-cms';
-import { navItems } from 'src/main';
+import { navItems } from 'src/test';
 // import { Button } from '@/components/ui/button';
 
 export default function Main() {
