@@ -1,14 +1,10 @@
 import path from 'path';
-// import { postgresAdapter } from '@payloadcms/db-postgres'
-// import { en } from 'payload/i18n/en'
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
-//import { slateEditor } from '@payloadcms/richtext-slate'
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
-import { EventsSchema } from '@anjy7/events-cms';
-import { NavbarSchema } from '@anjy7/navbar-cms'
+import { EventsSchema } from 'events-cms';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -16,9 +12,8 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  globals: [NavbarSchema],
+  globals: [EventsSchema],
   collections: [
-    EventsSchema,
     {
       slug: 'users',
       auth: true,

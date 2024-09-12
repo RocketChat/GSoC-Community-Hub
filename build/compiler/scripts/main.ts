@@ -40,9 +40,7 @@ function processFile(filePath: string): void {
   const componentCode = generateReactComponent(transformedImports,transformedDataImports, componentName, jsxElements);
   
   //installing npm packages used
-  installPackages(buildPathAppDir, packageNames, installedPackages);
-
-  //getAllExports('navbar-cms');
+  // installPackages(buildPathAppDir, packageNames, installedPackages);///////
 
   // Creating files
   let outputDirPath = buildPathAppDir;

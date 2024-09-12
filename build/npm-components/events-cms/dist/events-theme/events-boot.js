@@ -10,7 +10,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const EventsComponent = ({ overview, speakers, sessions })=>{
-    const [activeFilter, setActiveFilter] = useState('speakers');
+    const [activeFilter, setActiveFilter] = useState('overview');
     const [expandedSpeaker, setExpandedSpeaker] = useState(null);
     const toggleSpeakerBio = (speakerName)=>{
         setExpandedSpeaker(expandedSpeaker === speakerName ? null : speakerName);
@@ -20,24 +20,23 @@ const EventsComponent = ({ overview, speakers, sessions })=>{
             case 'overview':
                 return /*#__PURE__*/ _jsxs("div", {
                     style: {
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
                         justifyContent: "center",
-                        alignContent: "center"
+                        textAlign: "center",
+                        margin: "0 auto",
+                        maxWidth: "800px",
+                        padding: "20px"
                     },
                     children: [
-                        /*#__PURE__*/ _jsxs("div", {
-                            style: {
-                                textAlign: "center"
-                            },
-                            children: [
-                                /*#__PURE__*/ _jsx("h2", {
-                                    children: "About the Event"
-                                }),
-                                /*#__PURE__*/ _jsx("p", {
-                                    children: /*#__PURE__*/ _jsx("strong", {
-                                        children: "TLDR; Rocket.Chat's GSoC 2024: Pioneering the Future with GenAI Innovation"
-                                    })
-                                })
-                            ]
+                        /*#__PURE__*/ _jsx("h2", {
+                            children: "About the Event"
+                        }),
+                        /*#__PURE__*/ _jsx("p", {
+                            children: /*#__PURE__*/ _jsx("strong", {
+                                children: "TLDR; Rocket.Chat's GSoC 2024: Pioneering the Future with GenAI Innovation"
+                            })
                         }),
                         /*#__PURE__*/ _jsx("p", {
                             children: "Ready to experience the next wave of chat evolution? Join us for Rocket.Chat's Google Summer of Code Project Demo Day 2024, where our brilliant contributors will unveil groundbreaking GenAI projects and other cutting-edge developments they've crafted over the past few months. 🚀"
@@ -45,26 +44,24 @@ const EventsComponent = ({ overview, speakers, sessions })=>{
                         /*#__PURE__*/ _jsx("p", {
                             children: "Discover how Rocket.Chat is pushing the boundaries of what's possible with Generative AI, creating smarter, more intuitive chat experiences that redefine productivity and collaboration. You'll also see how we're empowering our community with open-source tools that fuel innovation and creativity. 💡"
                         }),
-                        /*#__PURE__*/ _jsxs("div", {
+                        /*#__PURE__*/ _jsx("p", {
+                            children: /*#__PURE__*/ _jsx("strong", {
+                                children: "Event highlights include:"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxs("ul", {
                             style: {
-                                textAlign: "center"
+                                textAlign: "left"
                             },
                             children: [
-                                /*#__PURE__*/ _jsx("p", {
-                                    children: "Event highlights include:"
+                                /*#__PURE__*/ _jsx("li", {
+                                    children: "- Inspiring insights from Rocket.Chat's visionary leaders"
                                 }),
-                                /*#__PURE__*/ _jsxs("ul", {
-                                    children: [
-                                        /*#__PURE__*/ _jsx("li", {
-                                            children: "Inspiring insights from Rocket.Chat's visionary leaders"
-                                        }),
-                                        /*#__PURE__*/ _jsx("li", {
-                                            children: "Live demos of revolutionary GenAI features and integrations"
-                                        }),
-                                        /*#__PURE__*/ _jsx("li", {
-                                            children: "Engage with our vibrant community members & Rocketeers"
-                                        })
-                                    ]
+                                /*#__PURE__*/ _jsx("li", {
+                                    children: "- Live demos of revolutionary GenAI features and integrations"
+                                }),
+                                /*#__PURE__*/ _jsx("li", {
+                                    children: "- Engage with our vibrant community members & Rocketeers"
                                 })
                             ]
                         }),
@@ -353,7 +350,7 @@ const EventsComponent = ({ overview, speakers, sessions })=>{
         children: [
             /*#__PURE__*/ _jsx("div", {
                 style: {
-                    background: `url(${"https://github.com/RocketChat/RC4Conferences/blob/main/assets/alumni_summit_2024.png?raw=true"})`,
+                    background: `url(${"https://github.com/anjy7/RC-CommunityHub/blob/main/build/gsoc_demo_day_2024(1).png"})`,
                     backgroundRepeat: 'round',
                     borderRadius: '15px',
                     margin: 'auto',
@@ -367,7 +364,7 @@ const EventsComponent = ({ overview, speakers, sessions })=>{
                         borderRadius: 'inherit'
                     },
                     children: /*#__PURE__*/ _jsx(Image, {
-                        src: "https://github.com/RocketChat/RC4Conferences/blob/main/assets/alumni_summit_2024.png?raw=true",
+                        src: "https://github.com/anjy7/RC-CommunityHub/blob/main/build/gsoc_demo_day_2024(1).png?raw=true",
                         style: {
                             scale: '70%'
                         },

@@ -7,6 +7,7 @@ import { NavigationMenuDemo } from 'navbar-cms';
 import { navItems } from 'src/projects';
 import LoginForm from '../../components/forms/login-form';
 import { query as q } from 'faunadb'; // Import the new component
+import { setCookie } from 'cookies-next';
 
 export default function Login() {
   const [error, setError] = useState<string | null>(null);
@@ -18,6 +19,7 @@ export default function Login() {
     };
     data: {
       email: string;
+      username: string;
       password: string;
     };
   };
@@ -37,7 +39,8 @@ export default function Login() {
       if (user) {
         if (user.data.password === password) {
           console.log('Login successful');
-          router.push('/');
+          setCookie('username', user.data.username ); // 1 week
+          // router.push('/');
         } else {
           setError('Invalid password');
         }

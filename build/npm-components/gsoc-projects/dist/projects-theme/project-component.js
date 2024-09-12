@@ -20,13 +20,21 @@ const ProjectsComponent = ({ data })=>{
         children: [
             /*#__PURE__*/ _jsx("div", {
                 style: {
+                    display: 'flex',
+                    justifyContent: 'center',
                     marginTop: "2rem",
-                    marginBottom: "1rem",
-                    font: "2rem",
-                    fontWeight: '600',
-                    margin: 'auto'
+                    marginBottom: "2rem"
                 },
-                children: "GSoC Project Ideas"
+                children: /*#__PURE__*/ _jsx("div", {
+                    style: {
+                        fontSize: "2rem",
+                        fontWeight: '700',
+                        color: '#333',
+                        textAlign: 'center',
+                        maxWidth: '90%'
+                    },
+                    children: "Google Summer of Code Project Ideas"
+                })
             }),
             /*#__PURE__*/ _jsx("div", {
                 style: {

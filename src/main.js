@@ -25,7 +25,7 @@ export const navItems  = [
       "dropdown": [
         {
           "type": "link",
-          "link": "/events",
+          "link": "/ai4all",
           "label": "Open Source AI Club"
         },
       ],
@@ -36,7 +36,7 @@ export const navItems  = [
       "dropdown": [
         {
           "type": "link",
-          "link": "/events",
+          "link": "/appsworkshop",
           "label": "Rocket.Chat Apps Workshop"
         },
         {
@@ -55,6 +55,11 @@ export const navItems  = [
     {
       "type":"link",
       "link":"/register",
+      "label":"sign out"
+    },
+    {
+      "type":"modal",
+      "link":"",
       "label":"Register"
     }
   ];

@@ -8,6 +8,7 @@ import { navItems } from 'src/projects';
 import { useRouter } from 'next/navigation';
 import { Container, Card } from 'react-bootstrap';
 import RegistrationForm from '../../components/forms/registration-form';
+import { setCookie } from 'cookies-next';
 
 const registerUser = async (username: string, password: string, email: string) => {
   try {
@@ -23,6 +24,8 @@ const registerUser = async (username: string, password: string, email: string) =
     const user = { username, email, password };
 
     const response = await faunaClient.query(q.Create(q.Collection('User'), { data: user }));
+    setCookie('username', username ); 
+    setCookie('email', email ); 
 
     return response;
   } catch (error) {

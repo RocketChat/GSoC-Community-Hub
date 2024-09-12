@@ -52,7 +52,7 @@ interface EventsComponentProps {
 }
 
 const EventsComponent: React.FC<EventsComponentProps> = ({ overview, speakers, sessions }) => {
-  const [activeFilter, setActiveFilter] = useState< 'overview'| 'speakers' | 'sessions'>('speakers');
+  const [activeFilter, setActiveFilter] = useState< 'overview'| 'speakers' | 'sessions'>('overview');
 
   const [expandedSpeaker, setExpandedSpeaker] = useState<string | null>(null);
 
@@ -65,29 +65,34 @@ const EventsComponent: React.FC<EventsComponentProps> = ({ overview, speakers, s
     switch (activeFilter) {
       case 'overview':
         return (
-          <div style={{justifyContent:"center", alignContent:"center", }}>
-               <div style={{textAlign:"center"}}>
-                
-          <h2>About the Event</h2>
-          
-          <p><strong>TLDR; Rocket.Chat's GSoC 2024: Pioneering the Future with GenAI Innovation</strong></p>
-               </div>
-          
-          <p>Ready to experience the next wave of chat evolution? Join us for Rocket.Chat's Google Summer of Code Project Demo Day 2024, where our brilliant contributors will unveil groundbreaking GenAI projects and other cutting-edge developments they've crafted over the past few months. 🚀</p>
-          
-          <p>Discover how Rocket.Chat is pushing the boundaries of what's possible with Generative AI, creating smarter, more intuitive chat experiences that redefine productivity and collaboration. You'll also see how we're empowering our community with open-source tools that fuel innovation and creativity. 💡</p>
-          <div style={{textAlign:"center"}}>
-          <p>Event highlights include:</p>
+          <div style={{
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            textAlign: "center", 
+            margin: "0 auto", 
+            maxWidth: "800px", 
+            padding: "20px"
+          }}>
+            <h2>About the Event</h2>
             
-          <ul>
-            <li>Inspiring insights from Rocket.Chat's visionary leaders</li>
-            <li>Live demos of revolutionary GenAI features and integrations</li>
-            <li>Engage with our vibrant community members & Rocketeers</li>
-          </ul>
+            <p><strong>TLDR; Rocket.Chat's GSoC 2024: Pioneering the Future with GenAI Innovation</strong></p>
+            
+            <p>Ready to experience the next wave of chat evolution? Join us for Rocket.Chat's Google Summer of Code Project Demo Day 2024, where our brilliant contributors will unveil groundbreaking GenAI projects and other cutting-edge developments they've crafted over the past few months. 🚀</p>
+            
+            <p>Discover how Rocket.Chat is pushing the boundaries of what's possible with Generative AI, creating smarter, more intuitive chat experiences that redefine productivity and collaboration. You'll also see how we're empowering our community with open-source tools that fuel innovation and creativity. 💡</p>
+            
+            <p><strong>Event highlights include:</strong></p>
+            <ul style={{textAlign: "left"}}>
+              <li>- Inspiring insights from Rocket.Chat's visionary leaders</li>
+              <li>- Live demos of revolutionary GenAI features and integrations</li>
+              <li>- Engage with our vibrant community members & Rocketeers</li>
+            </ul>
+            
+            <p>Don't miss your chance to connect with our amazing community and witness firsthand how Rocket.Chat is transforming the future of chat. Save the date and prepare to be inspired!</p>
           </div>
           
-          <p>Don't miss your chance to connect with our amazing community and witness firsthand how Rocket.Chat is transforming the future of chat. Save the date and prepare to be inspired!</p>
-        </div>
         );
       case 'speakers':
         return (
@@ -198,7 +203,7 @@ const EventsComponent: React.FC<EventsComponentProps> = ({ overview, speakers, s
     <div style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
        <div
         style={{
-          background: `url(${"https://github.com/RocketChat/RC4Conferences/blob/main/assets/alumni_summit_2024.png?raw=true"})`,
+          background: `url(${"https://github.com/anjy7/RC-CommunityHub/blob/main/build/gsoc_demo_day_2024(1).png"})`,
           backgroundRepeat: 'round',
           borderRadius: '15px',
           margin: 'auto',
@@ -209,7 +214,7 @@ const EventsComponent: React.FC<EventsComponentProps> = ({ overview, speakers, s
       >
         <div style={{ backdropFilter: 'blur(10px)', borderRadius: 'inherit' }}>
           <Image
-            src={"https://github.com/RocketChat/RC4Conferences/blob/main/assets/alumni_summit_2024.png?raw=true"}
+            src={"https://github.com/anjy7/RC-CommunityHub/blob/main/build/gsoc_demo_day_2024(1).png?raw=true"}
             style={{ scale: '70%' }}
             fluid
           />

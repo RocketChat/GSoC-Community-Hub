@@ -11,7 +11,6 @@ var generateReactComponent_1 = require("./transform/generateReactComponent");
 var transformImportStatements_1 = require("./transform/transformImportStatements");
 var transformDataItems_1 = require("./transform/transformDataItems");
 var extractData_1 = require("./extract/extractData");
-var installPackages_1 = require("./install/installPackages");
 var rootDir = path.resolve(process.cwd(), '../');
 var srcPath = path.join(rootDir, 'src');
 var buildPathAppDir = path.join(rootDir, 'build/app');
@@ -35,8 +34,7 @@ function processFile(filePath) {
         .join("\n");
     var componentCode = (0, generateReactComponent_1.generateReactComponent)(transformedImports, transformedDataImports, componentName, jsxElements);
     //installing npm packages used
-    (0, installPackages_1.installPackages)(buildPathAppDir, packageNames, installedPackages);
-    //getAllExports('navbar-cms');
+    // installPackages(buildPathAppDir, packageNames, installedPackages);///////
     // Creating files
     var outputDirPath = buildPathAppDir;
     if (fileName !== "main") {

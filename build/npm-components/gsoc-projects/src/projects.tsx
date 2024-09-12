@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Suspense } from 'react'
 import { getLinks } from './api/index.js'
 import ProjectsComponent from './projects-theme/project-component.js';
+import { ReactElement } from 'react';
 
 interface Project {
   title: string;
@@ -14,7 +15,11 @@ interface Project {
   year: string;
 }
 
-const GsocProjectsContent = async ({ data } : { data: Project[] }) => {
+interface GsocProjectsProps {
+  data: Project[];
+}
+
+const GsocProjectsContent = async ({ data }: GsocProjectsProps) => {
   // console.log(user);
   let events = data;
  // add check to get the data from the cms and verify if its same, if not then update it
@@ -28,7 +33,7 @@ const GsocProjectsContent = async ({ data } : { data: Project[] }) => {
   return <ProjectsComponent data={data}/>;
 };
 
-export const GsocProjects = ({ data } : { data: Project[]}) => (
+export const GsocProjects = ({ data }: GsocProjectsProps): ReactElement => (
   <Suspense>
     {/* @ts-ignore: Async components are valid in the app directory */}
     <GsocProjectsContent

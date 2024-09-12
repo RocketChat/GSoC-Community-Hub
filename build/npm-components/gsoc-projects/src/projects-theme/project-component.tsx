@@ -47,7 +47,17 @@ const ProjectsComponent: React.FC<EventsComponentProps> = ({ data } : { data: Pr
 
   return (
     <div style={{ paddingLeft: '1rem', paddingRight: '1rem', marginBottom:"1rem" }}>
-      <div style={{ marginTop:"2rem", marginBottom:"1rem", font:"2rem" , fontWeight: '600', margin: 'auto'}}>GSoC Project Ideas</div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: "2rem", marginBottom: "2rem" }}>
+  <div style={{ 
+    fontSize: "2rem", 
+    fontWeight: '700', 
+    color: '#333',
+    textAlign: 'center',
+    maxWidth: '90%'
+  }}>
+    Google Summer of Code Project Ideas
+  </div>
+</div>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <ButtonGroup>
           {years.map((year) => (
