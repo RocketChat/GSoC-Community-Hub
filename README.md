@@ -5,19 +5,19 @@ An easy to use, ready-for-customization, community engagement and management sys
 
 ## Technical Synopsis
 
-A fully componentized (not page-based as in Next.JS) scalable web app, with a set of tested full-stack configurable GSoC-friendly components, ready to be customized for your GSoC community.
+A fully componentized (not page-based as in nextjs) scalable web app, with a set of tested full-stack configurable GSoC-friendly components, ready to be customized for your GSoC community.
 
 Full stack components are components that may encapsulate server-side behaviors in addition to client-side/UI behaviors.
 
-This framework can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL.   
+This system can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL.   
 
 This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites.
 
-Currently, the framework is built based on Svelte 5.
+Currently, the system is built based on Svelte 5.
 
 ## Developing
 
-The framework is superby lightweight yet runs on across all OS and environments.
+The system is superby lightweight yet runs across all OS and environments.
 
 First, install bun.   It should take 2 minutes.
 
@@ -38,7 +38,7 @@ cp sample.env.local  .env.local
 nano  .env.local
 ```
 
-To start a  development server, with a browser on the app's home page:
+To start a development server, with a browser on the app's home page:
 
 ```bash
 bun run dev --open
@@ -46,7 +46,7 @@ bun run dev --open
 
 ## Building
 
-To create a production version of your app:
+To create a production version of your system:
 
 ```bash
 bun run build
