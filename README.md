@@ -56,7 +56,7 @@ You can preview the production build with `bun run preview`.
 
 ##  Components Ecosystem
 
-The following independent components are available.&ensp; They are located under the `./sr/lib/components` directory.&ensp; Many more components are being created/ported. &ensp;  Configuration and parameterization are documented on their own doc page.
+The following independent components are available.&ensp; They are located under the `./src/lib/components` directory.&ensp; Many more components are being created/ported. &ensp;  Configuration and parameterization are documented on their own doc page.
 <br/>
 <br/>
 
