@@ -1,11 +1,12 @@
 {
 	"name": "gsochub",
 	"version": "0.0.1",
-	"type": "module",
+	"private": "true",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"compile": "tsc src/compiler/scripts/main.ts && node src/compiler/scripts/main.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
@@ -36,7 +37,8 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
-		"@sveltestrap/sveltestrap": "^6.2.7"
+		"@sveltestrap/sveltestrap": "^6.2.7",
+		"@types/node": "^22.13.10"
 	},
 	"volta": {
 		"node": "20.10.0"
