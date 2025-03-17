@@ -2,9 +2,6 @@ export function generateSvelteComponent(importStatement: string[],dataImports: s
   const imports = importStatement.join('\n');
   const data = dataImports;
   return `
-<script module>
-</script>
-
 <script lang="ts">
   ${data}
   ${imports}

@@ -14,7 +14,7 @@ var extractData_1 = require("./extract/extractData");
 //import { installPackages } from "./install/installPackages";
 var rootDir = path.resolve(process.cwd(), './');
 var srcPath = path.join(rootDir, 'src');
-var buildPathAppDir = path.join(rootDir, '/src/lib/components');
+var buildPathAppDir = path.join(rootDir, '/src/routes');
 // Global Set to keep track of installed packages
 //const installedPackages = new Set<string>();
 function processFile(filePath) {
@@ -44,7 +44,7 @@ function processFile(filePath) {
     if (!fs.existsSync(outputDirPath)) {
         fs.mkdirSync(outputDirPath, { recursive: true });
     }
-    var outputFilePath = path.join(outputDirPath, "".concat(componentName, ".svelte"));
+    var outputFilePath = path.join(outputDirPath, "+page.svelte");
     fs.writeFileSync(outputFilePath, componentCode);
     console.log("Generated file: ".concat(outputFilePath));
 }
