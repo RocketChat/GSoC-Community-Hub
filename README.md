@@ -37,6 +37,12 @@ cp sample.env.local  .env.local
 nano  .env.local
 ```
 
+To generate specified pages via the DSL (these will be found in ./src/routes):
+
+```bash
+bun run compile
+```
+
 To start a development server, with a browser on the app's home page:
 
 ```bash
