@@ -1,0 +1,33 @@
+use Menubar from $lib/components/menubar/Menubar.svelte
+use Herounit from $lib/components/herounit/Herounit.svelte
+use Docslink from $lib/components/docslink/Docslink.svelte
+use Searchbar from $lib/components/searchbar/Searchbar.svelte
+use Statscounters from $lib/components/statscounters/Statscounters.svelte
+use Simonlinktiles from $lib/components/simonlinktiles/Simonlinktiles.svelte
+use Carousel from $lib/components/carousel/Carousel.svelte
+use Personatiles from $lib/components/personatiles/Personatiles.svelte
+
+get brand
+get menutree
+get herotitle
+get herosub
+get leftlink
+get rightlink
+get searchactions 
+get counters
+get tilelinks
+get stories
+get caption
+get personas 
+get images
+
+<main>
+<Menubar {brand} {menutree} />
+<Herounit title={herotitle} subtitle={herosub}/>
+<Docslink {leftlink} {rightlink}/>
+<Searchbar {searchactions} />
+<Statscounters {counters}/>
+<Simonlinktiles {tilelinks}/>
+<Carousel {stories}/>
+<Personatiles {caption} {personas} {images}/>
+</main>

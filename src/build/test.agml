@@ -1,8 +1,0 @@
-
-use NavigationMenuDemo from navbar-cms
-
-get name
-
-<main>
-<NavigationMenuDemo data={navItems} />
-</main> 
