@@ -8,9 +8,14 @@ A fully componentized (not page-based as in nextjs) scalable web app, with a set
 
 Full stack components are components that may encapsulate server-side behaviors in addition to client-side/UI behaviors.
 
-This system can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL.   
+This system can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL. 
 
-This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites.
+The way the domain specific language works is simple; 
+- Specify imports using `use X from module`
+- Get component data using the `get` syntax
+- specify page layout by placing components inside of the `<main></main>` tag
+
+This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a detailed [summary](https://github.com/anjy7/Google-Summer-of-Code).
 
 Currently, the system is built based on [Svelte 5](https://github.com/sveltejs/svelte).  Layout is powered by [bootstrap](https://github.com/twbs/bootstrap).  Runtime is [bun](https://github.com/oven-sh/bun).
 
