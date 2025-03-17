@@ -10,10 +10,10 @@ Full stack components are components that may encapsulate server-side behaviors 
 
 This system can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL. 
 
-The way the domain specific language works is simple; 
+The way the Domain Specific Language works is simple; 
 - Specify imports using `use X from module`
 - Get component data using the `get` syntax
-- specify page layout by placing components inside of the `<main></main>` tag
+- Specify page layout by placing components inside of the `<main></main>` tag
 
 This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a detailed [summary](https://github.com/anjy7/Google-Summer-of-Code).
 
@@ -42,7 +42,7 @@ cp sample.env.local  .env.local
 nano  .env.local
 ```
 
-To generate specified pages via the DSL (these will be found in ./src/routes):
+To generate specified pages via the DSL (these will be found in `./src/routes`):
 
 ```bash
 bun run compile
