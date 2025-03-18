@@ -9,8 +9,8 @@ use Personatiles from $lib/components/personatiles/Personatiles.svelte
 
 get brand
 get menutree
-get herotitle
-get herosub
+get heroTitle
+get heroSub
 get leftlink
 get rightlink
 get searchactions 
@@ -23,7 +23,7 @@ get images
 
 <main>
 <Menubar {brand} {menutree} />
-<Herounit title={herotitle} subtitle={herosub}/>
+<Herounit title={heroTitle} subtitle={heroSub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
 <Statscounters {counters}/>

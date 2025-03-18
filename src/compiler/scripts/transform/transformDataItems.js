@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.transformDataItems = transformDataItems;
 function transformDataItems(dataItems, fileName) {
-    var sourcePath = "../../build/".concat(fileName);
-    return "import { ".concat(dataItems.join(', '), " } from '").concat(sourcePath, "';");
+    var sourcePath = "../../build";
+    return dataItems.map(function (item) { return " import { ".concat(item, " } from \"").concat(sourcePath, "/").concat(item, "\";"); }).join("\n");
+    //return `import { ${dataItems.join(', ')} } from '${sourcePath}';`;
 }

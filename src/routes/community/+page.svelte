@@ -1,6 +1,18 @@
 
 <script lang="ts">
-  import { brand, menutree, herotitle, herosub, leftlink, rightlink, searchactions, counters, tilelinks, stories, caption, personas, images } from '../../build/community';
+   import { brand } from "../../build/brand";
+ import { menutree } from "../../build/menutree";
+ import { heroTitle } from "../../build/heroTitle";
+ import { heroSub } from "../../build/heroSub";
+ import { leftlink } from "../../build/leftlink";
+ import { rightlink } from "../../build/rightlink";
+ import { searchactions } from "../../build/searchactions";
+ import { counters } from "../../build/counters";
+ import { tilelinks } from "../../build/tilelinks";
+ import { stories } from "../../build/stories";
+ import { caption } from "../../build/caption";
+ import { personas } from "../../build/personas";
+ import { images } from "../../build/images";
   import Menubar from '$lib/components/menubar/Menubar.svelte';
 import Herounit from '$lib/components/herounit/Herounit.svelte';
 import Docslink from '$lib/components/docslink/Docslink.svelte';
@@ -12,7 +24,7 @@ import Personatiles from '$lib/components/personatiles/Personatiles.svelte';
 </script>
 
 <Menubar {brand} {menutree} />
-<Herounit title={herotitle} subtitle={herosub}/>
+<Herounit title={heroTitle} subtitle={heroSub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
 <Statscounters {counters}/>
