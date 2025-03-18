@@ -15,7 +15,7 @@ The way the Domain Specific Language works is simple;
 - Get component data using the `get` syntax
 - Specify page layout by placing components inside of the `<main></main>` tag
 
-This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a detailed [summary](https://github.com/anjy7/Google-Summer-of-Code).
+This DSL will facilitate the creation of a near-future "drag-and-drop what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a excellent [summary](https://github.com/anjy7/Google-Summer-of-Code).
 
 Currently, the system is built based on [Svelte 5](https://github.com/sveltejs/svelte).  Layout is powered by [bootstrap](https://github.com/twbs/bootstrap).  Runtime is [bun](https://github.com/oven-sh/bun).
 
