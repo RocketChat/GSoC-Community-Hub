@@ -13,8 +13,8 @@
 </script>
 <style>
     .links-container {
-        padding: 1rem 0;
-        font-size: 0.95rem;
+        padding: 0 0 1rem; /* Eliminated top padding completely, kept bottom padding */
+        font-size: 1.2rem; /* Increased from 0.95rem to 1.2rem for better balance */
     }
     .links-text { 
         text-align: center;
