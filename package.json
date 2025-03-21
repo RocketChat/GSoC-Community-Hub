@@ -36,7 +36,8 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
-		"@sveltestrap/sveltestrap": "^6.2.7"
+		"@sveltestrap/sveltestrap": "^6.2.7",
+		"keycloak-js": "^26.1.4"
 	},
 	"volta": {
 		"node": "20.10.0"
