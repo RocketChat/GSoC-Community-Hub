@@ -3,7 +3,8 @@
 
 <script lang="ts">
 	let { stories } = $props();
-	let n = stories.length;
+	const n = stories.length;
+	const itemsPerView = 3;
 
 	import { Container, Row, Col } from '@sveltestrap/sveltestrap';
 	import Arrow from './Arrow.svelte';
@@ -15,7 +16,8 @@
 </script>
 
 <Styles />
-<div>
+<div class="carousel-container">
+	<div class="carousel-heading">Latest <span class="red-text">Community</span> News</div>
 	<Container>
 		<Row>
 			<Col>
@@ -25,7 +27,13 @@
 						{#snippet children({ currentIndex })}
 							{#each stories as item, i}
 								{#if i >= currentIndex}
-									<img src={item} width={sw / 3} alt="no_alt" />
+									<div class="item-container" style="width: {sw / itemsPerView}px;">
+										<img src={item.imageUrl} width={sw / itemsPerView} alt="alt_img_{item.id}" />
+										<div class="item-text">
+											<span class="headline">{item.name}</span>
+											<div class="description">{item.description}</div>
+										</div>
+									</div>
 								{/if}
 							{/each}
 						{/snippet}
@@ -41,17 +49,16 @@
 
 							<button
 								class="next"
-								onclick={() =>
-									setIndex(currentIndex < n - 4 ? currentIndex : currentIndex + 1)}
+								onclick={() => setIndex(currentIndex < 0 ? 0 : currentIndex + 1)}
 							>
 								<Arrow direction="right" />
 							</button>
 
 							<div class="btn-container">
-								{#each Array(Math.ceil(stories.length / 3)) as _, i}
+								{#each Array(Math.ceil(n / itemsPerView)) as _, i}
 									<button
 										class="car-btn"
-										class:active={i == currentIndex}
+										class:active={i === currentIndex}
 										onclick={() => setIndex(i)}
 										aria-label={`Go to page ${i + 1}`}
 									></button>
@@ -66,6 +73,54 @@
 </div>
 
 <style>
+	.carousel-container {
+		background-color: whitesmoke;
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+	.carousel-heading {
+		font-size: 2rem;
+		text-align: center;
+		margin: 8px 0;
+		font-weight: bold;
+	}
+	.tiny-slider-wrapper {
+		position: relative;
+		padding-left: 4rem;
+		padding-right: 4rem;
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+	.item-container {
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	.item-text {
+		height: 10rem;
+	}
+	.headline {
+		padding: 16px 16px 0px 16px;
+		font-size: larger;
+		font-weight: bold;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		line-clamp: 1;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+	.description {
+		padding: 16px;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
 	.prev {
 		position: absolute; /* Positioned relative to the parent */
 		left: 0; /* Aligns it to the left edge */
@@ -84,14 +139,6 @@
 		width: 50px;
 		height: 50px;
 		/* background-color: white; */
-	}
-	.tiny-slider-wrapper {
-		position: relative;
-		/* background-color: whitesmoke; */
-		padding-left: 4rem;
-		padding-right: 4rem;
-		padding-top: 2rem;
-		padding-bottom: 1rem;
 	}
 	.btn-container {
 		display: flex;
