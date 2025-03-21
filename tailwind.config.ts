@@ -1,11 +1,15 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
-  theme: {
-    extend: {}
-  },
+	theme: {
+		extend: {
+			colors: {
+				secondaryColor: '#F5455C'
+			}
+		}
+	},
 
-  plugins: []
+	plugins: []
 } satisfies Config;
