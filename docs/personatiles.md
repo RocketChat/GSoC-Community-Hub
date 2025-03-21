@@ -1,7 +1,7 @@
-# Personatile Component
+# Personatiles Component
 
 ## Description
-The `Personatile` component displays a row of personas, each with an image and a title. It uses `@sveltestrap/sveltestrap` for layout and styling.
+The `Personatiles` component displays a row of personas, each with an image and a title. It uses `@sveltestrap/sveltestrap` for layout and styling.
 
 ## Usage
 Use this component to showcase personas or user roles in a visually appealing way. Ideal for landing pages, team sections, or role-based features.
@@ -18,7 +18,7 @@ Use this component to showcase personas or user roles in a visually appealing wa
 
 ```svelte
 <script lang="ts">
-  import Personatile from './Personatile.svelte';
+  import Personatiles from './Personatiles.svelte';
 
   const personas = ["Admin", "Developer", "Group Chat", "GSoC"];
   const images = [
@@ -29,4 +29,4 @@ Use this component to showcase personas or user roles in a visually appealing wa
   ];
 </script>
 
-<Personatile caption="Our Team" personas={personas} images={images} />
+<Personatiles caption="Our Team" personas={personas} images={images} />

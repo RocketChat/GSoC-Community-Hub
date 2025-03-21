@@ -1,7 +1,7 @@
-# Manubar Component
+# Menubar Component
 
 ## Description
-The `Manubar` component is a responsive navigation bar with a brand logo and dropdown menus. It uses `@sveltestrap/sveltestrap` for layout and styling.
+The `Menubar` component is a responsive navigation bar with a brand logo and dropdown menus. It uses `@sveltestrap/sveltestrap` for layout and styling.
 
 ## Usage
 Use this component to create a navigation bar with dropdown menus. Ideal for websites or apps requiring a clean and functional menu system.
@@ -23,7 +23,7 @@ Each item in `menutree` should have:
 
 ```svelte
 <script lang="ts">
-  import Manubar from './Manubar.svelte';
+  import Menubar from './Menubar.svelte';
 
   const menuItems = [
     {
@@ -45,4 +45,4 @@ Each item in `menutree` should have:
   ];
 </script>
 
-<Manubar brand="MyApp" menutree={menuItems} />
+<Menubar brand="MyApp" menutree={menuItems} />
