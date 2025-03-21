@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import Menubar from '$lib/components/menubar/Menubar.svelte';
 	import Herounit from '$lib/components/herounit/Herounit.svelte';
@@ -8,6 +7,8 @@
     import Simonlinktiles from '$lib/components/simonlinktiles/Simonlinktiles.svelte';
     import Carousel from '$lib/components/carousel/Carousel.svelte';
     import Personatiles from '$lib/components/personatiles/Personatiles.svelte';
+    import Eventsscheduleposter from '$lib/components/eventsscheduleposter/Eventsscheduleposter.svelte';
+    import { conferenceData, sessionsData } from '$lib/components/eventsscheduleposter/sampleEvents';
 
     // Menubar data from CRM
     let brand = "rocket.chat";
@@ -77,3 +78,4 @@
 <Simonlinktiles {tilelinks}/>
 <Carousel {stories}/>
 <Personatiles {caption} {personas} {images}/>
+<Eventsscheduleposter conference={conferenceData} sessions={sessionsData} />
