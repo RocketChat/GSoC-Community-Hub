@@ -62,12 +62,12 @@ The following independent components are available.&ensp; They are located under
 
 |Component Name|Description|Doc link|
 |------|------|------|
-|`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|[Menubar Documentation](./docs/menubar.md)|
-|`herounit` -  Hero Unit|A large formatted text box across the page|[Herounit Documentation](./docs/Herounit.md)|
-|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|[Searchbar Documentation](./docs/Searchbar.md)|
-|`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[Statscounters Documentation](./docs/statscounters.md)|
-|`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[Simonlinktiles Documentation](./docs/simonlinktiles.md)|
-|`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[Carousel Documentation](./docs/Carousel.md)|
-|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[Personatiles Documentation](./docs/personatiles.md)|
+|`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|[link](./docs/Menubar.md)|
+|`herounit` -  Hero Unit|A large formatted text box across the page|[link](./docs/Herounit.md)|
+|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|[link](./docs/Searchbar.md)|
+|`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[link](./docs/statscounters.md)|
+|`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
+|`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/Carousel.md)|
+|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
 
 
