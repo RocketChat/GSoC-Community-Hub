@@ -1,28 +1,31 @@
 # Carousel Component
 
-## Overview
-The Carousel component provides a responsive image slider for showcasing multiple images in a horizontal scrolling gallery. It uses the `svelte-tiny-slider` library to handle the sliding functionality and includes navigation arrows for user interaction.
+The Carousel component is a responsive image slider that allows you to display a rotating collection of images with navigation controls.
 
-## Usage
-The Carousel component is ideal for:
-- Image galleries
-- Product showcases
-- Featured content rotation
-- Visual storytelling sequences
+## Overview
+
+The Carousel component uses the [svelte-tiny-slider] library to create a smooth, responsive image carousel with previous/next navigation buttons. It's ideal for showcasing featured content, testimonials, or product images.
+
+## Component Structure
+
+The Carousel component consists of two parts:
+- `Carousel.svelte`: The main component that handles the image slider functionality
+- `Arrow.svelte`: A helper component that creates the directional navigation arrows
 
 ## Props
 
-| Prop | Type | Description | Required |
-|------|------|-------------|----------|
-| `stories` | `string[]` | Array of image URLs to display in the carousel | Yes |
+| Prop | Type | Description |
+|------|------|-------------|
+| `stories` | `string[]` | An array of image URLs to display in the carousel |
 
-## Example
+## Usage Example
 
 ```svelte
 <script>
-  import { Carousel } from '$lib/components/carousel';
+  import Carousel from '$lib/components/Carousel.svelte';
   
-  const imageUrls = [
+  // Array of image URLs
+  const images = [
     '/images/slide1.jpg',
     '/images/slide2.jpg',
     '/images/slide3.jpg',
@@ -31,29 +34,27 @@ The Carousel component is ideal for:
   ];
 </script>
 
-<Carousel stories={imageUrls} />
+<Carousel stories={images} />
 ```
 
 ## Features
-- Responsive design that adapts to different screen sizes
-- Smooth sliding transitions
-- Interactive navigation arrows
-- Displays multiple images at once (3 per view)
-- Shadow and border-radius styling for a polished look
 
-## Dependencies
-- `svelte-tiny-slider`: Powers the sliding functionality
-- `@sveltestrap/sveltestrap`: Provides the grid layout components
-- `Arrow.svelte`: Custom arrow component for navigation controls
+- Responsive design that adapts to different screen sizes
+- Previous/next navigation buttons with hover effects
+- Automatic sizing of images based on container width
+- Smooth transitions between slides
+- Support for variable number of images
 
 ## Styling
-The component includes custom styling for:
-- Container padding and positioning
-- Image styling with border-radius and shadow effects
-- Navigation arrow buttons with hover effects
-- Responsive behavior
 
-## Notes
-- The carousel displays images at 1/3 of the container width
-- Navigation buttons prevent scrolling past the beginning or end of the image array
-- The component manages its state internally, tracking the current index and width
+The carousel includes custom styling:
+- Rounded corners and shadow effects on images
+- Circular navigation buttons with hover states
+- Proper spacing and margins for optimal display
+
+## Dependencies
+
+The component requires:
+- `svelte-tiny-slider`: For the slider functionality
+- `@sveltestrap/sveltestrap`: For layout components (Container, Row, Col)
+- The internal `Arrow.svelte` component for navigation controls
