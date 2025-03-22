@@ -63,8 +63,8 @@ The following independent components are available.&ensp; They are located under
 |Component Name|Description|Doc link|
 |------|------|------|
 |`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|link|
-|`herounit` -  Hero Unit|A large formatted text box across the page|link|
-|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|link|
+|`herounit` -  Hero Unit|A large formatted text box across the page|link|(./docs/Carousel.md)|
+|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|link|(./)
 |`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|link|
 |`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|link|
 |`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|link|
