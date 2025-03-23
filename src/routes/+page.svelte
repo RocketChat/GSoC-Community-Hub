@@ -57,10 +57,57 @@
 
 	// Carousel data from CRM
 	let stories = [
-		'cover-image-blog-11.jpg',
-		'rocket-chat-funding.png',
-		'frame-9.png',
-		'whatsapp-safe-secure-message-blog.jpg'
+		{
+			id: 1,
+			name: 'Data protection solutions',
+			description: '5 security features that every company should keep in mind',
+			imageUrl: 'cover-image-blog-11.jpg',
+			url: 'https://rocket.chat/blog/learn/data-protection-solutions-security-features/',
+			published_at: '2021-06-21T09:03:49.990Z',
+			created_at: '2021-06-21T09:03:50.005Z',
+			updated_at: '2021-07-17T14:19:39.237Z'
+		},
+		{
+			id: 2,
+			name: 'Rocket.Chat raises $19m',
+			description:
+				'In Series A funding confirming privacy-first communication as a major trend in 2021',
+			imageUrl: 'rocket-chat-funding.png',
+			url: 'https://www.rocket.chat/press-releases/rocket-chat-raises-19-million-in-series-a-funding-confirming-privacy-first-communication-as-a-major-trend-in-2021',
+			published_at: '2021-06-21T09:03:49.990Z',
+			created_at: '2021-06-21T09:03:50.134Z',
+			updated_at: '2021-07-17T14:19:56.643Z'
+		},
+		{
+			id: 3,
+			name: '4 Different Slack Alternatives',
+			description: 'We’ve Tried 4 Different Slack Alternatives & Here’s Our Conclusion',
+			imageUrl: 'frame-9.png',
+			url: 'https://rocket.chat/blog/learn/slack-alternative/',
+			published_at: '2021-06-21T09:03:49.990Z',
+			created_at: '2021-06-21T09:03:50.301Z',
+			updated_at: '2021-07-17T14:16:05.252Z'
+		},
+		{
+			id: 4,
+			name: 'Is WhatsApp safe for companies?',
+			description: 'A quick guide for secure messaging',
+			imageUrl: 'whatsapp-safe-secure-message-blog.jpg',
+			url: 'https://rocket.chat/blog/learn/whatsapp-guide-secure-messaging/',
+			published_at: '2021-06-21T09:03:49.990Z',
+			created_at: '2021-06-21T09:03:50.446Z',
+			updated_at: '2021-07-17T14:18:39.712Z'
+		},
+		{
+			id: 5,
+			name: 'Security Bundle',
+			description: 'Get to Know Rocket.Chat’s Newest Weapon For Secure Messaging',
+			imageUrl: 'security-bundle-ilustra.jpg',
+			url: 'https://rocket.chat/blog/product/security-bundle-for-secure-messaging/',
+			published_at: '2021-06-21T09:03:49.990Z',
+			created_at: '2021-06-21T09:03:50.621Z',
+			updated_at: '2021-07-17T14:20:12.000Z'
+		}
 	];
 
 	// Personatiles data from CRM
