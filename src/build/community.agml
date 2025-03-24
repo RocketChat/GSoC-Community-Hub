@@ -9,13 +9,17 @@ use Personatiles from $lib/components/personatiles/Personatiles.svelte
 
 get brand
 get menutree
-get herounit
-get docslink
+get herotitle
+get herosub
+get leftlink
+get rightlink
 get searchactions 
 get counters
 get tilelinks
 get stories
-get personalities
+get caption
+get personas
+get images
 
 <main>
 <Menubar {brand} {menutree} />
