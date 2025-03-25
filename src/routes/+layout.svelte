@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import '../app.css';
 	import Menubar from '$lib/components/menubar/Menubar.svelte';
