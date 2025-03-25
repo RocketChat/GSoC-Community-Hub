@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { keycloakInstance } from '$lib/store.svelte';
+	let { loginData } = $props();
+	console.log(loginData);
 </script>
 
-<!-- <section class="hero h-[35rem] w-[60rem]"> -->
 <div class="container">
 	<div
 		class="flex w-[15rem] flex-col items-center justify-evenly gap-4 sm:w-[30rem] md:w-[40rem] lg:h-[30rem] lg:w-[50rem] lg:flex-row"
@@ -11,15 +12,15 @@
 			<div
 				class="auth-image-content flex h-full w-full flex-col items-center justify-center text-center"
 			>
-				<h2>Welcome to GSoC Community Hub</h2>
+				<h2>{loginData.welcomeTitle}</h2>
 				<p>
-					Log in to access your dashboard, manage events, and explore community resources securely.
+					{loginData.welcomeSubtitle}
 				</p>
 			</div>
 		</div>
 		<div class="auth-form flex h-full w-full flex-col">
-			<h1 class="">Sign In</h1>
-			<p>Log in to manage your community platform and events.</p>
+			<h1 class="">{loginData.loginInTitle}</h1>
+			<p>{loginData.loginInSubtitle}</p>
 
 			<div class="auth-benefits">
 				<div class="benefit-item">
@@ -54,7 +55,7 @@
 							/>
 						</svg>
 					</div>
-					<span>Manage and explore all community events</span>
+					<span>{loginData.manageBenefit}</span>
 				</div>
 				<div class="benefit-item">
 					<div class="benefit-icon">
@@ -81,7 +82,7 @@
 							/>
 						</svg>
 					</div>
-					<span>Enhanced security with Keycloak authentication</span>
+					<span>{loginData.securityBenefit}</span>
 				</div>
 			</div>
 
@@ -123,7 +124,7 @@
 						/>
 					</svg>
 				</span>
-				<span>Sign in securely</span>
+				<span>{loginData.loginButtonText}</span>
 			</button>
 
 			<div class="secure-info">
@@ -156,21 +157,20 @@
 						stroke-linejoin="round"
 					/>
 				</svg>
-				<span>You'll be redirected to our secure authentication service</span>
+				<span>{loginData.secureInfoText}</span>
 			</div>
 			<p class="register-link text-black">
-				Don't have an account? <button
+				{loginData.registerLinkText.prompt}
+				<button
 					class="underline hover:text-blue-700"
 					onclick={async () => {
 						await keycloakInstance?.instance?.register();
-					}}>Register here</button
+					}}>{loginData.registerLinkText.registerLink}</button
 				>
 			</p>
 		</div>
 	</div>
 </div>
-
-<!-- </section> -->
 
 <style>
 	.container {

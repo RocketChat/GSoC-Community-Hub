@@ -19,84 +19,99 @@
 
 	import { goto } from '$app/navigation';
 	import Login from '../login/Login.svelte';
+
+	// login data
+	let loginData = {
+		welcomeTitle: 'Welcome to GSoC Community Hub',
+		welcomeSubtitle:
+			'Log in to access your dashboard, manage events, and explore community resources securely.',
+		loginTitle: 'Sign In',
+		loginSubtitle: 'Log in to manage your community platform and events.',
+		manageBenefit: 'Manage and explore all community events',
+		securityBenefit: 'Enhanced security with Keycloak authentication',
+		loginButtonText: 'Sign in securely',
+		secureInfoText: "You'll be redirected to our secure authentication service",
+		registerLinkText: {
+			prompt: "Don't have an account?",
+			registerLink: 'Register here'
+		}
+	};
 </script>
 
 {#snippet navItems()}
 	{#each menutree as menu, i}
-		<Dropdown class="">
-			<DropdownToggle
-				nav
-				class="border-b-2 border-solid border-transparent  hover:border-secondaryColor hover:text-secondaryColor focus:border-secondaryColor"
-				caret>{menu.top}</DropdownToggle
-			>
-			<DropdownMenu>
-				{#each menu.dropdown as item}
-					{#if item.label == '---'}
-						<DropdownItem divider />
-					{:else}
-						<DropdownItem class="hover:text-secondaryColor">
-							{item.label}
-						</DropdownItem>
-					{/if}
-				{/each}
-			</DropdownMenu>
-		</Dropdown>
-	{/each}
-	{#if authenticated.value}
-		<Dropdown>
-			<DropdownToggle nav class="user-avatar">
-				{#if user.avatar}
-					<img src={user.avatar} alt="User Avatar" class="avatar-img" />
-				{/if}
-			</DropdownToggle>
-			<DropdownMenu>
-				{#if user.role === 'admin'}
-					<DropdownItem class="hover:text-secondaryColor" on:click={() => goto('/admin')}
-						>Admin</DropdownItem
+		{#if menu.top === 'Login'}
+			{#if !authenticated.value}
+				<Dropdown class="">
+					<DropdownToggle
+						nav
+						caret
+						class="border-b-2 border-solid border-transparent bg-none outline-none hover:border-secondaryColor focus:border-secondaryColor focus:text-secondaryColor "
+						>{menu.top}</DropdownToggle
 					>
-				{/if}
-				<DropdownItem
-					class="hover:text-secondaryColor"
-					on:click={async () => {
-						await keycloakInstance.instance?.logout();
-					}}>Logout</DropdownItem
+					<DropdownMenu end>
+						<Login {loginData} />
+					</DropdownMenu>
+				</Dropdown>
+			{/if}
+		{:else if menu.top === 'user'}
+			{#if authenticated.value}
+				<Dropdown>
+					<DropdownToggle nav class="user-avatar">
+						{#if user.avatar}
+							<img src={user.avatar} alt="User Avatar" class="avatar-img" />
+						{/if}
+					</DropdownToggle>
+					<DropdownMenu>
+						{#if user.role === 'admin'}
+							<DropdownItem class="hover:text-secondaryColor" on:click={() => goto('/admin')}
+								>{menu.dropdown[0]}</DropdownItem
+							>
+						{/if}
+						<DropdownItem
+							class="hover:text-secondaryColor"
+							on:click={async () => {
+								await keycloakInstance.instance?.logout();
+							}}>{menu.dropdown[1]}</DropdownItem
+						>
+					</DropdownMenu>
+				</Dropdown>
+			{/if}
+		{:else}
+			<Dropdown>
+				<DropdownToggle
+					nav
+					class="border-b-2 border-solid border-transparent  hover:border-secondaryColor hover:text-secondaryColor focus:border-secondaryColor"
+					caret>{menu.top}</DropdownToggle
 				>
-			</DropdownMenu>
-		</Dropdown>
-	{:else}
-		<Dropdown>
-			<DropdownToggle
-				nav
-				caret
-				class="border-b-2 border-solid border-transparent bg-none outline-none hover:border-secondaryColor focus:border-secondaryColor focus:border-secondaryColor focus:text-secondaryColor "
-				>Login</DropdownToggle
-			>
-			<DropdownMenu end>
-				<Login />
-			</DropdownMenu>
-		</Dropdown>
-		<!-- <NavLink
-	on:click={() => {
-		goto('/register');
-	}}>Register</NavLink
-> -->
-	{/if}
+				<DropdownMenu>
+					{#each menu.dropdown as item}
+						{#if item.label == '---'}
+							<DropdownItem divider />
+						{:else}
+							<DropdownItem class="hover:text-secondaryColor">
+								{item.label}
+							</DropdownItem>
+						{/if}
+					{/each}
+				</DropdownMenu>
+			</Dropdown>
+		{/if}
+	{/each}
 {/snippet}
 <Styles />
 <div class="navbar-container">
 	<div>
 		<Navbar container="lg" expand="md">
 			<NavbarBrand class="flex h-full items-center justify-center gap-2" href="/">
-				<img
-					src="https://cdn.prod.website-files.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
-					alt=""
-				/>
+				<img src={brand.brandImgLink} alt={brand.brandName} />
 			</NavbarBrand>
 			<div class="hidden lg:block">
 				<Nav class="ms-auto flex items-center gap-3" navbar>
 					{@render navItems()}
 				</Nav>
 			</div>
+			<NavLink href="/chat">chat</NavLink>
 			<div class="lg:hidden">
 				<Dropdown>
 					<DropdownToggle nav>
