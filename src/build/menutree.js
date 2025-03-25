@@ -1,7 +1,7 @@
 export const menutree = [
     { top: "Community", dropdown: [ {label: "Community Rocket.Chat Serever"},  {label: "---"}, {label: "Forum"}, {label: "---"}, {label: "Github code contributons"},],},
     { top: "Recent Events", dropdown: [ {label: "Alumni Summit 2024"},  {label: "---"}, {label: "Demo Day 2024"},],},
-    { top: "Google SUmmer of Code", dropdown: [ {label: "GSoC 2024"},  {label: "---"}, {label: "Projects"},{label: "Alumni Summit"}, {label: "Demo Day"},
+    { top: "Google Summer of Code", dropdown: [ {label: "GSoC 2024"},  {label: "---"}, {label: "Projects"},{label: "Alumni Summit"}, {label: "Demo Day"},
     {label: "---"},{label: "GSoC 2023"},  {label: "---"}, {label: "Projects"},{label: "Alumni Summit"}, {label: "Demo Day"},
     {label: "---"},{label: "GSoC 2022"},  {label: "---"}, {label: "Projects"},{label: "Alumni Summit"}, {label: "Demo Day"},
     {label: "---"},{label: "GSoC 2021"},  {label: "---"}, {label: "Projects"},{label: "Alumni Summit"}, {label: "Demo Day"},
