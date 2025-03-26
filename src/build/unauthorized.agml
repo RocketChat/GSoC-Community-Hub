@@ -1,0 +1,7 @@
+use Unauthorized from $lib/components/unauthorized/Unauthorized.svelte
+
+get unauthorizedText
+
+<main>
+    <Unauthorized {unauthorizedText}/>
+</main>
