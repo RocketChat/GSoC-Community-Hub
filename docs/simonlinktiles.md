@@ -16,20 +16,19 @@ Use this component to showcase links, features, or information in a grid layout.
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Simonlinktiles from './Simonlinktiles.svelte';
+```agml
 
-  const tiles = [
-    [
-      { title: "Feature 1", desc: "Description for feature 1." },
-      { title: "Feature 2", desc: "Description for feature 2." }
-    ],
-    [
-      { title: "Feature 3", desc: "Description for feature 3." },
-      { title: "Feature 4", desc: "Description for feature 4." }
-    ]
-  ];
-</script>
+  /**
+   *@prop {Object[][]} tilelinks  - A 2D array of tile objects, where each tile has title and desc.
+   */
 
-<Simonlinktiles tilelinks={tiles} />
+
+use Simonlinktiles from $lib/components/simonlinktiles/Simonlinktiles.svelte
+
+get tilelinks
+
+<main>
+
+<Simonlinktiles {tilelinks}/>
+
+</main>

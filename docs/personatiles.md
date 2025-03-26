@@ -16,17 +16,24 @@ Use this component to showcase personas or user roles in a visually appealing wa
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Personatiles from './Personatiles.svelte';
 
-  const personas = ["Admin", "Developer", "Group Chat", "GSoC"];
-  const images = [
-    "admin.png",
-    "developer.png",
-    "group-chat.png",
-    "gsoc.png"
-  ];
-</script>
+```agml
 
-<Personatiles caption="Our Team" personas={personas} images={images} />
+  /**
+   *@prop {string} caption  - Optional caption for the component.
+   *@prop {string[]} personas - An array of persona titles.
+   *@prop {string[]} images - An array of image URLs corresponding to each persona.
+   */
+
+
+use Personatiles from $lib/components/personatiles/Personatiles.svelte
+
+get caption
+get personas
+get images
+
+<main>
+
+<Personatiles {caption} {personas} {images}/>
+
+</main>

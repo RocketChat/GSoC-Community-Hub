@@ -15,9 +15,21 @@ Use this component to create a hero section with a prominent title and supportin
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Herounit from './Herounit.svelte';
-</script>
+```agml
 
-<Herounit title="Welcome to My App" subtitle="Your journey starts here!" />
+  /**
+   *@prop {string} title  - The main title text (supports HTML).
+   *@prop {string} subtitle - The supporting subtitle text.
+   */
+
+
+use Herounit from $lib/components/herounit/Herounit.svelte
+
+get title
+get subtitle
+
+<main>
+
+<Herounit {title} {subtitle}/>
+
+</main>

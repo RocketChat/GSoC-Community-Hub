@@ -22,22 +22,19 @@ The `menu` object should have:
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Searchbar from './Searchbar.svelte';
+```agml
 
-  const searchConfig = {
-    placeholder: "Search...",
-    menu: {
-      top: "Filter",
-      dropdown: [
-        { label: "Option 1" },
-        { label: "Option 2" },
-        { label: "---" },
-        { label: "Option 3" }
-      ]
-    }
-  };
-</script>
+  /**
+   *@prop {Object} searchactions  - Configuration for the search bar.
+   */
 
-<Searchbar searchactions={searchConfig} />
+
+use Searchbar from $lib/components/searchbar/Searchbar.svelte
+
+get searchactions
+
+<main>
+
+<Searchbar {searchactions}/>
+
+</main>

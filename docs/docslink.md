@@ -15,9 +15,22 @@ Use this component to visually separate two links in a clean and centered layout
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Docslink from './Docslink.svelte';
-</script>
 
-<Docslink leftlink="Home" rightlink="About" />
+```agml
+
+  /**
+   *@prop {string} leftlink  - The text or link to display on the left.
+   *@prop {string} rightlink - The text or link to display on the right.
+   */
+
+
+use Docslink from $lib/components/docslink/Docslink.svelte
+
+get leftlink
+get rightlink
+
+<main>
+
+<Docslink {leftlink} {rightlink}/>
+
+</main>

@@ -16,15 +16,20 @@ Use this component to showcase statistics, metrics, or achievements with a visua
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Statscounters from './Statscounters.svelte';
 
-  const counters = [
-    { max: 1000, label: "Users" },
-    { max: 500, label: "Projects" },
-    { max: 250, label: "Downloads" }
-  ];
-</script>
+```agml
 
-<Statscounters counters={counters} />
+  /**
+   *@prop {Object[]} counters - An array of counter objects, where each object has max and label.
+   */
+
+
+use Statscounters from $lib/components/statscounters/Statscounters.svelte
+
+get counters
+
+<main>
+
+<Statscounters {counters}/>
+
+</main>

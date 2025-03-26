@@ -14,17 +14,20 @@ Use this component to display a gallery of images in a compact and interactive w
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Carousel from './Carousel.svelte';
 
-  const images = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg',
-    'image5.jpg'
-  ];
-</script>
+```agml
 
-<Carousel stories={images} />
+  /**
+   *@prop {string[]} stories - The prop is type of array of strings(url or path of image).
+   */
+
+
+use Carousel from $lib/components/carousel/Carousel.svelte
+
+get stories
+
+<main>
+
+<Carousel {stories}/>
+
+</main>

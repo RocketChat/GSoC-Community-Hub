@@ -21,28 +21,22 @@ Each item in `menutree` should have:
 
 ## Example
 
-```svelte
-<script lang="ts">
-  import Menubar from './Menubar.svelte';
 
-  const menuItems = [
-    {
-      top: "Home",
-      dropdown: [
-        { label: "Dashboard" },
-        { label: "Profile" },
-        { label: "---" },
-        { label: "Logout" }
-      ]
-    },
-    {
-      top: "Settings",
-      dropdown: [
-        { label: "Account" },
-        { label: "Privacy" }
-      ]
-    }
-  ];
-</script>
+```agml
 
-<Menubar brand="MyApp" menutree={menuItems} />
+  /**
+   *@prop {string} brand  - The main title text (supports HTML).
+   *@prop {Menu[]} menutree - An array of menu items with dropdown options.
+   */
+
+
+use Menubar from $lib/components/menubar/Menubar.svelte
+
+get brand
+get menutree
+
+<main>
+
+<Menubar {brand} {menutree}/>
+
+</main>
