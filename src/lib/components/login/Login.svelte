@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { keycloakInstance } from '$lib/store.svelte';
 	let { loginData } = $props();
-	console.log(loginData);
 </script>
 
 <div class="container">
