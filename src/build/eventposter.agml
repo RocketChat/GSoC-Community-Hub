@@ -1,0 +1,45 @@
+import json
+
+// Load event data from JSON file
+let eventData = loadJSON('/home/karan/Downloads/GSoC-Community-Hub/GSoC-Community-Hub/static/gsoc_alumni_summit_2025.json')
+
+// Extract event details
+let event = eventData.event
+
+// Create the event poster
+poster {
+    banner: static/alumni_summit_2025.png // Use banner from JSON
+    title: event.title
+    subtitle: "Organized by Rocket.Chat"
+    date: formatDate(event.time_and_date.start, "MMMM d, yyyy")
+    time: formatTime(event.time_and_date.start, "h:mm a") + " - " + formatTime(event.time_and_date.end, "h:mm a")
+    location: event.location
+    description: event.Overview.join(" ")
+
+    // Add sessions dynamically
+    for session in event.sessions {
+        sessionBlock {
+            title: session.title
+            speaker: session.speaker
+            time: session.start_time + " - " + session.end_time
+            duration: session.duration + " mins"
+            description: session.description != "" ? session.description : "No description provided."
+        }
+    }
+
+    // Add speaker details dynamically
+    for speaker in event.speakers {
+        speakerBlock {
+            name: speaker.name
+            bio: speaker.bio
+            image: speaker.image
+            more: speaker.more
+            socialLinks {
+                github: speaker.social[0].github
+                email: speaker.social[1].email
+                twitter: speaker.social[2].twitter
+                linkedin: speaker.social[3].linkedin
+            }
+        }
+    }
+}
