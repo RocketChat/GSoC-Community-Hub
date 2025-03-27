@@ -40,9 +40,20 @@
 		{:else if menu.top === 'user'}
 			{#if authenticated.value}
 				<Dropdown>
-					<DropdownToggle nav class="user-avatar">
+					<div class="hidden lg:block">
+						<DropdownToggle nav class="">
+							{#if user.avatar}
+								<img src={user.avatar} alt="User Avatar" class="avatar-img" />
+							{/if}
+						</DropdownToggle>
+					</div>
+					<DropdownToggle
+						nav
+						caret
+						class="border-b-2 border-solid border-transparent bg-none outline-none hover:border-secondaryColor hover:text-secondaryColor focus:border-secondaryColor focus:text-secondaryColor"
+					>
 						{#if user.avatar}
-							<img src={user.avatar} alt="User Avatar" class="avatar-img" />
+							{menu.dropdownDisplayName}
 						{/if}
 					</DropdownToggle>
 					<DropdownMenu>

@@ -80,6 +80,7 @@ export const menutree = [
 	},
 	{
 		top: 'user',
-		dropdown: ['Admin', 'Logout']
+		dropdown: ['Admin', 'Logout'],
+		dropdownDisplayName: 'Account'
 	}
 ];
