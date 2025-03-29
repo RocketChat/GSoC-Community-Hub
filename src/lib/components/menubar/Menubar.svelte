@@ -1,8 +1,4 @@
-<script module>
-</script>
-
 <script lang="ts">
-	let { brand, menutree } = $props();
 	import {
 		Navbar,
 		NavbarBrand,
@@ -14,6 +10,15 @@
 	} from '@sveltestrap/sveltestrap';
 
 	import { Styles } from '@sveltestrap/sveltestrap';
+
+	export let brand: string;
+	export let menutree: Array<{
+		top: string;
+		dropdown: Array<{
+			label: string;
+			href?: string;
+		}>;
+	}>;
 </script>
 
 <style>
@@ -60,7 +65,7 @@
 		        {#if item.label == "---"}
 				  <DropdownItem divider />
 				{:else}
-				<DropdownItem>
+				<DropdownItem href={item.href || '#'}>
 				 {item.label}
 				</DropdownItem>
 				 {/if}
