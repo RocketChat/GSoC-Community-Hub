@@ -18,7 +18,7 @@ const buildPathAppDir = path.join(rootDir, '/src/routes');
 // Global Set to keep track of installed packages
 //const installedPackages = new Set<string>();
 
-function processFile(filePath: string): void {
+export function processFile(filePath: string): void {
   const fileName = path.basename(filePath, path.extname(filePath));
   const sourceCode = fs.readFileSync(filePath, "utf-8");
   const sourceFile = ts.createSourceFile("input.tsx", sourceCode, ts.ScriptTarget.Latest, true);
