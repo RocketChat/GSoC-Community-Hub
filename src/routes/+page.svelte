@@ -30,4 +30,3 @@ import Personatiles from '$lib/components/personatiles/Personatiles.svelte';
 <Simonlinktiles {tilelinks}/>
 <Carousel {stories}/>
 <Personatiles {caption} {personas} {images}/>
-<Eventsscheduleposter conference={conferenceData} sessions={sessionsData} />
