@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "NodeNext", // Use "CommonJS" if your project is not ESM
+		"moduleResolution": "NodeNext",
+		"target": "ES2022",
+		"outDir": "./dist", // Ensure output directory is correct
+		"strict": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"rootDir": "./src" // Ensure it points to your source folder
+	},
+	"include": ["src/compiler/scripts/**/*.ts"],
+	"exclude": ["node_modules", ".svelte-kit/**"]
+}

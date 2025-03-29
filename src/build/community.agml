@@ -20,9 +20,10 @@ get stories
 get caption
 get personas
 get images
+get loginData
 
 <main>
-<Menubar {brand} {menutree} />
+<Menubar {loginData} {brand} {menutree} />
 <Herounit title={herotitle} subtitle={herosub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
