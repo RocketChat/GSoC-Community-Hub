@@ -1,3 +1,5 @@
-    // Statscounters data from CRM
-export const counters = [ { max: 388388, label: "Users"}, 
-    {max: 12828288, label: "Messages"}, {max: 802, label: "Online"}];
+import { fetchStats } from "../countStats";
+const [ Users, Messages, onlineUsers ] = await fetchStats();
+// Statscounters data from CRM
+export const counters = [ { max: Users, label: "Users"}, 
+    {max: Messages, label: "Messages"}, {max: onlineUsers, label: "Online"}];
