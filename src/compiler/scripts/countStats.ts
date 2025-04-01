@@ -1,9 +1,11 @@
+import { PUBLIC_URL, PUBLIC_TOKEN, PUBLIC_USERID } from '$env/static/public';
+
 export const fetchStats = async () => {
-    const response = await fetch("https://apiexplorer.support.rocket.chat/api/v1/statistics.list", {
+    const response = await fetch(PUBLIC_URL, {
     method: 'GET',
     headers: {
-        'X-Auth-Token':"ReFnX4E6DWjzKv1PFqrTD3IAHxYKQ5hqAL9PrgRJ4yx",
-        'X-User-Id': "4M9iA94fqvpo3Ekm8",
+        'X-Auth-Token':PUBLIC_TOKEN,
+        'X-User-Id': PUBLIC_USERID,
         'accept': 'application/json'
         }
     });
@@ -20,3 +22,4 @@ export const fetchStats = async () => {
     }
 
 }
+
