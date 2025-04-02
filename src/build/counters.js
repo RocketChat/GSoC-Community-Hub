@@ -1,5 +1,5 @@
-import { fetchStats } from "$lib/util/countStats";
-const {totalUsers, totalMessages, onlineUsers } = await fetchStats() ?? {totalUsers: 388388, totalMessages : 12828288, onlineUsers : 802};
+import { data } from "./stats";
 // Statscounters data from CRM
-export const counters = [ { max: totalUsers, label: "Users"}, 
-    {max: totalMessages, label: "Messages"}, {max: onlineUsers, label: "Online"}];
+const stats = data.statistics;
+export const counters = [ { max: stats[0].totalUsers, label: "Users"}, 
+    {max: stats[0].totalMessages, label: "Messages"}, {max: stats[0].onlineUsers, label: "Online"}];
