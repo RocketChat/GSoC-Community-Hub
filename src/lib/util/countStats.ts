@@ -1,34 +1,28 @@
-import { PUBLIC_URL, PUBLIC_TOKEN, PUBLIC_USERID } from '$env/static/public';
+import * as fs from "fs";
+import * as path from "path";
 
-interface StatsResponse{
-    totalUsers?: number,
-    totalMessages?: number, 
-    onlineUsers?: number 
-}
+const rootDir = path.resolve(process.cwd(), './');
+const outputFileDir = path.join(rootDir, '/src/build/stats.js');
 
-export const fetchStats = async () => {
-    try{
-        const res = await fetch(PUBLIC_URL, {
+const fetchStats = async () => {
+        const res = await fetch("https://apiexplorer.support.rocket.chat/api/v1/statistics.list", {
         method: 'GET',
         headers: {
-            'X-Auth-Token':PUBLIC_TOKEN,
-            'X-User-Id': PUBLIC_USERID,
+            'X-Auth-Token':"ReFnX4E6DWjzKv1PFqrTD3IAHxYKQ5hqAL9PrgRJ4yx",
+            'X-User-Id': "4M9iA94fqvpo3Ekm8",
             'accept': 'application/json'
             },
         });
+        if(res.ok){
             const data = await res.json();
-            const stats = data?.statistics;
-            const response : StatsResponse = {
-                totalUsers : stats[0]["onlineUsers"],
-                totalMessages : stats[0]["totalMessages"], 
-                onlineUsers : stats[0]["onlineUsers"]
-            }
-            return response;  
-    }catch(e){
-        if(e instanceof Error){
-            console.error(e.message);
+            const jsonData = JSON.stringify(data);
+            fs.writeFileSync(outputFileDir, `export const data = ${jsonData}`);
+        }else{
+            fs.writeFileSync(outputFileDir, `export const data = {"statistics":[{"totalUsers":388388,
+                "totalMessages":12828288, "onlineUsers":802 }]}`);
         }
-    }
-
 }
+
+fetchStats();
+
 
