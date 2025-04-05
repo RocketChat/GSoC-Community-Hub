@@ -1,16 +1,15 @@
-import * as ts from "typescript";
-import * as fs from "fs";
-import * as path from "path";
+import * as ts from 'typescript';
+import * as fs from 'fs';
+import * as path from 'path';
 //import { extractPackageNames } from "./extract/extractPackageNames";
-import { extractImportStatements } from "./extract/extractImportStatements";
-import { extractComponentNames } from "./extract/extractComponentNames";
-import { findFirstJsxOpeningLikeElementWithName } from "./extract/findFirstJsxOpeningLikeElementWithName";
-import { generateSvelteComponent } from "./transform/generateSvelteComponent";
-import { transformImportStatements } from "./transform/transformImportStatements";
-import { transformDataItems } from "./transform/transformDataItems";
-import { extractData } from "./extract/extractData";
+import { extractImportStatements } from './extract/extractImportStatements';
+import { extractComponentNames } from './extract/extractComponentNames';
+import { findFirstJsxOpeningLikeElementWithName } from './extract/findFirstJsxOpeningLikeElementWithName';
+import { generateSvelteComponent } from './transform/generateSvelteComponent';
+import { transformImportStatements } from './transform/transformImportStatements';
+import { transformDataItems } from './transform/transformDataItems';
+import { extractData } from './extract/extractData';
 //import { installPackages } from "./install/installPackages";
-
 
 const rootDir = path.resolve(process.cwd(), './');
 const srcPath = path.join(rootDir, 'src');
@@ -18,43 +17,46 @@ const buildPathAppDir = path.join(rootDir, '/src/routes');
 // Global Set to keep track of installed packages
 //const installedPackages = new Set<string>();
 
-export function processFile(filePath: string): void {
-  const fileName = path.basename(filePath, path.extname(filePath));
-  const sourceCode = fs.readFileSync(filePath, "utf-8");
-  const sourceFile = ts.createSourceFile("input.tsx", sourceCode, ts.ScriptTarget.Latest, true);
+function processFile(filePath: string): void {
+	const fileName = path.basename(filePath, path.extname(filePath));
+	const sourceCode = fs.readFileSync(filePath, 'utf-8');
+	const sourceFile = ts.createSourceFile('input.tsx', sourceCode, ts.ScriptTarget.Latest, true);
 
-  //extracting and transforming 
-  //const packageNames = extractPackageNames(sourceFile);
-  const importStatement = extractImportStatements(sourceFile);
-  const dataItems = extractData(sourceFile);
-  const componentNames = extractComponentNames(importStatement);
-  const transformedImports = transformImportStatements(importStatement);
-  const transformedDataImports = transformDataItems(dataItems, fileName);
-  
-  //generating component
-  const componentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
-  const jsxElements = findFirstJsxOpeningLikeElementWithName(sourceFile, componentNames)
-  .map((element) => element.getText())
-  .join("\n");
-  const componentCode = generateSvelteComponent(transformedImports,transformedDataImports, componentName, jsxElements);
-  
-  //installing npm packages used
-  // installPackages(buildPathAppDir, packageNames, installedPackages);///////
+	//extracting and transforming
+	//const packageNames = extractPackageNames(sourceFile);
+	const importStatement = extractImportStatements(sourceFile);
+	const dataItems = extractData(sourceFile);
+	const componentNames = extractComponentNames(importStatement);
+	const transformedImports = transformImportStatements(importStatement);
+	const transformedDataImports = transformDataItems(dataItems, fileName);
 
-  // Creating files
-  let outputDirPath = buildPathAppDir;
-  if (fileName !== "main") {
-    outputDirPath = path.join(outputDirPath, fileName);
-  }
-  if (!fs.existsSync(outputDirPath)) {
-    fs.mkdirSync(outputDirPath, { recursive: true });
-  }
+	//generating component
+	const componentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+	const jsxElements = findFirstJsxOpeningLikeElementWithName(sourceFile, componentNames)
+		.map((element) => element.getText())
+		.join('\n');
+	const componentCode = generateSvelteComponent(
+		transformedImports,
+		transformedDataImports,
+		componentName,
+		jsxElements
+	);
 
-  const outputFilePath = path.join(outputDirPath, `+page.svelte`);
-  fs.writeFileSync(outputFilePath, componentCode);
-  console.log(`Generated file: ${outputFilePath}`);
+	//installing npm packages used
+	// installPackages(buildPathAppDir, packageNames, installedPackages);///////
 
+	// Creating files
+	let outputDirPath = buildPathAppDir;
+	if (fileName !== 'main') {
+		outputDirPath = path.join(outputDirPath, fileName);
+	}
+	if (!fs.existsSync(outputDirPath)) {
+		fs.mkdirSync(outputDirPath, { recursive: true });
+	}
 
+	const outputFilePath = path.join(outputDirPath, `+page.svelte`);
+	fs.writeFileSync(outputFilePath, componentCode);
+	console.log(`Generated file: ${outputFilePath}`);
 }
 
 // async function getAllExports(packageName) {
@@ -71,21 +73,17 @@ export function processFile(filePath: string): void {
 //   }
 // }
 
-
-
-
 function walkDirectory(dirPath: string): void {
-  const files = fs.readdirSync(dirPath);
-  for (const file of files) {
-    const filePath = path.join(dirPath, file);
-    const stats = fs.statSync(filePath);
-    if (stats.isDirectory()) {
-      walkDirectory(filePath);
-    } else if (stats.isFile() && path.extname(file).toLowerCase() === ".agml") {
-      processFile(filePath);
-    }
-  }
+	const files = fs.readdirSync(dirPath);
+	for (const file of files) {
+		const filePath = path.join(dirPath, file);
+		const stats = fs.statSync(filePath);
+		if (stats.isDirectory()) {
+			walkDirectory(filePath);
+		} else if (stats.isFile() && path.extname(file).toLowerCase() === '.agml') {
+			processFile(filePath);
+		}
+	}
 }
 
 walkDirectory(srcPath);
-
