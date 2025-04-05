@@ -3,7 +3,7 @@ use EventPoster from $lib/components/eventposter/EventPoster.svelte
 
 get brand
 get menutree
-get eventData from $data/gsoc_alumni_summit_2025.json
+get eventData
 
 <main>
 <Menubar {brand} {menutree} />
