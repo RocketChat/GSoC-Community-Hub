@@ -3,6 +3,8 @@ import * as path from "path";
 
 const rootDir = path.resolve(process.cwd(), './');
 const outputFileDir = path.join(rootDir, '/src/build/stats.js');
+const max_retries = 3;
+let validResponse = false;
 
 const fetchStats = async () => {
         const res = await fetch("https://apiexplorer.support.rocket.chat/api/v1/statistics.list", {
@@ -13,7 +15,13 @@ const fetchStats = async () => {
             'accept': 'application/json'
             },
         });
-        if(res.ok){
+
+        for(let retry_count = 1; retry_count <= max_retries; retry_count++){
+            if(res.ok){
+                validResponse = true; break;
+            }
+        }
+        if(validResponse){
             const data = await res.json();
             const jsonData = JSON.stringify(data);
             fs.writeFileSync(outputFileDir, `export const data = ${jsonData}`);
