@@ -3,7 +3,7 @@ import * as path from "path";
 
 const rootDir = path.resolve(process.cwd(), './');
 const outputFileDir = path.join(rootDir, '/src/build/stats.js');
-const max_retries = 3;
+const maxRetries = 3;
 let validResponse = false;
 
 const fetchStats = async () => {
@@ -16,7 +16,7 @@ const fetchStats = async () => {
             },
         });
 
-        for(let retry_count = 1; retry_count <= max_retries; retry_count++){
+        for(let retryCount = 1; retryCount <= maxRetries; retryCount++){
             if(res.ok){
                 validResponse = true; break;
             }
