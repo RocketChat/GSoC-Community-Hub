@@ -19,7 +19,8 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
+vite.config.mts.timestamp-*
+vite.config.mjs.timestamp-*
 
 # Dependency directories
 node_modules/
