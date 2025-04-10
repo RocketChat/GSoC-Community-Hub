@@ -1,17 +1,20 @@
 import * as fs from "fs";
 import * as path from "path";
 
+const URL = import.meta.env.VITE_URL;
+const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
+const USERID = import.meta.env.VITE_USERID;
 const rootDir = path.resolve(process.cwd(), './');
 const outputFileDir = path.join(rootDir, '/src/build/stats.js');
 const maxRetries = 3;
 let validResponse = false;
 
 const fetchStats = async () => {
-        const res = await fetch("https://apiexplorer.support.rocket.chat/api/v1/statistics.list", {
+        const res = await fetch(URL, {
         method: 'GET',
         headers: {
-            'X-Auth-Token':"ReFnX4E6DWjzKv1PFqrTD3IAHxYKQ5hqAL9PrgRJ4yx",
-            'X-User-Id': "4M9iA94fqvpo3Ekm8",
+            'X-Auth-Token':USER_TOKEN,
+            'X-User-Id': USERID,
             'accept': 'application/json'
             },
         });
