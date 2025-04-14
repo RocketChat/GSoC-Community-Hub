@@ -1,3 +1,5 @@
+export const brand = 'GSoC Community Hub';
+
 export const menutree = [
 	{
 		top: 'Community',
@@ -11,7 +13,13 @@ export const menutree = [
 	},
 	{
 		top: 'Recent Events',
-		dropdown: [{ label: 'Alumni Summit 2024' }, { label: '---' }, { label: 'Demo Day 2024' }]
+		dropdown: [
+			{ label: 'Alumni Summit 2025', href: '/alumni-summit' },
+			{ label: '---' },
+			{ label: 'Alumni Summit 2024' },
+			{ label: '---' },
+			{ label: 'Demo Day 2024' }
+		]
 	},
 	{
 		top: 'Google Summer of Code',
@@ -74,13 +82,5 @@ export const menutree = [
 			{ label: 'Discussion Forum' },
 			{ label: 'Discord' }
 		]
-	},
-	{
-		top: 'Login'
-	},
-	{
-		top: 'user',
-		dropdown: ['Admin', 'Logout'],
-		dropdownDisplayName: 'Account'
 	}
 ];

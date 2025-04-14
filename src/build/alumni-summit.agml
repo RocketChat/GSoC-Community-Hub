@@ -1,0 +1,11 @@
+use Menubar from $lib/components/menubar/Menubar.svelte
+use EventPoster from $lib/components/eventposter/EventPoster.svelte
+
+get brand
+get menutree
+get eventData
+
+<main>
+<Menubar {brand} {menutree} />
+<EventPoster {eventData} />
+</main> 

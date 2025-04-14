@@ -1,8 +1,4 @@
-<script module>
-</script>
-
 <script lang="ts">
-	let { brand, menutree, loginData } = $props();
 	import {
 		Navbar,
 		NavbarBrand,
@@ -15,10 +11,15 @@
 	} from '@sveltestrap/sveltestrap';
 
 	import { Styles } from '@sveltestrap/sveltestrap';
-	import { authenticated, keycloakInstance, user } from '$lib/store.svelte';
 
-	import { goto } from '$app/navigation';
-	import Login from '../login/Login.svelte';
+	export let brand: string;
+	export let menutree: Array<{
+		top: string;
+		dropdown: Array<{
+			label: string;
+			href?: string;
+		}>;
+	}>;
 </script>
 
 {#snippet navItems()}
@@ -121,6 +122,31 @@
 			</div>
 		</Navbar>
 	</div>
+</div>
+
+<Styles />
+<div class="navbar-container">
+	<Navbar color="light" light container="lg" expand="md">
+		<NavbarBrand href="/">{brand}</NavbarBrand>
+		<Nav class="ms-auto" navbar>
+			{#each menutree as menu, i}
+				<Dropdown>
+					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
+					<DropdownMenu>
+						{#each menu.dropdown as item}
+							{#if item.label == '---'}
+								<DropdownItem divider />
+							{:else}
+								<DropdownItem href={item.href || '#'}>
+									{item.label}
+								</DropdownItem>
+							{/if}
+						{/each}
+					</DropdownMenu>
+				</Dropdown>
+			{/each}
+		</Nav>
+	</Navbar>
 </div>
 
 <style>
