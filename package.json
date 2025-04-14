@@ -4,8 +4,8 @@
 	"type": "module",
 	"private": "true",
 	"scripts": {
-		"dev": "bun src/lib/util/countStats.ts && vite dev",
-		"build": "bun src/lib/util/countStats.ts && vite build",
+		"dev": "bun src/lib/util/main.ts && vite dev",
+		"build": "bun src/lib/util/main.ts && vite build",
 		"preview": "vite preview",
 		"compile": "bun src/compiler/scripts/main.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

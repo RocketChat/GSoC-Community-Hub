@@ -9,7 +9,7 @@ const outputFileDir = path.join(rootDir, '/src/build/stats.js');
 const maxRetries = 3;
 let validResponse = false;
 
-const fetchStats = async () => {
+export const fetchStats = async () => {
         const res = await fetch(URL, {
         method: 'GET',
         headers: {
@@ -34,6 +34,6 @@ const fetchStats = async () => {
         }
 }
 
-fetchStats();
+
 
 
