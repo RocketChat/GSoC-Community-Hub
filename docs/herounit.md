@@ -17,12 +17,6 @@ Use this component to create a hero section with a prominent title and supportin
 
 ```agml
 
-  /**
-   *@prop {string} title  - The main title text (supports HTML).
-   *@prop {string} subtitle - The supporting subtitle text.
-   */
-
-
 use Herounit from $lib/components/herounit/Herounit.svelte
 
 get title
@@ -33,3 +27,5 @@ get subtitle
 <Herounit {title} {subtitle}/>
 
 </main>
+
+```

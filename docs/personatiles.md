@@ -19,13 +19,6 @@ Use this component to showcase personas or user roles in a visually appealing wa
 
 ```agml
 
-  /**
-   *@prop {string} caption  - Optional caption for the component.
-   *@prop {string[]} personas - An array of persona titles.
-   *@prop {string[]} images - An array of image URLs corresponding to each persona.
-   */
-
-
 use Personatiles from $lib/components/personatiles/Personatiles.svelte
 
 get caption
@@ -37,3 +30,5 @@ get images
 <Personatiles {caption} {personas} {images}/>
 
 </main>
+
+```

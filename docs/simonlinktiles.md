@@ -18,11 +18,6 @@ Use this component to showcase links, features, or information in a grid layout.
 
 ```agml
 
-  /**
-   *@prop {Object[][]} tilelinks  - A 2D array of tile objects, where each tile has title and desc.
-   */
-
-
 use Simonlinktiles from $lib/components/simonlinktiles/Simonlinktiles.svelte
 
 get tilelinks
@@ -32,3 +27,5 @@ get tilelinks
 <Simonlinktiles {tilelinks}/>
 
 </main>
+
+```

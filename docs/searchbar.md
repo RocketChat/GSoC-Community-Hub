@@ -24,11 +24,6 @@ The `menu` object should have:
 
 ```agml
 
-  /**
-   *@prop {Object} searchactions  - Configuration for the search bar.
-   */
-
-
 use Searchbar from $lib/components/searchbar/Searchbar.svelte
 
 get searchactions
@@ -38,3 +33,5 @@ get searchactions
 <Searchbar {searchactions}/>
 
 </main>
+
+```

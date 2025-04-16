@@ -18,12 +18,6 @@ Use this component to visually separate two links in a clean and centered layout
 
 ```agml
 
-  /**
-   *@prop {string} leftlink  - The text or link to display on the left.
-   *@prop {string} rightlink - The text or link to display on the right.
-   */
-
-
 use Docslink from $lib/components/docslink/Docslink.svelte
 
 get leftlink
@@ -34,3 +28,5 @@ get rightlink
 <Docslink {leftlink} {rightlink}/>
 
 </main>
+
+```

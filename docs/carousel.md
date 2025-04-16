@@ -17,11 +17,6 @@ Use this component to display a gallery of images in a compact and interactive w
 
 ```agml
 
-  /**
-   *@prop {string[]} stories - The prop is type of array of strings(url or path of image).
-   */
-
-
 use Carousel from $lib/components/carousel/Carousel.svelte
 
 get stories
@@ -31,3 +26,5 @@ get stories
 <Carousel {stories}/>
 
 </main>
+
+```

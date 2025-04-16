@@ -24,12 +24,6 @@ Each item in `menutree` should have:
 
 ```agml
 
-  /**
-   *@prop {string} brand  - The main title text (supports HTML).
-   *@prop {Menu[]} menutree - An array of menu items with dropdown options.
-   */
-
-
 use Menubar from $lib/components/menubar/Menubar.svelte
 
 get brand
@@ -40,3 +34,5 @@ get menutree
 <Menubar {brand} {menutree}/>
 
 </main>
+
+```
