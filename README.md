@@ -53,12 +53,26 @@ bun run build
 
 You can preview the production build with `bun run preview`.
 
+## What is an `.agml` file?
+
+In a nutshell, `.agml` files represent our **domain-specific language (DSL)** designed to simplify the creation of Svelte pages. The syntax is intentionally minimal and easy to learn, with just a few conventions to follow:
+
+- **`i` (install)**: Installs a specified package from a registry (e.g., `npm`).  
+  *Note: Since all components are currently available in `lib/components`, this command is optional and can usually be skipped.*
+
+- **`use`**: Imports specific components or modules from the package.
+
+- **`get`**: Fetches and binds data that will be passed as props to components.
+
+- The rest of the page content should be enclosed within a `<main></main>` block.
+
 
 ##  Components Ecosystem
 
 The following independent components are available.&ensp; They are located under the `./src/lib/components` directory.&ensp; Many more components are being created/ported. &ensp;  Configuration and parameterization are documented on their own doc page.
 <br/>
 <br/>
+
 
 |Component Name|Description|Doc link|
 |------|------|------|
