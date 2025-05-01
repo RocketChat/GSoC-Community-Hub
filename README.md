@@ -64,6 +64,19 @@ bun run build
 
 You can preview the production build with `bun run preview`.
 
+## What is an `.agml` file?
+
+In a nutshell, `.agml` files represent our **domain-specific language (DSL)** designed to simplify the creation of Svelte pages. The syntax is intentionally minimal and easy to learn, with just a few conventions to follow:
+
+- **`i` (install)**: Installs a specified package from a registry (e.g., `npm`).  
+  *Note: Since all components are currently available in `lib/components`, this command is optional and can usually be skipped.*
+
+- **`use`**: Imports specific components or modules from the package.
+
+- **`get`**: Fetches and binds data that will be passed as props to components.
+
+- The rest of the page content should be enclosed within a `<main></main>` block.
+
 
 ##  Components Ecosystem
 
@@ -71,14 +84,15 @@ The following independent components are available.&ensp; They are located under
 <br/>
 <br/>
 
+
 |Component Name|Description|Doc link|
 |------|------|------|
-|`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|link|
-|`herounit` -  Hero Unit|A large formatted text box across the page|link|
-|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|link|
-|`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|link|
-|`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|link|
-|`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|link|
-|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|link| 
+|`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|[link](./docs/menubar.md)|
+|`herounit` -  Hero Unit|A large formatted text box across the page|[link](./docs/herounit.md)|
+|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|[link](./docs/searchbar.md)|
+|`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[link](./docs/statscounters.md)|
+|`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
+|`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/carousel.md)|
+|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)| 
 
 
