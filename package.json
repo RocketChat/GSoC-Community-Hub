@@ -39,6 +39,7 @@
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-vercel": "^5.7.2",
 		"@sveltestrap/sveltestrap": "^6.2.8"
 	},
 	"volta": {
