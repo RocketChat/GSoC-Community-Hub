@@ -11,7 +11,11 @@
 
 	import { Styles } from '@sveltestrap/sveltestrap';
 
-	export let brand: string;
+	export let brand: {
+		brandName: string;
+		brandImgLink: string;
+	}
+
 	export let menutree: Array<{
 		top: string;
 		dropdown: Array<{
@@ -51,28 +55,50 @@
     }
 </style>
 
+{#snippet nav()}
+			<Nav class="ms-auto" navbar>
+				{#each menutree as menu, i}
+				<Dropdown>
+					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
+				<DropdownMenu>
+				  {#each menu.dropdown as item}
+				
+					{#if item.label == "---"}
+					  <DropdownItem divider />
+					{:else}
+					<DropdownItem href={item.href || '#'}>
+					 {item.label}
+					</DropdownItem>
+					 {/if}
+				{/each}
+				</DropdownMenu>
+				</Dropdown>
+				 {/each}
+			</Nav>
+{/snippet}
+
 <Styles />
 <div class="navbar-container">
 	<Navbar color="light" light container="lg" expand="md">
-		<NavbarBrand href="/">{brand}</NavbarBrand>
-		<Nav class="ms-auto" navbar>
-			{#each menutree as menu, i}
-			<Dropdown>
-				<DropdownToggle nav caret>{menu.top}</DropdownToggle>
-		    <DropdownMenu>
-			  {#each menu.dropdown as item}
-			
-		        {#if item.label == "---"}
-				  <DropdownItem divider />
-				{:else}
-				<DropdownItem href={item.href || '#'}>
-				 {item.label}
-				</DropdownItem>
-				 {/if}
-			{/each}
-			</DropdownMenu>
-			</Dropdown>
-			 {/each}
-		</Nav>
+		<NavbarBrand  href="/">
+			<img src={brand.brandImgLink} alt={brand.brandName} />
+		</NavbarBrand>
+		<div class="hidden lg:block">
+			{@render nav()}
+		</div>
+			<div class="lg:hidden">
+				<Dropdown>
+					<DropdownToggle nav>
+						<svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+							><path
+								d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+							/></svg
+						>
+					</DropdownToggle>
+					<DropdownMenu class="gap-2">
+						{@render nav()}
+					</DropdownMenu>
+				</Dropdown>
+			</div>
 	</Navbar>
 </div>
