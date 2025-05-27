@@ -82,5 +82,14 @@ export const menutree = [
 			{ label: 'Discussion Forum' },
 			{ label: 'Discord' }
 		]
+	},
+
+	{
+		top: 'Log In',
+		dropdown: [
+			{label: 'Login'},
+			{label: '---'},
+			{label: 'Sign in' }
+		]
 	}
 ];
