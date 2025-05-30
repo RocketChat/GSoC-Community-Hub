@@ -12,7 +12,7 @@
 	} from '@sveltestrap/sveltestrap';
 
 	import { initKeycloak } from '$lib/auth/keycloakAuth';
-	import { keycloakInstance, authenticated, user } from '$lib/shared.svelte'; 
+	import { keycloakInstance, authenticated, user, setAuthenticated } from '$lib/shared.svelte'; 
 	import { Styles } from '@sveltestrap/sveltestrap';
 	export let brand: {
 		brandName: string;
@@ -34,11 +34,11 @@
 				{#if menu.top === "Login"}
 					{#if !authenticated.value}
 					<NavItem>
-						<NavLink on:click={async () => initKeycloak().then(() => authenticated.value = true)}>{menu.top}</NavLink>
+						<NavLink on:click={async () => initKeycloak()}>{menu.top}</NavLink>
 					</NavItem>
 					{:else}
 					<NavItem>
-						<NavLink on:click={() => keycloakInstance.instance?.logout()}>{menu.dropdown[0]}</NavLink>
+						<NavLink on:click={() => keycloakInstance.instance?.logout().then(() => setAuthenticated(false))}>{menu.dropdown[0]}</NavLink>
 					</NavItem>
 					<NavItem>
 						<img class="w-10 h-10 rounded-full" src={user.avatar} alt="user" />
