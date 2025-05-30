@@ -11,7 +11,8 @@
 		DropdownItem
 	} from '@sveltestrap/sveltestrap';
 
-	import { keycloakInstance, authenticated } from '$lib/auth/keycloakAuth'; 
+	import { initKeycloak } from '$lib/auth/keycloakAuth';
+	import { keycloakInstance, authenticated, user } from '$lib/shared.svelte'; 
 	import { Styles } from '@sveltestrap/sveltestrap';
 	export let brand: {
 		brandName: string;
@@ -26,6 +27,42 @@
 		}>;
 	}>;
 </script>
+
+{#snippet nav()}
+			<Nav class="ms-auto" navbar>
+				{#each menutree as menu, i}
+				{#if menu.top === "Login"}
+					{#if !authenticated.value}
+					<NavItem>
+						<NavLink on:click={async () => initKeycloak().then(() => authenticated.value = true)}>{menu.top}</NavLink>
+					</NavItem>
+					{:else}
+					<NavItem>
+						<NavLink on:click={() => keycloakInstance.instance?.logout()}>{menu.dropdown[0]}</NavLink>
+					</NavItem>
+					<NavItem>
+						<img class="w-10 h-10 rounded-full" src={user.avatar} alt="user" />
+					</NavItem>
+				{/if}
+				{:else}
+				<Dropdown>
+					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
+					<DropdownMenu>
+						{#each menu.dropdown as item}
+						{#if item.label == "---"}
+						<DropdownItem divider />
+						{:else}
+						<DropdownItem href={item.href || '#'}>
+							{item.label}
+					</DropdownItem>
+					 {/if}
+				{/each}
+				</DropdownMenu>
+				</Dropdown>
+				{/if}
+				 {/each}
+			</Nav>
+{/snippet}
 
 <style>
     .navbar-container {
@@ -56,33 +93,6 @@
         padding: 0.5rem 1.25rem;
     }
 </style>
-
-{#snippet nav()}
-			<Nav class="ms-auto" navbar>
-				{#each menutree as menu, i}
-				{#if menu.top === "Login"}
-					<NavItem>
-						<NavLink on:click={async () => keycloakInstance.instance?.login()}>{menu.top}</NavLink>
-					</NavItem>
-				{:else}
-				<Dropdown>
-					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
-					<DropdownMenu>
-						{#each menu.dropdown as item}
-						{#if item.label == "---"}
-						<DropdownItem divider />
-						{:else}
-						<DropdownItem href={item.href || '#'}>
-							{item.label}
-					</DropdownItem>
-					 {/if}
-				{/each}
-				</DropdownMenu>
-				</Dropdown>
-				{/if}
-				 {/each}
-			</Nav>
-{/snippet}
 
 <Styles />
 <div class="navbar-container">

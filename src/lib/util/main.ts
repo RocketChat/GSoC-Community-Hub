@@ -1,3 +1,3 @@
-import { fetchStats } from "../util/countStats"
+// import { fetchStats } from "../util/countStats"
 
-fetchStats();
+// fetchStats();

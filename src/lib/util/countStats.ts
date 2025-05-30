@@ -33,7 +33,3 @@ export const fetchStats = async () => {
                 "totalMessages":12828288, "onlineUsers":802 }]}`);
         }
 }
-
-
-
-

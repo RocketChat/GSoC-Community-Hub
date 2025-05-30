@@ -39,13 +39,8 @@
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-<<<<<<< HEAD
 		"@sveltestrap/sveltestrap": "^6.2.8",
 		"keycloak-js": "^26.2.0"
-=======
-		"@sveltejs/adapter-vercel": "^5.7.2",
-		"@sveltestrap/sveltestrap": "^6.2.8"
->>>>>>> ec1aa2bab6be0240103b4e05191ae679e5dbb38f
 	},
 	"volta": {
 		"node": "20.10.0"

@@ -85,11 +85,7 @@ export const menutree = [
 	},
 
 	{
-		top: 'Log In',
-		dropdown: [
-			{label: 'Login'},
-			{label: '---'},
-			{label: 'Sign in' }
-		]
+		top: 'Login',
+		dropdown: ['Logout']
 	}
 ];
