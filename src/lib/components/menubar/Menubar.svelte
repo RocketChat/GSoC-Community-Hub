@@ -10,9 +10,9 @@
 		DropdownMenu,
 		DropdownItem
 	} from '@sveltestrap/sveltestrap';
-
-	import { initKeycloak } from '$lib/auth/keycloakAuth';
-	import { keycloakInstance, authenticated, user, setAuthenticated } from '$lib/shared.svelte'; 
+	import { signIn, signOut } from "@auth/sveltekit/client";
+	import { page } from '$app/state';
+	import { user } from '$lib/shared.svelte'; 
 	import { Styles } from '@sveltestrap/sveltestrap';
 	export let brand: {
 		brandName: string;
@@ -32,18 +32,18 @@
 			<Nav class="ms-auto" navbar>
 				{#each menutree as menu, i}
 				{#if menu.top === "Login"}
-					{#if !authenticated.value}
+					{#if page.data.session}
 					<NavItem>
-						<NavLink on:click={async () => initKeycloak()}>{menu.top}</NavLink>
-					</NavItem>
-					{:else}
-					<NavItem>
-						<NavLink on:click={() => keycloakInstance.instance?.logout().then(() => setAuthenticated(false))}>{menu.dropdown[0]}</NavLink>
+						<NavLink on:click={() => signOut()}>{menu.dropdown[0]}</NavLink>
 					</NavItem>
 					<NavItem>
 						<img class="w-10 h-10 rounded-full" src={user.avatar} alt="user" />
 					</NavItem>
-				{/if}
+					{:else}
+					<NavItem>
+						<NavLink on:click={() => signIn("keycloak")}>{menu.top}</NavLink>
+					</NavItem>
+					{/if}
 				{:else}
 				<Dropdown>
 					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
