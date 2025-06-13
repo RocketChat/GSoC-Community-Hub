@@ -1,8 +1,7 @@
 import Keycloak from 'keycloak-js';
 
-
-
-export const user = $state<{ email: string | null; role: string | null; avatar: string }>({
+export const user = $state<{ name: string | undefined | null; email: string | null; role: string | null; avatar: string | null }>({
+	name: null,
 	email: null,
 	role: null,
 	avatar: 'defaultPic.png'
@@ -11,15 +10,5 @@ export const user = $state<{ email: string | null; role: string | null; avatar: 
 export const keycloakInstance = $state<{ instance: Keycloak | null }>({ instance: null });
 
 export const authenticated = $state<{ value: boolean }>({
-	value: false
+	value: false																						
 });
-
-
-//setter functions for shared state 
-export async function setAuthenticated(value: boolean) {
-  authenticated.value = value;
-}
-
-export async function setKeyCloakInstance(value: Keycloak){
-  keycloakInstance.instance = value;
-}

@@ -10,10 +10,10 @@
 		DropdownMenu,
 		DropdownItem
 	} from '@sveltestrap/sveltestrap';
-	import { signIn, signOut } from "@auth/sveltekit/client";
-	import { page } from '$app/state';
-	import { user } from '$lib/shared.svelte'; 
+	// import { initKeycloak } from '$lib/auth/keycloakAuth';
+	// import { keycloakInstance, authenticated, user, setAuthenticated } from '$lib/shared.svelte'; 
 	import { Styles } from '@sveltestrap/sveltestrap';
+	import ProtectedRoute from '../protectedroute/ProtectedRoute.svelte'; 
 	export let brand: {
 		brandName: string;
 		brandImgLink: string;
@@ -31,19 +31,23 @@
 {#snippet nav()}
 			<Nav class="ms-auto" navbar>
 				{#each menutree as menu, i}
-				{#if menu.top === "Login"}
-					{#if page.data.session}
-					<NavItem>
-						<NavLink on:click={() => signOut()}>{menu.dropdown[0]}</NavLink>
-					</NavItem>
-					<NavItem>
-						<img class="w-10 h-10 rounded-full" src={user.avatar} alt="user" />
-					</NavItem>
-					{:else}
-					<NavItem>
-						<NavLink on:click={() => signIn("keycloak")}>{menu.top}</NavLink>
-					</NavItem>
-					{/if}
+				{#if menu.top === "Custom Menu"}
+					<ProtectedRoute>
+						<Dropdown>
+							<DropdownToggle nav caret>{menu.top}</DropdownToggle>
+							<DropdownMenu>
+								{#each menu.dropdown as item}
+								{#if item.label == "---"}
+								<DropdownItem divider />
+								{:else}
+								<DropdownItem href={item.href || '#'}>
+								{item.label}
+								</DropdownItem>
+								{/if}
+								{/each}
+							</DropdownMenu>		
+						</Dropdown>
+					</ProtectedRoute>
 				{:else}
 				<Dropdown>
 					<DropdownToggle nav caret>{menu.top}</DropdownToggle>

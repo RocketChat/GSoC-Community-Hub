@@ -4,7 +4,7 @@ export const menutree = [
 	{
 		top: 'Community',
 		dropdown: [
-			{ label: 'Community Rocket.Chat Serever' },
+			{ label: 'Community Rocket.Chat Server' },
 			{ label: '---' },
 			{ label: 'Forum' },
 			{ label: '---' },
@@ -85,7 +85,12 @@ export const menutree = [
 	},
 
 	{
-		top: 'Login',
-		dropdown: ['Logout']
+		top: 'Custom Menu',
+		dropdown: [
+			{label: 'Option 1'},
+			{label: 'Option 2'},
+			{label: 'Meet with mentee'},
+			{label: 'Option 3'}
+		]
 	}
 ];
