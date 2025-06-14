@@ -21,6 +21,7 @@ export const menutree = [
 			{ label: 'Demo Day 2024' }
 		]
 	},
+
 	{
 		top: 'Google Summer of Code',
 		dropdown: [
@@ -85,12 +86,12 @@ export const menutree = [
 	},
 
 	{
-		top: 'Custom Menu',
+		top: 'User Menu',
 		dropdown: [
 			{label: 'Option 1'},
 			{label: 'Option 2'},
 			{label: 'Meet with mentee'},
 			{label: 'Option 3'}
 		]
-	}
+	},
 ];

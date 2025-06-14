@@ -9,14 +9,20 @@
 		DropdownToggle,
 		DropdownMenu,
 		DropdownItem
-	} from '@sveltestrap/sveltestrap';
-	// import { initKeycloak } from '$lib/auth/keycloakAuth';
-	// import { keycloakInstance, authenticated, user, setAuthenticated } from '$lib/shared.svelte'; 
+	} from '@sveltestrap/sveltestrap'; 
 	import { Styles } from '@sveltestrap/sveltestrap';
-	import ProtectedRoute from '../protectedroute/ProtectedRoute.svelte'; 
+	// import ProtectedRoute from '../protectedroute/ProtectedRoute.svelte'; 
+	import { authenticated, keycloakInstance } from '$lib/shared.svelte';
+	import { initKeycloak } from '$lib/auth/keycloakAuth';
+	
 	export let brand: {
 		brandName: string;
 		brandImgLink: string;
+	}
+
+	export let loginData : {
+		loginPrompt: string;
+		logoutPrompt: string;
 	}
 
 	export let menutree: Array<{
@@ -31,9 +37,27 @@
 {#snippet nav()}
 			<Nav class="ms-auto" navbar>
 				{#each menutree as menu, i}
-				{#if menu.top === "Custom Menu"}
-					<ProtectedRoute>
-						<Dropdown>
+				{#if menu.top === "User Menu"}
+					{#if authenticated.value}
+					<Dropdown>
+						<DropdownToggle nav caret>{menu.top}</DropdownToggle>
+						<DropdownMenu>
+							{#each menu.dropdown as item}
+							{#if item.label == "---"}
+							<DropdownItem divider />
+							{:else}
+							<DropdownItem href={item.href || '#'}>
+							{item.label}
+							</DropdownItem>
+							{/if}
+							{/each}
+						</DropdownMenu>		
+					</Dropdown>
+					<NavItem>
+						<NavLink on:click={async () => keycloakInstance.instance?.logout().then(() => authenticated.value = false) }>{loginData.logoutPrompt}</NavLink>
+					</NavItem>
+					{:else}
+						<Dropdown class="hidden">
 							<DropdownToggle nav caret>{menu.top}</DropdownToggle>
 							<DropdownMenu>
 								{#each menu.dropdown as item}
@@ -47,7 +71,10 @@
 								{/each}
 							</DropdownMenu>		
 						</Dropdown>
-					</ProtectedRoute>
+						<NavItem>
+							<NavLink on:click={async () => initKeycloak()}>{loginData.loginPrompt}</NavLink>
+						</NavItem>
+					{/if}
 				{:else}
 				<Dropdown>
 					<DropdownToggle nav caret>{menu.top}</DropdownToggle>

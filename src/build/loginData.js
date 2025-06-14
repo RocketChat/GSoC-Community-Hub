@@ -1,4 +1,4 @@
 export const loginData = {
     loginPrompt: "Login",
-    userProfile: ""
+    logoutPrompt: "Logout",
 }
