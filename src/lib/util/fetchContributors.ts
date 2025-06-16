@@ -2,15 +2,15 @@ import * as fs from "fs";
 import * as path from "path";
 import { dummyData } from "$build/dummyContribData";
 
-const LEADERBOARD_URL ="https://gsoc.rocket.chat/api/contributor";
+const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;
 const rootDir = path.resolve(process.cwd(), '../../../');
 const defaultFileDir = path.join(rootDir, '/src/build/contributorData.js');
 const contributorDataSortPDir = path.join(rootDir, '/src/build/contributorDataSortP.js');
 const contributorDataSortIDir = path.join(rootDir, '/src/build/contributorDataSortI.js');
 let outputFileDir = defaultFileDir;
 let outputName = "contributorDataSortM";
-//sort them in all three ways at build time, store all data.
 
+//sort them in all three ways at build time, store all data.
 export function sortContributors(contributorData : any[], param? : string){
   let pref1 : string, pref2 : string, pref3: string;
   if(param === 'p'){

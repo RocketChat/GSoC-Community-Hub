@@ -1,12 +1,19 @@
 <script lang="ts">
-   import { Table, Container, Row, Col } from '@sveltestrap/sveltestrap';
-	export let contributorData: Array<{
-        avatar: string,
-        username: string,
-        openPRs: number,
-        mergedPRs: number,
-        issues: number,
-	}>;
+  import { Table, Container, Row, Col, NavLink } from '@sveltestrap/sveltestrap';
+  import type { Contributor } from '$lib/util/fetchContributors';
+	export let contributorDataSortM: Array<Contributor>;
+  export let contributorDataSortI: Array<Contributor>;
+  export let contributorDataSortP: Array<Contributor>;
+  export let contributorData: Array<Contributor> = contributorDataSortM;
+  function sortContributor(sortParam?: string){
+    if (sortParam === "p"){
+      contributorData = contributorDataSortP;
+    }else if(sortParam === "i"){
+      contributorData = contributorDataSortI;
+    }else{
+      contributorData = contributorDataSortM;
+    }
+  }
 </script>
 
 <Container fluid class="p-4">
@@ -14,16 +21,21 @@
     <Col>
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="display-4 text-muted mb-0">Contributors</h2>
-            <small class="text-muted">Last Updated: 5 mins ago </small>
          </div>
       <div class="bg-white rounded shadow-sm">
         <Table hover responsive class="mb-0">
           <thead class="bg-light">
             <tr>
               <th class="border-0 py-3 ps-4 text-muted fw-semibold">Username</th>
-              <th class="border-0 py-3 text-center text-primary fw-semibold">Open PRs</th>
-              <th class="border-0 py-3 text-center text-primary fw-semibold">Merged PRs</th>
-              <th class="border-0 py-3 text-center text-primary fw-semibold pe-4">Issues</th>
+              <th class="border-0 py-3 text-center text-primary fw-semibold">
+                <NavLink on:click={() => sortContributor("p")}>Open PRs</NavLink>
+              </th>
+              <th class="border-0 py-3 text-center text-primary fw-semibold">
+                <NavLink on:click={() => sortContributor()}>Merged PRs</NavLink>
+              </th>
+              <th class="border-0 py-3 text-center text-primary fw-semibold pe-4">
+                <NavLink on:click={() => sortContributor("i")}>Issues</NavLink>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -47,13 +59,13 @@
                   </div>
                 </td>
                 <td class="text-center py-3">
-                  <span class="text-primary fw-medium">{contributor.openPRs}</span>
+                  <span class="text-primary fw-medium">{contributor.openPRsNumber}</span>
                 </td>
                 <td class="text-center py-3">
-                  <span class="text-primary fw-medium">{contributor.mergedPRs}</span>
+                  <span class="text-primary fw-medium">{contributor.mergedPRsNumber}</span>
                 </td>
                 <td class="text-center py-3 pe-4">
-                  <span class="text-primary fw-medium">{contributor.issues}</span>
+                  <span class="text-primary fw-medium">{contributor.issuesNumber}</span>
                 </td>
               </tr>
             {/each}
