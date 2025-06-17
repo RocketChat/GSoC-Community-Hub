@@ -94,5 +94,7 @@ The following independent components are available.&ensp; They are located under
 |`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
 |`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/carousel.md)|
 |`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)| 
+|`leaderboard` - Leaderboard|A table of contributors ranked by `mergedPRs` `openPRs` and `issues`|[link](./docs/leaderboard.md)| 
+
 
 
