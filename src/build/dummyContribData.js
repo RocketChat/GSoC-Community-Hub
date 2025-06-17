@@ -1,4 +1,4 @@
-export const contributorData = [
+export const dummyData = [
         {
             avatar: "",
             username: "Rohit3523",
@@ -62,7 +62,7 @@ export const contributorData = [
             mergedPRs: 2,
             issues: 2,
         },
-        
+
         {
             avatar: "",
             username: "sushen123",
@@ -94,5 +94,5 @@ export const contributorData = [
             mergedPRs: 2,
             issues: 2,
         },
-        
+
     ]

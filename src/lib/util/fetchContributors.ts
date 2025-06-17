@@ -2,9 +2,22 @@ import * as fs from "fs";
 import * as path from "path";
 import { dummyData } from "$build/dummyContribData";
 
-const LEADERBOARD_URL ="https://gsoc.rocket.chat/api/contributor";
-const rootDir = path.resolve(process.cwd(), '../../../');
-const defaultFileDir = path.join(rootDir, '/src/build/contributorData.js');
+export interface Contributor {
+  avatar: string,
+  username: string,
+  openPRsNumber: number,
+  mergedPRsNumber: number,
+  issuesNumber: number
+}
+
+export interface LeaderboardAdminData{
+  avatar: string;
+  username: string;
+}
+
+const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;;
+const rootDir = path.resolve(process.cwd(), './');
+const defaultFileDir = path.join(rootDir, '/src/build/contributorDataSortM.js');
 const contributorDataSortPDir = path.join(rootDir, '/src/build/contributorDataSortP.js');
 const contributorDataSortIDir = path.join(rootDir, '/src/build/contributorDataSortI.js');
 let outputFileDir = defaultFileDir;
@@ -52,25 +65,18 @@ export function sortContributors(contributorData : any[], param? : string){
     return 0;
   });
   fs.writeFileSync(outputFileDir, `export const ${outputName} = ${JSON.stringify(contributorData)}`);
-
+  
 }
 
-export interface Contributor {
-  avatar: string,
-  username: string,
-  openPRsNumber: number,
-  mergedPRsNumber: number,
-  issuesNumber: number
-}
+let data : Array<Contributor> = [];
 
 export const fetchContributors = async () => {
-    let data : Array<Contributor> = [];
-
-    try{        
-        const req = await fetch(LEADERBOARD_URL, {
-            method: 'GET',
-        })
-
+  
+  try{        
+    const req = await fetch(LEADERBOARD_URL, {
+      method: 'GET',
+    })
+    
         if(req.ok){
             const res = await req.json();
             for(const contrib in res){
@@ -94,4 +100,35 @@ export const fetchContributors = async () => {
     }
 }
 
-fetchContributors();
+
+
+//Admin data function.
+
+// export const addContributorsByUsername = async (username : string) => {
+//   let adminData : Array<LeaderboardAdminData> = [];
+//   try{
+//     const req = await fetch(`${LEADERBOARD_URL}?username=${username}`,{
+//       method: "GET",
+//     });
+
+//     if(req.ok){
+//       const res = await req.json();
+//           for(const contrib in res){
+//                 const contribObj = {
+//                     avatar: res[contrib].avatarUrl,
+//                     username: contrib,
+//                     openPRsNumber: res[contrib].openPRsNumber,
+//                     mergedPRsNumber: res[contrib].mergedPRsNumber,
+//                     issuesNumber: res[contrib].issuesNumber
+//                 }
+//                 data.push(contribObj);
+//                 adminData = [...adminData, {
+//                   username: contrib,
+//                   avatar: res[contrib].avatarUrl,
+//                 }];
+//           }
+//     }
+//   }catch(e){
+//     console.error(e);
+//   }
+// } 

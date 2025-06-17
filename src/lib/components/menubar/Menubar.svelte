@@ -62,7 +62,6 @@
 					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
 				<DropdownMenu>
 				  {#each menu.dropdown as item}
-				
 					{#if item.label == "---"}
 					  <DropdownItem divider />
 					{:else}
