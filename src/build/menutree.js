@@ -10,7 +10,7 @@ export const menutree = [
 			{ label: '---' },
 			{ label: 'Github code contributons' },
 			{ label: '---' },
-			{ label: 'Leaderboard', href: '/leaderboard' },
+			{ label: 'Leaderboard', href: '/leaderboard' }
 		]
 	},
 	{
@@ -23,7 +23,7 @@ export const menutree = [
 			{ label: 'Demo Day 2024' }
 		]
 	},
-	
+
 	{
 		top: 'Google Summer of Code',
 		dropdown: [
