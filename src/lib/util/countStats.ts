@@ -26,6 +26,7 @@ export const fetchStats = async () => {
             }
         }
         if(validResponse){
+            console.log(res);
             const data = await res.json();
             const jsonData = JSON.stringify(data);
             fs.writeFileSync(outputFileDir, `export const data = ${jsonData}`);

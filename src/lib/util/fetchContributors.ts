@@ -22,6 +22,7 @@ const contributorDataSortPDir = path.join(rootDir, '/src/build/contributorDataSo
 const contributorDataSortIDir = path.join(rootDir, '/src/build/contributorDataSortI.js');
 let outputFileDir = defaultFileDir;
 let outputName = "contributorDataSortM";
+
 //sort them in all three ways at build time, store all data.
 
 export function sortContributors(contributorData : any[], param? : string){
@@ -100,35 +101,3 @@ export const fetchContributors = async () => {
     }
 }
 
-
-
-//Admin data function.
-
-// export const addContributorsByUsername = async (username : string) => {
-//   let adminData : Array<LeaderboardAdminData> = [];
-//   try{
-//     const req = await fetch(`${LEADERBOARD_URL}?username=${username}`,{
-//       method: "GET",
-//     });
-
-//     if(req.ok){
-//       const res = await req.json();
-//           for(const contrib in res){
-//                 const contribObj = {
-//                     avatar: res[contrib].avatarUrl,
-//                     username: contrib,
-//                     openPRsNumber: res[contrib].openPRsNumber,
-//                     mergedPRsNumber: res[contrib].mergedPRsNumber,
-//                     issuesNumber: res[contrib].issuesNumber
-//                 }
-//                 data.push(contribObj);
-//                 adminData = [...adminData, {
-//                   username: contrib,
-//                   avatar: res[contrib].avatarUrl,
-//                 }];
-//           }
-//     }
-//   }catch(e){
-//     console.error(e);
-//   }
-// } 

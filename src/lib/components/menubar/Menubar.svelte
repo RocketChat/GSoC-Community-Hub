@@ -10,19 +10,8 @@
 	} from '@sveltestrap/sveltestrap';
 
 	import { Styles } from '@sveltestrap/sveltestrap';
+	let { brand, menutree } = $props();
 
-	export let brand: {
-		brandName: string;
-		brandImgLink: string;
-	}
-
-	export let menutree: Array<{
-		top: string;
-		dropdown: Array<{
-			label: string;
-			href?: string;
-		}>;
-	}>;
 </script>
 
 <style>

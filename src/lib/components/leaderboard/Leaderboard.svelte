@@ -1,9 +1,7 @@
 <script lang="ts">
   import { Table, Container, Row, Col, NavLink } from '@sveltestrap/sveltestrap';
   import type { Contributor } from '$lib/util/fetchContributors';
-	export let contributorDataSortM: Array<Contributor>;
-  export let contributorDataSortI: Array<Contributor>;
-  export let contributorDataSortP: Array<Contributor>;
+	export let contributorDataSortM, contributorDataSortP, contributorDataSortI : Array<Contributor>;
   export let contributorData: Array<Contributor> = contributorDataSortM;
   function sortContributor(sortParam?: string){
     if (sortParam === "p"){
