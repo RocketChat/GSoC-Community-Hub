@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { Table, Container, Row, Col, NavLink } from '@sveltestrap/sveltestrap';
 	import type { Contributor } from '$lib/util/fetchContributors';
-	export let contributorDataSortM, contributorDataSortP, contributorDataSortI: Array<Contributor>;
+	export let contributorDataSortM: Array<Contributor>;
+	export let contributorDataSortP: Array<Contributor>;
+	export let contributorDataSortI: Array<Contributor>;
 	export let contributorData: Array<Contributor> = contributorDataSortM;
 	function sortContributor(sortParam?: string) {
 		if (sortParam === 'p') {
@@ -52,7 +54,8 @@
 											height="40"
 										/>
 										<a
-											href="#{contributor.username}"
+											href="https://github.com/{contributor.username}"
+											target="_blank"
 											class="text-primary text-decoration-none fw-medium"
 										>
 											{contributor.username}
@@ -60,13 +63,37 @@
 									</div>
 								</td>
 								<td class="py-3 text-center">
-									<span class="text-primary fw-medium">{contributor.openPRsNumber}</span>
+									<span>
+										<a
+											href={contributor.openPRsLink}
+											target="_blank"
+											class="text-primary text-decoration-none fw-medium"
+										>
+										{contributor.openPRsNumber}
+										</a>
+									</span>
 								</td>
 								<td class="py-3 text-center">
-									<span class="text-primary fw-medium">{contributor.mergedPRsNumber}</span>
+									<span>
+										<a
+											href={contributor.mergedPRsLink}
+											target="_blank"
+											class="text-primary text-decoration-none fw-medium"
+										>
+										{contributor.mergedPRsNumber}
+										</a>
+									</span>
 								</td>
 								<td class="py-3 pe-4 text-center">
-									<span class="text-primary fw-medium">{contributor.issuesNumber}</span>
+									<span>
+										<a
+											href={contributor.issuesLink}
+											target="_blank"
+											class="text-primary text-decoration-none fw-medium"
+										>
+										{contributor.issuesNumber}
+										</a>
+									</span>
 								</td>
 							</tr>
 						{/each}

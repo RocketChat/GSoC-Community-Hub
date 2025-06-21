@@ -8,6 +8,9 @@ export interface Contributor {
 	openPRsNumber: number;
 	mergedPRsNumber: number;
 	issuesNumber: number;
+	openPRsLink: string;
+	mergedPRsLink: string;
+	issuesLink: string;
 }
 
 export interface LeaderboardAdminData {
@@ -87,7 +90,10 @@ export const fetchContributors = async () => {
 					username: contrib,
 					openPRsNumber: res[contrib].openPRsNumber,
 					mergedPRsNumber: res[contrib].mergedPRsNumber,
-					issuesNumber: res[contrib].issuesNumber
+					issuesNumber: res[contrib].issuesNumber,
+					openPRsLink: res[contrib].openPRsLink,
+					mergedPRsLink: res[contrib].mergedPRsLink,
+					issuesLink: res[contrib].issuesLink
 				};
 				data.push(contribObj);
 			}
@@ -101,3 +107,4 @@ export const fetchContributors = async () => {
 		console.error(error);
 	}
 };
+
