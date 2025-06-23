@@ -32,3 +32,5 @@ get images
 </main>
 
 ```
+
+![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")

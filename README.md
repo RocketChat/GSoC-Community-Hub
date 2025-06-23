@@ -93,6 +93,7 @@ The following independent components are available.&ensp; They are located under
 |`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[link](./docs/statscounters.md)|
 |`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
 |`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/carousel.md)|
-|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)| 
+|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
+|`eventposter` - Event Poster|It is a feature-rich and fully responsive event showcase block.|[link](./docs/eventposter.md)| 
 
 
