@@ -84,6 +84,7 @@ The following independent components are available.&ensp; They are located under
 <br/>
 <br/>
 
+<<<<<<< HEAD
 | Component Name                           | Description                                                                                                                                                                                        | Doc link                         |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | `menubar` - Menu Bar<br/><br/><br/>      | A navigation menu aross the top of the page that can be configured. It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management) | [link](./docs/menubar.md)        |
@@ -94,3 +95,18 @@ The following independent components are available.&ensp; They are located under
 | `carousel` - Carousel                    | A rotating carousel of images and headlines that can be clicked                                                                                                                                    | [link](./docs/carousel.md)       |
 | `personatiles` - Persona Tiles           | Iconic tiles with labels representing the personas using this server                                                                                                                               | [link](./docs/personatiles.md)   |
 | `leaderboard` - Leaderboard              | A table of contributors ranked by `mergedPRs` `openPRs` and `issues`                                                                                                                               | [link](./docs/leaderboard.md)    |
+=======
+
+|Component Name|Description|Doc link|
+|------|------|------|
+|`menubar` - Menu Bar<br/><br/><br/>|A navigation menu aross the top of the page that can be configured.  It is tightly integrated with authentication (we support only OIDC) and _superprofile_ (scaled global server state management)|[link](./docs/menubar.md)|
+|`herounit` -  Hero Unit|A large formatted text box across the page|[link](./docs/herounit.md)|
+|`searchbar` - Search Bar|Dynamic search bar allowing user selection of search provider|[link](./docs/searchbar.md)|
+|`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[link](./docs/statscounters.md)|
+|`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
+|`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/carousel.md)|
+|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
+|`eventposter` - Event Poster|It is a feature-rich and fully responsive event showcase block.|[link](./docs/eventposter.md)| 
+
+
+>>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
