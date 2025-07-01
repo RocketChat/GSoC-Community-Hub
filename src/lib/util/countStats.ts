@@ -4,7 +4,7 @@ import * as path from 'path';
 const URL = import.meta.env.VITE_URL;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
-const rootDir = path.resolve(process.cwd(), '../../../');
+const rootDir = path.resolve(process.cwd(), './');
 const outputFileDir = path.join(rootDir, '/src/build/stats.js');
 const maxRetries = 3;
 let validResponse = false;
