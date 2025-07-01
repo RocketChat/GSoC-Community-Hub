@@ -4,7 +4,7 @@ export const menutree = [
 	{
 		top: 'Community',
 		dropdown: [
-			{ label: 'Community Rocket.Chat Serever' },
+			{ label: 'Community Rocket.Chat Server' },
 			{ label: '---' },
 			{ label: 'Forum' },
 			{ label: '---' },
@@ -21,6 +21,7 @@ export const menutree = [
 			{ label: 'Demo Day 2024' }
 		]
 	},
+
 	{
 		top: 'Google Summer of Code',
 		dropdown: [
@@ -82,5 +83,15 @@ export const menutree = [
 			{ label: 'Discussion Forum' },
 			{ label: 'Discord' }
 		]
-	}
+	},
+
+	{
+		top: 'User Menu',
+		dropdown: [
+			{label: 'Option 1'},
+			{label: 'Option 2'},
+			{label: 'Meet with mentee'},
+			{label: 'Option 3'}
+		]
+	},
 ];

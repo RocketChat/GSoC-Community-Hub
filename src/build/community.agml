@@ -9,6 +9,7 @@ use Personatiles from $lib/components/personatiles/Personatiles.svelte
 
 get brand
 get menutree
+get loginData
 get herotitle
 get herosub
 get leftlink

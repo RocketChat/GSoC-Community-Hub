@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
+
 const URL = import.meta.env.VITE_URL;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
@@ -33,7 +34,3 @@ export const fetchStats = async () => {
                 "totalMessages":12828288, "onlineUsers":802 }]}`);
         }
 }
-
-
-
-
