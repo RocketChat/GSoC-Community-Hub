@@ -1,14 +1,9 @@
 # Herounit Component
 
 ## Description
-<<<<<<< HEAD
-
-The `Herounit` component displays a centered title and subtitle in a clean, responsive layout. It uses `@sveltestrap/sveltestrap` for layout and styling.
-=======
 The `Herounit` component renders a **prominent title** and **subtitle** in a clean, centered layout. It provides a visually striking introduction section—perfect for **landing pages**, **homepage banners**, or **section headers**.
 
 ---
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
 
 ## Usage
 
@@ -45,10 +40,7 @@ get subtitle
 </main>
 
 ```
-<<<<<<< HEAD
-=======
 
 The above code outputs as follows:
 
 ![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d

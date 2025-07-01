@@ -33,8 +33,5 @@ get images
 </main>
 
 ```
-<<<<<<< HEAD
-=======
 
 ![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d

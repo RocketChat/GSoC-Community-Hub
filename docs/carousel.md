@@ -67,12 +67,8 @@ get stories
 </main>
 ```
 
-<<<<<<< HEAD
-```
-=======
 ---
 
 The above code outputs a crousel like:
 
 ![Crousel image.](./docsImages/crouselComponent.png "This is a Crousel component image.")
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d

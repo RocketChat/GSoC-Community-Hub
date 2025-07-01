@@ -1,13 +1,7 @@
 # Menubar Component
 
 ## Description
-<<<<<<< HEAD
-
-The `Menubar` component is a responsive navigation bar with a brand logo and dropdown menus. It uses `@sveltestrap/sveltestrap` for layout and styling.
-
-=======
 The `Menubar` component is a responsive navigation bar with a brand logo and dropdown menus.
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
 ## Usage
 
 Use this component to create a navigation bar with dropdown menus. Ideal for websites or apps requiring a clean and functional menu system.
@@ -45,12 +39,7 @@ Each item in `menutree` should have:
 
 ## Example
 
-<<<<<<< HEAD
-```agml
-=======
 ```svelte
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
-
 use Menubar from $lib/components/menubar/Menubar.svelte
 
 get brand
@@ -81,12 +70,8 @@ get menutree
 </main>
 ```
 
-<<<<<<< HEAD
-```
-=======
 ---
 
 The Menubar Component looks as follows:
 
 ![Menubar image.](./docsImages/MenubarImage.png "This is a Menubar component image.")
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d

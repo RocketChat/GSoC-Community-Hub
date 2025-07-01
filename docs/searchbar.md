@@ -1,14 +1,9 @@
 # Searchbar Component
 
 ## Description
-<<<<<<< HEAD
-
-The `Searchbar` component provides a search input field with a dropdown menu for filtering or selecting search options. It uses `@sveltestrap/sveltestrap` for layout and styling.
-=======
 The `Searchbar` component provides a search input field with a dropdown menu for filtering or selecting search options.
 
 ---
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
 
 ## Usage
 
@@ -68,10 +63,7 @@ get searchactions
 </main>
 
 ```
-<<<<<<< HEAD
-=======
 
 ---
 
 ![Searchbar image.](./docsImages/SearchbarImage.png "This is a Searchbar component image.")
->>>>>>> 06677209dae49d2aa7725343720d9cda3c7d9a5d
