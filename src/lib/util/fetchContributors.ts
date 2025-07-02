@@ -2,6 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { dummyData } from '$build/dummyContribData';
 
+
+
 export interface Contributor {
 	avatar: string;
 	username: string;
@@ -13,13 +15,11 @@ export interface Contributor {
 	issuesLink: string;
 }
 
-export interface LeaderboardAdminData {
-	avatar: string;
-	username: string;
-}
 
 const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;
+const LB_DATE_URL = import.meta.env.VITE_LB_DATE_URL;
 const rootDir = path.resolve(process.cwd(), './');
+const lastUpdatedDir = path.join(rootDir, '/src/build/lastUpdated.js'); 
 const defaultFileDir = path.join(rootDir, '/src/build/contributorDataSortM.js');
 const contributorDataSortPDir = path.join(rootDir, '/src/build/contributorDataSortP.js');
 const contributorDataSortIDir = path.join(rootDir, '/src/build/contributorDataSortI.js');
@@ -74,6 +74,24 @@ export function sortContributors(contributorData: any[], param?: string) {
 	);
 }
 
+export const fetchLastUpdated = async () => {
+	try {
+		const req = await fetch(LB_DATE_URL, {
+			method: 'GET'
+		});
+
+		if (req.ok) {
+			const res = await req.json();
+			fs.writeFileSync(lastUpdatedDir, `export const lastUpdated = ${JSON.stringify(res)}`);
+		}
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+
+
+
 let data: Array<Contributor> = [];
 
 export const fetchContributors = async () => {
@@ -107,4 +125,3 @@ export const fetchContributors = async () => {
 		console.error(error);
 	}
 };
-

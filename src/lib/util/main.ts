@@ -1,5 +1,6 @@
 import { fetchStats } from '../util/countStats';
-import { fetchContributors } from './fetchContributors';
+import { fetchContributors, fetchLastUpdated } from './fetchContributors';
 
 fetchStats();
 fetchContributors();
+fetchLastUpdated();

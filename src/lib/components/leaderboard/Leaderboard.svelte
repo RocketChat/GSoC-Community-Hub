@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Table, Container, Row, Col, NavLink } from '@sveltestrap/sveltestrap';
 	import type { Contributor } from '$lib/util/fetchContributors';
+	import moment from 'moment';
+	export let lastUpdated : {
+		starttime : number;
+		endtime: number;
+	}
 	export let contributorDataSortM: Array<Contributor>;
 	export let contributorDataSortP: Array<Contributor>;
 	export let contributorDataSortI: Array<Contributor>;
@@ -15,15 +20,20 @@
 		}
 	}
 
+	
 	$: totalContributors = contributorData.length;
+	$: lastUpdatedTime = moment(Date.now()).from(lastUpdated.endtime)
 </script>
 
 <Container fluid class="p-4">
 	<Row>
 		<Col>
 			<div class="d-flex justify-content-between align-items-center mb-4">
-				<h2 class="display-4 text-muted mb-0">Contributors</h2>
-				<small class="rocket-text-muted">Total Contributors: {totalContributors}</small>
+				<span>
+					<h2 class="display-4 text-muted mb-0">Contributors</h2>
+					<small class="rocket-text-muted">Total Contributors: {totalContributors}</small>
+				</span>
+				<small class="rocket-text-muted">Last Updated: {lastUpdatedTime} </small>
 			</div>
 			<div class="rounded bg-white shadow-sm">
 				<Table hover responsive class="mb-0">
