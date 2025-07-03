@@ -6,16 +6,17 @@ The `Herounit` component renders a **prominent title** and **subtitle** in a cle
 ---
 
 ## Usage
+
 Use this component to create a hero section with a prominent title and supporting subtitle. Ideal for landing pages, headers, or section introductions.
 
 ---
 
 ## Props
 
-| Prop Name  | Type   | Default | Description                     |
-|------------|--------|---------|---------------------------------|
+| Prop Name  | Type     | Default | Description                          |
+| ---------- | -------- | ------- | ------------------------------------ |
 | `title`    | `string` | `""`    | The main title text (supports HTML). |
-| `subtitle` | `string` | `""`    | The supporting subtitle text.   |
+| `subtitle` | `string` | `""`    | The supporting subtitle text.        |
 
 ---
 

@@ -1,10 +1,17 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
-    plugins: [sveltekit()],
+	plugins: [sveltekit()],
 
-    test: {
-        include: ['src/**/*.{test,spec}.{js,ts}']
-    }
+	server: {
+		hmr: {
+			timeout: 120000,
+
+		},
+	},
+
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	}
 });
