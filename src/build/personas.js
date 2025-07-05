@@ -1,1 +1,1 @@
-export const personas = ["Admin", "Developer", "Group chat", "GSoC"];
+export const personas = ['Admin', 'Developer', 'Group chat', 'GSoC'];

@@ -6,11 +6,11 @@
 	import { Styles } from '@sveltestrap/sveltestrap';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut, quadOut, linear } from 'svelte/easing';
-	let {counters} = $props();
+	let { counters } = $props();
 
-	const c1 = tweened(0, { duration: 3000, easing: cubicOut});
-	const c2 = tweened(0, { duration: 5000, easing: quadOut});
-	const c3 = tweened(0, { duration: 3900, easing: linear});
+	const c1 = tweened(0, { duration: 3000, easing: cubicOut });
+	const c2 = tweened(0, { duration: 5000, easing: quadOut });
+	const c3 = tweened(0, { duration: 3900, easing: linear });
 
 	c1.set(counters[0].max);
 	c2.set(counters[1].max);
@@ -60,11 +60,11 @@
 		margin: 2rem 0;
 		border-radius: 8px;
 	}
-	
+
 	.stats-col {
 		position: relative;
 	}
-	
+
 	.stats-col:not(:first-child)::before {
 		content: '';
 		position: absolute;
@@ -74,40 +74,40 @@
 		width: 1px;
 		background-color: #ddd;
 	}
-	
+
 	.stats-item {
 		text-align: center;
 		padding: 1rem;
 	}
-	
+
 	.counter {
 		display: block;
 		margin-bottom: 0.5rem;
 	}
-	
+
 	.countup {
 		font-size: clamp(2rem, 6vw, 3rem);
 		color: #f5455c;
 		font-weight: 700;
 		line-height: 1.2;
 	}
-	
+
 	.label {
 		font-size: clamp(1rem, 2vw, 1.25rem);
 		font-weight: 500;
 		color: #333;
 		line-height: 1.4;
 	}
-	
+
 	@media (max-width: 767px) {
 		.stats-col:not(:first-child)::before {
 			display: none;
 		}
-		
+
 		.stats-item {
 			margin-bottom: 2rem;
 		}
-		
+
 		.stats-col:last-child .stats-item {
 			margin-bottom: 0;
 		}

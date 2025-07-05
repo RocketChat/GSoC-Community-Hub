@@ -1,1 +1,1 @@
-export const leftlink = "Read the Guides";
+export const leftlink = 'Read the Guides';

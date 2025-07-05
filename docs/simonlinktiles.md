@@ -6,6 +6,7 @@ The `Simonlinktiles` component displays a grid of cards, each containing a title
 ---
 
 ## Usage
+
 Use this component to showcase links, features, or information in a grid layout. Ideal for dashboards, landing pages, or feature highlights.
 
 ---
