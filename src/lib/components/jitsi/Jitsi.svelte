@@ -20,7 +20,6 @@
   let isJoined = false;
   let isLoading = false;
   let participantCount = 0;
-  let meetingStatus = 'Not Connected';
   let api = null;
   let jitsiNode;
   let enableVideo = true;
@@ -54,7 +53,6 @@
     }
     
     isLoading = true;
-    meetingStatus = 'Connecting...';
     
     if (api) {
       api.dispose();
@@ -99,12 +97,10 @@
         api.addEventListener('videoConferenceJoined', () => {
           isJoined = true;
           isLoading = false;
-          meetingStatus = 'Connected';
         });
         
         api.addEventListener('videoConferenceLeft', () => {
           isJoined = false;
-          meetingStatus = 'Disconnected';
         });
         
         api.addEventListener('participantJoined', () => {
@@ -118,32 +114,14 @@
         api.addEventListener('readyToClose', () => {
           api.dispose();
           isJoined = false;
-          meetingStatus = 'Not Connected';
         });
+
+  
       } else {
         isLoading = false;
-        meetingStatus = 'API not loaded';
         console.error('Jitsi Meet API not loaded');
       }
     }, 2000);
-  }
-  
-  function leaveMeeting() {
-    if (api) {
-      api.executeCommand('hangup');
-    }
-  }
-  
-  function toggleAudio() {
-    if (api) {
-      api.executeCommand('toggleAudio');
-    }
-  }
-  
-  function toggleVideo() {
-    if (api) {
-      api.executeCommand('toggleVideo');
-    }
   }
 </script>
 
@@ -219,38 +197,14 @@
             </Row>
           
             <div class="d-flex gap-2 mt-3 flex-wrap">
-              {#if !isJoined}
                 <Button 
                   color="danger" 
                   on:click={joinMeeting}
                   disabled={isLoading}
                   class="conference-btn"
                   >
-                  {isLoading ? 'Connecting...' : 'Join Meeting'}
+                  Join Meeting
                 </Button>
-              {:else if isJoined}
-                <Button 
-                color="outline-danger" 
-                  on:click={leaveMeeting}
-                  class="conference-btn"
-                >
-                  Leave Meeting
-                </Button>
-                <Button 
-                color="outline-secondary" 
-                on:click={toggleAudio}
-                class="conference-btn"
-                >
-                Toggle Audio
-              </Button>
-                <Button 
-                  color="outline-secondary" 
-                  on:click={toggleVideo}
-                  class="conference-btn"
-                >
-                  Toggle Video
-                </Button>
-              {/if}
             </div>
           </Form>
         </CardBody>

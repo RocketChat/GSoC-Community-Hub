@@ -34,28 +34,6 @@
 	</Nav>
 {/snippet}
 
-{#snippet nav()}
-			<Nav class="ms-auto" navbar>
-				{#each menutree as menu, i}
-				<Dropdown>
-					<DropdownToggle nav caret>{menu.top}</DropdownToggle>
-				<DropdownMenu>
-				  {#each menu.dropdown as item}
-				
-					{#if item.label == "---"}
-					  <DropdownItem divider />
-					{:else}
-					<DropdownItem href={item.href || '#'}>
-					 {item.label}
-					</DropdownItem>
-					 {/if}
-				{/each}
-				</DropdownMenu>
-				</Dropdown>
-				 {/each}
-			</Nav>
-{/snippet}
-
 <Styles />
 <div class="navbar-container">
 	<Navbar color="light" light container="lg" expand="md">
