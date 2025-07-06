@@ -1,7 +1,7 @@
 #Leaderboard Component
 
 ## Description
-The `Leaderboard` Component is a component the displays the individual contributors to a given organization's repository, ranked by metrics such as number of `mergedPRs` , `openPRs` and `issues`. The component is an attempt to gamify contributons to the organization, thereby promoting participation.
+The `Leaderboard` Component is a component displaying the individual contributors to a given organization's repository, ranked by metrics such as number of `mergedPRs` , `openPRs` and `issues`. The component is an attempt to gamify contributons to the organization, thereby promoting participation.
 
 ## Usage
 
