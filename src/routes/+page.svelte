@@ -20,12 +20,15 @@
 	import Simonlinktiles from '$lib/components/simonlinktiles/Simonlinktiles.svelte';
 	import Carousel from '$lib/components/carousel/Carousel.svelte';
 	import Personatiles from '$lib/components/personatiles/Personatiles.svelte';
+	import Rcstatscounter from "$lib/components/rcstatscounter/Rcstatscounter.svelte";
+  	import {rcCounters} from "../build/rcCounters"
 </script>
 
 <Menubar {brand} {menutree} />
 <Herounit title={herotitle} subtitle={herosub} />
 <Docslink {leftlink} {rightlink} />
 <Searchbar {searchactions} />
+<Rcstatscounter {rcCounters}/>
 <Statscounters {counters} />
 <Simonlinktiles {tilelinks} />
 <Carousel {stories} />
