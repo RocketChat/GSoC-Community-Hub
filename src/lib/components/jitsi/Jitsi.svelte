@@ -9,13 +9,15 @@
     FormGroup, 
     Label, 
     Input, 
-    Button,
-    Badge,
+    Button 
   } from '@sveltestrap/sveltestrap';
   import { onMount, onDestroy } from 'svelte';
-  
-  let roomName = 'GSOC Meeting Room';
-  let displayName = 'User';
+  import { userids } from '$build/userid';  
+  import { isMeetingStarted } from '$lib/shared.svelte';
+
+
+  let roomName = `${userids[0].sub}${userids[0].mentorid[0]}`;
+  let displayName = `${userids[0].username}`;
   let domain = 'meet.jit.si'; 
   let isJoined = false;
   let isLoading = false;
@@ -27,45 +29,64 @@
   let enableChat = true;
   let enableScreenShare = true;
   let moderatorMode = false;
-  
+  let apiLoaded = false;
+
   onMount(() => {
     const script = document.createElement('script');
     script.src = 'https://meet.jit.si/external_api.js';
+
+    script.onload = () => {
+      apiLoaded = true;
+    };
+
+
     document.head.appendChild(script);
-    
+
     return () => {
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }
     };
   });
-  
+
   onDestroy(() => {
     if (api) {
       api.dispose();
     }
   });
-  
-  function joinMeeting() {
+
+  function checkParticipants() {
+    if(participantCount > 0){
+      isMeetingStarted.started = true;
+    }else{
+      isMeetingStarted.started = false;
+    }
+  }  
+
+  async function joinMeeting() {
+    if (!apiLoaded || !JitsiMeetExternalAPI) {
+      alert('Meeting system still loading. Please try again in a few seconds.');
+      return;
+    }
+
     if (!roomName.trim() || !displayName.trim()) {
       alert('Please enter both room name and display name');
       return;
     }
-    
+
     isLoading = true;
-    
+    isJoined = true;
+
     if (api) {
       api.dispose();
     }
-    
+
     const options = {
-      roomName: roomName,
+      roomName,
       width: '100%',
       height: '100%',
       parentNode: jitsiNode,
-      userInfo: {
-        displayName: displayName
-      },
+      userInfo: { displayName },
       configOverwrite: {
         startWithAudioMuted: !enableAudio,
         startWithVideoMuted: !enableVideo,
@@ -89,39 +110,33 @@
         SHOW_WATERMARK_FOR_GUESTS: false,
       }
     };
-    
-    setTimeout(() => {
-      if (window.JitsiMeetExternalAPI) {
-        api = new window.JitsiMeetExternalAPI(domain, options);
-        
-        api.addEventListener('videoConferenceJoined', () => {
-          isJoined = true;
-          isLoading = false;
-        });
-        
-        api.addEventListener('videoConferenceLeft', () => {
-          isJoined = false;
-        });
-        
-        api.addEventListener('participantJoined', () => {
-          participantCount++;
-        });
-        
-        api.addEventListener('participantLeft', () => {
-          participantCount = Math.max(0, participantCount - 1);
-        });
-        
-        api.addEventListener('readyToClose', () => {
-          api.dispose();
-          isJoined = false;
-        });
 
-  
-      } else {
-        isLoading = false;
-        console.error('Jitsi Meet API not loaded');
-      }
-    }, 2000);
+    api = new JitsiMeetExternalAPI(domain, options);
+    // api.addListener('videoConferenceJoined', () => {
+    //   isJoined = true;
+    //   isLoading = false;
+    // });
+
+    // api.addListener('videoConferenceLeft', () => {
+    //   isJoined = false;
+    // });
+
+    // api.addListener('participantJoined', () => {
+    //   participantCount++;
+    //   checkParticipants();
+    // });
+
+    // api.addListener('participantLeft', () => {
+    //   participantCount = Math.max(0, participantCount - 1);
+    //   checkParticipants();
+    // });
+
+    // api.addListener('readyToClose', () => {
+    //   api.dispose();
+    //   isJoined = false;
+    //   isLoading = false;
+    //   isMeetingStarted.started = false;
+    // });
   }
 </script>
 
@@ -132,46 +147,37 @@
         <CardBody class="p-4">
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="conference-section-title mb-0">Meet With Mentee</h3>
-            <div class="d-flex align-items-center gap-3">
-              {#if participantCount > 0}
-              <Badge color="info" class="conference-participants">
-                {participantCount} participant{participantCount !== 1 ? 's' : ''}
-              </Badge>
-              {/if}
-            </div>
-          </div>
-          
+          </div>    
           <Form class="mb-4">
             <Row>
               <Col md="12">
                 <FormGroup class="mb-3">
                   <Label class="conference-label">Room Name:</Label>
                   <Input 
-                  type="text" 
-                  bind:value={roomName}
-                  disabled={isJoined}
-                  class="conference-input"
-                  placeholder="Enter room name"
+                    type="text" 
+                    bind:value={roomName}
+                    disabled
+                    class="conference-input"
+                    placeholder="Enter room name"
                   />
                 </FormGroup>
 
                 <FormGroup class="mb-3">
                   <Label class="conference-label">Display Name:</Label>
                   <Input 
-                  type="text" 
-                  bind:value={displayName}
-                  disabled={isJoined}
-                  class="conference-input"
-                  placeholder="Your name"
+                    type="text" 
+                    bind:value={displayName}
+                    disabled
+                    class="conference-input"
+                    placeholder="Your name"
                   />
                 </FormGroup>
 
                 <FormGroup class="mb-0">
                   <input
-                  type="checkbox" 
-                  bind:checked={enableVideo}
-                  disabled={isJoined}
-                  class="me-2"
+                    type="checkbox" 
+                    bind:checked={enableVideo}
+                    class="me-2"
                   />
                   <Label class="conference-label">Start with Video</Label>
                 </FormGroup>
@@ -179,7 +185,6 @@
                   <input
                     type="checkbox" 
                     bind:checked={enableAudio}
-                    disabled={isJoined}
                     class="me-2"
                   />
                   <Label class="conference-label">Start with Audio</Label>
@@ -188,7 +193,6 @@
                   <input
                     type="checkbox" 
                     bind:checked={enableScreenShare}
-                    disabled={isJoined}
                     class="me-2"
                   />
                   <Label class="conference-label">Enable Screen Sharing</Label>
@@ -197,14 +201,14 @@
             </Row>
           
             <div class="d-flex gap-2 mt-3 flex-wrap">
-                <Button 
-                  color="danger" 
-                  on:click={joinMeeting}
-                  disabled={isLoading}
-                  class="conference-btn"
-                  >
-                  Join Meeting
-                </Button>
+              <Button 
+                color="danger" 
+                on:click={joinMeeting}
+                disabled={isLoading}
+                class="conference-btn"
+              >
+                Join Meeting
+              </Button>
             </div>
           </Form>
         </CardBody>
@@ -228,8 +232,7 @@
                       <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                     </svg>
                   </div>
-                  <h4 class="conference-placeholder-title">Ready to Join</h4>
-                  <p class="conference-placeholder-text">Configure your settings above and click "Join Meeting"</p>
+                  <p class="conference-placeholder-text">Configure your settings and click "Join Meeting"</p>
                 </div>
               </div>
             {/if}
@@ -271,16 +274,6 @@
     padding: 0.5rem 1.5rem;
   }
 
-  :global(.conference-status) {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.75rem;
-  }
-
-  :global(.conference-participants) {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.75rem;
-  }
-
   :global(.conference-container) {
     border-radius: 0.5rem;
     overflow: hidden;
@@ -295,16 +288,8 @@
     opacity: 0.7;
   }
 
-  :global(.conference-placeholder-title) {
-    color: #2f343d;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
   :global(.conference-placeholder-text) {
     color: #6c757d;
     font-size: 0.9rem;
-    margin-bottom: 0;
   }
 </style>
