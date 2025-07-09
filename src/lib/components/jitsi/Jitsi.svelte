@@ -13,12 +13,10 @@
   } from '@sveltestrap/sveltestrap';
   import { onMount, onDestroy } from 'svelte';
   import { userids } from '$build/userid';  
-  import { isMeetingStarted } from '$lib/shared.svelte';
-
 
   let roomName = `${userids[0].sub}${userids[0].mentorid[0]}`;
   let displayName = `${userids[0].username}`;
-  let domain = 'meet.jit.si'; 
+  let domain = 'meet.element.io'; 
   let isJoined = false;
   let isLoading = false;
   let participantCount = 0;
@@ -33,7 +31,7 @@
 
   onMount(() => {
     const script = document.createElement('script');
-    script.src = 'https://meet.jit.si/external_api.js';
+    script.src = 'https://meet.element.io/external_api.js';
 
     script.onload = () => {
       apiLoaded = true;
@@ -55,16 +53,8 @@
     }
   });
 
-  function checkParticipants() {
-    if(participantCount > 0){
-      isMeetingStarted.started = true;
-    }else{
-      isMeetingStarted.started = false;
-    }
-  }  
-
   async function joinMeeting() {
-    if (!apiLoaded || !JitsiMeetExternalAPI) {
+    if (!apiLoaded || !window.JitsiMeetExternalAPI) {
       alert('Meeting system still loading. Please try again in a few seconds.');
       return;
     }
@@ -76,7 +66,6 @@
 
     isLoading = true;
     isJoined = true;
-
     if (api) {
       api.dispose();
     }
@@ -110,33 +99,30 @@
         SHOW_WATERMARK_FOR_GUESTS: false,
       }
     };
-
     api = new JitsiMeetExternalAPI(domain, options);
-    // api.addListener('videoConferenceJoined', () => {
-    //   isJoined = true;
-    //   isLoading = false;
-    // });
 
-    // api.addListener('videoConferenceLeft', () => {
-    //   isJoined = false;
-    // });
+    api.addListener('videoConferenceJoined', () => {
+      isJoined = true;
+      isLoading = false;
+    });
 
-    // api.addListener('participantJoined', () => {
-    //   participantCount++;
-    //   checkParticipants();
-    // });
+    api.addListener('videoConferenceLeft', () => {
+      isJoined = false;
+    });
 
-    // api.addListener('participantLeft', () => {
-    //   participantCount = Math.max(0, participantCount - 1);
-    //   checkParticipants();
-    // });
+    api.addListener('participantJoined', () => {
+      participantCount++;
+    });
 
-    // api.addListener('readyToClose', () => {
-    //   api.dispose();
-    //   isJoined = false;
-    //   isLoading = false;
-    //   isMeetingStarted.started = false;
-    // });
+    api.addListener('participantLeft', () => {
+      participantCount = Math.max(0, participantCount - 1);
+    });
+
+    api.addListener('readyToClose', () => {
+      api.dispose();
+      isJoined = false;
+      isLoading = false;
+    });
   }
 </script>
 
@@ -177,6 +163,7 @@
                   <input
                     type="checkbox" 
                     bind:checked={enableVideo}
+                    disabled={isJoined}
                     class="me-2"
                   />
                   <Label class="conference-label">Start with Video</Label>
@@ -185,6 +172,7 @@
                   <input
                     type="checkbox" 
                     bind:checked={enableAudio}
+                    disabled={isJoined}
                     class="me-2"
                   />
                   <Label class="conference-label">Start with Audio</Label>
@@ -193,6 +181,7 @@
                   <input
                     type="checkbox" 
                     bind:checked={enableScreenShare}
+                    disabled={isJoined}
                     class="me-2"
                   />
                   <Label class="conference-label">Enable Screen Sharing</Label>

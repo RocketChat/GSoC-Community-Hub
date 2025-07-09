@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { isMeetingStarted } from '$lib/shared.svelte';
 	import {
 		Navbar,
 		NavbarBrand,
@@ -21,14 +20,7 @@
 				<DropdownToggle nav caret>{menu.top}</DropdownToggle>
 				<DropdownMenu>
 					{#each menu.dropdown as item}
-						{#if item.label == 'Meet with mentee' && isMeetingStarted.started}
-							<span>
-								<DropdownItem href={item.href || '#'}>
-									<span class="live-dot"></span>
-									{item.label}
-								</DropdownItem>
-							</span>
-						{:else if item.label == '---'}
+						{#if item.label == '---'}
 							<DropdownItem divider />
 						{:else}
 							<DropdownItem href={item.href || '#'}>
@@ -69,21 +61,6 @@
 </div>
 
 <style>
-	.live-dot {
-		display: inline-block;
-		width: 8px;
-		height: 8px;
-		margin-left: 6px;
-		border-radius: 50%;
-		background-color: red;
-		animation: pulse 1s infinite;
-	}
-
-	@keyframes pulse {
-		0% { transform: scale(1); opacity: 1; }
-		50% { transform: scale(1.5); opacity: 0.6; }
-		100% { transform: scale(1); opacity: 1; }
-	}
 	.navbar-container {
 		margin-bottom: 1rem;
 	}
