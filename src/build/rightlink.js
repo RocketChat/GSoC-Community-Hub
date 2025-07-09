@@ -1,1 +1,1 @@
-export const rightlink = "Read Release Notes";
+export const rightlink = 'Read Release Notes';

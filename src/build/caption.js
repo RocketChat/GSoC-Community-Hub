@@ -1,3 +1,1 @@
-export const caption = "Get What You Need...";
-
-
+export const caption = 'Get What You Need...';

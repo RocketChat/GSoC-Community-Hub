@@ -55,12 +55,12 @@
 		padding: 1.5rem 0;
 		margin: 1rem 0 2rem;
 	}
-	
+
 	.search-wrapper {
 		display: block;
 		width: 100%;
 	}
-	
+
 	:global(.search-input) {
 		height: 3rem;
 		font-size: 1rem;
@@ -68,15 +68,15 @@
 		border-top-right-radius: 6px !important;
 		border-bottom-right-radius: 6px !important;
 	}
-	
+
 	:global(.input-group-prepend) {
 		border-top-left-radius: 6px !important;
 		border-bottom-left-radius: 6px !important;
 		background-color: #f8f9fa;
 	}
-	
+
 	:global(.input-group) {
-		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 		border-radius: 6px;
 	}
 </style>

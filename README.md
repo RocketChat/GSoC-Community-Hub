@@ -8,22 +8,23 @@ A fully componentized (not page-based as in nextjs) scalable web app, with a set
 
 Full stack components are components that may encapsulate server-side behaviors in addition to client-side/UI behaviors.
 
-This system can be configured (layout of pages based on components;  and parameterization of the components) via a specially designed DSL. 
+This system can be configured (layout of pages based on components; and parameterization of the components) via a specially designed DSL.
 
-The way the Domain Specific Language works is simple; 
+The way the Domain Specific Language works is simple;
+
 - Specify imports using `use X from module`
 - Get component data using the `get` syntax
 - Specify page layout by placing components inside of the `<main></main>` tag
 
-This DSL will facilitate the creation of a near-future drag-and-drop "what-you-see-is-what-you-get" GUI layout tool;  as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a excellent [summary](https://github.com/anjy7/Google-Summer-of-Code).
+This DSL will facilitate the creation of a near-future drag-and-drop "what-you-see-is-what-you-get" GUI layout tool; as well as AI prompt based generation of entire community websites. For a more thorough rundown, its creator provides a excellent [summary](https://github.com/anjy7/Google-Summer-of-Code).
 
-Currently, the system is built based on [Svelte 5](https://github.com/sveltejs/svelte).  Layout is powered by [bootstrap](https://github.com/twbs/bootstrap).  Runtime is [bun](https://github.com/oven-sh/bun).
+Currently, the system is built based on [Svelte 5](https://github.com/sveltejs/svelte). Layout is powered by [bootstrap](https://github.com/twbs/bootstrap). Runtime is [bun](https://github.com/oven-sh/bun).
 
 ## Developing
 
 The system is superbly lightweight yet runs across all OS and environments.
 
-First, install bun.   It should take 2 minutes.
+First, install bun. It should take 2 minutes.
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
@@ -35,7 +36,7 @@ To install dependencies:
 bun install
 ```
 
-Customize  the environment variables:
+Customize the environment variables:
 
 ```bash
 cp sample.env.local  .env.local
@@ -69,7 +70,7 @@ You can preview the production build with `bun run preview`.
 In a nutshell, `.agml` files represent our **domain-specific language (DSL)** designed to simplify the creation of Svelte pages. The syntax is intentionally minimal and easy to learn, with just a few conventions to follow:
 
 - **`i` (install)**: Installs a specified package from a registry (e.g., `npm`).  
-  *Note: Since all components are currently available in `lib/components`, this command is optional and can usually be skipped.*
+  _Note: Since all components are currently available in `lib/components`, this command is optional and can usually be skipped._
 
 - **`use`**: Imports specific components or modules from the package.
 
@@ -77,10 +78,9 @@ In a nutshell, `.agml` files represent our **domain-specific language (DSL)** de
 
 - The rest of the page content should be enclosed within a `<main></main>` block.
 
+## Components Ecosystem
 
-##  Components Ecosystem
-
-The following independent components are available.&ensp; They are located under the `./src/lib/components` directory.&ensp; Many more components are being created/ported. &ensp;  Configuration and parameterization are documented on their own doc page.
+The following independent components are available.&ensp; They are located under the `./src/lib/components` directory.&ensp; Many more components are being created/ported. &ensp; Configuration and parameterization are documented on their own doc page.
 <br/>
 <br/>
 
@@ -93,6 +93,7 @@ The following independent components are available.&ensp; They are located under
 |`statscounters` - Statistic Counter|Presents a numeric metrics by counting up from zero|[link](./docs/statscounters.md)|
 |`simonlinktiles` - Simon-like link tiles|Large rectangular tiles laid out in a grid|[link](./docs/simonlinktiles.md)|
 |`carousel` - Carousel|A rotating carousel of images and headlines that can be clicked|[link](./docs/carousel.md)|
-|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)| 
-
+|`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
+|`eventposter` - Event Poster|It is a feature-rich and fully responsive event showcase block.|[link](./docs/eventposter.md)| 
+|`leaderboard` - Leaderboard|A table of contributors ranked by `mergedPRs` `openPRs` and `issues`|[link](./docs/leaderboard.md)|
 
