@@ -44,7 +44,7 @@
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-vercel": "^5.7.2",
+		"@embeddedchat/react": "^0.2.3",
 		"@sveltestrap/sveltestrap": "^6.2.8",
 		"moment": "^2.30.1"
 	},
