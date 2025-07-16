@@ -17,7 +17,22 @@ Use this component to showcase personas or user roles in a visually appealing wa
 | `images`   | `Array<string>` | `[]`    | An array of image URLs corresponding to each persona. |
 
 ## Example
-An example of this component in code can be found in [Examples](../examples/personatiles.md)
 
-## Component Preview
+```agml
+
+use Personatiles from $lib/components/personatiles/Personatiles.svelte
+
+get caption
+get personas
+get images
+
+<main>
+
+<Personatiles {caption} {personas} {images}/>
+
+</main>
+
+```
+This example is available for build and test at [Examples](../examples/personatiles.md)
+
 ![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")

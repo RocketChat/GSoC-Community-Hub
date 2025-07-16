@@ -44,9 +44,28 @@ The `menu` object should have:
 ---
 
 ## Example
-An example of this component in code can be found in [Examples](../examples/searchbar.md)
+
+```svelte
+<script>
+  const searchactions = { placeholder: "Find commmunity information",
+        menu: { top: "Ask AI", dropdown: [
+            {label: "Community posts and messages"},{label: "---"}, {label: "Documenataion"}, 
+        ]}
+    };
+</script>
+
+use Searchbox from $lib/components/searchbox/Searchbox.svelte
+
+get searchactions
+
+<main>
+  <Searchbox {searchactions} />
+</main>
+
+```
+
+This example is available for build and test at [Examples](../examples/searchbar.md)
 
 ---
 
-## Component Preview
 ![Searchbar image.](./docsImages/SearchbarImage.png "This is a Searchbar component image.")

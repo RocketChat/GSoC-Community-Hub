@@ -21,9 +21,27 @@ Use this component to create a hero section with a prominent title and supportin
 ---
 
 ## Example
-An example of this component in code can be found in [Examples](../examples/eventposter.md)
 
+```svelte
+<script>
+    const herotitle =  "Welcome to our <b style='color:red'>community</b>";
+    const herosub = "Let's dream, share, and collaborate in shaping the future of the Rocket.Chat ecosystem together !!";
+</script>
+use Herounit from $lib/components/herounit/Herounit.svelte
 
-## Component Preview
+get title
+get subtitle
+
+<main>
+  <Herounit 
+    title={herotitle} 
+    subtitle={herosub} 
+  />
+</main>
+
+```
+This example is available for build and test at [Examples](../examples/herounit.md)
+
+The above code outputs as follows:
 
 ![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")
