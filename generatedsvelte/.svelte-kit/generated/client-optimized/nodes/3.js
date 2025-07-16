@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/alumni-summit/+page.svelte";
