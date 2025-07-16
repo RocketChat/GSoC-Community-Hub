@@ -1,4 +1,5 @@
 import * as ts from 'typescript';
+import * as fs from 'fs';
 
 export function extractData(sourceFile: ts.SourceFile): string[] {
 	const dataItems: string[] = [];
@@ -22,4 +23,22 @@ export function extractData(sourceFile: ts.SourceFile): string[] {
 
 	visit(sourceFile);
 	return dataItems;
+}
+
+export function extractSourcePath(buildPath: string, dataItems: string[]): Record<string, string> {
+	const sourcePath: Record<string, string> = {};
+	const trimmedFiles: string[] = [];
+	const files = fs.readdirSync(buildPath);
+	//check if fetched at build time, if not, assume it is statically defined.
+	files.forEach((file) => {
+		trimmedFiles.push(file.split('.')[0].trim());
+	});
+	dataItems.forEach((item) => {
+		if (trimmedFiles.includes(item.trim())) {
+			sourcePath[item.trim()] = '../../../build';
+		} else {
+			sourcePath[item] = '$data';
+		}
+	});
+	return sourcePath;
 }

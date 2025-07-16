@@ -8,11 +8,11 @@ import { findFirstJsxOpeningLikeElementWithName } from './extract/findFirstJsxOp
 import { generateSvelteComponent } from './transform/generateSvelteComponent';
 import { transformImportStatements } from './transform/transformImportStatements';
 import { transformDataItems } from './transform/transformDataItems';
-import { extractData } from './extract/extractData';
+import { extractData, extractSourcePath } from './extract/extractData';
 //import { installPackages } from "./install/installPackages";
 
 const rootDir = path.resolve(process.cwd(), './');
-const srcPath = path.join(rootDir, 'src');
+const srcPath = path.join(rootDir, 'data');
 const buildPathAppDir = path.join(rootDir, '/src/routes');
 // Global Set to keep track of installed packages
 //const installedPackages = new Set<string>();
@@ -21,14 +21,16 @@ function processFile(filePath: string): void {
 	const fileName = path.basename(filePath, path.extname(filePath));
 	const sourceCode = fs.readFileSync(filePath, 'utf-8');
 	const sourceFile = ts.createSourceFile('input.tsx', sourceCode, ts.ScriptTarget.Latest, true);
+	const buildPath = path.join(rootDir, 'build');
 
 	//extracting and transforming
 	//const packageNames = extractPackageNames(sourceFile);
 	const importStatement = extractImportStatements(sourceFile);
 	const dataItems = extractData(sourceFile);
+	const sourcePath = extractSourcePath(buildPath, dataItems);
 	const componentNames = extractComponentNames(importStatement);
 	const transformedImports = transformImportStatements(importStatement);
-	const transformedDataImports = transformDataItems(dataItems, fileName);
+	const transformedDataImports = transformDataItems(dataItems, sourcePath);
 
 	//generating component
 	const componentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);

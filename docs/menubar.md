@@ -38,40 +38,10 @@ Each item in `menutree` should have:
 ---
 
 ## Example
-
-```svelte
-use Menubar from $lib/components/menubar/Menubar.svelte
-
-get brand
-get menutree
-
-<main>
-  <Menubar 
-    brand="MySite" 
-    menutree={[
-      {
-        top: "Products",
-        dropdown: [
-          { label: "Pricing", href: "/pricing" },
-          { label: "Features", href: "/features" },
-          { label: "---" },
-          { label: "Documentation", href: "/docs" }
-        ]
-      },
-      {
-        top: "Company",
-        dropdown: [
-          { label: "About", href: "/about" },
-          { label: "Careers", href: "/careers" }
-        ]
-      }
-    ]}
-  />
-</main>
-```
+An example of this component in code can be found in [Examples](../examples/menubar.md)
 
 ---
 
-The Menubar Component looks as follows:
+## Component Preview
 
 ![Menubar image.](./docsImages/MenubarImage.png "This is a Menubar component image.")

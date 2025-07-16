@@ -2,10 +2,10 @@
 	import { Table, Container, Row, Col, NavLink } from '@sveltestrap/sveltestrap';
 	import type { Contributor } from '$lib/util/fetchContributors';
 	import moment from 'moment';
-	export let lastUpdated : {
-		starttime : number;
+	export let lastUpdated: {
+		starttime: number;
 		endtime: number;
-	}
+	};
 	export let contributorDataSortM: Array<Contributor>;
 	export let contributorDataSortP: Array<Contributor>;
 	export let contributorDataSortI: Array<Contributor>;
@@ -20,9 +20,8 @@
 		}
 	}
 
-	
 	$: totalContributors = contributorData.length;
-	$: lastUpdatedTime = moment(Date.now()).from(lastUpdated.endtime)
+	$: lastUpdatedTime = moment(Date.now()).from(lastUpdated.endtime);
 </script>
 
 <Container fluid class="p-4">
@@ -79,7 +78,7 @@
 											target="_blank"
 											class="text-primary text-decoration-none fw-medium"
 										>
-										{contributor.openPRsNumber}
+											{contributor.openPRsNumber}
 										</a>
 									</span>
 								</td>
@@ -90,7 +89,7 @@
 											target="_blank"
 											class="text-primary text-decoration-none fw-medium"
 										>
-										{contributor.mergedPRsNumber}
+											{contributor.mergedPRsNumber}
 										</a>
 									</span>
 								</td>
@@ -101,7 +100,7 @@
 											target="_blank"
 											class="text-primary text-decoration-none fw-medium"
 										>
-										{contributor.issuesNumber}
+											{contributor.issuesNumber}
 										</a>
 									</span>
 								</td>

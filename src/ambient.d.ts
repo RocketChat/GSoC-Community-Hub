@@ -1,8 +1,6 @@
-declare module "@embeddedchat/react"{
-	export class EmbeddedChat extends React.Component<EmbeddedChatProps & unknown, unknown>{
-
-    }
-    export interface EmbeddedChatProps{
+declare module '@embeddedchat/react' {
+	export class EmbeddedChat extends React.Component<EmbeddedChatProps & unknown, unknown> {}
+	export interface EmbeddedChatProps {
 		// width: string;
 		// height: string;
 		// isClosable: boolean;
@@ -20,5 +18,4 @@ declare module "@embeddedchat/react"{
 		// hideHeader: boolean;
 		// dark: boolean;
 	}
-
 }

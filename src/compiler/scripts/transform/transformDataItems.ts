@@ -1,5 +1,6 @@
-export function transformDataItems(dataItems: string[], fileName: string): string {
-	const sourcePath = '$build';
-	return dataItems.map((item) => ` import { ${item} } from "${sourcePath}/${item}";`).join('\n');
+export function transformDataItems(dataItems: string[], sourcePath: Record<string,string>): string {
+	return dataItems
+		.map((item) => ` import { ${item} } from "${sourcePath[item]}/${item}";`)
+		.join('\n');
 	//return `import { ${dataItems.join(', ')} } from '${sourcePath}';`;
 }

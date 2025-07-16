@@ -1,0 +1,15 @@
+use Menubar from $lib/components/menubar/Menubar.svelte
+use Leaderboard from $lib/components/leaderboard/Leaderboard.svelte
+
+
+get brand
+get menutree
+get contributorDataSortM
+get contributorDataSortI 
+get contributorDataSortP
+get lastUpdated
+
+<main>
+<Menubar {brand} {menutree} />
+<Leaderboard {contributorDataSortM} {contributorDataSortI} {contributorDataSortP} {lastUpdated} />
+</main> 

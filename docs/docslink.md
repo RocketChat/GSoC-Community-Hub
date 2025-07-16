@@ -29,30 +29,11 @@ Use this component to visually separate two links in a clean and centered layout
 ---
 
 ## Example
-
-
-```svelte
-
-<script>
-    const leftlink = "Read the Guides";
-    const rightlink = "Read Release Notes";
-</script>
-
-use Docslink from $lib/components/docslink/Docslink.svelte
-
-get leftlink
-get rightlink
-
-<main>
-
-<Docslink {leftlink} {rightlink}/>
-
-</main>
-
-```
+An example of this component in code can be found in [Examples](../examples/docslink.md)
 
 ---
 
-The above code outputs a component :
+## Component Preview
+
 
 ![Docslink image.](./docsImages/docsLinkImage.png "This is a Docslink component image.")

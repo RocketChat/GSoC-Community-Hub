@@ -21,37 +21,11 @@ Use this component to display a fixed set of three animated statistic counters. 
 > **Note**: The component is explicitly built to support only **three** counters. Passing fewer or more items may result in rendering issues or runtime errors.
 
 ---
-
 ## Example
+An example of this component in code can be found in [Examples](../examples/statscounters.md)
 
-```svelte
-<script>
-    import Statscounters from '$lib/components/statscounters/Statscounters.svelte';
+---
 
-    const data = {
-        statistics: [
-            {
-                totalUsers: 388388,
-                totalMessages: 12828288,
-                onlineUsers: 802
-            }
-        ]
-    };
-
-    const stats = data.statistics[0];
-
-    const counters = [
-        { max: stats.totalUsers, label: 'Users' },
-        { max: stats.totalMessages, label: 'Messages' },
-        { max: stats.onlineUsers, label: 'Online' }
-    ];
-</script>
-
-<main>
-    <Statscounters {counters} />
-</main>
-
-```
-The above code outputs:
+## Component Preview
 
 ![Statscounters image.](./docsImages/statsCounterImage.png "This is a Statscounters image.")

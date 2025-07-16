@@ -4,10 +4,10 @@
 	"type": "module",
 	"private": "true",
 	"scripts": {
-		"dev": "bun src/lib/util/main.ts && vite dev",
-		"build": "bun src/lib/util/main.ts && vite build",
+		"dev": "bun run compile && vite dev",
+		"build": "bun run compile && vite build",
 		"preview": "vite preview",
-		"compile": "bun src/compiler/scripts/main.ts",
+		"compile": "bun src/lib/util/main.ts && bun src/compiler/scripts/main.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",

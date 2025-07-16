@@ -1,4 +1,4 @@
-import { data } from './stats';
+import { data } from '../build/stats';
 // Statscounters data from CRM
 const stats = data.statistics;
 export const counters = [

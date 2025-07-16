@@ -49,10 +49,10 @@
 
 							<button
 								class="next"
-								onclick={() => setIndex(currentIndex < Math.ceil(n / itemsPerView) - 1
-												? currentIndex + 1
-												: currentIndex)
-											}
+								onclick={() =>
+									setIndex(
+										currentIndex < Math.ceil(n / itemsPerView) - 1 ? currentIndex + 1 : currentIndex
+									)}
 							>
 								<Arrow direction="right" />
 							</button>

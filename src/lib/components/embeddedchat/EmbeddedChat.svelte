@@ -1,22 +1,21 @@
 <script lang="ts">
-    import { createElement } from "react";
-    import { createRoot }  from "react-dom/client";
-    import type { EmbeddedChatProps } from "@embeddedchat/react";
+	import { createElement } from 'react';
+	import { createRoot } from 'react-dom/client';
+	import type { EmbeddedChatProps } from '@embeddedchat/react';
 
-    let props: EmbeddedChatProps = $props()
-    let rootEl: HTMLElement
+	let props: EmbeddedChatProps = $props();
+	let rootEl: HTMLElement;
 
-    $effect(() => {
-		const root = createRoot(rootEl)
+	$effect(() => {
+		const root = createRoot(rootEl);
 
 		import('@embeddedchat/react').then(({ EmbeddedChat }) => {
-			const embeddedchat = createElement(EmbeddedChat, { ...props })
-			root.render(embeddedchat)
-		})
+			const embeddedchat = createElement(EmbeddedChat, { ...props });
+			root.render(embeddedchat);
+		});
 
-		return () => root.unmount()
-	})
+		return () => root.unmount();
+	});
 </script>
 
 <div bind:this={rootEl} class="root"></div>
-

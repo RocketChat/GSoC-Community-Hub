@@ -6,9 +6,12 @@ export default defineConfig({
 
 	server: {
 		hmr: {
-			timeout: 120000,
-
+			timeout: 120000
 		},
+		fs: {
+			// Allow serving files from one level up to the project root
+			allow: ['..']
+		}
 	},
 
 	test: {
