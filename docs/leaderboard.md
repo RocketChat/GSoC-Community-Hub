@@ -34,3 +34,5 @@ get contributorDataSortP
 <Leaderboard {contributorDataSortM}{contributorDataSortI} {contributorDataSortP} />
 </main> 
 ```
+
+This example is available for build and test at [Examples](../examples/leaderboard.md)

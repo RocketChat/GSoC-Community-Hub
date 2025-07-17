@@ -51,6 +51,7 @@ get rightlink
 
 ```
 
+This example is available for build and test at [Examples](../examples/docslink.md)
 ---
 
 The above code outputs a component :

@@ -51,6 +51,7 @@ get tilelinks
   <Simonlinktiles {tilelinks}/>
 </main>
 ```
+This example is available for build and test at [Examples](../examples/simonlinktiles.md)
 
 ---
 

@@ -40,6 +40,7 @@ get subtitle
 </main>
 
 ```
+This example is available for build and test at [Examples](../examples/herounit.md)
 
 The above code outputs as follows:
 
