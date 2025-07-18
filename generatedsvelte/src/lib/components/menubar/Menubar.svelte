@@ -10,7 +10,15 @@
 	} from '@sveltestrap/sveltestrap';
 
 	import { Styles } from '@sveltestrap/sveltestrap';
+	import { userids } from '../../../../../build/userid';
 	let { brand, menutree } = $props();
+	let currentTime = $state(Date.now());
+	let startTime = Date.parse(userids[0].meetingTime[0]);
+	let endTime = Date.parse(userids[0].meetingTime[1]);
+	let inRange = $state(false);
+	$effect(() => {
+		inRange = true ? currentTime >= startTime && currentTime <= endTime : false;
+	});
 </script>
 
 {#snippet nav()}
@@ -22,6 +30,11 @@
 					{#each menu.dropdown as item}
 						{#if item.label == '---'}
 							<DropdownItem divider />
+						{:else if item.label == 'Meet with mentee' && inRange}
+							<DropdownItem href={item.href || '#'}>
+								<span class="live-dot"></span>
+								{item.label}
+							</DropdownItem>
 						{:else}
 							<DropdownItem href={item.href || '#'}>
 								{item.label}
@@ -61,6 +74,31 @@
 </div>
 
 <style>
+	.live-dot {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		margin-left: 6px;
+		border-radius: 50%;
+		background-color: red;
+		animation: pulse 1s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			transform: scale(1);
+			opacity: 1;
+		}
+		50% {
+			transform: scale(1.5);
+			opacity: 0.6;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
 	.navbar-container {
 		margin-bottom: 1rem;
 	}
