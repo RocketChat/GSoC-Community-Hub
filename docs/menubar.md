@@ -69,6 +69,7 @@ get menutree
   />
 </main>
 ```
+This example is available for build and test at [Examples](../examples/menubar.md)
 
 ---
 

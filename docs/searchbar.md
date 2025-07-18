@@ -64,6 +64,8 @@ get searchactions
 
 ```
 
+This example is available for build and test at [Examples](../examples/searchbar.md)
+
 ---
 
 ![Searchbar image.](./docsImages/SearchbarImage.png "This is a Searchbar component image.")

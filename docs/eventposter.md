@@ -85,5 +85,6 @@ This component is ideal for conferences, webinars, summits, or any event-based p
   <EventPoster {eventData} />
 </main>
 ```
+This example is available for build and test at [Examples](../examples/eventposter.md)
 
 ![Eventposter image.](./docsImages/eventposterImage.png "This is a Eventposter component image.")

@@ -30,6 +30,11 @@ First, install bun. It should take 2 minutes.
 curl -fsSL https://bun.sh/install | bash
 ```
 
+Then, cd into your working directory `generatedsvelte`.
+```bash
+cd generatedsvelte
+```
+
 To install dependencies:
 
 ```bash
@@ -96,4 +101,3 @@ The following independent components are available.&ensp; They are located under
 |`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
 |`eventposter` - Event Poster|It is a feature-rich and fully responsive event showcase block.|[link](./docs/eventposter.md)| 
 |`leaderboard` - Leaderboard|A table of contributors ranked by `mergedPRs` `openPRs` and `issues`|[link](./docs/leaderboard.md)|
-

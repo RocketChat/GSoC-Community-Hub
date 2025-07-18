@@ -33,5 +33,6 @@ get images
 </main>
 
 ```
+This example is available for build and test at [Examples](../examples/personatiles.md)
 
 ![Herounit image.](./docsImages/HerounitImage.png "This is a Herounit component image.")

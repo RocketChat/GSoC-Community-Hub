@@ -67,6 +67,8 @@ get stories
 </main>
 ```
 
+This example is available for build and test at [Examples](../examples/carousel.md)
+
 ---
 
 The above code outputs a crousel like:

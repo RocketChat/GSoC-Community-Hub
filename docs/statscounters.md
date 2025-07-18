@@ -52,6 +52,8 @@ Use this component to display a fixed set of three animated statistic counters. 
 </main>
 
 ```
+This example is available for build and test at [Examples](../examples/statscounters.md)
+
 The above code outputs:
 
 ![Statscounters image.](./docsImages/statsCounterImage.png "This is a Statscounters image.")
