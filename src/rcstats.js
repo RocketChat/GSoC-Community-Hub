@@ -1,0 +1,1 @@
+export const data = {"statistics":[{"onlineUsers":2,"totalUsers":3,"totalMessages":8}]}

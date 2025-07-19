@@ -101,3 +101,4 @@ The following independent components are available.&ensp; They are located under
 |`personatiles` - Persona Tiles|Iconic tiles with labels representing the personas using this server|[link](./docs/personatiles.md)|
 |`eventposter` - Event Poster|It is a feature-rich and fully responsive event showcase block.|[link](./docs/eventposter.md)| 
 |`leaderboard` - Leaderboard|A table of contributors ranked by `mergedPRs` `openPRs` and `issues`|[link](./docs/leaderboard.md)|
+|`rcstatscounter` - Rocket Chat Statistic Counter|Presents a numeric metrics of Rocket Chat Server by counting up from zero|[link](./docs/rcstatscounter.md)|
