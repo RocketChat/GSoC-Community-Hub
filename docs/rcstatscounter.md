@@ -37,7 +37,7 @@ These should be available at build time through your environment configuration:
 - **`RC_USER_TOKEN`**: API token of an authorized Rocket.Chat user.
 - **`RC_USER_ID`**: The ID of the user associated with the API token.
 
-> **Ensure that the API token and user ID have admin privileges to access the `/api/v1/statistics` endpoint.**
+> **Ensure that the API token and user ID have admin privileges to access the API endpoint.**
 
 ---
 
