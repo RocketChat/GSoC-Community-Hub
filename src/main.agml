@@ -6,6 +6,7 @@ use Statscounters from $lib/components/statscounters/Statscounters.svelte
 use Simonlinktiles from $lib/components/simonlinktiles/Simonlinktiles.svelte
 use Carousel from $lib/components/carousel/Carousel.svelte
 use Personatiles from $lib/components/personatiles/Personatiles.svelte
+use Rcstatscounter from $lib/components/rcstatscounter/Rcstatscounter.svelte
 
 get brand
 get menutree
@@ -20,12 +21,14 @@ get stories
 get caption
 get personas
 get images
+get rcCounters
 
 <main>
 <Menubar {brand} {menutree} />
 <Herounit title={herotitle} subtitle={herosub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
+<Rcstatscounter {rcCounters} />
 <Statscounters {counters}/>
 <Simonlinktiles {tilelinks}/>
 <Carousel {stories}/>

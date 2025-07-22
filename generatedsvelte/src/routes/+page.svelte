@@ -12,6 +12,7 @@
  import { caption } from "../../../src/caption";
  import { personas } from "../../../src/personas";
  import { images } from "../../../src/images";
+ import { rcCounters } from "../../../src/rcCounters";
   import Menubar from '$lib/components/menubar/Menubar.svelte';
 import Herounit from '$lib/components/herounit/Herounit.svelte';
 import Docslink from '$lib/components/docslink/Docslink.svelte';
@@ -20,12 +21,14 @@ import Statscounters from '$lib/components/statscounters/Statscounters.svelte';
 import Simonlinktiles from '$lib/components/simonlinktiles/Simonlinktiles.svelte';
 import Carousel from '$lib/components/carousel/Carousel.svelte';
 import Personatiles from '$lib/components/personatiles/Personatiles.svelte';
+import Rcstatscounter from '$lib/components/rcstatscounter/Rcstatscounter.svelte';
 </script>
 
 <Menubar {brand} {menutree} />
 <Herounit title={herotitle} subtitle={herosub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
+<Rcstatscounter {rcCounters} />
 <Statscounters {counters}/>
 <Simonlinktiles {tilelinks}/>
 <Carousel {stories}/>
