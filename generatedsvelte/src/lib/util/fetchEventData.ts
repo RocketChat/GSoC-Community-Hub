@@ -213,5 +213,3 @@ export const fetchEventData = async () => {
         );
     }
 };
-
-
