@@ -1,8 +1,10 @@
 import { fetchStats } from './countStats';
 import { fetchContributors, fetchLastUpdated } from './fetchContributors';
-import {fetchRcStats} from "../util/countRcStats"
+import {fetchRcStats} from "./countRcStats"
+import { fetchEventData } from './fetchEventData';
 
 // fetchRcStats();
-// fetchStats();
-// fetchContributors();
-// fetchLastUpdated();
+// // fetchStats();
+// // fetchContributors();
+// // fetchLastUpdated();
+// fetchEventData();

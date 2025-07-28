@@ -16,10 +16,10 @@ export interface Contributor {
 const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;
 const LB_DATE_URL = import.meta.env.VITE_LB_DATE_URL;
 const rootDir = path.resolve(process.cwd(), './');
-const lastUpdatedDir = path.join(rootDir, '/src/build/lastUpdated.js');
-const defaultFileDir = path.join(rootDir, '/src/build/contributorDataSortM.js');
-const contributorDataSortPDir = path.join(rootDir, '/src/build/contributorDataSortP.js');
-const contributorDataSortIDir = path.join(rootDir, '/src/build/contributorDataSortI.js');
+const lastUpdatedDir = path.join(rootDir, '/build/lastUpdated.js');
+const defaultFileDir = path.join(rootDir, '/build/contributorDataSortM.js');
+const contributorDataSortPDir = path.join(rootDir, '/build/contributorDataSortP.js');
+const contributorDataSortIDir = path.join(rootDir, '/build/contributorDataSortI.js');
 let outputFileDir = defaultFileDir;
 let outputName = 'contributorDataSortM';
 
