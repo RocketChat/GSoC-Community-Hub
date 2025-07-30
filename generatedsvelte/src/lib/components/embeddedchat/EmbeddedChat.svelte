@@ -4,24 +4,41 @@
         Heading,
         Avatar,
         Input,
-        Icon
+        Icon,
+        Button
     } from '@embeddedchat/ui-elements';
     import { sveltify } from "svelte-preprocess-react";
-
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+    import type { Threads } from '$lib/util/fetchThreads';
+    export let threadList: Array<Threads>;
+    let threads = threadList;
     const react = sveltify(
         {  
             Box, 
             Heading,
             Avatar,
             Input,
-            Icon
+            Icon,
+            Button
         }
     );
-
+    const CHANNEL_NAME = "workshopthreads";
     let isFullscreen = false;
 
     function toggleFullscreen() {
         isFullscreen = !isFullscreen;
+    }
+
+    function formatDateTime(timestamp: string): string {
+        const date = new Date(timestamp);
+        return date.toLocaleString('en-US', {
+            month: 'short',
+            day: '2-digit',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
     }
 
 </script>
@@ -29,8 +46,7 @@
 <react.Box class={isFullscreen ? "chat-container fullscreen" : "chat-container"}>
     <react.Box class="chat-header">
         <react.Heading level={3} class="channel-name">
-            <!-- channel name (fetched from API) -->
-            #general 
+            #{CHANNEL_NAME}
         </react.Heading>
         <react.Box class="header-actions">
             <react.Icon name="expand" size="32px" class="header-icon" onClick={toggleFullscreen} />
@@ -39,26 +55,42 @@
 
     <react.Box class="messages-container">
         <!-- render top threads accordingly -->
-        <react.Box class="message-item">
-            <react.Avatar 
-                url=""
-                alt="user-avatar"
-                size="2.25rem"
-                fallbackIcon=""
-                class="message-avatar"
-            />
-            <react.Box class="message-content">
-                <react.Box class="message-header">
-                    <react.Box is="span" class="username">Zishan Ahmad</react.Box>
-                    <react.Box is="span" class="timestamp">10:30 PM</react.Box>
-                </react.Box>
-                <react.Box class="message-body">
-                    <react.Box class="message-text">
-                        Heyyy there
+        {#each threads as thread}
+            {#if thread.message}
+                <react.Box class="message-item">
+                    <react.Avatar 
+                        url=""
+                        alt="user-avatar"
+                        size="2.25rem"
+                        fallbackIcon=""
+                        class="message-avatar"
+                    />
+                    <react.Box class="message-content">
+                        <react.Box class="message-header">
+                            <react.Box is="span">
+                                <react.Box is="span" class="thread-owner-name">{thread.name}</react.Box>
+                                <react.Box is="span" class="thread-owner-username">@{thread.username}</react.Box>
+                            </react.Box>
+                            
+                            <react.Box is="span" class="timestamp">{formatDateTime(thread.timestamp)}</react.Box>
+                        </react.Box>
+                        <react.Box class="message-body">
+                            <react.Box class="message-text">
+                                {thread.message}
+                            </react.Box>
+                            <react.Box class="thread-actions">
+                                <react.Button size="small" class="view-thread-btn">
+                                    <a href="{BASE_URL}/channel/{CHANNEL_NAME}/thread/{thread.id}" target="_blank">
+                                        View thread
+                                    </a>
+                                </react.Button>
+                                <react.Box is="span" class="thread-count">{thread.tcount} replies</react.Box>
+                            </react.Box>
+                        </react.Box>
                     </react.Box>
                 </react.Box>
-            </react.Box>
-        </react.Box>
+            {/if}
+        {/each}
     </react.Box>
 
     <react.Box class="login-container">
@@ -68,6 +100,11 @@
 
 
 <style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
     :global(.chat-container) {
         display: flex;
         flex-direction: column;
@@ -135,9 +172,10 @@
     }
 
     :global(.message-avatar) {
-        background-color: #8b5cf6;
+        background-color: #2f3349;
         color: white;
         flex-shrink: 0;
+        border: none;
     }
 
     :global(.message-content) {
@@ -152,22 +190,15 @@
         margin-bottom: 0.25rem;
     }
 
-    :global(.username) {
+    :global(.thread-owner-username) {
+        color: #2f3349;
+        font-size: 0.75rem;
+    }
+
+    :global(.thread-owner-name) {
         font-weight: 600;
         color: #2f3349;
         font-size: 0.9rem;
-    }
-
-    :global(.user-badge) {
-        font-size: 0.75rem;
-        padding: 0.125rem 0.375rem;
-        border-radius: 0.25rem;
-        font-weight: 500;
-    }
-
-    :global(.user-badge) {
-        background-color: #fef3c7;
-        color: #92400e;
     }
 
     :global(.timestamp) {
@@ -182,7 +213,33 @@
     }
 
     :global(.message-text) {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    :global(.thread-actions) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    :global(.view-thread-btn) {
+        background-color: #4a5568;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+
+    :global(.view-thread-btn:hover) {
+        background-color: #718096;
+    }
+
+    :global(.thread-count) {
+        font-size: 0.75rem;
+        color: #6b7280;
     }
 
     :global(.login-container) {

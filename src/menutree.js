@@ -6,7 +6,7 @@ export const menutree = [
 		dropdown: [
 			{ label: 'Community Rocket.Chat Serever' },
 			{ label: '---' },
-			{ label: 'Forum' },
+			{ label: 'Forum', href: '/embeddedchat' },
 			{ label: '---' },
 			{ label: 'Github code contributons' },
 			{ label: '---' },

@@ -1,4 +1,4 @@
-import {data} from "./rcstats";
+import {data} from "../build/rcstats";
 
 const stats = data.statistics;
 export const rcCounters = [ { max: stats[0].totalUsers, label: "Rocket Chat Users"}, 
