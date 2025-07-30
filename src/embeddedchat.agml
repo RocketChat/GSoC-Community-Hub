@@ -1,0 +1,11 @@
+use Menubar from $lib/components/menubar/Menubar.svelte
+use EmbeddedChat from $lib/components/embeddedchat/EmbeddedChat.svelte
+
+get brand
+get menutree
+get threadsList
+
+<main>
+<Menubar {brand} {menutree} />
+<EmbeddedChat threadList={threadsList}/>
+</main> 
