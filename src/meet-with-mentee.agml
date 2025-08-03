@@ -1,0 +1,10 @@
+use Menubar from $lib/components/menubar/Menubar.svelte
+use Jitsi from $lib/components/jitsi/Jitsi.svelte
+
+get brand
+get menutree
+
+<main>
+<Menubar {brand} {menutree} />
+<Jitsi />
+</main>

@@ -85,5 +85,18 @@ export const menutree = [
 			{ label: 'Discussion Forum' },
 			{ label: 'Discord' }
 		]
-	}
+	},
+
+	{
+		top: 'User Menu',
+		dropdown: [
+			{label: 'Option 1'},
+			{ label: '---' },
+			{label: 'Option 2'},
+			{ label: '---' },
+			{label: 'Meet with mentee', href: '/meet-with-mentee'},
+			{ label: '---' },
+			{label: 'Option 3'}
+		]
+	},
 ];
