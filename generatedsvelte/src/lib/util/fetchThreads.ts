@@ -4,7 +4,7 @@ import * as path from 'path';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ROOM_ID = import.meta.env.VITE_ROOM_ID;
 const THREAD_COUNT = 5;
-const THREADS_URL = `${BASE_URL}/api/v1/chat.getThreadsList?count=${THREAD_COUNT}&sort=%7B%22tcount%22%3A-1%7D&rid=${ROOM_ID}`;
+const THREADS_URL = `${BASE_URL}/api/v1/chat.getThreadsList?count=${THREAD_COUNT}&sort=%7B%22tcount%22%3A%20-1%2C%20%22tlm%22%3A%20-1%7D&rid=${ROOM_ID}`;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
 const rootDir = path.resolve(process.cwd(), '../');
@@ -58,8 +58,8 @@ export const fetchThreads = async () => {
         } else {
             fs.writeFileSync(
                 outputFileDir,
-                `export const threadsList = [{"message":" ","timestamp":" ", "tcount" : " ",
-                "username":" ","name":" ","time_last_replied":" "}] `
+                `export const threadsList = [{"message":"N/A","timestamp":"2025-01-01T01:00:00.415Z", "tcount" : "0",
+                "username":"N/A","name":N/A","time_last_replied":"2025-01-01T01:00:00.415Z"}] `
             );
         }
     } catch (error){
