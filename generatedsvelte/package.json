@@ -4,7 +4,7 @@
 	"type": "module",
 	"private": "true",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "bun run compile && vite dev",
 		"build": "bun run compile && vite build",
 		"preview": "vite preview",
 		"compile": "bun src/lib/util/main.ts && bun src/compiler/scripts/main.ts",
