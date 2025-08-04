@@ -22,7 +22,7 @@
             Button
         }
     );
-    const CHANNEL_NAME = "workshopthreads";
+    const ROOM_NAME = import.meta.env.VITE_ROOM_NAME.toLowerCase();
     let isFullscreen = false;
 
     function toggleFullscreen() {
@@ -46,7 +46,7 @@
 <react.Box class={isFullscreen ? "chat-container fullscreen" : "chat-container"}>
     <react.Box class="chat-header">
         <react.Heading level={3} class="channel-name">
-            #{CHANNEL_NAME}
+            #{ROOM_NAME}
         </react.Heading>
         <react.Box class="header-actions">
             <react.Icon name="expand" size="32px" class="header-icon" onClick={toggleFullscreen} />
@@ -54,7 +54,7 @@
     </react.Box>
 
     <react.Box class="messages-container">
-        <!-- render top threads accordingly -->
+        <!-- render top threads accordingly, sorted by reply count and date  -->
         {#each threads as thread}
             {#if thread.message}
                 <react.Box class="message-item">
@@ -80,7 +80,7 @@
                             </react.Box>
                             <react.Box class="thread-actions">
                                 <react.Button size="small" class="view-thread-btn">
-                                    <a href="{BASE_URL}/channel/{CHANNEL_NAME}/thread/{thread.id}" target="_blank">
+                                    <a href="{BASE_URL}/channel/{ROOM_NAME}/thread/{thread.id}" target="_blank">
                                         View thread
                                     </a>
                                 </react.Button>
