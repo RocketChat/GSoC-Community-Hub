@@ -10,9 +10,9 @@ The `EmbeddedChat` component is one designed to display the most engaging thread
 
 | Prop Name   | Type       | Description                                                                 |
 |-------------|------------|-----------------------------------------------------------------------------|
-| `threadsList` | `Array<Object>`   | An array of information on the threads being pulled from the RC API containing info like the **message**, **id**, and **date of creation** |
+| `_room_id` | `Array<Object>`   | An array of information on the threads being pulled a room channel (as specified by the room id) from the RC API containing info like the **message**, **id**, and **date of creation** |
 
-### `threadsList` structure:
+### `room_id` prop structure:
 export interface Threads {
     id: string;
     message: string;
@@ -37,13 +37,13 @@ export interface Threads {
 <script lang="ts">
    import { brand } from "../../../../src/brand";
  import { menutree } from "../../../../src/menutree";
- import { threadsList } from "../../../../build/threadsList";
+ import { _67b98510c9 } from "../../../../build/_67b98509f520fb810c9c7265";
   import Menubar from '$lib/components/menubar/Menubar.svelte';
 import EmbeddedChat from '$lib/components/embeddedchat/EmbeddedChat.svelte';
 </script>
 
 <Menubar {brand} {menutree} />
-<EmbeddedChat threadList={threadsList}/>
+<EmbeddedChat threadList={_67b98510c9}/>
 ```
 This example is available for build and test at [Examples](../examples/embeddedchat.md)
 
