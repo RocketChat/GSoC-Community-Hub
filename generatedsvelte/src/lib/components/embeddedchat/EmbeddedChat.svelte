@@ -10,8 +10,7 @@
     import { sveltify } from "svelte-preprocess-react";
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     import type { Threads } from '$lib/util/fetchThreads';
-    export let threadList: Array<Threads>;
-    let threads = threadList;
+    export let threadsList: Array<Threads>;
     const react = sveltify(
         {  
             Box, 
@@ -55,7 +54,7 @@
 
     <react.Box class="messages-container">
         <!-- render top threads accordingly, sorted by reply count and date  -->
-        {#each threads as thread}
+        {#each threadsList as thread}
             {#if thread.message}
                 <react.Box class="message-item">
                     <react.Avatar 
