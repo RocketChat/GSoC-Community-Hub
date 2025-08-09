@@ -1,10 +1,12 @@
+```svelte
 <script lang="ts">
    import { brand } from "../../../../src/brand";
  import { menutree } from "../../../../src/menutree";
- import { eventData } from "../../../../build/eventData";
+ import { WORKSHOPTHREADS } from "../../../../build/WORKSHOPTHREADS";
   import Menubar from '$lib/components/menubar/Menubar.svelte';
-import EventPoster from '$lib/components/eventposter/EventPoster.svelte';
+import EmbeddedChat from '$lib/components/embeddedchat/EmbeddedChat.svelte';
 </script>
 
 <Menubar {brand} {menutree} />
-<EventPoster {eventData} />
+<EmbeddedChat threadsList={WORKSHOPTHREADS}/>
+```
