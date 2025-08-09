@@ -3,6 +3,14 @@ import * as path from 'path';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ROOM_ID = import.meta.env.VITE_ROOM_ID.split(',');
+const ROOM_NAME = import.meta.env.VITE_ROOM_NAME.split(',');
+
+//map room names to ids
+export const ROOM_OBJ : Record<string, string> = {};
+for(let i = 0; i < ROOM_NAME.length; i++){
+    ROOM_OBJ[ROOM_NAME[i]] = ROOM_ID[i];
+}
+
 const THREAD_COUNT = 5;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
@@ -12,6 +20,7 @@ const maxRetries = 3;
 let validResponse = false;
 
 export interface Threads {
+    room_name: string;
     id: string;
     message: string;
     tcount: number;
@@ -21,9 +30,9 @@ export interface Threads {
     time_last_replied: string;
 }
 
-const fetchThreads = async (room_id: string) => {
+const fetchThreads = async (room_name: string) => {
     let threads : Array<Threads> = [];
-    const THREADS_URL = `${BASE_URL}/api/v1/chat.getThreadsList?count=${THREAD_COUNT}&sort=%7B%22tcount%22%3A%20-1%2C%20%22tlm%22%3A%20-1%7D&rid=${room_id.trim()}`;
+    const THREADS_URL = `${BASE_URL}/api/v1/chat.getThreadsList?count=${THREAD_COUNT}&sort=%7B%22tcount%22%3A%20-1%2C%20%22tlm%22%3A%20-1%7D&rid=${ROOM_OBJ[room_name].trim()}`;
     try{    
         const res = await fetch(THREADS_URL, {
             method: 'GET',
@@ -45,6 +54,7 @@ const fetchThreads = async (room_id: string) => {
             const data = await res.json();
             for(const thread in data["threads"]){
             const threadObj = {
+                room_name : room_name,
                 id: data["threads"][thread]["_id"],
                 message: data["threads"][thread]["msg"],
                 tcount: data["threads"][thread]["tcount"],
@@ -63,9 +73,9 @@ const fetchThreads = async (room_id: string) => {
 };
 
 export const fetchAllThreads = async () => {
-    for(const id in ROOM_ID){
-        let outputFileDir = path.join(rootDir, `/build/_${ROOM_ID[id].trim()}.js`);
-        let threads = await fetchThreads(ROOM_ID[id]);
-        fs.writeFileSync(outputFileDir, `export const _${ROOM_ID[id].trim()} = ${JSON.stringify(threads)}`);
+    for(const room in ROOM_NAME){
+        let outputFileDir = path.join(rootDir, `/build/${ROOM_NAME[room].trim()}.js`);
+        let threads = await fetchThreads(ROOM_NAME[room]);
+        fs.writeFileSync(outputFileDir, `export const ${ROOM_NAME[room].trim()} = ${JSON.stringify(threads)}`);
     }
 }
