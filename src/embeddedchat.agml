@@ -3,9 +3,9 @@ use EmbeddedChat from $lib/components/embeddedchat/EmbeddedChat.svelte
 
 get brand
 get menutree
-get _67b98509f520fb810c9c7265
+get WORKSHOPTHREADS
 
 <main>
 <Menubar {brand} {menutree} />
-<EmbeddedChat threadsList={_67b98509f520fb810c9c7265}/>
+<EmbeddedChat threadsList={WORKSHOPTHREADS}/>
 </main> 

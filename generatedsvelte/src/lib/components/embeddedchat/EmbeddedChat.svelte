@@ -11,6 +11,7 @@
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     import type { Threads } from '$lib/util/fetchThreads';
     export let threadsList: Array<Threads>;
+    const ROOM_NAME = threadsList[0].room_name.toLowerCase(); 
     const react = sveltify(
         {  
             Box, 
@@ -21,7 +22,7 @@
             Button
         }
     );
-    const ROOM_NAME = import.meta.env.VITE_ROOM_NAME.toLowerCase();
+
     let isFullscreen = false;
 
     function toggleFullscreen() {
@@ -39,7 +40,6 @@
             hour12: true
         });
     }
-
 </script>
 
 <react.Box class={isFullscreen ? "chat-container fullscreen" : "chat-container"}>
