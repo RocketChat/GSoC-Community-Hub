@@ -7,6 +7,7 @@ use Simonlinktiles from $lib/components/simonlinktiles/Simonlinktiles.svelte
 use Carousel from $lib/components/carousel/Carousel.svelte
 use Personatiles from $lib/components/personatiles/Personatiles.svelte
 use Rcstatscounter from $lib/components/rcstatscounter/Rcstatscounter.svelte
+use Discordstatscounter from $lib/components/discordstatscounter/Discordstatscounter.svelte
 
 get brand
 get menutree
@@ -22,12 +23,14 @@ get caption
 get personas
 get images
 get rcCounters
+get discordCounters
 
 <main>
 <Menubar {brand} {menutree} />
 <Herounit title={herotitle} subtitle={herosub}/>
 <Docslink {leftlink} {rightlink}/>
 <Searchbar {searchactions} />
+<Discordstatscounter {discordCounters} />
 <Rcstatscounter {rcCounters} />
 <Statscounters {counters}/>
 <Simonlinktiles {tilelinks}/>
