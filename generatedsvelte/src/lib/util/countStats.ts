@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 
-const URL = import.meta.env.VITE_URL;
+const URL = import.meta.env.VITE_BASE_URL;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
 const rootDir = path.resolve(process.cwd(), '../');
@@ -27,8 +27,8 @@ export const fetchStats = async () => {
 		}
 	}
 	if (validResponse) {
-		console.log(res);
 		const data = await res.json();
+		console.log(data);
 		const jsonData = JSON.stringify(data);
 		fs.writeFileSync(outputFileDir, `export const data = ${jsonData}`);
 	} else {
@@ -39,3 +39,5 @@ export const fetchStats = async () => {
 		);
 	}
 };
+
+fetchStats();

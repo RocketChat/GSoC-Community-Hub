@@ -1,10 +1,10 @@
 import { fetchStats } from './countStats';
 import { fetchContributors, fetchLastUpdated } from './fetchContributors';
 import { fetchEventData } from './fetchEventData';
-import {fetchRcStats} from "../util/countRcStats"
+// import {fetchRcStats} from "../util/countRcStats"
 import { fetchAllThreads } from './fetchThreads';
 
-fetchRcStats();
+// ===fetchRcStats();
 fetchStats();
 fetchContributors();
 fetchEventData();
