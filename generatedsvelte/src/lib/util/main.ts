@@ -4,7 +4,7 @@ import { fetchEventData } from './fetchEventData';
 // import {fetchRcStats} from "../util/countRcStats"
 import { fetchAllThreads } from './fetchThreads';
 
-// ===fetchRcStats();
+//fetchRcStats();
 fetchStats();
 fetchContributors();
 fetchEventData();
