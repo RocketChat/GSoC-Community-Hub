@@ -1,7 +1,7 @@
 import * as ts from 'typescript';
 import * as fs from 'fs';
 import * as path from 'path';
-//import { extractPackageNames } from "./extract/extractPackageNames";
+import { extractPackageNames } from "./extract/extractPackageNames";
 import { extractImportStatements } from './extract/extractImportStatements';
 import { extractComponentNames } from './extract/extractComponentNames';
 import { findFirstJsxOpeningLikeElementWithName } from './extract/findFirstJsxOpeningLikeElementWithName';
@@ -9,13 +9,13 @@ import { generateSvelteComponent } from './transform/generateSvelteComponent';
 import { transformImportStatements } from './transform/transformImportStatements';
 import { transformDataItems } from './transform/transformDataItems';
 import { extractData, extractSourcePath } from './extract/extractData';
-//import { installPackages } from "./install/installPackages";
+import { installPackages } from "./install/installPackages";
 
 const rootDir = path.resolve(process.cwd(), '../');
 const srcPath = path.join(rootDir, 'src');
 const buildPathAppDir = path.join(rootDir, 'generatedsvelte/src/routes');
 // Global Set to keep track of installed packages
-//const installedPackages = new Set<string>();
+const installedPackages = new Set<string>();
 
 function processFile(filePath: string): void {
 	const fileName = path.basename(filePath, path.extname(filePath));
@@ -24,7 +24,7 @@ function processFile(filePath: string): void {
 	const buildPath = path.join(rootDir, 'build');
 
 	//extracting and transforming
-	//const packageNames = extractPackageNames(sourceFile);
+	const packageNames = extractPackageNames(sourceFile);
 	const importStatement = extractImportStatements(sourceFile);
 	const dataItems = extractData(sourceFile);
 	const sourcePath = extractSourcePath(buildPath, fileName, dataItems);
@@ -45,7 +45,7 @@ function processFile(filePath: string): void {
 	);
 
 	//installing npm packages used
-	// installPackages(buildPathAppDir, packageNames, installedPackages);///////
+	installPackages(buildPathAppDir, packageNames, installedPackages);///////
 
 	// Creating files
 	let outputDirPath = buildPathAppDir;

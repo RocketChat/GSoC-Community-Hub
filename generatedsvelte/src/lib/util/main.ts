@@ -5,8 +5,8 @@ import { fetchEventData } from './fetchEventData';
 import { fetchAllThreads } from './fetchThreads';
 
 //fetchRcStats();
-fetchStats();
+// fetchStats();
 fetchContributors();
 fetchEventData();
-fetchLastUpdated();
+// fetchLastUpdated();
 fetchAllThreads();
