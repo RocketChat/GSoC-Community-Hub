@@ -4,9 +4,15 @@ import { fetchEventData } from './fetchEventData';
 import {fetchRcStats} from "../util/countRcStats"
 import { fetchAllThreads } from './fetchThreads';
 
-fetchRcStats();
-fetchStats();
-fetchContributors();
-fetchEventData();
-fetchLastUpdated();
-fetchAllThreads();
+async function main(){
+    fetchRcStats();
+    fetchStats();
+    fetchContributors();
+    fetchEventData();
+    fetchLastUpdated();
+    fetchAllThreads();
+
+
+}
+
+main();

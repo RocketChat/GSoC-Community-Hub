@@ -35,7 +35,7 @@ export function extractSourcePath(buildPath: string, fileName: string, dataItems
 	});
 	dataItems.forEach((item) => {
 		if (trimmedFiles.includes(item.trim())) {
-			sourcePath[item.trim()] = '../../../../build';
+			sourcePath[item.trim()] = '../../../build';
 		} else if(fileName === 'main') {
 			sourcePath[item] = '../../../src';
 		}else{
