@@ -11,7 +11,7 @@ import { transformDataItems } from './transform/transformDataItems';
 import { extractData, extractSourcePath } from './extract/extractData';
 //import { installPackages } from "./install/installPackages";
 
-const rootDir = path.resolve(process.cwd(), '../');
+const rootDir = process.cwd();
 const srcPath = path.join(rootDir, 'src');
 const buildPathAppDir = path.join(rootDir, 'generatedsvelte/src/routes');
 // Global Set to keep track of installed packages

@@ -14,7 +14,7 @@ for(let i = 0; i < ROOM_NAME.length; i++){
 const THREAD_COUNT = 5;
 const USER_TOKEN = import.meta.env.VITE_USER_TOKEN;
 const USERID = import.meta.env.VITE_USERID;
-const rootDir = path.resolve(process.cwd(), '../');
+const rootDir = process.cwd();
 const maxRetries = 3;
 
 let validResponse = false;

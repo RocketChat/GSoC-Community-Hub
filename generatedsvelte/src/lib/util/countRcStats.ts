@@ -3,7 +3,7 @@ import * as path from "path";
 const RC_URL = import.meta.env.RC_URL;
 const RC_USER_TOKEN = import.meta.env.RC_USER_TOKEN;
 const RC_USER_ID = import.meta.env.RC_USER_ID;
-const rootDir = path.resolve(process.cwd(), '../');
+const rootDir = process.cwd();
 const outputFileDir = path.join(rootDir, '/build/rcstats.js');
 const maxRetries = 3;
 let validResponse = false;

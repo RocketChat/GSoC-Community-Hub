@@ -1,0 +1,19 @@
+{
+	"name": "gsochub-framework",
+	"version": "0.0.1",
+	"type": "module",
+	"private": "true",
+	"scripts": {
+		"postinstall": "cd generatedsvelte && bun install",
+		"compile": "bun generatedsvelte/src/lib/util/main.ts && bun generatedsvelte/src/compiler/scripts/main.ts",
+		"build": "bun run compile && cd generatedsvelte && bun run build"
+	},
+	"devDependencies": {
+		"@types/node": "^22.16.4",
+		"typescript": "^5.8.2"
+	},
+	"volta": {
+		"node": "20.10.0"
+	}
+}
+

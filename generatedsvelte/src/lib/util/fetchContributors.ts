@@ -15,7 +15,7 @@ export interface Contributor {
 
 const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;
 const LB_DATE_URL = import.meta.env.VITE_LB_DATE_URL;
-const rootDir = path.resolve(process.cwd(), '../');
+const rootDir = process.cwd();
 const lastUpdatedDir = path.join(rootDir, '/build/lastUpdated.js');
 const defaultFileDir = path.join(rootDir, '/build/contributorDataSortM.js');
 const contributorDataSortPDir = path.join(rootDir, '/build/contributorDataSortP.js');
