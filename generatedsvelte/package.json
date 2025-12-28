@@ -1,13 +1,13 @@
 {
-	"name": "gsochub",
+	"name": "gsochub-svelte",
 	"version": "0.0.1",
 	"type": "module",
 	"private": "true",
 	"scripts": {
+		"compile": "cd .. && bun run compile",
 		"dev": "bun run compile && vite dev",
 		"build": "bun run compile && vite build",
 		"preview": "vite preview",
-		"compile": "bun src/lib/util/main.ts && bun src/compiler/scripts/main.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 const EVENT_DATA_URL = import.meta.env.VITE_EVENT_DATA_URL;
-const rootDir = path.resolve(process.cwd(), '../');
+const rootDir = process.cwd();
 const outputFileDir = path.join(rootDir, '/build/eventData.js');
 const maxRetries = 3;
 let validResponse = false;
