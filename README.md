@@ -30,9 +30,9 @@ First, install bun. It should take 2 minutes.
 curl -fsSL https://bun.sh/install | bash
 ```
 
-Then, cd into your working directory `generatedsvelte`.
+Then, cd into your working directory `GsoC-Community-Hub`.
 ```bash
-cd generatedsvelte
+cd GsoC-Community-Hub
 ```
 
 To install dependencies:

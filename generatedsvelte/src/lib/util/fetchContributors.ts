@@ -13,8 +13,9 @@ export interface Contributor {
 	issuesLink: string;
 }
 
-const LEADERBOARD_URL = import.meta.env.VITE_LEADERBOARD_URL;
-const LB_DATE_URL = import.meta.env.VITE_LB_DATE_URL;
+const LB_URL = import.meta.env.VITE_LEADERBOARD_URL;
+const LEADERBOARD_URL = `${LB_URL}/api/contributor`;
+const LB_DATE_URL = `${LB_URL}/api/log`;
 const rootDir = path.resolve(process.cwd(), '../');
 const lastUpdatedDir = path.join(rootDir, '/build/lastUpdated.js');
 const defaultFileDir = path.join(rootDir, '/build/contributorDataSortM.js');
@@ -80,6 +81,8 @@ export const fetchLastUpdated = async () => {
 		if (req.ok) {
 			const res = await req.json();
 			fs.writeFileSync(lastUpdatedDir, `export const lastUpdated = ${JSON.stringify(res)}`);
+		}else{
+			fs.writeFileSync(outputFileDir, `export const contributorData = {"starttime": 1755686799213, "endtime": 1755687032213}`);
 		}
 	} catch (error) {
 		console.error(error);
@@ -119,3 +122,5 @@ export const fetchContributors = async () => {
 		console.error(error);
 	}
 };
+
+fetchContributors();

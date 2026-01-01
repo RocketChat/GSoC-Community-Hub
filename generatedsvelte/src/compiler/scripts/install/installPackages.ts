@@ -11,7 +11,7 @@ export function installPackages(
 		console.log(`Installing packages in ${directory}: ${newPackages.join(', ')}`);
 
 		try {
-			execSync(`pnpm install ${newPackages.join(' ')}`, { cwd: directory, stdio: 'inherit' });
+			execSync(`bun install ${newPackages.join(' ')}`, { cwd: directory, stdio: 'inherit' });
 			newPackages.forEach((pkg) => installedPackages.add(pkg));
 			console.log('Packages installed successfully.');
 		} catch (error) {
